@@ -1,45 +1,45 @@
 # main:
 
-#   - title: Poster':'' mmLeaf':' Versatile Leaf Wetness Detection via mmWave Sensing
-#     authors: Maolin Gan, <strong>Yimeng Liu<strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao
-#     conference_short: MobiSys'23
-#     conference: Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services
-#     pdf: ./assets/files/mmleaf.pdf
-#     page: https://dl.acm.org/doi/abs/10.1145/3581791.3597367
-#     bibtex: ./assets/files/mmleaf.txt
-#     image: ./assets/files/mmleaf.jpg
+  - title: Poster':'' mmLeaf':' Versatile Leaf Wetness Detection via mmWave Sensing
+    authors: Maolin Gan, <strong>Yimeng Liu<strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao
+    conference_short: MobiSys'23
+    conference: Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services
+    pdf: ./assets/files/mmleaf.pdf
+    page: https://dl.acm.org/doi/abs/10.1145/3581791.3597367
+    bibtex: ./assets/files/mmleaf.txt
+    # image: ./assets/files/mmleaf.jpg
 
 
-#   - title: Detection of passageways in natural foliage using biomimetic sonar
-#     authors: Ruihao Wang, <strong>Yimeng Liu<strong>, Rolf Müller
-#     conference_short: Bioinspir. Biomim.
-#     conference: Bioinspiration & Biomimetics
-#     pdf: ./assets/files/biodetection.pdf
-#     page: https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta
-#     bibtex: ./assets/files/biodetection.txt
-#     image: ./assets/files/biodetection.jpg
+  - title: Detection of passageways in natural foliage using biomimetic sonar
+    authors: Ruihao Wang, <strong>Yimeng Liu<strong>, Rolf Müller
+    conference_short: Bioinspir. Biomim.
+    conference: Bioinspiration & Biomimetics
+    pdf: ./assets/files/biodetection.pdf
+    page: https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta
+    bibtex: ./assets/files/biodetection.txt
+    # image: ./assets/files/biodetection.jpg
 
 
-main:
+# main:
 
-  - title: Multi-target electrochemical malaria aptasensor on flexible multielectrode arrays for detection in malaria parasite blood samples
-    authors: Gabriela Figueroa-Miranda, <strong>Song Chen</strong>, Marc Neis, Lei Zhou, Yuting Zhang, Young Lo, Julian Alexander Tanner, Andrea Kreidenweiss, Andreas Offenhäusser, Dirk Mayer
-    conference_short: Sens. Actuators B Chem.
-    conference: Sensors and Actuators B Chemical
-    pdf: ./assets/files/multi.pdf
-    page: https://www.sciencedirect.com/science/article/abs/pii/S0925400521013800?via%3Dihub
-    bibtex: ./assets/files/multi.txt
-    image: ./assets/files/multi.jpg
-    citation: sf-0AGoAAAAJ:u5HHmVD_uO8C
-    notes: Published
+#   - title: Multi-target electrochemical malaria aptasensor on flexible multielectrode arrays for detection in malaria parasite blood samples
+#     authors: Gabriela Figueroa-Miranda, <strong>Song Chen</strong>, Marc Neis, Lei Zhou, Yuting Zhang, Young Lo, Julian Alexander Tanner, Andrea Kreidenweiss, Andreas Offenhäusser, Dirk Mayer
+#     conference_short: Sens. Actuators B Chem.
+#     conference: Sensors and Actuators B Chemical
+#     pdf: ./assets/files/multi.pdf
+#     page: https://www.sciencedirect.com/science/article/abs/pii/S0925400521013800?via%3Dihub
+#     bibtex: ./assets/files/multi.txt
+#     image: ./assets/files/multi.jpg
+#     citation: sf-0AGoAAAAJ:u5HHmVD_uO8C
+#     notes: Published
 
-  - title: Magneto‐Ionics in Annealed W/CoFeB/HfO2 Thin Films
-    authors: Rohit Pachat, Djoudi Ourdani, Maria‐andromachi Syskaki, Alessio Lamperti, Subhajit Roy, <strong>Song Chen</strong>, Adriano Di Pietro, Ludovic Largeau, Roméo Juge, Maryam Massouras, Cristina Balan, Johannes Wilhelmus van der Jagt, Guillaume Agnus, Yves Roussigné, Mihai Gabor, Salim Mourad Chérif, Gianfranco Durin, Shimpei Ono, Jürgen Langer, Damien Querlioz, Dafiné Ravelosona, Mohamed Belmeguenai, Liza Herrera Diez
-    conference_short: Adv. Mater. Interfaces
-    conference: Advanced Materials Interfaces
-    pdf: https://onlinelibrary.wiley.com/doi/pdf/10.1002/admi.202200690
-    page: https://www.sciencedirect.com/science/article/abs/pii/S0925400521013800?via%3Dihub
-    bibtex: ./assets/files/magnetoionic.txt
-    image: ./assets/files/admi202270196-gra-0001-m.jpg
-    citation: sf-0AGoAAAAJ:d1gkVwhDpl0C
-    notes: Published
+#   - title: Magneto‐Ionics in Annealed W/CoFeB/HfO2 Thin Films
+#     authors: Rohit Pachat, Djoudi Ourdani, Maria‐andromachi Syskaki, Alessio Lamperti, Subhajit Roy, <strong>Song Chen</strong>, Adriano Di Pietro, Ludovic Largeau, Roméo Juge, Maryam Massouras, Cristina Balan, Johannes Wilhelmus van der Jagt, Guillaume Agnus, Yves Roussigné, Mihai Gabor, Salim Mourad Chérif, Gianfranco Durin, Shimpei Ono, Jürgen Langer, Damien Querlioz, Dafiné Ravelosona, Mohamed Belmeguenai, Liza Herrera Diez
+#     conference_short: Adv. Mater. Interfaces
+#     conference: Advanced Materials Interfaces
+#     pdf: https://onlinelibrary.wiley.com/doi/pdf/10.1002/admi.202200690
+#     page: https://www.sciencedirect.com/science/article/abs/pii/S0925400521013800?via%3Dihub
+#     bibtex: ./assets/files/magnetoionic.txt
+#     image: ./assets/files/admi202270196-gra-0001-m.jpg
+#     citation: sf-0AGoAAAAJ:d1gkVwhDpl0C
+#     notes: Published
