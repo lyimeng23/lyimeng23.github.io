@@ -38,9 +38,9 @@ I am currently a PhD student in Computer Science and Engineering from Michigan S
 - **Marie Curie Alumni Association Member**, 2021 - Present
 - **The European Magnetism Association (EMA) Member**, 2021 - Present
 
-## Certificates
+<!-- ## Certificates
 
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="343635de-7d0f-43ea-922d-432566a4b1e5" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="343635de-7d0f-43ea-922d-432566a4b1e5" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script> -->
 
 
 {% include_relative _includes/projects.md %}
@@ -49,4 +49,4 @@ I am currently a PhD student in Computer Science and Engineering from Michigan S
 
 {% include_relative _includes/conference.md %}
 
-{% include_relative _includes/contact.md %}
+<!-- {% include_relative _includes/contact.md %} -->
