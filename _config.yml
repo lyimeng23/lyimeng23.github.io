@@ -22,7 +22,7 @@ enable_hopkins_logo: false
 enable_last_update: false
 
 # Links
-# cv_link: https://blog.songchen.science/de3ec0aa2234aa1e3ee275bbc715c6c9/CV.pdf
+# cv_link: ./assets/files/cv.pdf
 google_scholar: https://scholar.google.com/citations?hl=en&user=m2XRhbgAAAAJ
 # github_link: https://github.com/song-chen1/
 linkedin: https://www.linkedin.com/in/yimeng-liu-5921591ab/
