@@ -4,7 +4,20 @@
 
 <ul>
 
-<li><strong>[Jun. 2024]</strong> Automating the generation of publication based on the Googlescholar profile, as shown in the  <span style="color:#e74d3c"><a href="https://github.com/song-chen1/song-chen1.github.io">Github repository</a></span>.</li>
+
+
+<li><strong>[Aug. 2024]</strong> Our paper has been accepted at MobiCom'24.</li>
+ <li><strong>[Aug. 2024]</strong> Attended the NSF workshop on Substantial Computing at Purdue University.</li> 
+ <li><strong>[May. 2023]</strong> Pursuing a Ph.D. degree under the supervision of <a href="https://cse.msu.edu/~caozc/">Dr. Zhichao Cao</a> at Michigan State University, Department of Computer Science and Engineering.</li> 
+ <li><strong>[June. 2023]</strong> Our paper has been accepted at MobiSys'23. Check it out <a href="https://dl.acm.org/doi/abs/10.1145/3581791.3597367">here</a>.</li>
+ <li><strong>[May. 2023]</strong> Graduated from Virginia Tech with a Bachelor of Science in Mathematics!</li>
+ <li><strong>[Aug. 2022]</strong> Our paper has been accepted by Bioinspiration & Biomimetics. Check it out <a href="https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta">here</a>.</li>
+ <li><strong>[May. 2022]</strong> Summer Research Intern at EIN Lab under the supervision of <a href="https://cse.msu.edu/~caozc/">Dr. Zhichao Cao</a>.</li> 
+ <li><strong>[Oct. 2020]</strong> Undergraduate Research under the supervision of <a href="https://me.vt.edu/people/faculty/mueller-rolf.html">Dr. Rolf Müller</a>.</li>
+
+
+
+<!-- <li><strong>[Jun. 2024]</strong> Automating the generation of publication based on the Googlescholar profile, as shown in the  <span style="color:#e74d3c"><a href="https://github.com/song-chen1/song-chen1.github.io">Github repository</a></span>.</li>
 <li><strong>[DEC. 2023]</strong> The <span style="color:#e74d3c"><a href="https://goindex.chen-song90.workers.dev">Googledrive index</a></span> has been now integrated to the webblog.</li>
 <li><strong>[DEC. 2023]</strong> The <span style="color:#e74d3c"><a href="https://songchen.science/blog/gallery/">Hitchhiker's Gallery</a></span> has been released, thanks to anzai's <span style="color:#e74d3c"><a href="https://github.com/anzai249/easy-masonry/tree/main">work: easy-masonry</a></span> </li>
 <li><strong>[NOV. 2023]</strong> The <span style="color:#e74d3c"><a href="https://bemagic-etn.eu/news/80-bemagic-final-event">Final Event of the BeMAGIC project</a></span> will take place in the Universitat Autònoma de Barcelona, Spain, on 14-15 December. </li>
@@ -21,6 +34,6 @@
 <li><strong>[JUN. 2023]</strong> Secondment at the institute <a href="https://www.imm.cnr.it/">CNR-IMM</a>, in collarboartion with professor <span style="color:#e74d3c"><a href="https://www.mdm.imm.cnr.it/users/lamperti-alessio">Alessio Lamperti.</a></span></li>
 <li><strong>[DEC. 2022]</strong> Secondment at the  <a href="https://www.aalto.fi/en/department-of-applied-physics">department Applied Physics of Aalto University</a>, in collarboartion with professor <span style="color:#e74d3c"><a href="https://www.aalto.fi/en/people/sebastiaan-van-dijken">Sebastiaan van Dijken.</a></span></li>
 <li><strong>[JUN. 2022]</strong> Secondment at the  <a href="https://www.aalto.fi/en/department-of-applied-physics">department Applied Physics of Aalto University</a>, in collarboartion with professor <span style="color:#e74d3c"><a href="https://www.aalto.fi/en/people/sebastiaan-van-dijken">Sebastiaan van Dijken.</a></span></li>
-<li><strong>[JUN. 2021]</strong> Join the <a href="https://www.spin-ion.com/">Spin-Ion Technologies</a>, involved in the <a href="https://bemagic-etn.eu/">BeMAGIC</a> program (Marie Sklodowska-Curie European Training Network).</li>
+<li><strong>[JUN. 2021]</strong> Join the <a href="https://www.spin-ion.com/">Spin-Ion Technologies</a>, involved in the <a href="https://bemagic-etn.eu/">BeMAGIC</a> program (Marie Sklodowska-Curie European Training Network).</li> -->
 </div>
 </ul>

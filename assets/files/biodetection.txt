@@ -1,0 +1,10 @@
+@article{wang2022detection,
+  title={Detection of passageways in natural foliage using biomimetic sonar},
+  author={Wang, Ruihao and Liu, Yimeng and M{\"u}ller, Rolf},
+  journal={Bioinspiration \& Biomimetics},
+  volume={17},
+  number={5},
+  pages={056009},
+  year={2022},
+  publisher={IOP Publishing}
+}

@@ -1,0 +1,17 @@
+@inproceedings{10.1145/3581791.3597367,
+author = {Gan, Maolin and Liu, Yimeng and Liu, Li and Wu, Chenshu and Dong, Younsuk and Zeng, Huacheng and Cao, Zhichao},
+title = {Poster: mmLeaf: Versatile Leaf Wetness Detection via mmWave Sensing},
+year = {2023},
+isbn = {9798400701108},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3581791.3597367},
+doi = {10.1145/3581791.3597367},
+abstract = {Leaf wetness detection is one of the key technologies for preventing plant diseases in agriculture. In this poster, we propose mmLeaf, leveraging a commercial off-the-shelf millimeter-wave (mmWave) radar to detect actual leaf wetness in diverse environments and lighting conditions. mmLeaf captures mmWave signals reflected by monitored leaves with a two-dimensional (2D) scanning system. Then, we use a multiple-input multiple-output (MIMO) array and synthetic aperture radar (SAR) to reconstruct the signal distribution of different planes of the leaves. A deep learning model takes the fused signal distribution as inputs to classify the leaf wetness. We implement mmLeaf using a frequency-modulated continuous-wave (FMCW) radar and evaluate its performance with a potted plant indoors. By exploring the use of mmWave signals, mmLeaf delivers an end-to-end detection framework that achieves up to 90\% accuracy in classifying leaf wetness under different distances.},
+booktitle = {Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services},
+pages = {563–564},
+numpages = {2},
+keywords = {mmWave sensing, leaf wetness, near-field radar imaging, SAR, deep learning},
+location = {Helsinki, Finland},
+series = {MobiSys '23}
+}
