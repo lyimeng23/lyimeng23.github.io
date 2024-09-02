@@ -20,7 +20,7 @@ The code is written in Markdown and is intended to be used in a website or web p
 
 <h1 id="publications"></h1>
 
-<h2 style="margin: 30px 0px -15px;">Publications <span style="font-size:15px;">[</span><a href="https://scholar.google.com/citations?user=sf-0AGoAAAAJ&hl=de" target="_blank" style="font-size:15px;">Google Scholar</a><span style="font-size:15px;">]</span></h2>
+<h2 style="margin: 30px 0px -15px;">Publications <span style="font-size:15px;">[</span><a href="https://scholar.google.com/citations?hl=en&user=m2XRhbgAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><span style="font-size:15px;">]</span></h2>
 
 <div class="publications">
   <ol class="bibliography">
@@ -31,7 +31,7 @@ The code is written in Markdown and is intended to be used in a website or web p
     <li>
       <div class="pub-row">
         <div class="col-sm-3 abbr" style="padding-right: 15px;padding-left: 15px;">
-          <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width: 100px; height: 50px;">
+          <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width: 100px; height: 40%;">
           <abbr class="badge">{{ link.conference_short }}</abbr>
         </div>
         <div class="col-sm-9" style="padding-right: 15px;padding-left: 20px;">
