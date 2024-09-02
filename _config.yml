@@ -11,12 +11,10 @@ address: 428 S SHAW LN, East Lansing, MI 48824
 address_link: https://maps.app.goo.gl/G9r7mtNajoCMG74s7
 
 # Search Engine Optimization (SEO)
-keywords: yimeng, yimeng liu, yimeng msu, yimeng liu msu
+keywords:   Yimeng Liu, michigan state university, msu,yimeng, liu, mobile sensing, mobile computing, Yimeng Liu research, Yimeng Liu academic,  Yimeng Liu publications, Yimeng Liu university, Yimeng Liu   , Yimeng Liu expert in IoT, Yimeng Liu mobile sensing, mobile computing research, IoT research projects, sensor technology expert, mobile sensing technology, wireless sensing research, Internet of Things (IoT) expert, machine learning for IoT, mmWave sensing research, federated learning in IoT, mobile computing   , Yimeng Liu academic profile,   Yimeng Liu university projects, Yimeng Liu research lab, Yimeng Liu collaborations, university mobile computing research, academic IoT expert, mobile computing university   , computer science   , technology innovation in IoT, academic research in mobile computing, wireless sensing systems, advanced mobile technologies, Yimeng Liu engineering, technology-driven research in IoT.
 canonical: https://minimal-light-theme.yliu.me/
-description: Yimeng Liu is a PhD student in Computer Science and Engineering from Michigan State University, where I am advised by Dr. Zhichao Cao, and a Bachelor of Science degree in Mathematics from Virginia Tech. My focus is on mobile and wireless sensing technologies. My research began at Virginia Tech with the development of a transfer learning model that significantly enhanced UAV navigation by integrating optical and acoustic data for improved accuracy. Currently, at Michigan State, I lead a smart agriculture project, implementing an advanced wireless sensing system with multimodal sensors to optimize crop yield and sustainability. My expertise includes designing sophisticated machine learning algorithms and utilizing deep learning techniques for accurate agricultural assessment and predictive analytics.
+description: Discover the official website of Yimeng Liu, a leading expert in mobile computing, sensing, and IoT. Explore  academic profile, innovative research projects, and influential publications. Learn more about his contributions to cutting-edge technology and connect for collaborations or inquiries. This site provides comprehensive insights into   Liu's professional achievements and ongoing work in the field.
 
-# The option is used to enable the Johns Hopkins template.
-enable_hopkins_logo: true
 
 # The option is used to show the last update time.
 enable_last_update: true
@@ -47,7 +45,7 @@ clustrmaps_id: ${{ secrets.CLUSTRMAPS_ID }}
 
 # Google Analytics ID
 # Please remove this if you don't use Google Analytics
-# google_analytics: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+google_analytics: ${{ secrets.GOOGLE_SCHOLAR_ID }}
 
 # Use this project as a remote theme for GitHub Pages
 # See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
