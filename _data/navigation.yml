@@ -1,9 +1,5 @@
 main:
 
-  - title: "Contact"
-    url: ./#contact 
-    right: true 
-
   - title: "Conferences & Events"
     url: ./#conferences
 
@@ -13,11 +9,9 @@ main:
   - title: "Projects"
     url: ./#projects
 
+
   - title: "News"
     url: ./#news
-
-  - title: "Blogs"
-    url: ./blog/
 
   - title: "Bio"
     url: ./#about-me
