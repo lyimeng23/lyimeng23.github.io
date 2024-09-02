@@ -8,8 +8,8 @@ main:
     page: https://dl.acm.org/doi/abs/10.1145/3581791.3597367
     bibtex: ./assets/files/mmleaf.txt
     image: ./assets/files/mmleaf.jpg
-    # citation: sf-0AGoAAAAJ:u5HHmVD_uO8C
-    # notes: Published
+    citation: sf-0AGoAAAAJ:u5HHmVD_uO8C
+    notes: Published
 
 
   - title: Detection of passageways in natural foliage using biomimetic sonar
@@ -20,8 +20,8 @@ main:
     page: https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta
     bibtex: ./assets/files/biodetection.txt
     image: ./assets/files/biodetection.jpg
-    # citation: sf-0AGoAAAAJ:u5HHmVD_uO8C
-    # notes: Published
+    citation: sf-0AGoAAAAJ:u5HHmVD_uO8C
+    notes: Published
 
   # - title: Magneto‐Ionics in Annealed W/CoFeB/HfO2 Thin Films
   #   authors: Rohit Pachat, Djoudi Ourdani, Maria‐andromachi Syskaki, Alessio Lamperti, Subhajit Roy, <strong>Song Chen</strong>, Adriano Di Pietro, Ludovic Largeau, Roméo Juge, Maryam Massouras, Cristina Balan, Johannes Wilhelmus van der Jagt, Guillaume Agnus, Yves Roussigné, Mihai Gabor, Salim Mourad Chérif, Gianfranco Durin, Shimpei Ono, Jürgen Langer, Damien Querlioz, Dafiné Ravelosona, Mohamed Belmeguenai, Liza Herrera Diez

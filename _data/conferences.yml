@@ -1,12 +1,11 @@
 main:
   - title: NSF Workshop on Sustainable Computing
-    authors: Song Chen
+    authors: Yimeng Liu
     # conference_short: BeMAGIC
     # conference: BeMAGIC Final Event
     # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
     web: https://nsf-desc-2024.github.io/
     image: ./assets/img/NSFSC.jpg
-    notes: 
 
   # - title: Reversible and Non-volatile Magneto-ionic effect in W-CoFeB-MgO-HfO2 ultra-thin films with Perpendicular Anisotropy
   #   authors: Song Chen, Elmer Monteblanco, Rohit Pachat, Liza Herrera Diez, Dafiné Ravelosona
