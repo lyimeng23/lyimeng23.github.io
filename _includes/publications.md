@@ -61,29 +61,6 @@ The code is written in Markdown and is intended to be used in a website or web p
       {% if link.notes %} 
       <strong> <i style="color:#e74d3c">{{ link.notes }}</i></strong>
       {% endif %}
-      {% if link.others %} 
-      {{ link.others }}
-      {% endif %}
-      {% if link.citation %} 
-      <strong> <a style="color:#e74d3c; font-weight:600"> • <i class="total_citation_mtl" data-citation="{{ link.citation }}"></i> <i style="color:#e74d3c; font-weight:600"> Citations </i></a></strong>
-      <script>
-        $(document).ready(function () {
-            var gsDataBaseUrl = 'https://lyimeng23.github.io/';
-            $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
-                var citationEles = document.getElementsByClassName('total_citation_mtl');
-                Array.prototype.forEach.call(citationEles, function(element) {
-                    var citationKey = element.getAttribute('data-citation');
-                    if (data['publications'][citationKey]) {
-                        var numCitations = data['publications'][citationKey]['num_citations'];
-                        element.innerHTML = numCitations;
-                    } else {
-                        element.innerHTML = 'N/A';
-                    }
-                });
-            });
-        });
-      </script>
-      {% endif %}
     </div>
   </div>
 </div>
