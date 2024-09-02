@@ -1,7 +1,7 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    /* background-color: #18453B; */
-    background-color: #fff;
+    background-color: #18453B;
+    /* background-color: #fff; */
     overflow: hidden;
 	position:fixed;
 	z-index:999;
@@ -30,7 +30,7 @@
     text-align: center;
     padding: 10px 9px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 30px;
   }
   
   /* Change the color of links on hover */
