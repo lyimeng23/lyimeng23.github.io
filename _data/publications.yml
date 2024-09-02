@@ -1,7 +1,7 @@
 main:
 
-  - title: mmLeaf:\ Versatile Leaf Wetness Detection via mmWave Sensing
-    authors: Maolin Gan, <strong>Yimeng Liu<strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao
+  - title: mmLeaf:Versatile Leaf Wetness Detection via mmWave Sensing
+    authors: Maolin Gan, <strong>Yimeng Liu</strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao
     conference_short: MobiSys 23
     conference: Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services
     pdf: ./assets/files/mmleaf.pdf
@@ -11,7 +11,7 @@ main:
 
 
   - title: Detection of passageways in natural foliage using biomimetic sonar
-    authors: Ruihao Wang, <strong>Yimeng Liu<strong>, Rolf Müller
+    authors: Ruihao Wang, <strong>Yimeng Liu</strong>, Rolf Müller
     conference_short: Bioinspir. Biomim.
     conference: Bioinspiration & Biomimetics
     pdf: ./assets/files/biodetection.pdf
