@@ -10,6 +10,9 @@ layout: homepage
 
 I am currently a PhD student in Computer Science and Engineering from Michigan State University, where I am advised by Dr. Zhichao Cao, and a Bachelor of Science degree in Mathematics from Virginia Tech. My focus is on mobile and wireless sensing technologies. My research began at Virginia Tech with the development of a transfer learning model that significantly enhanced UAV navigation by integrating optical and acoustic data for improved accuracy. Currently, at Michigan State, I lead a smart agriculture project, implementing an advanced wireless sensing system with multimodal sensors to optimize crop yield and sustainability. My expertise includes designing sophisticated machine learning algorithms and utilizing deep learning techniques for accurate agricultural assessment and predictive analytics.
 
+
+{% include_relative _includes/news.md %}
+
 ## Research Interest
 
 - **Ion-material Simulation:** SRIM, SDTrimSP, RustBCA
@@ -39,7 +42,6 @@ I am currently a PhD student in Computer Science and Engineering from Michigan S
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="343635de-7d0f-43ea-922d-432566a4b1e5" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
-{% include_relative _includes/news.md %}
 
 {% include_relative _includes/projects.md %}
 
