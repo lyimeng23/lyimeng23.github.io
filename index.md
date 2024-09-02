@@ -6,10 +6,10 @@ layout: homepage
 
 <h2 style="margin: 60px 0px 10px;">Short Bio</h2>
 
-<!-- I am currently a Physics Ph.D. candidate at [Spin-Ion Technologies](https://www.spin-ion.com/) and [Université Paris-Saclay](https://www.universite-paris-saclay.fr/), working under the mentorship of Dr. [Ravelosona dafiné](https://www.spin-ion.com/about-us/), the director of research [CNRS](https://www.cnrs.fr/fr) and CTO of [Spin-Ion Technologies](https://www.spin-ion.com/). My research involves magnetoelectric ("ME") materials for energy-efficient information technology and "ME" materials for data security in information technology using Multiferroics/Magneto-ionics/Surface charging, with a special focus on the boosting magneto-ionic effect using ion irradiation and implantation. -->
 
-I am currently a PhD student in Computer Science and Engineering from Michigan State University. I am advised by <strong>Dr. Zhichao Cao<strong>, and a Bachelor of Science degree in Mathematics from Virginia Tech. My focus is on mobile and wireless sensing technologies. My research began at Virginia Tech with the development of a transfer learning model that significantly enhanced UAV navigation by integrating optical and acoustic data for improved accuracy. Currently, at Michigan State, I lead a smart agriculture project, implementing an advanced wireless sensing system with multimodal sensors to optimize crop yield and sustainability. My expertise includes designing sophisticated machine learning algorithms and utilizing deep learning techniques for accurate agricultural assessment and predictive analytics.
+My name is Yimeng Liu. I am a Ph.D. student in Computer Science and Engineering at Michigan State University (MSU), advised by **[Dr. Zhichao Cao](https://cse.msu.edu/~caozc/)**. I received my Bachelor of Science degree in Mathematics from [Virginia Tech](https://www.vt.edu/) in 2023, where I was an undergraduate researcher supervised by **[Dr. Rolf Muller](https://me.vt.edu/people/faculty/mueller-rolf.html)**.
 
+My research focuses on **Artificial Intelligence of Things (AIoT)**, **mobile and wireless sensing technologies**, particularly in millimeter-wave radar sensing, multimodality sensing, and smart agriculture. My work includes leaf wetness sensing (MobiCom'24) and a bioinspired UAV navigation system (Bioinspir. Biomim.).
 
 {% include_relative _includes/news.md %}
 
