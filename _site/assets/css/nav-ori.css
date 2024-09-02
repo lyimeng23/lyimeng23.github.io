@@ -8,7 +8,7 @@
   }
 
   .topnav img {
-    margin-bottom:-17.5pt;
+    margin-bottom:-20.5pt;
     margin-top:-16.5pt;
     margin-left:30%;
   }
@@ -20,13 +20,13 @@
     text-align: center;
     padding: 18px 9px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 25px;
   }
   
   /* Change the color of links on hover */
   .topnav a:hover {
     background-color: #ddd;
-    color: black;
+    color: 18453B;
   }
   
   /* Add a color to the active/current link */
