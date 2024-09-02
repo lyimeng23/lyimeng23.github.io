@@ -1,8 +1,8 @@
 main:
 
-  - title: Poster: mmLeaf: Versatile Leaf Wetness Detection via mmWave Sensing
+  - title: Poster':'' mmLeaf':' Versatile Leaf Wetness Detection via mmWave Sensing
     authors: Maolin Gan, <strong>Yimeng Liu<strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao
-    conference_short: MobiSys '23
+    conference_short: MobiSys'23
     conference: Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services
     pdf: ./assets/files/mmleaf.pdf
     page: https://dl.acm.org/doi/abs/10.1145/3581791.3597367
