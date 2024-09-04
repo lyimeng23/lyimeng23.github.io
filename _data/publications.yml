@@ -2,8 +2,8 @@ main:
 
   - title: Hydra:Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion
     authors: <strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Li Liu, Younsuk Dong, Zhichao Cao
-    conference_short: Proceedings of the 29th Annual International Conference on Mobile Computing and Networking
-    conference: MobiCom'24
+    conference: Proceedings of the 29th Annual International Conference on Mobile Computing and Networking
+    conference_short: MobiCom'24
     # pdf: ./assets/files/hydra.pdf
     page: https://doi.org/10.1145/3636534.3690662
     # bibtex: ./assets/files/hydra.txt
