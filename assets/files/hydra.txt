@@ -1,0 +1,6 @@
+@inproceedings{hydra24liu,
+author = {Liu, Yimeng and Gan, Maolin and Zeng, Huaili and Li,  Liu and Dong, Younsuk and Cao, Zhichao},
+title = {Hydra: Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion},
+booktitle = {Proceedings of ACM MobiCom},
+year = {2024}
+}
