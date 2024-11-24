@@ -7,7 +7,7 @@ main:
     web: https://nsf-desc-2024.github.io/
     image: ./assets/img/NSFSC.jpg
 
-  - title: NSF Workshop on Sustainable Computing
+  - title: MobiCom'24 @ Washington, D.C.
     authors: Yimeng Liu
     # conference_short: BeMAGIC
     # conference: BeMAGIC Final Event
