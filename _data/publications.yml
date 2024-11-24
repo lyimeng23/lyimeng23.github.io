@@ -2,7 +2,7 @@ main:
 
   - title: Hydra:Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion
     authors: <strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Li Liu, Younsuk Dong, Zhichao Cao
-    conference: Proceedings of the 29th Annual International Conference on Mobile Computing and Networking
+    conference: Proceedings of ACM MobiCom 2024
     conference_short: MobiCom'24
     pdf: ./assets/files/hydra.pdf
     page: https://doi.org/10.1145/3636534.3690662
@@ -15,7 +15,7 @@ main:
   - title: Poster:mmLeaf:Versatile Leaf Wetness Detection via mmWave Sensing
     authors: Maolin Gan, <strong>Yimeng Liu</strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao
     conference_short: MobiSys'23
-    conference: Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services
+    conference: Proceedings of ACM MobiSys 2023
     pdf: ./assets/files/mmleaf.pdf
     page: https://dl.acm.org/doi/abs/10.1145/3581791.3597367
     bibtex: ./assets/files/mmleaf.txt
