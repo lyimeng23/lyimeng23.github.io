@@ -8,7 +8,7 @@ main:
     page: https://doi.org/10.1145/3636534.3690662
     bibtex: ./assets/files/hydra.txt
     image: ./assets/files/hydra.jpg
-    slides: ./assets/files/HydraLiu-MobiCom24.pptx
+    slide: ./assets/files/HydraLiu-MobiCom24.pptx
 
 
 
