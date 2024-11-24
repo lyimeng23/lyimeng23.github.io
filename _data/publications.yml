@@ -8,10 +8,11 @@ main:
     page: https://doi.org/10.1145/3636534.3690662
     bibtex: ./assets/files/hydra.txt
     image: ./assets/files/hydra.jpg
+    slides: ./assets/files/HydraLiu-MobiCom24.pptx
 
 
 
-  - title: mmLeaf:Versatile Leaf Wetness Detection via mmWave Sensing
+  - title: Poster:mmLeaf:Versatile Leaf Wetness Detection via mmWave Sensing
     authors: Maolin Gan, <strong>Yimeng Liu</strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao
     conference_short: MobiSys'23
     conference: Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services

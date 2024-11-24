@@ -6,3 +6,11 @@ main:
     # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
     web: https://nsf-desc-2024.github.io/
     image: ./assets/img/NSFSC.jpg
+
+  - title: NSF Workshop on Sustainable Computing
+    authors: Yimeng Liu
+    # conference_short: BeMAGIC
+    # conference: BeMAGIC Final Event
+    # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
+    web: https://www.sigmobile.org/mobicom/2024/index.html
+    image: ./assets/img/mobicom24.jpg
