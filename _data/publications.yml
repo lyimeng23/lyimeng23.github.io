@@ -3,7 +3,7 @@ main:
     authors: 	<strong>Yimeng Liu*</strong>, Maolin Gan*, Gen Li, Younsuk Dong and Zhichao Cao 
     conference: Proceedings of IEEE INFOCOM 2025
     conference_short: INFOCOM'25
-    image: ./assets/files/Adonis.jpg
+    image: ./assets/files/Adonis.png
     
   - title: AeroEcho:Towards Agricultural Low-power Wide-area Backscatter with Aerial Excitation Source
     authors: 	Yidong Ren, Gen Li, <strong>Yimeng Liu*</strong>, Younsuk Dong, Zhichao Cao
