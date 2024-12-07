@@ -6,6 +6,7 @@
 
 
 
+<li><strong>[Dec 2024]</strong> Our paper Adonis and AeroEcho has been accepted at INFOCOM'25.</li>
 <li><strong>[Oct. 2024]</strong> Invited talk at the University of Hawaii at Mānoa.</li>
 <li><strong>[Aug. 2024]</strong> Our paper has been accepted at MobiCom'24.</li>
  <li><strong>[Aug. 2024]</strong> Attended the NSF workshop on Substantial Computing at Purdue University.</li> 
