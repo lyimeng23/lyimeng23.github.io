@@ -1,5 +1,17 @@
 main:
+  - title: Adonis: Neural-enhanced Fine-grained Leaf Wetness Sensing with Efficient mmWave Imaging
+    authors: 	<strong>Yimeng Liu*</strong>, Maolin Gan*, Gen Li, Younsuk Dong and Zhichao Cao 
+    conference: Proceedings of IEEE INFOCOM 2025
+    conference_short: INFOCOM'25
+    image: ./assets/files/Adonis.jpg
+    
+  - title: AeroEcho: Towards Agricultural Low-power Wide-area Backscatter with Aerial Excitation Source
+    authors: 	Yidong Ren, Gen Li, <strong>Yimeng Liu*</strong>, Younsuk Dong, Zhichao Cao
+    conference: Proceedings of IEEE INFOCOM 2025
+    conference_short: INFOCOM'25
+    image: ./assets/files/AeroEcho.png
 
+    
   - title: Hydra:Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion
     authors: <strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Li Liu, Younsuk Dong, Zhichao Cao
     conference: Proceedings of ACM MobiCom 2024
