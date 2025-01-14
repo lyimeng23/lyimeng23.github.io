@@ -23,6 +23,6 @@ My research focuses on Artificial Intelligence of Things (AIoT) and mobile and w
 {% include_relative _includes/publications.md %}
 
 {% include_relative _includes/conference.md %}
-{% include_relative _includes/service.md %}
+{% include_relative _includes/services.md %}
 
 <!-- {% include_relative _includes/contact.md %} -->
