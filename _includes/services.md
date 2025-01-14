@@ -33,7 +33,7 @@
 <h4 style="margin:0 10px 0;">Journal Reviewers</h4>
 
 <ul style="margin:0 0 20px;">
-  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Internet of Things Journal</autocolor></a></li>
-  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Transactions on Mobile Computing</autocolor></a></li>
+  <li><a href="https://ieee-iotj.org/"><autocolor>IEEE Internet of Things Journal</autocolor></a></li>
+  <li><a href="https://xplorestaging.ieee.org/xpl/RecentIssue.jsp?punumber=7755"><autocolor>IEEE Transactions on Mobile Computing</autocolor></a></li>
   
 </ul>
