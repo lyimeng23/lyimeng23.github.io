@@ -1,7 +1,7 @@
 <h1 id="services"></h1>
 
 <h2 style="margin: 60px 0px 10px;">Services</h2>
-
+<!-- 
 <h4 style="margin:0 10px 0;">Organization Committee</h4>
 
 <ul style="margin:0 0 5px;">
@@ -28,10 +28,12 @@
   <li><a href="http://cvpr2023.thecvf.com/"><autocolor>...</autocolor></a></li>
   
 </ul>
+-->
 
 <h4 style="margin:0 10px 0;">Journal Reviewers</h4>
 
 <ul style="margin:0 0 20px;">
-  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>...</autocolor></a></li>
+  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Internet of Things Journal</autocolor></a></li>
+  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Transactions on Mobile Computing</autocolor></a></li>
   
 </ul>
