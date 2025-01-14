@@ -4,12 +4,14 @@ main:
     conference: Proceedings of IEEE INFOCOM 2025
     conference_short: INFOCOM'25
     image: ./assets/files/Adonis.png
+    pdf: ./assets/files/adonis.pdf
     
   - title: AeroEcho:Towards Agricultural Low-power Wide-area Backscatter with Aerial Excitation Source
     authors: 	Yidong Ren, Gen Li, <strong>Yimeng Liu</strong>, Younsuk Dong, Zhichao Cao
     conference: Proceedings of IEEE INFOCOM 2025
     conference_short: INFOCOM'25
     image: ./assets/files/AeroEcho.png
+    pdf: ./assets/files/aeroecho.pdf
 
     
   - title: Hydra:Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion
