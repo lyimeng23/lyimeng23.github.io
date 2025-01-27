@@ -7,7 +7,7 @@ layout: homepage
 <h2 style="margin: 60px 0px 10px;">Short Bio</h2>
 
 
-My name is Yimeng Liu. I am a Ph.D. student in Computer Science and Engineering at [Michigan State University (MSU)](https://msu.edu/), advised by **[Dr. Zhichao Cao](https://cse.msu.edu/~caozc/)**. I received my Bachelor of Science degree in Mathematics from [Virginia Tech](https://www.vt.edu/) in 2023, where I was an undergraduate researcher supervised by **[Dr. Rolf Muller](https://me.vt.edu/people/faculty/mueller-rolf.html)**.
+My name is Yimeng Liu. I am a Ph.D. student in Computer Science and Engineering at [Michigan State University (MSU)](https://msu.edu/), advised by **[Dr. Zhichao Cao](https://cse.msu.edu/~caozc/)**. I received my Bachelor of Science in Mathematics from [Virginia Tech](https://www.vt.edu/) in 2023.
 
 My research focuses on Artificial Intelligence of Things (AIoT) and mobile and wireless sensing technologies, particularly millimeter-wave radar sensing, multimodality sensing, and smart agriculture. My work includes Multi-modality Fusion (MobiCom'24), Leaf Wetness Level Detection (INFOCOM'25), and LoRa Backscatter (INFOCOM'25).
 
