@@ -1,5 +1,5 @@
 main:
-  - title: Proteus: Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer
+  - title: Proteus:Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer
     authors: 	<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Xiaobo Tan, Zhichao Cao
     conference: Proceedings of ACM SenSys 2025
     conference_short: SenSys'25
