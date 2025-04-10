@@ -40,16 +40,17 @@
       position: relative;
       z-index: 1;
     }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.5rem; }
+    header h1 { font-size: 5rem; margin-bottom: 10px; }
+    header p { font-size: 2rem; }
     /* Navigation */
     nav {
-      background: rgba(51, 51, 51, 0.9);
+      background: rgba(63, 59, 59, 0.9);
       padding: 15px;
       position: sticky;
       top: 0;
       z-index: 10;
       box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      font-size: 1.5rem;
     }
     nav ul { display: flex; justify-content: center; }
     nav li { margin: 0 15px; }
@@ -59,7 +60,6 @@
       transition: color 0.3s;
     }
     nav a:hover { color: #f39c12; }
-    /* Container & Sections */
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
     section {
       background: #fff;
@@ -77,13 +77,14 @@
       padding-bottom: 10px;
       margin-bottom: 20px;
       color: #333;
+      font-size: 2rem;
     }
-    section p, section ul { margin-bottom: 15px; }
+    section p, section ul { margin-bottom: 15px; font-size: 1.3rem; }
     /* Carousel Styles */
     #carousel {
       position: relative;
       overflow: hidden;
-      max-width: 100%;
+      max-width: 50%;
       margin: 20px auto;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -91,7 +92,7 @@
     #carousel .slide {
       display: none;
       width: 100%;
-      height: 400px;
+      /* height: 400px; */
       background: #000;
       position: relative;
     }
@@ -99,7 +100,7 @@
     #carousel img, 
     #carousel video {
       width: 100%;
-      height: 100%;
+      /* height: 100%; */
       object-fit: cover;
       border-radius: 8px;
     }
@@ -202,7 +203,6 @@
         <li>Dr. Sun</li>
         <li>Dr. Cao</li>
         <li>Dr. Chen</li>
-        <li>Dr. Eby</li>
       </ul>
     </section>
     <!-- Media Carousel Section -->
@@ -222,7 +222,7 @@
   <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
   
   <script>
-    // Back to Top Button Functionality
+    // Back-to-Top Button Functionality
     window.addEventListener('scroll', function() {
       const btn = document.getElementById("backToTop");
       btn.style.display = (window.scrollY > 150) ? "block" : "none";
@@ -246,72 +246,93 @@
       sections.forEach(section => observer.observe(section));
     });
 
-    // Media Carousel Script
-    const mediaFiles = [
-      { type: 'image', src: 'media/image1.jpg' },
-      { type: 'video', src: 'media/video1.mp4' },
-      { type: 'image', src: 'media/image2.jpg' },
-      { type: 'video', src: 'media/video2.mp4' },
-      { type: 'image', src: 'media/image3.jpg' }
-    ];
-
-    let currentSlide = 0;
-    const carousel = document.getElementById('carousel');
-    
-    // Function to create slide element based on media type
-    function createSlide(media) {
-      const slide = document.createElement('div');
-      slide.classList.add('slide');
-      if (media.type === 'image') {
-        const img = document.createElement('img');
-        img.src = media.src;
-        img.alt = "Media Image";
-        slide.appendChild(img);
-      } else if (media.type === 'video') {
-        const video = document.createElement('video');
-        video.src = media.src;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.loop = true;
-        video.autoplay = true;
-        slide.appendChild(video);
-      }
-      return slide;
+    // Function to load media files from a given folder in your GitHub repository.
+    function loadMediaFiles(folder) {
+      const apiUrl = `https://api.github.com/repos/lyimeng23/lyimeng23.github.io/contents/project/senior_driving/${folder}`;
+      return fetch(apiUrl)
+        .then(response => response.json())
+        .then(files => {
+          const mediaFiles = [];
+          files.forEach(file => {
+            // Check file extension for .jpg or .mp4 (case-insensitive)
+            if (file.name.match(/\.(jpg|mp4)$/i)) {
+              const fileType = file.name.toLowerCase().endsWith('.jpg') ? 'image' : 'video';
+              mediaFiles.push({ type: fileType, src: file.download_url });
+            }
+          });
+          return mediaFiles;
+        })
+        .catch(error => {
+          console.error('Error fetching media files:', error);
+          return [];
+        });
     }
 
-    // Initialize Carousel: create slides and show the first one
-    mediaFiles.forEach((media, index) => {
-      const slide = createSlide(media);
-      if (index === currentSlide) {
-        slide.classList.add('active');
+    // Initialize the carousel with the loaded media files.
+    function initializeCarousel(mediaFiles) {
+      let currentSlide = 0;
+      const carousel = document.getElementById('carousel');
+
+      function createSlide(media) {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+        if (media.type === 'image') {
+          const img = document.createElement('img');
+          img.src = media.src;
+          img.alt = "Media Image";
+          slide.appendChild(img);
+        } else if (media.type === 'video') {
+          const video = document.createElement('video');
+          video.src = media.src;
+          video.setAttribute('muted', '');
+          video.setAttribute('playsinline', '');
+          video.loop = true;
+          video.autoplay = true;
+          slide.appendChild(video);
+        }
+        return slide;
       }
-      carousel.insertBefore(slide, document.getElementById('prevBtn'));
-    });
 
-    const slides = document.querySelectorAll('#carousel .slide');
+      mediaFiles.forEach((media, index) => {
+        const slide = createSlide(media);
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        }
+        carousel.insertBefore(slide, document.getElementById('prevBtn'));
+      });
 
-    // Function to show a slide based on index
-    function showSlide(index) {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (index + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
+      const slides = document.querySelectorAll('#carousel .slide');
+
+      function showSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+
+      let slideInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 5000);
+
+      document.getElementById('nextBtn').addEventListener('click', () => {
+        clearInterval(slideInterval);
+        showSlide(currentSlide + 1);
+        slideInterval = setInterval(() => { showSlide(currentSlide + 1); }, 5000);
+      });
+      document.getElementById('prevBtn').addEventListener('click', () => {
+        clearInterval(slideInterval);
+        showSlide(currentSlide - 1);
+        slideInterval = setInterval(() => { showSlide(currentSlide + 1); }, 5000);
+      });
     }
 
-    // Auto rotate slides every 5 seconds
-    let slideInterval = setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 5000);
-
-    // Next/Prev Button functionality
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      clearInterval(slideInterval);
-      showSlide(currentSlide + 1);
-      slideInterval = setInterval(() => { showSlide(currentSlide + 1); }, 5000);
-    });
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      clearInterval(slideInterval);
-      showSlide(currentSlide - 1);
-      slideInterval = setInterval(() => { showSlide(currentSlide + 1); }, 5000);
+    document.addEventListener("DOMContentLoaded", function(){
+      loadMediaFiles('./gallery').then(mediaFiles => {
+        if(mediaFiles.length > 0) {
+          initializeCarousel(mediaFiles);
+        } else {
+          console.warn('No media files found in the specified folder.');
+        }
+      });
     });
   </script>
 </body>
