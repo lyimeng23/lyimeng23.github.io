@@ -6,7 +6,11 @@
   <title>Senior Driving Safety & Cognitive Health Project</title>
   <style>
     /* Global Styles */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       background: linear-gradient(to bottom, #f7f9fc, #e2e8f0);
@@ -14,8 +18,15 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; padding-left: 0; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
     /* Header */
     header {
       background: url('https://raw.githubusercontent.com/lyimeng23/lyimeng23.github.io/main/project/senior_driving/driving_bg.jpg') center/cover no-repeat;
@@ -31,17 +42,25 @@
     header::after {
       content: "";
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.4);
     }
-    header h1, header p {
+    header h1,
+    header p {
       position: relative;
       z-index: 1;
     }
-    header h1 { font-size: 5rem; margin-bottom: 10px; }
-    header p { font-size: 2rem; }
+    header h1 {
+      font-size: 5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 2rem;
+    }
+    
     /* Navigation */
     nav {
       background: rgba(63, 59, 59, 0.9);
@@ -52,15 +71,31 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.3);
       font-size: 1.5rem;
     }
-    nav ul { display: flex; justify-content: center; }
-    nav li { margin: 0 15px; }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav li {
+      margin: 0 15px;
+    }
     nav a {
       color: #fff;
       font-weight: bold;
       transition: color 0.3s;
     }
-    nav a:hover { color: #f39c12; }
-    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+    nav a:hover {
+      color: #f39c12;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    /* Sections */
     section {
       background: #fff;
       margin-bottom: 40px;
@@ -71,7 +106,10 @@
       transform: translateY(20px);
       transition: all 1s ease;
     }
-    section.visible { opacity: 1; transform: translateY(0); }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     section h2 {
       border-bottom: 2px solid #ddd;
       padding-bottom: 10px;
@@ -79,7 +117,12 @@
       color: #333;
       font-size: 2rem;
     }
-    section p, section ul { margin-bottom: 15px; font-size: 1.3rem; }
+    section p,
+    section ul {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
     /* Carousel Styles */
     #carousel {
       position: relative;
@@ -92,19 +135,20 @@
     #carousel .slide {
       display: none;
       width: 100%;
-      /* height: 400px; */
       background: #000;
       position: relative;
     }
-    #carousel .slide.active { display: block; }
-    #carousel img, 
+    #carousel .slide.active {
+      display: block;
+    }
+    #carousel img,
     #carousel video {
       width: 100%;
-      /* height: 100%; */
       object-fit: cover;
       border-radius: 8px;
     }
-    /* Navigation Buttons for Carousel */
+    
+    /* Carousel Navigation Buttons */
     .carousel-btn {
       position: absolute;
       top: 50%;
@@ -118,8 +162,13 @@
       font-size: 18px;
       z-index: 5;
     }
-    #prevBtn { left: 15px; }
-    #nextBtn { right: 15px; }
+    #prevBtn {
+      left: 15px;
+    }
+    #nextBtn {
+      right: 15px;
+    }
+    
     /* Footer */
     footer {
       text-align: center;
@@ -127,6 +176,7 @@
       background: #333;
       color: #fff;
     }
+    
     /* Back to Top Button */
     #backToTop {
       display: none;
@@ -142,6 +192,86 @@
       font-size: 14px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
+    #flyer {
+      color: #f31212;
+    }
+    
+    /* Responsive Media Queries */
+    /* For tablets and smaller devices */
+    @media (max-width: 768px) {
+      header {
+        height: 50vh;
+      }
+      header h1 {
+        font-size: 3.5rem;
+      }
+      header p {
+        font-size: 1.5rem;
+      }
+      nav {
+        font-size: 1.3rem;
+      }
+      nav li {
+        margin: 5px 10px;
+      }
+      .container {
+        max-width: 90%;
+        margin: 20px auto;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+      section p,
+      section ul {
+        font-size: 1.1rem;
+      }
+      #carousel {
+        max-width: 80%;
+      }
+    }
+    
+    /* For mobile phones */
+    @media (max-width: 480px) {
+      header {
+        height: 40vh;
+      }
+      header h1 {
+        font-size: 2.8rem;
+      }
+      header p {
+        font-size: 1.3rem;
+      }
+      nav {
+        font-size: 1.1rem;
+        padding: 10px;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      section {
+        padding: 20px;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+      section p,
+      section ul {
+        font-size: 1rem;
+      }
+      #carousel {
+        max-width: 95%;
+      }
+      #backToTop {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -156,10 +286,16 @@
       <li><a href="#why">Why It Matters</a></li>
       <li><a href="#timeline">Timeline & Future Work</a></li>
       <li><a href="#team">Our Team</a></li>
-      <li><a href="#carouselSection">Media Gallery</a></li>
+      <li><a href="#carouselSection">Media Carousel</a></li>
     </ul>
   </nav>
   <div class="container">
+    <section id="news">
+      <h2>News</h2>
+      <p>
+        We are actively recruiting seniors for our study. If you or someone you know is interested in participating, please contact us for more information. Click <a href="https://raw.githubusercontent.com/lyimeng23/lyimeng23.github.io/main/assets/files/Recruitment_Flyer.pdf" id="flyer">this</a> to check out our flyer.
+      </p>
+    </section>
     <section id="about">
       <h2>About the Project</h2>
       <p>
@@ -200,14 +336,15 @@
         Our multidisciplinary team is at the forefront of research in driving safety and cognitive health. Our dedicated researchers include:
       </p>
       <ul>
-        <li>Dr. Sun</li>
-        <li>Dr. Cao</li>
-        <li>Dr. Chen</li>
+        <li>Yimeng Liu, Ph.D. Student, Computer Science and Engineering, Michigan State University</li>
+        <li>Dr. Zhichao Cao, Assistant Professor, Computer Science and Engineering, Michigan State University</li>
+        <li>Dr. Sun Fei, Professor, School of Social Work, Michigan State University</li>
+        <li>Dr. Honglei Chen, Foundation Professor, Department of Epidemiology and Biostatistics, Michigan State University</li>
       </ul>
     </section>
     <!-- Media Carousel Section -->
     <section id="carouselSection">
-      <h2>Media Gallery</h2>
+      <h2>Media Carousel</h2>
       <p>View our latest images and videos showcasing project activities, testing environments, and community events.</p>
       <div id="carousel">
         <!-- Slides will be injected here by JavaScript -->
