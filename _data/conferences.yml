@@ -13,7 +13,7 @@ main:
     # conference: BeMAGIC Final Event
     # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
     web: https://www.sigmobile.org/mobicom/2024/index.html
-    image: ./assets/img/sensys25.jpg
+    image: ./assets/img/mobicom24.jpg
 
   - title: SenSys'25 @ Irving, CA
     authors: Yimeng Liu
@@ -21,4 +21,4 @@ main:
     # conference: BeMAGIC Final Event
     # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
     web: https://sensys.acm.org/2025/
-    image: ./assets/img/mobicom24.jpg
+    image: ./assets/img/sensys25.jpg
