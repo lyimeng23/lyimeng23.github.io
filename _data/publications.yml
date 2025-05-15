@@ -3,8 +3,11 @@ main:
     authors: 	<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Xiaobo Tan, Zhichao Cao
     conference: Proceedings of ACM SenSys 2025
     conference_short: SenSys'25
-    image: ./assets/files/proteus.png
     pdf: ./assets/files/proteus.pdf
+    page: https://dl.acm.org/doi/10.1145/3715014.3722052
+    bibtex: ./assets/files/proteus.txt
+    image: ./assets/files/proteus.png
+    slide: ./assets/files/Proteus-SenSys25.pptx
 
     
   - title: Adonis:Neural-enhanced Fine-grained Leaf Wetness Sensing with Efficient mmWave Imaging
