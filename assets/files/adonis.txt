@@ -1,0 +1,6 @@
+@inproceedings{adonis25liu,
+author = {Liu, Yimeng and Gan, Maolin and Zeng, Huaili and Ren, Yidong and Li, Gen and Lin, Jingkai and Dong, Younsuk and Tan, Xiaobo and Cao, Zhichao},
+title = {Proteus: Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer},
+booktitle = {Proceedings of ACM SenSys},
+year = {2025}
+}
