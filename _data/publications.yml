@@ -16,6 +16,8 @@ main:
     conference_short: INFOCOM'25
     image: ./assets/files/Adonis.png
     pdf: ./assets/files/adonis.pdf
+    bibtex: ./assets/files/adonis.txt
+    slide: ./assets/files/Adonis-INFOCOM25.pptx
     
   - title: AeroEcho:Towards Agricultural Low-power Wide-area Backscatter with Aerial Excitation Source
     authors: 	Yidong Ren, Gen Li, <strong>Yimeng Liu</strong>, Younsuk Dong, Zhichao Cao
