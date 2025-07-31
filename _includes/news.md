@@ -5,7 +5,7 @@
 <ul>
 
 
-
+<li><strong>[Jul. 2025]</strong> Our paper, <a href="https://arxiv.org/html/2507.22685v1">Hydra-Bench</a>, is published on arxiv. </li>
 <li><strong>[Jul. 2025]</strong> My story has been highlighted by  <a href="https://msutoday.msu.edu/news/2025/student-view-msu-made-math-compute-for-me">MSUTODAY</a> </li>
 <li><strong>[Mar. 2025]</strong> Our paper Proteus has been accepted at SenSys'25.</li>
 <li><strong>[Dec. 2024]</strong> Our paper Adonis and AeroEcho has been accepted at INFOCOM'25.</li>
