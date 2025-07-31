@@ -2,6 +2,17 @@ main:
   - title: Proteus:Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer
     authors: 	<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Xiaobo Tan, Zhichao Cao
     conference: Proceedings of ACM SenSys 2025
+    conference_short: arxiv
+    pdf: ./assets/files/HydraBench.pdf
+    page: https://arxiv.org/html/2507.22685v1
+    bibtex: ./assets/files/hydrabench.txt
+    image: ./assets/files/hydrabench.png
+
+
+    
+  - title: Proteus:Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer
+    authors: 	<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Xiaobo Tan, Zhichao Cao
+    conference: Proceedings of ACM SenSys 2025
     conference_short: SenSys'25
     pdf: ./assets/files/proteus.pdf
     page: https://dl.acm.org/doi/10.1145/3715014.3722052
