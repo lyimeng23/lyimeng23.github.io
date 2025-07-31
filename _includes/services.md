@@ -35,6 +35,7 @@
 <h4 style="margin:0 20px 0;font-weight: normal;">IEEE Internet of Things Journal </h4>
 <h4 style="margin:0 20px 0;font-weight: normal;">IEEE Transactions on Mobile Computing</h4>
 <h4 style="margin:0 20px 0;font-weight: normal;">IEEE Internet Computing</h4>
+<h4 style="margin:0 20px 0;font-weight: normal;">HAI 2025 Poster</h4>
 
 
 <h3 style="margin:0 20px 0;">Invited Program Committee</h3>
