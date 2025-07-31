@@ -1,0 +1,10 @@
+@misc{Liu2025HydraBench,
+  title        = {Hydra-Bench: A Benchmark for Multi-Modal Leaf Wetness Sensing},
+  author       = {Yimeng Liu and Maolin Gan and Yidong Ren and Gen Li and Jingkai Lin and Younsuk Dong and Zhichao Cao},
+  year         = {2025},
+  month        = jul,
+  eprint       = {2507.22685},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CV},
+  url          = {https://arxiv.org/abs/2507.22685v1}
+}
