@@ -7,19 +7,16 @@ layout: homepage
 <h2 style="margin: 60px 0px 10px;">Short Bio</h2>
 
 
-Hi! I’m **Yimeng Liu**, a Ph.D. candidate in **Computer Science and Engineering** at [Michigan State University (MSU)](https://msu.edu/), advised by [Dr. Zhichao Cao](https://cse.msu.edu/~caozc/).  
-I received my B.S. in Mathematics from [Virginia Tech](https://www.vt.edu/) in 2023.  
+Hi! I am Yimeng Liu, a Ph.D. candidate in Computer Science and Engineering at Michigan State University. My research focuses on Embodied AI and Physical AI, aiming to build intelligent systems that can perceive, reason, and act in the physical world. I study how agents can form world models from multi-modal sensory inputs including vision and wireless sensing and use them to support long-horizon, safety-critical decision-making in real-world environments.
 
 My research lies at the intersection of **Artificial Intelligence of Things (AIoT)** and **intelligent sensing systems**, with a strong emphasis on:
 
-- **Large Language Models (LLMs)** and parameter-efficient fine-tuning (PEFT, LoRA, QLoRA)  
-- **Reinforcement Learning (RL)** for adaptive decision-making in simulation-to-real environments (e.g., CARLA)  
-- **Computer Vision (CV)** for multimodal fusion and robust perception  
-- **Wireless & mmWave radar sensing** for next-generation AIoT applications in autonomous systems and agriculture  
+- **LLM-Driven Cognitive Perception and Decision-Making for Driving)** I study how large language models can be integrated with multi-modal perception to enable semantic reasoning, risk awareness, and cognitive decision-making in driving scenarios, with evaluation in simulation-to-real environments such as CARLA.
+- **Physical AI and World Modeling under Sparse and Multimodal Sensing** I develop physics-informed learning frameworks for mmWave/SAR imaging and multimodal sensing, enabling robust 3D reconstruction and world modeling when observations are sparse, noisy, or physically ill-posed.
+- **Closed-Loop Physical AI Systems for Human-Centered and Agricultural Applications** I build end-to-end AIoT systems that combine intelligent sensing, reinforcement learning, and physical simulation to support long-horizon, resource-aware decision-making in human-centered autonomy and intelligent agriculture.
 
-I have published in **ACM MobiCom (2024)**, **IEEE INFOCOM (2025)**, and **ACM SenSys (2025)**.  
-Recent projects include **multimodal fusion for robust AI sensing**, **LLM + RL for cognitive-aware driving assistance**, and **cross-modality knowledge distillation for perception under adverse conditions**.
-
+I have published in ACM MobiCom (2024), IEEE INFOCOM (2025), and ACM SenSys (2025).
+My recent work focuses on robust multimodal sensing, LLM- and reinforcement learning–based cognitive-aware driving assistance, and cross-modality knowledge distillation for reliable perception under adverse and partially observable conditions.
 
 
 {% include_relative _includes/news.md %}
