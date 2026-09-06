@@ -1,11 +1,14 @@
 # Featured research shown on the homepage (most representative of trajectory
 # and future direction). "problem" and "contribution" are one-line each.
+# "capability" labels which generalizable stage of the Spatial Intelligence
+# agenda a project demonstrates (not a stage number of a designed pipeline).
 main:
   - id: hydra
     title: "Hydra"
-    tagline: "Multi-modal leaf wetness sensing with mm-Wave and camera fusion"
-    problem: "Outdoor leaf-wetness sensing is fragile under changing light and weather."
-    contribution: "First contactless mmWave + RGB fusion system — 96% accuracy indoors, ~90% in real farms."
+    capability: "Multimodal Perception"
+    tagline: "Complementary mmWave–vision fusion for sensing under adverse conditions"
+    problem: "Single-modality sensing degrades under changing light, weather, and occlusion."
+    contribution: "First mmWave and RGB fusion system showing complementary modalities perceive the same physical state when one channel is unreliable."
     venue: "ACM MobiCom 2024"
     image: /assets/files/hydra.webp
     pdf: /assets/files/hydra.pdf
@@ -14,9 +17,10 @@ main:
 
   - id: proteus
     title: "Proteus"
-    tagline: "Cross-modality knowledge transfer for mmWave leaf wetness detection"
+    capability: "Cross-modal Learning"
+    tagline: "Knowledge transfer across sensing modalities when one is unavailable"
     problem: "High-accuracy fine-grained sensing depends on slow, costly scanning."
-    contribution: "Transfers mmWave sensing knowledge across modalities so lightweight systems reach scanner-grade accuracy."
+    contribution: "Transfers sensing knowledge across modalities so a lightweight, available channel keeps scanner-grade accuracy."
     venue: "ACM SenSys 2025"
     image: /assets/files/proteus.webp
     pdf: /assets/files/proteus.pdf
@@ -25,9 +29,10 @@ main:
 
   - id: adonis
     title: "Adonis"
-    tagline: "Neural-enhanced fine-grained leaf wetness sensing with efficient mmWave imaging"
+    capability: "Physical Representation"
+    tagline: "Recovering fine-grained physical state from sparse RF observations"
     problem: "mmWave imaging trades scan speed against fine spatial detail."
-    contribution: "Neural imaging keeps accuracy at wider scan distances — faster, finer, and more robust sensing."
+    contribution: "Neural mmWave imaging recovers fine-grained physical state at wider scan distances — faster, finer, and more robust sensing."
     venue: "IEEE INFOCOM 2025"
     image: /assets/files/Adonis.webp
     pdf: /assets/files/adonis.pdf
@@ -35,9 +40,10 @@ main:
 
   - id: driving
     title: "Cognitive Driving"
-    tagline: "LLM-driven perception and decision-making for human-centered driving"
+    capability: "Spatial Reasoning & Action · Ongoing"
+    tagline: "LLM-grounded spatial reasoning for risk-aware, human-centered driving"
     problem: "Driving assistants need semantic risk awareness, not just object lists."
-    contribution: "Grounding LLM reasoning in multi-modal perception for risk-aware decisions, evaluated in CARLA."
+    contribution: "Grounding LLM reasoning in multi-modal perception for risk-aware decisions, evaluated in CARLA — ongoing research."
     venue: "Research direction"
     status: "Ongoing"
     image: /project/senior-driving/images/driving_bg.webp

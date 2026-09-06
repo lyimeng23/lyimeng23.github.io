@@ -25,6 +25,7 @@
         </figure>
         <div class="feature-card__body">
           <div class="feature-card__meta">
+            {% if item.capability %}<span class="feature-card__capability">{{ item.capability }}</span>{% endif %}
             <span class="venue-badge">{{ item.venue }}</span>
             {% if item.status %}<span class="feature-card__status">{{ item.status }}</span>{% endif %}
           </div>
