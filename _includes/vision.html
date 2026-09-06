@@ -2,37 +2,47 @@
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Research Vision</p>
-      <h2 class="section__title">Physical AI for the Real World</h2>
+      <h2 class="section__title">Building Spatial Intelligence for the Physical World</h2>
       <p class="section__lede">
-        One agenda links my work: build agents that go from raw physical signals to
-        grounded, safe action. The chain below is the arc my research follows — and
-        traces the trajectory my published work is building.
+        Foundation models are strong on static vision and language, but stable understanding
+        of continuously changing, partially observable, multi-entity real environments —
+        maintaining spatial state over time, respecting physical constraints, predicting, and
+        acting grounded in that state — remains hard. My research builds that capability, one
+        stage at a time.
       </p>
     </div>
 
-    <ol class="vision" aria-label="Research pipeline: Sense, Model, Reason, Act">
+    <ol class="vision" aria-label="Research pipeline: Perception, Representation, Modeling, Reasoning, Embodied Intelligence">
       {% for step in site.data.vision.main %}
-      <li class="vision__step reveal" style="--i: {{ forloop.index0 }}">
-        <div class="vision__node">
-          <span class="vision__key" aria-hidden="true">{{ step.key }}</span>
-          <span class="visually-hidden">{{ step.aria }}</span>
-          <h3 class="vision__title">{{ step.title }}</h3>
-          <p class="vision__blurb">{{ step.blurb }}</p>
+      <li class="vision__step vision__step--{{ step.status }} reveal" style="--i: {{ forloop.index0 }}">
+        <div class="vision__row">
+          <span class="vision__num" aria-hidden="true">{{ step.key }}</span>
+          <div class="vision__content">
+            <p class="vision__question" aria-hidden="true">{{ step.question }}</p>
+            <h3 class="vision__title">{{ step.title }}</h3>
+            <p class="vision__blurb">{{ step.blurb }}</p>
+            <p class="vision__evidence">
+              <span class="vision__evidence-tag">{% if step.status == 'foundation' %}Published foundation{% elsif step.status == 'current' %}Current research{% else %}Future agenda{% endif %}</span>
+              <span class="vision__evidence-text">{{ step.evidence }}</span>
+            </p>
+          </div>
         </div>
+        {% unless forloop.last %}
+        <div class="vision__gap" aria-hidden="true"></div>
+        {% endunless %}
       </li>
-      {% unless forloop.last %}
-      <li class="vision__arrow reveal" aria-hidden="true" style="--i: {{ forloop.index0 }}">
-        <svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </li>
-      {% endunless %}
       {% endfor %}
     </ol>
 
-    <p class="vision__note reveal">
-      The published core of my work anchors the <strong>Sense → Model</strong> half of this
-      agenda — multi-modal mmWave/RF perception and physics-informed reconstruction.
-      <strong>Reason</strong> and <strong>Act</strong> are where my current work is headed:
-      LLM-grounded cognition for driving, and closed-loop agricultural systems.
-    </p>
+    <div class="vision__forward reveal">
+      <p class="eyebrow">Where this is leading</p>
+      <p class="vision__forward-text">
+        From isolated sensing → persistent spatial state → dynamic world models → spatial
+        reasoning and prediction → embodied decision and action. Over five to ten years, my
+        agenda turns today's perception foundations into AI that knows <em>what is where</em>,
+        <em>how things relate</em>, <em>what is changing</em>, and <em>what will happen next</em>
+        in the physical world — and acts on that understanding safely.
+      </p>
+    </div>
   </div>
 </section>
