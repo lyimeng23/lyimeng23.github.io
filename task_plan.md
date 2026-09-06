@@ -4,7 +4,7 @@
 From first principles, review and rebuild Yimeng Liu's academic homepage, upgrading it from a traditional "online CV / publication list" into a high-quality academic homepage that clearly expresses a Research Vision, supports future Faculty / Research Scientist job searches, collaboration, and personal research branding. Two phases: Phase 1 = full audit & design plan (NO code changes); Phase 2 = confirm, then implement with full acceptance testing.
 
 ## Current Phase
-Phase 3 (Full Acceptance) — in progress
+ALL PHASES COMPLETE — deployed live at https://lyimeng23.github.io/
 
 ## Phases
 
@@ -34,10 +34,18 @@ Phase 3 (Full Acceptance) — in progress
 - [x] Accessibility / reduced motion (skip-link, focus-visible, aria toggles, prefers-reduced-motion disables all motion)
 - [x] Publication data consistency (publications.yml normalized; featured flags verified on page)
 - [x] SEO / canonical / CNAME (canonical lyimeng23.github.io; CNAME removed; sitemap.xml canonical; robots.txt clean; verification metas restored)
-- [ ] Lighthouse (remaining)
+- [x] Lighthouse — 95 perf / 100 a11y / 100 best-practices / 100 SEO, CLS=0 (lh.json in shots-work)
 - [x] Delete confirmed-unused historical code and backups (js/, contact/, ori/copy, legacy includes/data)
-- [ ] Before/after comparison + rationale (remaining)
-- **Status:** in_progress
+- [x] Before/after comparison + rationale (AUDIT_REPORT.md §K)
+- **Status:** complete
+
+### Deployment & Post-deploy
+- [x] Commit + push to origin/main (1cb22c25 rebuild, b5605c58 verification metas)
+- [x] GH Pages build green; live URLs 200 (/, /news/, /activities/, /project/senior-driving/)
+- [x] Reload verification cross-check: google/Bing metas served on live site
+- **Status:** complete
+
+### Overall: ALL CHECKED OFF
 
 ## Key Questions (must verify facts, no guessing)
 1. ✔ VERIFIED: Production domain = lyimeng23.github.io (live, 200). CNAME songchen.science = original author's (Song Chen), REMOVED. Canonical = https://lyimeng23.github.io (user-confirmed).
