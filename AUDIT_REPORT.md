@@ -250,3 +250,52 @@ Mapping of current work (verified real papers):
 7. **Theme vendoring** — OK to replace `remote_theme` upstream with a fully local theme (own the design, stop upstream drift)?
 
 Please answer these (especially 1, 2, 3, 4) and I'll proceed into Phase 2 implementation, building and screenshotting each section as I go.
+
+---
+
+## K. Before / After comparison & rationale
+
+> All Phase 1 audit items (A–J) were addressed in Phase 2, accepted in Phase 3, and deployed live at https://lyimeng23.github.io/. Verification evidence in `/var/folders/p2/3g4m9xds31158t3k1lpq3xgr0000gn/T/opencode/shots-work/` (DOM checks, link scans, Lighthouse output `lh.json`).
+
+### Identity / config
+| Aspect | Before | After |
+|---|---|---|
+| Production domain | `lyimeng23.github.io` live, but canonical pointed at template `minipal-light-theme.yliu.me` | canonical = `https://lyimeng23.github.io/` (user-confirmed) |
+| CNAME | `songchen.science` (original author's domain) served on this repo | removed |
+| Verification | google/Bing meta tags dropped during rebuild | restored (`Hm9Hf3QonMSsBBMIRgZK66EXQ9W40H-jkN_vka0DQwo`, `515B13E9521CACD7FFF35583728F6E4F`) |
+| Scholar crawler | crawled Song Chen ID `sf-0AGoAAAAJ` | fixed to Yimeng `U0Py5sAAAAAJ` |
+| robots.txt | malformed Sitemap line, referenced stale paths | rebuilt; `/sitemap.xml` correct |
+| Static sitemap.xml | stale hand-written file | replaced by `jekyll-sitemap` plugin output |
+
+### Theme / design
+| Aspect | Before | After |
+|---|---|---|
+| Theme | `remote_theme: chrisrhymes/bulma-clean-theme` (upstream drift) | fully local custom theme (`_sass` tokens/base/layout/components/motion) |
+| Design | generic template skin | MSU-green token system, fluid `clamp()` type, MSU ribbons, light/serif accents, gradient text |
+| Homepage structure | author card → CV-style list | Hero → Research Vision (SENSE→MODEL→REASON→ACT) → Featured Research (4 cards) → Publications (7) → Highlights + About |
+| Motion | partial jquery effects | CSS reveal (IntersectionObserver), `prefers-reduced-motion` honored, no-reflow |
+| Accessibility | unknown | Lighthouse **100**, skip-link, focus-visible, aria labels, contrast tokens |
+| Performance | CDN-heavy template | Lighthouse **95** (P95, small budget), best-practices **100**, SEO **100**, CLS=0 |
+
+### Content / data
+| Aspect | Before | After |
+|---|---|---|
+| publications.yml | entry1 corrupted (Proteus title/authors + Hydra-Bench files) | decoded into separate Hydra-Bench + Proteus entries; 7 clean records |
+| News/Events/Services/Contact | mixed modules + stale data | consolidated into `/activities/`; news → `/news/`; homepage highlights digest |
+| Projects | dead CaspianPost page on home core, standalone driving subpage | CaspianPost moved off the core (secondary footnote link); driving migrated to unified `/project/` template |
+| About | long inline bio | compact bio + readable contact |
+
+### Code / repo hygiene
+| Aspect | Before | After |
+|---|---|---|
+| Vendored junk | old custom JS (jquery.cookie, google-citation, github-stars, scale.fix, back-to-top…), `minimal-light*.scss`, `_data` duplicates | deleted |
+| Legacy directories | `js/`, `contact/`, `project/senior_driving/`, `README copy.md`, `assets/css/nav-ori.css` etc. | deleted |
+| Build | required old Ruby + remote theme | `build.sh` (Docker jekyll) reproducible; production build 0 errors/warnings |
+| Git | `_site/` untracked residue risk | `.gitignore` covers `_site/`, `.opencode/` |
+| Deployment | not under version control | committed (`Rebuild academic homepage…`), pushed to `main`, GH Pages build green |
+
+### Why these trade-offs
+- **Fully local theme** → the site stays identical even if the upstream template disappears; design is now the owner's, not a fork.
+- **Narrative-first homepage** → converts the page from CV to a story that supports faculty / research-scientist positioning; keeps full publication list below.
+- **Deleting 23K lines** → the repo previously carried an entire skeleton theme + author residue asking to be confused with Song Chen; removal eliminates identity risk.
+- **Lazy featured images + local CSS** → Performance 95 with essentially no effort on CDN; no custom domain means we cannot tune response headers, so this is at the practical ceiling.
