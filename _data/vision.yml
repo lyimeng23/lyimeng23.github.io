@@ -3,29 +3,54 @@ main:
     title: "Multimodal Perception"
     question: "What is there?"
     blurb: "Observing people, objects, and environment through vision, mmWave/RF, and human/vehicle sensing — complementary modalities perceiving the same physical state even under adverse conditions."
-    evidence: "Hydra: first mmWave + RGB fusion showing complementary perception when light or weather degrades one channel."
+    evidence: "Hydra: mmWave + RGB fusion showing complementary perception when light or weather degrades one channel."
+    image: /assets/files/hydra.webp
+    image_alt: "Hydra outdoor sensing testbed with a camera and mmWave equipment"
+    image_width: 1200
+    image_height: 650
+    visual: sensors
     status: foundation
   - key: "02"
     title: "Cross-modal & Spatial Representation"
     question: "Where is it, and how is it related?"
     blurb: "Transforming and fusing information across modalities into a more stable physical and spatial representation."
     evidence: "Proteus: cross-modality knowledge transfer that keeps prediction stable when one sensing modality is unreliable or unavailable."
+    image: /assets/files/proteus.webp
+    image_alt: "Proteus mmWave radar testbed observing a plant"
+    image_width: 1200
+    image_height: 898
+    visual: relations
     status: foundation
   - key: "03"
     title: "Physical / Spatial Modeling"
     question: "How is the world changing?"
     blurb: "Recovering physical structure, geometry, state, and fine-grained spatial detail from sparse or noisy observations."
     evidence: "Adonis: efficient mmWave imaging that recovers fine-grained physical state at wider scan distances."
+    image: /assets/files/Adonis.webp
+    image_alt: "Adonis mmWave imaging setup for recovering fine-grained physical state"
+    image_width: 1200
+    image_height: 988
+    visual: state
     status: foundation
   - key: "04"
     title: "Spatial Reasoning & Prediction"
     question: "Why is it changing, and what happens next?"
     blurb: "On an evolving spatial state, understanding object–object, human–object, and agent–environment relations, tracking change, and predicting future states."
-    evidence: "Dynamic world models and spatial prediction — the focus of my current and future agenda."
-    status: current
+    evidence: "Future agenda: dynamic world models that preserve relations over time and make spatial prediction explicit."
+    image: /project/senior-driving/images/driving_bg.webp
+    image_alt: "Road scene used as a visual context for spatial prediction"
+    image_width: 1400
+    image_height: 673
+    visual: prediction
+    status: future
   - key: "05"
     title: "Embodied Intelligence"
     question: "What should the agent do?"
     blurb: "Grounded, safety-aware decision and action in real systems — driving, robotics, smart spaces, and agriculture."
     evidence: "Cognitive Driving: LLM-grounded spatial reasoning for risk-aware decisions in CARLA — ongoing research."
+    image: /project/senior-driving/images/driving_bg.webp
+    image_alt: "Road scene used as a visual context for risk-aware driving action"
+    image_width: 1400
+    image_height: 673
+    visual: action
     status: current

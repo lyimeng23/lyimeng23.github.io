@@ -26,6 +26,11 @@
         io.observe(el);
       });
     }
+  } else if (!reduced) {
+    // Older browsers should never get a permanently hidden page.
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      el.classList.add("is-visible");
+    });
   }
 
   // Mobile nav toggle.

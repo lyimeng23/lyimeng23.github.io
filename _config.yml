@@ -20,13 +20,13 @@ locale: en_US
 # Short human + SEO-friendly one-liners. Keep keywords focused (no stuffing).
 description: >
   Official website of Yimeng Liu, Ph.D. candidate in Computer Science and
-  Engineering at Michigan State University. Research on Physical AI: multimodal
-  sensing, wireless (mmWave/RF) perception, physics-informed world modeling, and
-  intelligent systems that perceive, model, reason about, and act in the physical
-  world — applied to driving, human-centered autonomy, and agriculture.
+  Engineering at Michigan State University. Research on Spatial Intelligence:
+  building persistent understanding of dynamic physical spaces from incomplete
+  multimodal observations, then reasoning, predicting, and supporting safe action.
 keywords:
   - Yimeng Liu
   - Michigan State University
+  - Spatial Intelligence
   - Physical AI
   - Embodied AI
   - mobile computing
@@ -79,3 +79,5 @@ exclude:
   - .git
   - .github
   - .opencode
+  - docs
+  - google_scholar_crawler

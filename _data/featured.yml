@@ -8,8 +8,9 @@ main:
     capability: "Multimodal Perception"
     tagline: "Complementary mmWave–vision fusion for sensing under adverse conditions"
     problem: "Single-modality sensing degrades under changing light, weather, and occlusion."
-    contribution: "First mmWave and RGB fusion system showing complementary modalities perceive the same physical state when one channel is unreliable."
+    contribution: "Demonstrates complementary mmWave and RGB perception of the same physical state when one channel is unreliable."
     venue: "ACM MobiCom 2024"
+    tier: "Published foundation"
     image: /assets/files/hydra.webp
     pdf: /assets/files/hydra.pdf
     code: https://github.com/liuyime2/MobiCom24-Hydra
@@ -22,6 +23,7 @@ main:
     problem: "High-accuracy fine-grained sensing depends on slow, costly scanning."
     contribution: "Transfers sensing knowledge across modalities so a lightweight, available channel keeps scanner-grade accuracy."
     venue: "ACM SenSys 2025"
+    tier: "Published foundation"
     image: /assets/files/proteus.webp
     pdf: /assets/files/proteus.pdf
     page: https://dl.acm.org/doi/10.1145/3715014.3722052
@@ -34,6 +36,7 @@ main:
     problem: "mmWave imaging trades scan speed against fine spatial detail."
     contribution: "Neural mmWave imaging recovers fine-grained physical state at wider scan distances — faster, finer, and more robust sensing."
     venue: "IEEE INFOCOM 2025"
+    tier: "Published foundation"
     image: /assets/files/Adonis.webp
     pdf: /assets/files/adonis.pdf
     slides: /assets/files/Adonis-INFOCOM25.pptx
@@ -45,6 +48,7 @@ main:
     problem: "Driving assistants need semantic risk awareness, not just object lists."
     contribution: "Grounding LLM reasoning in multi-modal perception for risk-aware decisions, evaluated in CARLA — ongoing research."
     venue: "Research direction"
+    tier: "Current research"
     status: "Ongoing"
     image: /project/senior-driving/images/driving_bg.webp
     more: /project/senior-driving/

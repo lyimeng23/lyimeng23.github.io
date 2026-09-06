@@ -2,10 +2,10 @@
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Publications</p>
-      <h2 class="section__title">Peer-reviewed work</h2>
+      <h2 class="section__title">Publication record</h2>
       <p class="section__lede">
-        Published in ACM MobiCom, ACM SenSys, IEEE INFOCOM, ACM MobiSys, and Bioinspiration &amp;
-        Biomimetics.
+        Selected peer-reviewed papers and research artifacts spanning multimodal sensing,
+        cross-modal learning, physical representation, and agricultural intelligence.
         {% if site.google_scholar %}<a href="{{ site.google_scholar }}" target="_blank" rel="noopener" title="Full profile on Google Scholar">Full profile on Google Scholar →</a>{% endif %}
       </p>
     </div>
@@ -14,6 +14,7 @@
     {% assign full = site.data.publications.main | where_exp: "pub", "pub.selected != true" %}
 
     {% if selected.size > 0 %}
+    <p class="pub__section-heading reveal">Highlighted papers &amp; research artifacts</p>
     <div class="pub-list" role="list">
       {% for pub in selected %}
       <article class="pub reveal" role="listitem">

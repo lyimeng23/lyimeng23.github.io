@@ -2,11 +2,11 @@
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Featured Research</p>
-      <h2 class="section__title">Selected work</h2>
+      <h2 class="section__title">Research capabilities, made concrete</h2>
       <p class="section__lede">
-        A snapshot of the trajectory: from the first contactless multi-modal leaf-wetness
-        system, through neural mmWave imaging and cross-modality knowledge transfer, to
-        LLM-grounded driving perception.
+        These projects are evidence for different parts of the Spatial Intelligence agenda:
+        three published foundations, and one ongoing direction toward grounded reasoning and
+        action. Each project is linked to its full research context.
       </p>
     </div>
 
@@ -24,8 +24,9 @@
           />
         </figure>
         <div class="feature-card__body">
+          {% if item.capability %}<p class="feature-card__capability">{{ item.capability }}</p>{% endif %}
           <div class="feature-card__meta">
-            {% if item.capability %}<span class="feature-card__capability">{{ item.capability }}</span>{% endif %}
+            {% if item.tier %}<span class="feature-card__tier">{{ item.tier }}</span>{% endif %}
             <span class="venue-badge">{{ item.venue }}</span>
             {% if item.status %}<span class="feature-card__status">{{ item.status }}</span>{% endif %}
           </div>
