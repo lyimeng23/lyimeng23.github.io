@@ -24,7 +24,7 @@
             <span class="pub__venue">{{ pub.venue_short }}</span>
           </div>
           <p class="pub__authors">{{ pub.authors }}</p>
-          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">{{ pub.year }}</span></em></p>
+          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">, {{ pub.year }}</span></em></p>
           <div class="pub__links">
             {% if pub.pdf %}<a class="pub__link" href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
             {% if pub.page %}<a class="pub__link" href="{{ pub.page }}" target="_blank" rel="noopener" title="ACM DOI / project link">Paper</a>{% endif %}
@@ -49,7 +49,7 @@
             <span class="pub__venue">{{ pub.venue_short }}</span>
           </div>
           <p class="pub__authors">{{ pub.authors }}</p>
-          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">{{ pub.year }}</span></em></p>
+          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">, {{ pub.year }}</span></em></p>
           <div class="pub__links">
             {% if pub.pdf %}<a class="pub__link" href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
             {% if pub.page %}<a class="pub__link" href="{{ pub.page }}" target="_blank" rel="noopener" title="ACM DOI / project link">Paper</a>{% endif %}
@@ -71,7 +71,7 @@
             <span class="pub__venue">{{ pub.venue_short }}</span>
           </div>
           <p class="pub__authors">{{ pub.authors }}</p>
-          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">{{ pub.year }}</span></em></p>
+          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">, {{ pub.year }}</span></em></p>
           <div class="pub__links">
             {% if pub.pdf %}<a class="pub__link" href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
             {% if pub.page %}<a class="pub__link" href="{{ pub.page }}" target="_blank" rel="noopener" title="ACM DOI / project link">Paper</a>{% endif %}

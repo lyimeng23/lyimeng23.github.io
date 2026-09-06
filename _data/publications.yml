@@ -5,7 +5,7 @@
 main:
   - title: "Proteus: Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer"
     authors: "<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Xiaobo Tan, Zhichao Cao"
-    venue: "Proceedings of ACM SenSys 2025"
+    venue: "Proceedings of ACM SenSys"
     venue_short: "SenSys'25"
     year: 2025
     selected: true
@@ -17,7 +17,7 @@ main:
 
   - title: "Adonis: Neural-Enhanced Fine-Grained Leaf Wetness Sensing with Efficient mmWave Imaging"
     authors: "<strong>Yimeng Liu</strong>*, Maolin Gan*, Gen Li, Younsuk Dong, Zhichao Cao"
-    venue: "Proceedings of IEEE INFOCOM 2025"
+    venue: "Proceedings of IEEE INFOCOM"
     venue_short: "INFOCOM'25"
     year: 2025
     selected: true
@@ -28,7 +28,7 @@ main:
 
   - title: "Hydra: Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion"
     authors: "<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Li Liu, Younsuk Dong, Zhichao Cao"
-    venue: "Proceedings of ACM MobiCom 2024"
+    venue: "Proceedings of ACM MobiCom"
     venue_short: "MobiCom'24"
     year: 2024
     selected: true
@@ -51,7 +51,7 @@ main:
 
   - title: "AeroEcho: Towards Agricultural Low-Power Wide-Area Backscatter with Aerial Excitation Source"
     authors: "Yidong Ren, Gen Li, <strong>Yimeng Liu</strong>, Younsuk Dong, Zhichao Cao"
-    venue: "Proceedings of IEEE INFOCOM 2025"
+    venue: "Proceedings of IEEE INFOCOM"
     venue_short: "INFOCOM'25"
     year: 2025
     image: /assets/files/AeroEcho.webp
@@ -59,7 +59,7 @@ main:
 
   - title: "Poster: mmLeaf — Versatile Leaf Wetness Detection via mmWave Sensing"
     authors: "Maolin Gan, <strong>Yimeng Liu</strong>, Li Liu, Chenshu Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao"
-    venue: "Proceedings of ACM MobiSys 2023"
+    venue: "Proceedings of ACM MobiSys"
     venue_short: "MobiSys'23"
     year: 2023
     image: /assets/files/mmleaf.webp
