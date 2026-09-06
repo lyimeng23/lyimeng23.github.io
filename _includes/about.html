@@ -2,14 +2,10 @@
   <div class="container">
     <div class="about-grid">
       <div class="about__intro reveal">
-        <p class="eyebrow">About</p>
-        <h2 class="section__title">About me</h2>
+        <p class="eyebrow">About / Activities</p>
+        <h2 class="section__title">The details behind the work.</h2>
         <p class="about__lede">
-          I am a Ph.D. candidate in Computer Science &amp; Engineering at Michigan State
-          University, advised by <a href="https://cse.msu.edu/~caozc/" target="_blank" rel="noopener">Dr. Zhichao Cao</a>.
-          I study Spatial Intelligence: how AI can move from incomplete multimodal observations
-          to structured and persistent representations of the physical world, reason about how
-          that world evolves, and support grounded, safe action.
+          For advisor, education, service, talks, collaboration interests, and contact, here is the fuller academic profile.
         </p>
       </div>
 
@@ -35,6 +31,7 @@
     <div class="about__actions reveal">
       {% if site.cv_link %}<a class="btn btn--primary" href="{{ site.cv_link }}" target="_blank" rel="noopener">Download CV</a>{% endif %}
       <a class="btn btn--ghost" href="{{ '/activities' | relative_url }}">Activities &amp; service</a>
+      {% if site.email_link %}<a class="btn btn--ghost" href="{{ site.email_link }}">Email</a>{% endif %}
       <a class="btn btn--ghost" href="{{ site.google_scholar }}" target="_blank" rel="noopener" title="Google Scholar">Google Scholar</a>
       <a class="btn btn--ghost" href="{{ site.github }}" target="_blank" rel="noopener" title="GitHub">GitHub</a>
     </div>

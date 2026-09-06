@@ -1,10 +1,12 @@
 main:
   - title: Research
     url: /#research-vision
-  - title: Projects
+  - title: Selected Work
     url: /#featured-research
   - title: Publications
     url: /#publications
+  - title: Updates
+    url: /#highlights
   - title: Activities
     url: /activities/
   - title: About

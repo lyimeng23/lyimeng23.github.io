@@ -2,24 +2,22 @@
   <div class="container">
     <div class="hero__grid">
       <header class="hero__inner">
-        <p class="eyebrow">Yimeng Liu</p>
-        <h1 class="hero__title">
-          Building Spatial Intelligence for the Physical World.
-        </h1>
+        <p class="eyebrow">Academic homepage</p>
+        <h1 class="hero__title">Yimeng Liu</h1>
         <p class="hero__subtitle">
           {{ site.position }}, Computer Science &amp; Engineering · {{ site.affiliation }}
         </p>
         <p class="hero__lede">
-          Spatial Intelligence means moving from incomplete multimodal observations to
-          structured, persistent representations of the physical world — then reasoning
-          about how that world evolves and acting on it safely.
+          I study Spatial Intelligence: how AI can move from incomplete multimodal observations
+          to a persistent understanding of dynamic physical spaces, and ultimately support grounded action.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#about">About me</a>
+          {% if site.cv_link %}<a class="btn btn--primary" href="{{ site.cv_link }}" target="_blank" rel="noopener">CV</a>{% endif %}
+          {% if site.google_scholar %}<a class="btn btn--ghost" href="{{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+          {% if site.github %}<a class="btn btn--ghost" href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+          {% if site.email_link %}<a class="btn btn--ghost" href="{{ site.email_link }}">Email</a>{% endif %}
           <a class="btn btn--ghost" href="#research-vision">Research</a>
-          <a class="btn btn--ghost" href="#featured-research">Projects</a>
           <a class="btn btn--ghost" href="#publications">Publications</a>
-          {% if site.cv_link %}<a class="btn btn--ghost" href="{{ site.cv_link }}" target="_blank" rel="noopener">CV</a>{% endif %}
         </div>
       </header>
       <figure class="hero__media reveal">
