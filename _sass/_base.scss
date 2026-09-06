@@ -114,6 +114,8 @@ ul, ol {
   }
 }
 
+[id] { scroll-margin-top: calc(#{$nav-height} + 1rem); }
+
 .section__head {
   margin-bottom: clamp(2rem, 4vw, 3rem);
   &--split {
