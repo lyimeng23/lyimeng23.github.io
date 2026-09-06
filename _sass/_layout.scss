@@ -176,8 +176,43 @@
     linear-gradient(180deg, $color-bg, $color-bg-alt);
 }
 
+.hero__grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: 1fr minmax(0, 300px);
+    gap: 3rem;
+  }
+}
+
 .hero__inner {
   max-width: 62ch;
+}
+
+.hero__media {
+  margin: 0;
+  order: -1; // portrait before text on mobile
+
+  @media (min-width: $bp-md) {
+    order: 0;
+    justify-self: end;
+  }
+}
+
+.hero__portrait {
+  display: block;
+  width: min(200px, 60vw);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: $radius;
+  border: 1px solid $color-border;
+  box-shadow: 0 18px 40px -18px rgba($color-text, 0.35);
+
+  @media (min-width: $bp-md) {
+    width: 100%;
+  }
 }
 
 .hero__title {

@@ -1,25 +1,36 @@
 <section class="hero">
   <div class="container">
-    <header class="hero__inner">
-      <p class="eyebrow">Yimeng Liu</p>
-      <h1 class="hero__title">
-        Building Spatial Intelligence for the Physical World.
-      </h1>
-      <p class="hero__subtitle">
-        {{ site.position }}, Computer Science &amp; Engineering · {{ site.affiliation }}
-      </p>
-      <p class="hero__lede">
-        Spatial Intelligence means moving from incomplete multimodal observations to
-        structured, persistent representations of the physical world — then reasoning
-        about how that world evolves and acting on it safely.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#research-vision">Research</a>
-        <a class="btn btn--ghost" href="#featured-research">Projects</a>
-        <a class="btn btn--ghost" href="#publications">Publications</a>
-        <a class="btn btn--ghost" href="#about">About</a>
-        {% if site.cv_link %}<a class="btn btn--ghost" href="{{ site.cv_link }}" target="_blank" rel="noopener">CV</a>{% endif %}
-      </div>
-    </header>
+    <div class="hero__grid">
+      <header class="hero__inner">
+        <p class="eyebrow">Yimeng Liu</p>
+        <h1 class="hero__title">
+          Building Spatial Intelligence for the Physical World.
+        </h1>
+        <p class="hero__subtitle">
+          {{ site.position }}, Computer Science &amp; Engineering · {{ site.affiliation }}
+        </p>
+        <p class="hero__lede">
+          Spatial Intelligence means moving from incomplete multimodal observations to
+          structured, persistent representations of the physical world — then reasoning
+          about how that world evolves and acting on it safely.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#research-vision">Research</a>
+          <a class="btn btn--ghost" href="#featured-research">Projects</a>
+          <a class="btn btn--ghost" href="#publications">Publications</a>
+          <a class="btn btn--ghost" href="#about">About</a>
+          {% if site.cv_link %}<a class="btn btn--ghost" href="{{ site.cv_link }}" target="_blank" rel="noopener">CV</a>{% endif %}
+        </div>
+      </header>
+      <figure class="hero__media reveal">
+        <img
+          class="hero__portrait"
+          src="{{ site.avatar | relative_url }}"
+          alt="Portrait of {{ site.title }}"
+          width="299" height="400"
+          fetchpriority="high"
+        />
+      </figure>
+    </div>
   </div>
 </section>
