@@ -12,17 +12,19 @@
 
     <div class="feature-grid">
       {% for item in site.data.featured.main %}
-      <a class="feature-card reveal" href="{% if item.more %}{{ item.more | relative_url }}{% else %}{{ item.pdf | relative_url }}{% endif %}"
-         {% if item.more %}{% else %}target="_blank" rel="noopener"{% endif %}>
-        <figure class="feature-card__media">
-          <img
-            class="feature-card__img"
-            src="{{ item.image | relative_url }}"
-            alt="{{ item.title }} — {{ item.tagline }}"
-            width="600" height="400"
-            loading="lazy"
-          />
-        </figure>
+      <article class="feature-card reveal">
+        <a class="feature-card__media-link" href="{% if item.more %}{{ item.more | relative_url }}{% elsif item.pdf %}{{ item.pdf | relative_url }}{% endif %}"
+           {% if item.more %}{% else %}target="_blank" rel="noopener"{% endif %} aria-label="Open {{ item.title }}{% if item.more %} project page{% else %} paper{% endif %}">
+          <figure class="feature-card__media">
+            <img
+              class="feature-card__img"
+              src="{{ item.image | relative_url }}"
+              alt="{{ item.title }} — {{ item.tagline }}"
+              width="600" height="400"
+              loading="lazy"
+            />
+          </figure>
+        </a>
         <div class="feature-card__body">
           {% if item.capability %}<p class="feature-card__capability">{{ item.capability }}</p>{% endif %}
           <div class="feature-card__meta">
@@ -32,17 +34,19 @@
           </div>
           <h3 class="feature-card__title">{{ item.title }}</h3>
           <p class="feature-card__tagline">{{ item.tagline }}</p>
-          <p class="feature-card__line"><strong>Problem.</strong> {{ item.problem }}</p>
-          <p class="feature-card__line"><strong>Contribution.</strong> {{ item.contribution }}</p>
-          <span class="feature-card__more">Learn more →</span>
+          <p class="feature-card__line"><strong>Research question.</strong> {{ item.question }}</p>
+          <p class="feature-card__line"><strong>Core idea.</strong> {{ item.idea }}</p>
+          <p class="feature-card__line"><strong>Key result.</strong> {{ item.result }}</p>
+          <div class="feature-card__links" aria-label="{{ item.title }} links">
+            {% if item.more %}<a class="feature-card__more" href="{{ item.more | relative_url }}">Project →</a>{% endif %}
+            {% if item.pdf %}<a class="feature-card__more" href="{{ item.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            {% if item.page %}<a class="feature-card__more" href="{{ item.page }}" target="_blank" rel="noopener">Paper</a>{% endif %}
+            {% if item.code %}<a class="feature-card__more" href="{{ item.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            {% if item.slides %}<a class="feature-card__more" href="{{ item.slides | relative_url }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+          </div>
         </div>
-      </a>
+      </article>
       {% endfor %}
     </div>
-
-    <p class="section__foot reveal">
-      Non-research builds — such as the <a href="{{ '/project/caspianpost/' | relative_url }}">CaspianPost</a>
-      TikTok publishing assistant — live separately under Projects.
-    </p>
   </div>
 </section>

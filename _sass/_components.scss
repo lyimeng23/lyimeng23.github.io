@@ -489,6 +489,9 @@ html:not(.js) .scene-layer:not(.scene-layer--base) { opacity: 0.92; transform: n
 
 .feature-card:first-child { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 2rem; padding-top: 0; border-top: 0; }
 
+.feature-card__media-link { display: block; min-width: 0; }
+.feature-card__media-link:focus-visible { outline: 3px solid $color-accent; outline-offset: 4px; }
+
 .feature-card__media {
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -564,11 +567,12 @@ html:not(.js) .scene-layer:not(.scene-layer--base) { opacity: 0.92; transform: n
 }
 
 .feature-card__more {
-  margin-top: auto;
-  padding-top: 0.5rem;
+  padding-top: 0.15rem;
   font-size: 0.875rem;
   font-weight: 650;
 }
+
+.feature-card__links { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; margin-top: auto; padding-top: 0.55rem; }
 
 @media (max-width: $bp-md) {
   .feature-grid {
