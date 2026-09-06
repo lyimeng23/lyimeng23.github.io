@@ -586,6 +586,30 @@ html:not(.js) .scene-layer:not(.scene-layer--base) { opacity: 0.92; transform: n
   .feature-card:first-child { padding-top: 1.25rem; }
 }
 
+// ---------- Research trajectory (past -> present -> future) ----------
+.section--transition { background: $color-bg; }
+.trajectory { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: 1rem; align-items: stretch; }
+.trajectory__stage { min-width: 0; padding-top: 1.15rem; border-top: 2px solid $color-border; }
+.trajectory__stage--published { border-color: $color-accent; }
+.trajectory__stage--current { border-color: #b36b2c; }
+.trajectory__stage--future { border-color: #8c887d; }
+.trajectory__status { margin: 0 0 0.8rem; color: $color-accent; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.trajectory__stage--current .trajectory__status { color: #9a591f; }
+.trajectory__stage--future .trajectory__status { color: #77736b; }
+.trajectory__stage h3 { margin: 0 0 1rem; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.25; }
+.trajectory__stage ol { display: grid; gap: 0.45rem; margin: 0 0 1.2rem; padding: 0; list-style: none; counter-reset: trajectory; }
+.trajectory__stage li { display: flex; gap: 0.55rem; align-items: baseline; color: $color-text; font-size: 0.98rem; }
+.trajectory__stage li::before { counter-increment: trajectory; content: counter(trajectory, decimal-leading-zero); color: $color-muted; font-size: 0.72rem; font-weight: 800; }
+.trajectory__stage p:last-child { margin: 0; color: $color-muted; font-size: 0.9rem; line-height: 1.55; }
+.trajectory__arrow { display: flex; align-items: center; color: $color-accent; font-size: 1.7rem; }
+.trajectory__closing { margin: 2.5rem 0 0; padding-top: 1.25rem; border-top: 1px solid $color-border; color: $color-muted; font-size: 1rem; }
+.trajectory__closing strong { color: $color-text; }
+
+@media (max-width: $bp-md) {
+  .trajectory { grid-template-columns: 1fr; gap: 1.5rem; }
+  .trajectory__arrow { justify-content: center; transform: rotate(90deg); }
+}
+
 // ---------- Publications ----------
 .pub__section-heading {
   margin: 0 0 1rem;
