@@ -7,7 +7,7 @@ tagline: In-car sensing, driving simulators, and community outreach to keep olde
 status: Active
 links:
   pdf: /assets/files/Recruitment_Flyer.pdf
-image: /project/senior-driving/images/driving_bg.jpg
+image: /project/senior-driving/images/driving_bg.webp
 image_alt: Senior driving safety and cognitive health campaign image
 problem_md: |
   Safe driving is key to maintaining independence for older adults. Yet even mild cognitive changes—often unnoticed—increase driving risk. By the time the symptoms of cognitive decline become visible, risky driving behavior may already be underway.
@@ -43,16 +43,16 @@ results_md: |
 
   We are actively recruiting seniors for our study. See our [recruitment flyer](/assets/files/Recruitment_Flyer.pdf) for details.
 gallery:
-  - src: /project/senior-driving/images/17d6da5c8340a858b9205a924a8e5d1.jpg
+  - src: /project/senior-driving/images/17d6da5c8340a858b9205a924a8e5d1.webp
     alt: Senior driving simulation session
-  - src: /project/senior-driving/images/259f6d9d66ec3564ed06674dda48211.jpg
+  - src: /project/senior-driving/images/259f6d9d66ec3564ed06674dda48211.webp
     alt: In-car monitoring prototype
-  - src: /project/senior-driving/images/5918ba8f92090e96bce9d3314ffe2e3.jpg
+  - src: /project/senior-driving/images/5918ba8f92090e96bce9d3314ffe2e3.webp
     alt: Driving simulator environment
-  - src: /project/senior-driving/images/cdce72d0fec9f0da8281732156a5aa0.jpg
+  - src: /project/senior-driving/images/cdce72d0fec9f0da8281732156a5aa0.webp
     alt: Community education workshop
-  - src: /project/senior-driving/images/f562d383347c92dc6271927b3c5f60f.jpg
+  - src: /project/senior-driving/images/f562d383347c92dc6271927b3c5f60f.webp
     alt: Study participants in action
-  - src: /project/senior-driving/images/image1.jpg
+  - src: /project/senior-driving/images/image1.webp
     alt: Project team activity
 ---

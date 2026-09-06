@@ -9,7 +9,7 @@ main:
     venue_short: "SenSys'25"
     year: 2025
     selected: true
-    image: /assets/files/proteus.png
+    image: /assets/files/proteus.webp
     pdf: /assets/files/proteus.pdf
     page: https://dl.acm.org/doi/10.1145/3715014.3722052
     bibtex: /assets/files/proteus.txt
@@ -21,7 +21,7 @@ main:
     venue_short: "INFOCOM'25"
     year: 2025
     selected: true
-    image: /assets/files/Adonis.png
+    image: /assets/files/Adonis.webp
     pdf: /assets/files/adonis.pdf
     bibtex: /assets/files/adonis.txt
     slides: /assets/files/Adonis-INFOCOM25.pptx
@@ -32,7 +32,7 @@ main:
     venue_short: "MobiCom'24"
     year: 2024
     selected: true
-    image: /assets/files/hydra.jpg
+    image: /assets/files/hydra.webp
     pdf: /assets/files/hydra.pdf
     code: https://github.com/liuyime2/MobiCom24-Hydra
     bibtex: /assets/files/hydra.txt
@@ -44,7 +44,7 @@ main:
     venue_short: "arXiv'25"
     year: 2025
     selected: true
-    image: /assets/files/hydrabench.png
+    image: /assets/files/hydrabench.webp
     pdf: /assets/files/HydraBench.pdf
     page: https://arxiv.org/abs/2507.22685
     bibtex: /assets/files/hydrabench.txt
@@ -54,7 +54,7 @@ main:
     venue: "Proceedings of IEEE INFOCOM 2025"
     venue_short: "INFOCOM'25"
     year: 2025
-    image: /assets/files/AeroEcho.png
+    image: /assets/files/AeroEcho.webp
     pdf: /assets/files/aeroecho.pdf
 
   - title: "Poster: mmLeaf — Versatile Leaf Wetness Detection via mmWave Sensing"
@@ -62,7 +62,7 @@ main:
     venue: "Proceedings of ACM MobiSys 2023"
     venue_short: "MobiSys'23"
     year: 2023
-    image: /assets/files/mmleaf.jpg
+    image: /assets/files/mmleaf.webp
     pdf: /assets/files/mmleaf.pdf
     page: https://dl.acm.org/doi/abs/10.1145/3581791.3597367
     bibtex: /assets/files/mmleaf.txt
@@ -72,7 +72,7 @@ main:
     venue: "Bioinspiration & Biomimetics, vol. 17"
     venue_short: "Bioinspir. Biomim."
     year: 2022
-    image: /assets/files/biodetection.jpg
+    image: /assets/files/biodetection.webp
     pdf: /assets/files/biodetection.pdf
     page: https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta
     bibtex: /assets/files/biodetection.txt
