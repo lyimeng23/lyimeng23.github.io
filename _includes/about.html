@@ -1,0 +1,41 @@
+<section class="section section--alt" id="about" tabindex="-1">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about__intro reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="section__title">About me</h2>
+        <p class="about__lede">
+          I am a Ph.D. candidate in Computer Science &amp; Engineering at Michigan State
+          University, advised by <a href="https://cse.msu.edu/~caozc/" target="_blank" rel="noopener">Dr. Zhichao Cao</a>.
+          I work on Physical AI: multimodal sensing, world modeling, and intelligent
+          systems that act safely and autonomously in the physical world.
+        </p>
+      </div>
+
+      <dl class="about__facts reveal">
+        <div class="about__fact">
+          <dt>Education</dt>
+          <dd>
+            <strong>Ph.D. candidate, Computer Science &amp; Engineering</strong> — Michigan State University (2023–)<br />
+            <strong>B.S., Mathematics</strong> — Virginia Tech (2023)
+          </dd>
+        </div>
+        <div class="about__fact">
+          <dt>Research interests</dt>
+          <dd>Multimodal &amp; wireless sensing · mmWave/RF · physics-informed learning · world modeling · LLM agents · human-centered AIoT</dd>
+        </div>
+        <div class="about__fact">
+          <dt>Affiliation</dt>
+          <dd>{{ site.affiliation }}, {{ site.address }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="about__actions reveal">
+      {% if site.cv_link %}<a class="btn btn--primary" href="{{ site.cv_link }}" target="_blank" rel="noopener">Download CV</a>{% endif %}
+      <a class="btn btn--ghost" href="{{ '/activities' | relative_url }}">Activities &amp; service</a>
+      <a class="btn btn--ghost" href="{{ site.google_scholar }}" target="_blank" rel="noopener" title="Google Scholar">Google Scholar</a>
+      <a class="btn btn--ghost" href="{{ site.github }}" target="_blank" rel="noopener" title="GitHub">GitHub</a>
+    </div>
+  </div>
+</section>

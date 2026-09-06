@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__identity">
+      <p class="site-footer__name">{{ site.title }}</p>
+      <p class="site-footer__position">{{ site.position }} · {{ site.affiliation }}</p>
+    </div>
+
+    <div class="site-footer__links">
+      {% if site.email %}<span class="site-footer__item">{{ site.email }}</span>{% endif %}
+      {% if site.google_scholar %}<a class="site-footer__item" href="{{ site.google_scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar profile">Google Scholar</a>{% endif %}
+      {% if site.github %}<a class="site-footer__item" href="{{ site.github }}" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>{% endif %}
+      {% if site.linkedin %}<a class="site-footer__item" href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>{% endif %}
+      {% if site.cv_link %}<a class="site-footer__item" href="{{ site.cv_link }}" target="_blank" rel="noopener" aria-label="Curriculum vitae (PDF)">CV</a>{% endif %}
+      {% if site.enable_last_update %}
+      <span class="site-footer__item site-footer__updated">Last updated {{ site.time | date: "%b %-d, %Y" }}</span>
+      {% endif %}
+    </div>
+  </div>
+</footer>

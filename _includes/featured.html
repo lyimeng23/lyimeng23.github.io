@@ -1,0 +1,46 @@
+<section class="section" id="featured-research" tabindex="-1">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Featured Research</p>
+      <h2 class="section__title">Selected work</h2>
+      <p class="section__lede">
+        A snapshot of the trajectory: from the first contactless multi-modal leaf-wetness
+        system, through neural mmWave imaging and cross-modality knowledge transfer, to
+        LLM-grounded driving perception.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      {% for item in site.data.featured.main %}
+      <a class="feature-card reveal" href="{% if item.more %}{{ item.more | relative_url }}{% else %}{{ item.pdf | relative_url }}{% endif %}"
+         {% if item.more %}{% else %}target="_blank" rel="noopener"{% endif %}>
+        <figure class="feature-card__media">
+          <img
+            class="feature-card__img"
+            src="{{ item.image | relative_url }}"
+            alt="{{ item.title }} — {{ item.tagline }}"
+            width="600" height="400"
+            loading="lazy"
+          />
+        </figure>
+        <div class="feature-card__body">
+          <div class="feature-card__meta">
+            <span class="venue-badge">{{ item.venue }}</span>
+            {% if item.status %}<span class="feature-card__status">{{ item.status }}</span>{% endif %}
+          </div>
+          <h3 class="feature-card__title">{{ item.title }}</h3>
+          <p class="feature-card__tagline">{{ item.tagline }}</p>
+          <p class="feature-card__line"><strong>Problem.</strong> {{ item.problem }}</p>
+          <p class="feature-card__line"><strong>Contribution.</strong> {{ item.contribution }}</p>
+          <span class="feature-card__more">Learn more →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <p class="section__foot reveal">
+      Non-research builds — such as the <a href="{{ '/project/caspianpost/' | relative_url }}">CaspianPost</a>
+      TikTok publishing assistant — live separately under Projects.
+    </p>
+  </div>
+</section>

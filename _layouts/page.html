@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="page">
+  <div class="container">
+    <header class="page__head reveal">
+      {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+      <h1 class="page__title">{{ page.title }}</h1>
+      {% if page.lede %}<p class="page__lede">{{ page.lede }}</p>{% endif %}
+    </header>
+    <div class="page__body reveal">
+      {{ content }}
+    </div>
+  </div>
+</article>

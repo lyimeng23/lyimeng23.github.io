@@ -1,24 +1,15 @@
 main:
   - title: NSF Workshop on Sustainable Computing @ Purdue University
-    # authors: Yimeng Liu
-    # conference_short: BeMAGIC
-    # conference: BeMAGIC Final Event
-    # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
+    role: Participant
     web: https://nsf-desc-2024.github.io/
-    image: ./assets/img/NSFSC.jpg
+    image: /assets/img/NSFSC.jpg
 
-  - title: MobiCom'24 @ Washington, D.C.
-    authors: Yimeng Liu
-    # conference_short: BeMAGIC
-    # conference: BeMAGIC Final Event
-    # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
+  - title: "ACM MobiCom 2024 — Washington, D.C."
+    role: Presented Hydra
     web: https://www.sigmobile.org/mobicom/2024/index.html
-    image: ./assets/img/mobicom24.jpg
+    image: /assets/img/mobicom24.jpg
 
-  - title: SenSys'25 @ Irving, CA
-    authors: Yimeng Liu
-    # conference_short: BeMAGIC
-    # conference: BeMAGIC Final Event
-    # pdf: https://bemagic-etn.eu/images/files2023/BeMAGIC%20Final%20Event%20information%201.pdf
+  - title: "ACM SenSys 2025 — Irvine, CA"
+    role: Presented Proteus
     web: https://sensys.acm.org/2025/
-    image: ./assets/img/sensys25.jpg
+    image: /assets/img/sensys25.jpg

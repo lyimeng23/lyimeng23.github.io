@@ -1,0 +1,91 @@
+---
+layout: default
+---
+
+<article class="project">
+  <header class="project__header">
+    <div class="container">
+      <p class="eyebrow">{{ page.eyebrow | default: "Project" }}</p>
+      <h1 class="project__title">{{ page.title }}</h1>
+      {% if page.tagline %}<p class="project__tagline">{{ page.tagline }}</p>{% endif %}
+      <div class="project__meta">
+        {% if page.venue %}<span>{{ page.venue }}</span>{% endif %}
+        {% if page.status %}<span class="badge">{{ page.status }}</span>{% endif %}
+      </div>
+      {% if page.links %}
+      <div class="project__actions">
+        {% if page.links.pdf %}<a class="btn btn--primary" href="{{ page.links.pdf }}" target="_blank" rel="noopener">Read the paper</a>{% endif %}
+        {% if page.links.code %}<a class="btn btn--ghost" href="{{ page.links.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
+        {% if page.links.dataset %}<a class="btn btn--ghost" href="{{ page.links.dataset }}" target="_blank" rel="noopener">Dataset</a>{% endif %}
+        {% if page.links.slides %}<a class="btn btn--ghost" href="{{ page.links.slides }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.image %}
+  <div class="container">
+    <figure class="project__figure">
+      <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy" />
+    </figure>
+  </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="project__body">
+      {% if page.narrative_md %}{{ page.narrative_md | markdownify }}{% endif %}
+      {% if page.problem_md %}
+      <section class="project__section">
+        <h2 class="project__h2">Problem</h2>
+        {{ page.problem_md | markdownify }}
+      </section>
+      {% endif %}
+      {% if page.gap_md %}
+      <section class="project__section">
+        <h2 class="project__h2">Gap</h2>
+        {{ page.gap_md | markdownify }}
+      </section>
+      {% endif %}
+      {% if page.idea_md %}
+      <section class="project__section">
+        <h2 class="project__h2">Core idea</h2>
+        {{ page.idea_md | markdownify }}
+      </section>
+      {% endif %}
+      {% if page.system_md %}
+      <section class="project__section">
+        <h2 class="project__h2">System</h2>
+        {{ page.system_md | markdownify }}
+      </section>
+      {% endif %}
+      {% if page.results_md %}
+      <section class="project__section">
+        <h2 class="project__h2">Results</h2>
+        {{ page.results_md | markdownify }}
+      </section>
+      {% endif %}
+      {% if page.bibtex_md %}
+      <section class="project__section">
+        <h2 class="project__h2">BibTeX</h2>
+        {{ page.bibtex_md | markdownify }}
+      </section>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if page.gallery %}
+  <div class="container">
+    <section class="project__section">
+      <h2 class="project__h2">Gallery</h2>
+      <div class="project__gallery">
+        {% for img in page.gallery %}
+        <figure class="project__gallery-item">
+          <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" />
+          {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
+        </figure>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+  {% endif %}
+</article>

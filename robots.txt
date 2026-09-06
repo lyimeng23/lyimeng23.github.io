@@ -1,18 +1,8 @@
 User-agent: *
-Allow: index.html
-Disallow: /assets/academicons/
-Disallow: /assets/css/
-Disallow: /assets/fonts/
-Disallow: /assets/fontawesome/
-Disallow: /assets/js/
-Disallow: /assets/mpii_files/
-Disallow: /images/
+Allow: /
+
+# Internal / tool pages that should not be indexed.
 Disallow: /google_scholar_crawler/
 Disallow: /404.html
-Disallow: /LICENSE
-Disallow: /.gitignore
-Disallow: /.github/
-Disallow: /git-update.sh
-Disallow: /README.md
 
-Sitemap: https://https://www.cs.jhu.edu/~yyliu/sitemap.xml
+Sitemap: https://lyimeng23.github.io/sitemap.xml

@@ -1,0 +1,21 @@
+<section class="section" id="highlights" tabindex="-1">
+  <div class="container">
+    <div class="section__head section__head--split reveal">
+      <div>
+        <p class="eyebrow">Highlights</p>
+        <h2 class="section__title">Recent milestones</h2>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="{{ '/news' | relative_url }}">Full timeline →</a>
+    </div>
+
+    <ul class="hl-list">
+      {% assign recent = site.data.news.main | where: "featured", true | slice: 0, 6 %}
+      {% for entry in recent %}
+      <li class="hl hl--top reveal">
+        <time class="hl__date" datetime="{{ entry.date }}">{{ entry.date }}</time>
+        <p class="hl__text">{{ entry.html }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

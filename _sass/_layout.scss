@@ -1,0 +1,374 @@
+// ============================================================
+// Layout — nav, header, section scaffolding, footer, pages.
+// ============================================================
+
+// ---------- Site nav (sticky) ----------
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba($color-bg, 0.92);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid $color-border;
+}
+
+.site-nav__inner {
+  min-height: $nav-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: $color-text;
+  text-decoration: none;
+  &:hover {
+    color: $color-accent;
+    text-decoration: none;
+  }
+}
+
+.site-nav__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: $color-accent;
+  color: $color-on-accent;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.site-nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav__link {
+  position: relative;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: $color-text;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: $color-accent;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s $ease;
+  }
+  &:hover {
+    color: $color-accent;
+    text-decoration: none;
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.site-nav__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  a {
+    display: inline-flex;
+    color: $color-muted;
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+// Toggle (mobile)
+.site-nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.site-nav__toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: $color-text;
+  border-radius: 2px;
+  transition: transform 0.25s $ease, opacity 0.2s ease;
+}
+
+.site-nav__toggle[aria-expanded="true"] {
+  .site-nav__toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav__toggle-bar:nth-child(2) { opacity: 0; }
+  .site-nav__toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+@media (max-width: $bp-md) {
+  .site-nav__toggle {
+    display: flex;
+  }
+  .site-nav__menu {
+    position: absolute;
+    top: $nav-height;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem $container-pad 1rem;
+    background: $color-bg;
+    border-bottom: 1px solid $color-border;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.25s $ease, opacity 0.25s ease, visibility 0.25s;
+    &.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .site-nav__link {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid $color-border;
+  }
+  .site-nav__social {
+    padding-top: 0.75rem;
+    justify-content: center;
+  }
+}
+
+// ---------- Hero ----------
+.hero {
+  padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba($color-accent, 0.08), transparent 60%),
+    linear-gradient(180deg, $color-bg, $color-bg-alt);
+}
+
+.hero__inner {
+  max-width: 62ch;
+}
+
+.hero__title {
+  font-size: $h1;
+  margin: 0 0 0.35em;
+  letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-weight: 600;
+  color: $color-accent;
+}
+
+.hero__lede {
+  margin: 0 0 2rem;
+  font-size: $text-lg;
+  color: $color-muted;
+  max-width: 52ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+// ---------- Section divider ----------
+.section__divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, $color-border, transparent);
+}
+
+// ---------- Footer ----------
+.site-footer {
+  background: $color-bg-alt;
+  border-top: 1px solid $color-border;
+  padding: 2.5rem 0 3rem;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.site-footer__name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.site-footer__position {
+  margin: 0.25rem 0 0;
+  color: $color-muted;
+  font-size: 0.9375rem;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  a {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+}
+
+.site-footer__updated {
+  width: 100%;
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  color: $color-muted;
+}
+
+// ---------- Sub pages ----------
+.page {
+  padding: clamp(3rem, 6vw, 4.5rem) 0 clamp(4rem, 8vw, 6rem);
+}
+
+.page__head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.page__title {
+  font-size: $h1;
+  margin-bottom: 0.35em;
+}
+
+.page__lede {
+  max-width: 52ch;
+  font-size: $text-lg;
+  color: $color-muted;
+  margin: 0;
+}
+
+.page__h2 {
+  margin-top: 2.5rem;
+  font-size: $h3;
+  font-weight: 700;
+  a {
+    color: $color-text;
+  }
+}
+
+.page__h3 {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+// Activities list
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.activity {
+  padding: 1rem 1.25rem;
+  background: $color-bg-alt;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+}
+
+.activity__link {
+  font-size: 1.0625rem;
+  font-weight: 650;
+}
+
+.activity__role {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+  color: $color-muted;
+}
+
+// ---------- Timeline (news) ----------
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $color-border;
+}
+
+.timeline__date {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $color-accent;
+  padding-top: 0.2rem;
+}
+
+.timeline__content {
+  max-width: 70ch;
+  .badge {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+  .section__head--split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

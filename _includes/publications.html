@@ -1,0 +1,87 @@
+<section class="section section--alt" id="publications" tabindex="-1">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Publications</p>
+      <h2 class="section__title">Peer-reviewed work</h2>
+      <p class="section__lede">
+        Published in ACM MobiCom, ACM SenSys, IEEE INFOCOM, ACM MobiSys, and Bioinspiration &amp;
+        Biomimetics.
+        {% if site.google_scholar %}<a href="{{ site.google_scholar }}" target="_blank" rel="noopener" title="Full profile on Google Scholar">Full profile on Google Scholar →</a>{% endif %}
+      </p>
+    </div>
+
+    {% assign selected = site.data.publications.main | where: "selected", true %}
+    {% assign full = site.data.publications.main | where_exp: "pub", "pub.selected != true" %}
+
+    {% if selected.size > 0 %}
+    <div class="pub-list" role="list">
+      {% for pub in selected %}
+      <article class="pub reveal" role="listitem">
+        <div class="pub__main">
+          <div class="pub__titlebar">
+            <h3 class="pub__title">{{ pub.title }}</h3>
+            <span class="pub__venue">{{ pub.venue_short }}</span>
+          </div>
+          <p class="pub__authors">{{ pub.authors }}</p>
+          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">{{ pub.year }}</span></em></p>
+          <div class="pub__links">
+            {% if pub.pdf %}<a class="pub__link" href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            {% if pub.page %}<a class="pub__link" href="{{ pub.page }}" target="_blank" rel="noopener" title="ACM DOI / project link">Paper</a>{% endif %}
+            {% if pub.code %}<a class="pub__link" href="{{ pub.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            {% if pub.dataset %}<a class="pub__link" href="{{ pub.dataset }}" target="_blank" rel="noopener">Dataset</a>{% endif %}
+            {% if pub.slides %}<a class="pub__link" href="{{ pub.slides }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+            {% if pub.bibtex %}<a class="pub__link" href="{{ pub.bibtex }}" target="_blank" rel="noopener">BibTeX</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p class="section__divider reveal">All publications</p>
+
+    <div class="pub-list" role="list">
+      {% for pub in full %}
+      <article class="pub pub--full publishable reveal" role="listitem">
+        <div class="pub__main">
+          <div class="pub__titlebar">
+            <h3 class="pub__title">{{ pub.title }}</h3>
+            <span class="pub__venue">{{ pub.venue_short }}</span>
+          </div>
+          <p class="pub__authors">{{ pub.authors }}</p>
+          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">{{ pub.year }}</span></em></p>
+          <div class="pub__links">
+            {% if pub.pdf %}<a class="pub__link" href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            {% if pub.page %}<a class="pub__link" href="{{ pub.page }}" target="_blank" rel="noopener" title="ACM DOI / project link">Paper</a>{% endif %}
+            {% if pub.code %}<a class="pub__link" href="{{ pub.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            {% if pub.slides %}<a class="pub__link" href="{{ pub.slides }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+            {% if pub.bibtex %}<a class="pub__link" href="{{ pub.bibtex }}" target="_blank" rel="noopener">BibTeX</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="pub-list" role="list">
+      {% for pub in site.data.publications.main %}
+      <article class="pub reveal" role="listitem">
+        <div class="pub__main">
+          <div class="pub__titlebar">
+            <h3 class="pub__title">{{ pub.title }}</h3>
+            <span class="pub__venue">{{ pub.venue_short }}</span>
+          </div>
+          <p class="pub__authors">{{ pub.authors }}</p>
+          <p class="pub__periodical"><em>{{ pub.venue }}<span class="pub__year">{{ pub.year }}</span></em></p>
+          <div class="pub__links">
+            {% if pub.pdf %}<a class="pub__link" href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            {% if pub.page %}<a class="pub__link" href="{{ pub.page }}" target="_blank" rel="noopener" title="ACM DOI / project link">Paper</a>{% endif %}
+            {% if pub.code %}<a class="pub__link" href="{{ pub.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            {% if pub.slides %}<a class="pub__link" href="{{ pub.slides }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+            {% if pub.bibtex %}<a class="pub__link" href="{{ pub.bibtex }}" target="_blank" rel="noopener">BibTeX</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>

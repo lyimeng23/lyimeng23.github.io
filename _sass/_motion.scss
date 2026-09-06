@@ -1,0 +1,45 @@
+// ============================================================
+// Motion — reveal-on-scroll with strict reduced-motion handling.
+// ============================================================
+
+// Elements start hidden ONLY when JS adds the .js class (no-JS = fully visible).
+.js .reveal {
+  opacity: 0;
+  transform: translateY($reveal-y);
+  transition: opacity $dur $ease, transform $dur $ease;
+  will-change: opacity, transform;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Staggered reveal inside the vision chain.
+.js .vision {
+  .vision__step { transition-delay: 0ms; }
+  .vision__step:nth-child(3n+2) { transition-delay: 90ms; }
+  .vision__step:nth-child(3n+3) { transition-delay: 180ms; }
+  .vision__arrow { transition-delay: 45ms; }
+}
+
+// Always honor reduced motion: no transform, no delay, appear instantly.
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal,
+  .js .vision .vision__step,
+  .js .vision .vision__arrow {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

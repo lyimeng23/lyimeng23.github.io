@@ -1,0 +1,38 @@
+<section class="section section--alt" id="research-vision" tabindex="-1">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Research Vision</p>
+      <h2 class="section__title">Physical AI for the Real World</h2>
+      <p class="section__lede">
+        One agenda links my work: build agents that go from raw physical signals to
+        grounded, safe action. The chain below is the arc my research follows — and
+        traces the trajectory my published work is building.
+      </p>
+    </div>
+
+    <ol class="vision" aria-label="Research pipeline: Sense, Model, Reason, Act">
+      {% for step in site.data.vision.main %}
+      <li class="vision__step reveal" style="--i: {{ forloop.index0 }}">
+        <div class="vision__node">
+          <span class="vision__key" aria-hidden="true">{{ step.key }}</span>
+          <span class="visually-hidden">{{ step.aria }}</span>
+          <h3 class="vision__title">{{ step.title }}</h3>
+          <p class="vision__blurb">{{ step.blurb }}</p>
+        </div>
+      </li>
+      {% unless forloop.last %}
+      <li class="vision__arrow reveal" aria-hidden="true" style="--i: {{ forloop.index0 }}">
+        <svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </li>
+      {% endunless %}
+      {% endfor %}
+    </ol>
+
+    <p class="vision__note reveal">
+      The published core of my work anchors the <strong>Sense → Model</strong> half of this
+      agenda — multi-modal mmWave/RF perception and physics-informed reconstruction.
+      <strong>Reason</strong> and <strong>Act</strong> are where my current work is headed:
+      LLM-grounded cognition for driving, and closed-loop agricultural systems.
+    </p>
+  </div>
+</section>

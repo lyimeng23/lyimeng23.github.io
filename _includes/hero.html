@@ -1,0 +1,25 @@
+<section class="hero">
+  <div class="container">
+    <header class="hero__inner">
+      <p class="eyebrow">Yimeng Liu</p>
+      <h1 class="hero__title">
+        I build intelligent systems that perceive, model, reason about, and act in the physical world.
+      </h1>
+      <p class="hero__subtitle">
+        {{ site.position }}, Computer Science &amp; Engineering · {{ site.affiliation }}
+      </p>
+      <p class="hero__lede">
+        My research sits at the intersection of <strong>Physical AI</strong>, wireless
+        perception, and machine learning — turning raw multi-modal sensing into robust
+        world models that drive safe, real-world decisions.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#research-vision">Research</a>
+        <a class="btn btn--ghost" href="#featured-research">Projects</a>
+        <a class="btn btn--ghost" href="#publications">Publications</a>
+        <a class="btn btn--ghost" href="#about">About</a>
+        {% if site.cv_link %}<a class="btn btn--ghost" href="{{ site.cv_link }}" target="_blank" rel="noopener">CV</a>{% endif %}
+      </div>
+    </header>
+  </div>
+</section>

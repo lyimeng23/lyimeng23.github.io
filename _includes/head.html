@@ -1,0 +1,50 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+{% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: ', ' }}" />
+{% elsif site.keywords %}<meta name="keywords" content="{{ site.keywords | join: ', ' }}" />
+{% endif %}
+<meta name="author" content="{{ site.title }}" />
+<meta name="theme-color" content="#18453B" />
+<link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index.html' }}" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url | remove: 'index.html' }}" />
+<meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
+<meta property="og:locale" content="{{ site.locale }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="{{ site.favicon }}" />
+<link rel="apple-touch-icon" href="{{ site.favicon }}" />
+
+<!-- Structured data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.url }}{{ site.avatar }}",
+  "jobTitle": "{{ site.position }}",
+  "affiliation": { "@type": "Organization", "name": "{{ site.affiliation }}" },
+  "sameAs": [
+    {% if site.google_scholar %}"{{ site.google_scholar }}"{% endif %}
+    {% if site.github and site.google_scholar %},{% endif %}
+    {% if site.github %}"{{ site.github }}"{% endif %}
+    {% if site.linkedin and site.github %},{% endif %}
+    {% if site.linkedin %}"{{ site.linkedin }}"{% endif %}
+    {% if site.orcid and site.orcid != "" %}, "{{ site.orcid }}"{% endif %}
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
