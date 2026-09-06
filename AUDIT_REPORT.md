@@ -276,6 +276,7 @@ Please answer these (especially 1, 2, 3, 4) and I'll proceed into Phase 2 implem
 | Motion | partial jquery effects | CSS reveal (IntersectionObserver), `prefers-reduced-motion` honored, no-reflow |
 | Accessibility | unknown | Lighthouse **100**, skip-link, focus-visible, aria labels, contrast tokens |
 | Performance | CDN-heavy template | Lighthouse **95** (P95, small budget), best-practices **100**, SEO **100**, CLS=0 |
+| Image optimization |—— | All 19 raster images converted to WebP (`sharp`, q80) — 5 MB → 1.6 MB (−61%); favicon → 64px WebP (824 B); `loading="lazy"` + `width/height` preserve aspect-ratio (CLS 0). Lighthouse after WebP: **100/100/100/100**, LCP 2.4 s → 0.9 s, Speed Index 4.7 s → 0.9 s. Original PNG/JPG deleted; `assets/mpii_files/` (jhu template residue: mpii.jpg, mpi-inf.css, print.css) removed; unused `image:` fields dropped from conferences.yml. |
 
 ### Content / data
 | Aspect | Before | After |

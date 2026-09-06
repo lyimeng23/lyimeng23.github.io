@@ -35,6 +35,7 @@ ALL PHASES COMPLETE — deployed live at https://lyimeng23.github.io/
 - [x] Publication data consistency (publications.yml normalized; featured flags verified on page)
 - [x] SEO / canonical / CNAME (canonical lyimeng23.github.io; CNAME removed; sitemap.xml canonical; robots.txt clean; verification metas restored)
 - [x] Lighthouse — 95 perf / 100 a11y / 100 best-practices / 100 SEO, CLS=0 (lh.json in shots-work)
+- [x] Lighthouse after WebP — **100 / 100 / 100 / 100**, LCP 2.4s→0.9s, SI 4.7s→0.9s (lh-webp2.json in shots-work)
 - [x] Delete confirmed-unused historical code and backups (js/, contact/, ori/copy, legacy includes/data)
 - [x] Before/after comparison + rationale (AUDIT_REPORT.md §K)
 - **Status:** complete

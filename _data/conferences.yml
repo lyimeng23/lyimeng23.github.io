@@ -2,14 +2,11 @@ main:
   - title: NSF Workshop on Sustainable Computing @ Purdue University
     role: Participant
     web: https://nsf-desc-2024.github.io/
-    image: /assets/img/NSFSC.webp
 
   - title: "ACM MobiCom 2024 — Washington, D.C."
     role: Presented Hydra
     web: https://www.sigmobile.org/mobicom/2024/index.html
-    image: /assets/img/mobicom24.webp
 
   - title: "ACM SenSys 2025 — Irvine, CA"
     role: Presented Proteus
     web: https://sensys.acm.org/2025/
-    image: /assets/img/sensys25.webp
