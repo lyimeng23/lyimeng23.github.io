@@ -302,6 +302,172 @@
   .vision-stage__visual figcaption { font-size: 0.68rem; }
 }
 
+// ---------- Spatial Intelligence scene (one world, progressive state) ----------
+.spatial-definition {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
+  gap: 0.75rem 2rem;
+  margin: 2.5rem 0 4rem;
+  padding: 1.25rem 0 1.25rem 1.25rem;
+  border-left: 2px solid $color-accent;
+}
+
+.spatial-definition__label {
+  margin: 0;
+  color: $color-accent;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spatial-definition__text {
+  max-width: 70ch;
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.spatial-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(270px, 0.78fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: start;
+}
+
+.spatial-scene {
+  position: sticky;
+  top: calc(#{$nav-height} + 1.25rem);
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #102b2b;
+  border-radius: $radius;
+  box-shadow: 0 18px 50px rgba(#102b2b, 0.15);
+}
+
+.spatial-scene__context {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+}
+
+.spatial-scene__context img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.6) contrast(1.1);
+}
+
+.spatial-scene__svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+}
+
+.scene-layer { transition: opacity 420ms $ease, transform 420ms $ease; }
+.scene-layer--base { opacity: 1; }
+.scene-layer:not(.scene-layer--base) { opacity: 0; transform: translateY(5px); }
+.no-js .scene-layer:not(.scene-layer--base),
+html:not(.js) .scene-layer:not(.scene-layer--base) { opacity: 0.92; transform: none; }
+.js .spatial-scene[data-active-stage="world"] .scene-layer--perceive,
+.js .spatial-scene[data-active-stage="world"] .scene-layer--represent,
+.js .spatial-scene[data-active-stage="world"] .scene-layer--model,
+.js .spatial-scene[data-active-stage="world"] .scene-layer--reason,
+.js .spatial-scene[data-active-stage="world"] .scene-layer--act { opacity: 0; }
+.js .spatial-scene[data-active-stage="perceive"] .scene-layer--perceive,
+.js .spatial-scene[data-active-stage="represent"] .scene-layer--represent,
+.js .spatial-scene[data-active-stage="model"] .scene-layer--model,
+.js .spatial-scene[data-active-stage="reason"] .scene-layer--reason,
+.js .spatial-scene[data-active-stage="act"] .scene-layer--act { opacity: 1; transform: translateY(0); }
+
+.scene-sky { fill: #234e54; }
+.scene-horizon { fill: #35635c; opacity: 0.92; }
+.scene-road { fill: #26393b; }
+.scene-crossroad { fill: none; stroke: rgba(#f7f1dd, 0.32); stroke-width: 25; }
+.scene-lane { fill: none; stroke: rgba(#f7f1dd, 0.7); stroke-width: 4; stroke-dasharray: 20 18; }
+.scene-lane--cross { stroke-width: 3; stroke-dasharray: 12 14; opacity: 0.8; }
+.scene-tree { fill: #1d4c40; stroke: #173a35; stroke-width: 7; }
+.scene-tree path { fill: none; stroke-width: 9; }
+.scene-light path { fill: none; stroke: #e4dfcc; stroke-width: 6; }
+.scene-light rect { fill: #172527; stroke: #e4dfcc; stroke-width: 4; }
+.scene-light circle { stroke: rgba(#f7f1dd, 0.4); stroke-width: 3; }
+.light-red { fill: #dc765d; }
+.light-yellow { fill: #dfb85c; opacity: 0.55; }
+.light-green { fill: #71ab7b; opacity: 0.4; }
+.scene-car { stroke: #f7f1dd; stroke-width: 4; }
+.scene-car--other { fill: #ae7650; }
+.scene-car--ego { fill: $color-accent; stroke-width: 5; }
+.scene-car circle { fill: #182527; stroke: #f7f1dd; stroke-width: 3; }
+.scene-pedestrian { fill: none; stroke: #f7f1dd; stroke-width: 7; stroke-linecap: round; }
+.scene-label { fill: #f7f1dd; font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-anchor: middle; }
+.scene-label--ego { fill: #f4c66f; }
+.sensor-ray, .sensor-arc { fill: none; stroke: #f4c66f; stroke-width: 3; stroke-dasharray: 9 9; opacity: 0.92; }
+.sensor-ray--rf { stroke: #9ed5ca; stroke-dasharray: 2 10; stroke-width: 5; }
+.sensor-dot { fill: #f4c66f; stroke: #fff5d6; stroke-width: 3; }
+.scene-badge rect, .action-badge rect { fill: #f4c66f; }
+.scene-badge text, .action-badge text, .time-pill text { fill: #102b2b; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-anchor: middle; }
+.bbox { fill: rgba(#f4c66f, 0.08); stroke: #f4c66f; stroke-width: 3; stroke-dasharray: 8 5; }
+.bbox--car { stroke: #9ed5ca; }
+.bbox--light { stroke: #e8e0c7; }
+.relation-line { fill: none; stroke: #f4c66f; stroke-width: 3; marker-end: url(#none); }
+.relation-line--risk { stroke: #de8262; stroke-dasharray: 7 5; }
+.relation-tag rect { fill: #102b2b; stroke: #f4c66f; stroke-width: 2; }
+.relation-tag text { fill: #f7f1dd; font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-anchor: middle; }
+.relation-tag--approach rect { stroke: #9ed5ca; }
+.history-line { fill: none; stroke: #9ed5ca; stroke-width: 5; stroke-linecap: round; opacity: 0.85; }
+.history-line--car { stroke: #f4c66f; }
+.time-pill rect { fill: #f7f1dd; }
+.time-mark circle { fill: #9ed5ca; stroke: #102b2b; stroke-width: 3; }
+.time-mark text { fill: #f7f1dd; font-size: 12px; font-weight: 800; }
+.prediction-cone { fill: rgba(#f4c66f, 0.15); stroke: rgba(#f4c66f, 0.7); stroke-width: 2; stroke-dasharray: 8 6; }
+.prediction-line, .risk-link { fill: none; stroke: #f4c66f; stroke-width: 4; stroke-dasharray: 12 8; }
+.risk-link { stroke: #de8262; stroke-width: 3; }
+.risk-ring { fill: rgba(#de8262, 0.14); stroke: #de8262; stroke-width: 4; }
+.uncertainty-label, .risk-label { fill: #f7f1dd; font-size: 12px; font-weight: 700; letter-spacing: 0.8px; }
+.risk-label { fill: #f2b5a1; }
+.action-route { fill: none; stroke: #9ed5ca; stroke-width: 6; stroke-linecap: round; }
+.action-arrow { fill: none; stroke: #9ed5ca; stroke-width: 6; stroke-linecap: round; }
+.action-choice rect { fill: #f4c66f; }
+.action-choice text { fill: #102b2b; font-size: 13px; font-weight: 800; letter-spacing: 1.4px; text-anchor: middle; }
+.scene-layer-caption { fill: #f7f1dd; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; }
+.spatial-scene__caption { display: flex; justify-content: space-between; gap: 1rem; padding: 0.85rem 1rem 1rem; color: #f7f1dd; font-size: 0.75rem; letter-spacing: 0.04em; }
+.spatial-scene__caption strong { color: #f4c66f; }
+
+.spatial-story__steps { list-style: none; margin: 0; padding: 0.5rem 0; }
+.spatial-story__step { margin: 0; padding: 0; border-top: 1px solid $color-border; }
+.spatial-story__button { display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: 0.9rem; width: 100%; padding: 1.35rem 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.spatial-story__button:focus-visible { outline: 3px solid $color-accent; outline-offset: 4px; }
+.spatial-story__number { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border: 1px solid $color-border; border-radius: 50%; color: $color-muted; font-size: 0.75rem; font-weight: 800; }
+.spatial-story__step.is-active .spatial-story__number { border-color: $color-accent; background: $color-accent; color: $color-on-accent; }
+.spatial-story__copy { display: grid; gap: 0.35rem; min-width: 0; }
+.spatial-story__label { color: $color-accent; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.spatial-story__copy strong { font-size: clamp(1.08rem, 1.8vw, 1.28rem); line-height: 1.25; }
+.spatial-story__summary { color: $color-muted; font-size: 0.94rem; line-height: 1.5; }
+.spatial-story__fallback { margin: 1.25rem 0 0; color: $color-muted; font-size: 0.8rem; }
+
+@media (max-width: $bp-md) {
+  .spatial-story { grid-template-columns: 1fr; gap: 1.5rem; }
+  .spatial-scene { position: relative; top: auto; }
+  .spatial-story__steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; }
+}
+
+@media (max-width: $bp-sm) {
+  .spatial-definition { grid-template-columns: 1fr; gap: 0.65rem; margin-bottom: 2.5rem; }
+  .spatial-story__steps { display: block; }
+  .spatial-scene__svg { min-height: 0; }
+  .spatial-scene__caption { display: block; line-height: 1.5; }
+  .spatial-scene__caption span { display: block; margin-top: 0.2rem; }
+  .scene-label { font-size: 10px; }
+  .scene-layer-caption { font-size: 11px; }
+}
+
 // ---------- Featured research (editorial evidence) ----------
 .feature-grid {
   display: grid;

@@ -2,114 +2,110 @@
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Research Vision</p>
-      <h2 class="section__title">One physical space. Five levels of understanding.</h2>
+      <h2 class="section__title">From observation to grounded action.</h2>
       <p class="section__lede">
-        Today's foundation models are strong on static vision and language, but stable
-        understanding of continuously changing, partially observable, multi-entity real
-        environments — maintaining spatial state over time, respecting physical constraints,
-        predicting, and acting grounded in that state — remains hard.
+        The physical world is only partially observed. Spatial Intelligence asks how AI can
+        maintain a useful account of a changing space—not just detect what is visible once,
+        but understand where entities are, how they relate, what may happen next, and how to act.
       </p>
     </div>
 
-    <div class="vision__definition reveal">
-      <p class="vision__definition-label">Spatial Intelligence, operationally</p>
-      <p class="vision__definition-text">
-        Start with incomplete multimodal observations. Build a persistent account of what is
-        where and how it relates. Keep that account current as the world changes, then use it
-        to reason, predict, and support safe action.
+    <div class="spatial-definition reveal">
+      <p class="spatial-definition__label">Spatial Intelligence, operationally</p>
+      <p class="spatial-definition__text">
+        Building Spatial Intelligence for the Physical World: enabling AI to move from incomplete
+        multimodal observations to persistent representations of dynamic physical spaces, reason
+        about how entities relate and evolve, predict what happens next, and support grounded action.
       </p>
-      <div class="vision__legend" aria-label="Evidence maturity">
-        <span class="vision__legend-item vision__legend-item--foundation"><i aria-hidden="true"></i>Published foundations</span>
-        <span class="vision__legend-item vision__legend-item--current"><i aria-hidden="true"></i>Current research</span>
-        <span class="vision__legend-item vision__legend-item--future"><i aria-hidden="true"></i>Future agenda</span>
-      </div>
     </div>
 
-    <ol class="vision" aria-label="From multimodal perception to embodied intelligence">
-      {% for step in site.data.vision.main %}
-      <li class="vision__step vision__step--{{ step.status }} reveal" style="--i: {{ forloop.index0 }}">
-        <div class="vision-stage {% if forloop.index == 2 or forloop.index == 4 %}vision-stage--reverse{% endif %}">
-          <figure class="vision-stage__visual">
-            <div class="vision-visual__frame">
-              <img src="{{ step.image | relative_url }}" alt="{{ step.image_alt }}" width="{{ step.image_width }}" height="{{ step.image_height }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" decoding="async" />
-              <div class="vision-visual__veil" aria-hidden="true"></div>
-
-              {% case step.visual %}
-              {% when 'sensors' %}
-              <div class="vision-graphic vision-graphic--sensors" aria-hidden="true">
-                <span class="vision-signal vision-signal--vision">RGB / vision</span>
-                <span class="vision-signal vision-signal--rf">mmWave / RF</span>
-                <span class="vision-signal vision-signal--state">same physical state</span>
-                <span class="vision-signal-dot vision-signal-dot--one"></span>
-                <span class="vision-signal-dot vision-signal-dot--two"></span>
-              </div>
-              {% when 'relations' %}
-              <div class="vision-graphic vision-graphic--relations" aria-hidden="true">
-                <svg viewBox="0 0 360 220" role="presentation">
-                  <path d="M76 72 L178 48 L277 91 L231 170 L112 164 Z" />
-                  <path d="M76 72 L112 164 M178 48 L231 170 M277 91 L112 164" />
-                </svg>
-                <span class="vision-node vision-node--source">vision</span>
-                <span class="vision-node vision-node--target">RF</span>
-                <span class="vision-node vision-node--relation">shared state</span>
-              </div>
-              {% when 'state' %}
-              <div class="vision-graphic vision-graphic--state" aria-hidden="true">
-                <div class="vision-state-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="vision-state-track"><span></span><span></span><span></span></div>
-                <span class="vision-state-label">persistent spatial state</span>
-              </div>
-              {% when 'prediction' %}
-              <div class="vision-graphic vision-graphic--prediction" aria-hidden="true">
-                <svg viewBox="0 0 420 220" role="presentation">
-                  <path class="vision-road" d="M8 194 C118 176 140 110 232 112 S342 157 412 26" />
-                  <path class="vision-predicted" d="M232 112 C299 102 347 83 412 26" />
-                </svg>
-                <span class="vision-time vision-time--now">t₀</span>
-                <span class="vision-time vision-time--next">t₊₁</span>
-                <span class="vision-time vision-time--future">prediction</span>
-              </div>
-              {% when 'action' %}
-              <div class="vision-graphic vision-graphic--action" aria-hidden="true">
-                <svg viewBox="0 0 420 220" role="presentation">
-                  <path d="M32 178 C125 170 135 91 218 106 S306 157 388 50" />
-                  <path class="vision-action-arrow" d="M322 60 L388 50 L365 96" />
-                </svg>
-                <span class="vision-action-label">observe → decide → act</span>
-                <span class="vision-action-chip">safe response</span>
-              </div>
-              {% endcase %}
-            </div>
-            <figcaption><strong>{{ step.title }}</strong><span>{{ step.visual | capitalize }} layer</span></figcaption>
-          </figure>
-
-          <div class="vision-stage__copy">
-            <div class="vision-stage__topline">
-              <span class="vision__num" aria-hidden="true">{{ step.key }}</span>
-              <span class="vision__stage-label">{% if step.status == 'foundation' %}Published foundation{% elsif step.status == 'current' %}Current research{% else %}Future agenda{% endif %}</span>
-            </div>
-            <p class="vision__question">{{ step.question }}</p>
-            <h3 class="vision__title">{{ step.title }}</h3>
-            <p class="vision__blurb">{{ step.blurb }}</p>
-            <p class="vision__evidence"><strong>Evidence / direction</strong> {{ step.evidence }}</p>
-          </div>
+    <div class="spatial-story" data-spatial-story>
+      <figure class="spatial-scene" id="spatial-scene" data-spatial-scene>
+        <div class="spatial-scene__context" aria-hidden="true">
+          <img src="{{ '/project/senior-driving/images/driving_bg.webp' | relative_url }}" alt="" loading="lazy" decoding="async" />
         </div>
-        {% unless forloop.last %}<div class="vision__connector" aria-hidden="true"><span></span></div>{% endunless %}
-      </li>
-      {% endfor %}
-    </ol>
+        <svg class="spatial-scene__svg" viewBox="0 0 900 560" role="img" aria-labelledby="spatial-scene-title spatial-scene-desc">
+          <title id="spatial-scene-title">One physical space becoming a spatially intelligent scene</title>
+          <desc id="spatial-scene-desc">A road intersection with an ego vehicle, a pedestrian, another vehicle, a traffic light, and surrounding objects. Overlays progressively show sensing, representation, temporal state, prediction, and action.</desc>
 
-    <div class="vision__forward reveal">
-      <div>
-        <p class="eyebrow">Future research agenda</p>
-        <h3>Make the world model persistent, predictive, and actionable.</h3>
-      </div>
-      <p class="vision__forward-text">
-        From isolated sensing → persistent spatial state → dynamic world models → spatial
-        reasoning and prediction → embodied decision and action. Over the next five to ten
-        years, this agenda asks how AI can know <em>what is where</em>, <em>how things relate</em>,
-        <em>what is changing</em>, and <em>what will happen next</em> — then act on that understanding safely.
-      </p>
+          <g class="scene-layer scene-layer--base">
+            <rect class="scene-sky" x="0" y="0" width="900" height="360" />
+            <path class="scene-horizon" d="M0 284 C115 240 214 266 322 236 S548 265 670 226 S805 246 900 215 L900 374 L0 374 Z" />
+            <path class="scene-road" d="M0 374 L900 374 L900 560 L0 560 Z" />
+            <path class="scene-crossroad" d="M0 430 L900 430" />
+            <path class="scene-lane" d="M82 560 L344 374 M820 560 L548 374" />
+            <path class="scene-lane scene-lane--cross" d="M0 482 L900 482" />
+            <g class="scene-tree scene-tree--left"><path d="M92 332 L92 248" /><circle cx="92" cy="230" r="42" /><circle cx="57" cy="252" r="30" /><circle cx="126" cy="256" r="31" /></g>
+            <g class="scene-tree scene-tree--right"><path d="M800 334 L800 252" /><circle cx="800" cy="232" r="43" /><circle cx="765" cy="252" r="29" /><circle cx="835" cy="258" r="30" /></g>
+            <g class="scene-light"><path d="M706 362 L706 132" /><rect x="681" y="124" width="50" height="112" rx="8" /><circle class="light-red" cx="706" cy="151" r="10" /><circle class="light-yellow" cx="706" cy="180" r="10" /><circle class="light-green" cx="706" cy="209" r="10" /></g>
+            <g class="scene-car scene-car--other"><rect x="574" y="284" width="92" height="42" rx="10" /><path d="M595 284 L614 263 L646 263 L657 284" /><circle cx="597" cy="328" r="10" /><circle cx="642" cy="328" r="10" /></g>
+            <g class="scene-pedestrian"><circle cx="455" cy="280" r="10" /><path d="M455 292 L455 326 M455 302 L437 314 M455 302 L474 314 M455 326 L441 351 M455 326 L470 350" /></g>
+            <g class="scene-car scene-car--ego"><rect x="389" y="430" width="122" height="62" rx="14" /><path d="M409 430 L430 399 L470 399 L492 430" /><circle cx="416" cy="495" r="13" /><circle cx="484" cy="495" r="13" /></g>
+            <text class="scene-label scene-label--ego" x="450" y="535">EGO VEHICLE</text>
+            <text class="scene-label" x="455" y="368">PEDESTRIAN</text>
+            <text class="scene-label" x="620" y="350">OTHER VEHICLE</text>
+            <text class="scene-label" x="742" y="116">TRAFFIC LIGHT</text>
+          </g>
+
+          <g class="scene-layer scene-layer--perceive" data-scene-layer="perceive">
+            <path class="sensor-ray sensor-ray--camera" d="M450 424 L455 280 M450 424 L620 305 M450 424 L706 191" />
+            <path class="sensor-ray sensor-ray--rf" d="M448 425 Q450 300 455 280 M448 425 Q540 330 620 305" />
+            <path class="sensor-arc" d="M310 416 Q450 278 590 416" />
+            <circle class="sensor-dot" cx="455" cy="280" r="7" /><circle class="sensor-dot" cx="620" cy="305" r="7" /><circle class="sensor-dot" cx="706" cy="191" r="7" />
+            <g class="scene-badge scene-badge--camera"><rect x="78" y="62" width="160" height="34" rx="17" /><text x="158" y="84">CAMERA OBSERVATION</text></g>
+            <g class="scene-badge scene-badge--rf"><rect x="661" y="390" width="150" height="34" rx="17" /><text x="736" y="412">mmWAVE / RF</text></g>
+            <text class="scene-layer-caption" x="52" y="520">incomplete multimodal observations</text>
+          </g>
+
+          <g class="scene-layer scene-layer--represent" data-scene-layer="represent">
+            <rect class="bbox bbox--ped" x="423" y="255" width="64" height="105" rx="4" /><rect class="bbox bbox--car" x="562" y="250" width="119" height="91" rx="4" /><rect class="bbox bbox--light" x="675" y="112" width="63" height="132" rx="4" />
+            <path class="relation-line" d="M455 360 Q500 382 450 424" /><path class="relation-line relation-line--risk" d="M487 306 Q544 287 562 292" />
+            <g class="scene-badge scene-badge--state"><rect x="54" y="64" width="204" height="34" rx="17" /><text x="156" y="86">OBJECTS + RELATIONS</text></g>
+            <g class="relation-tag relation-tag--cross"><rect x="277" y="355" width="122" height="28" rx="14" /><text x="338" y="373">CROSSING</text></g>
+            <g class="relation-tag relation-tag--approach"><rect x="530" y="210" width="136" height="28" rx="14" /><text x="598" y="228">APPROACHING</text></g>
+            <text class="scene-layer-caption" x="52" y="520">position · identity · trajectory · relation</text>
+          </g>
+
+          <g class="scene-layer scene-layer--model" data-scene-layer="model">
+            <path class="history-line" d="M450 424 C448 397 452 373 455 350 C457 326 456 303 455 280" />
+            <path class="history-line history-line--car" d="M450 424 C490 387 540 350 579 326 C597 316 610 310 620 305" />
+            <g class="time-pill"><rect x="280" y="104" width="210" height="38" rx="19" /><text x="385" y="129">PERSISTENT SPATIAL STATE</text></g>
+            <g class="time-mark"><circle cx="392" cy="386" r="6" /><text x="379" y="409">t0</text><circle cx="414" cy="350" r="6" /><text x="401" y="373">t1</text><circle cx="438" cy="315" r="6" /><text x="425" y="338">t2</text><circle cx="455" cy="280" r="6" /><text x="442" y="263">t3</text></g>
+            <text class="scene-layer-caption" x="52" y="520">same entities · changing state · time</text>
+          </g>
+
+          <g class="scene-layer scene-layer--reason" data-scene-layer="reason">
+            <path class="prediction-cone" d="M455 280 L374 154 L544 154 Z" />
+            <path class="prediction-line" d="M455 280 C472 239 494 202 526 170" />
+            <circle class="risk-ring" cx="524" cy="168" r="28" /><path class="risk-link" d="M487 306 Q514 260 524 168" />
+            <g class="scene-badge scene-badge--predict"><rect x="54" y="64" width="190" height="34" rx="17" /><text x="149" y="86">PREDICTED FUTURE</text></g>
+            <text class="uncertainty-label" x="532" y="140">uncertainty</text><text class="risk-label" x="548" y="176">risk relation</text>
+            <text class="scene-layer-caption" x="52" y="520">possible future · interaction · uncertainty</text>
+          </g>
+
+          <g class="scene-layer scene-layer--act" data-scene-layer="act">
+            <path class="action-route" d="M450 424 C450 385 455 334 455 280 C455 234 482 190 526 170" />
+            <path class="action-arrow" d="M526 170 L510 188 M526 170 L501 174" />
+            <g class="action-badge"><rect x="54" y="64" width="190" height="36" rx="18" /><text x="149" y="87">GROUNDED ACTION</text></g>
+            <g class="action-choice action-choice--primary"><rect x="630" y="386" width="176" height="42" rx="21" /><text x="718" y="412">SLOW DOWN</text></g>
+            <text class="scene-layer-caption" x="52" y="520">observe more · slow down · re-plan</text>
+          </g>
+        </svg>
+        <figcaption class="spatial-scene__caption"><strong>One physical space</strong><span>the representation becomes richer as the question changes</span></figcaption>
+      </figure>
+
+      <ol class="spatial-story__steps" aria-label="Spatial Intelligence progression">
+        {% for step in site.data.spatial_story.main %}
+        <li class="spatial-story__step reveal{% if forloop.first %} is-active{% endif %}" data-spatial-step="{{ step.layer }}" style="--i: {{ forloop.index0 }}">
+          <button class="spatial-story__button" type="button" aria-controls="spatial-scene" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">
+            <span class="spatial-story__number">{{ step.key }}</span>
+            <span class="spatial-story__copy"><span class="spatial-story__label">{{ step.label }}</span><strong>{{ step.question }}</strong><span class="spatial-story__summary">{{ step.summary }}</span></span>
+          </button>
+        </li>
+        {% endfor %}
+      </ol>
     </div>
+
+    <p class="spatial-story__fallback">The scene is also described in the six steps above, so the research progression remains readable without motion or JavaScript.</p>
   </div>
 </section>
