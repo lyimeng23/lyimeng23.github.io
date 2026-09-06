@@ -178,12 +178,14 @@
 
 .hero__grid {
   display: grid;
-  gap: 2.5rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: start;
 
   @media (min-width: $bp-md) {
-    grid-template-columns: 1fr minmax(0, 300px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
     gap: 3rem;
+    align-items: center;
   }
 }
 
@@ -193,17 +195,15 @@
 
 .hero__media {
   margin: 0;
-  order: -1; // portrait before text on mobile
 
   @media (min-width: $bp-md) {
-    order: 0;
     justify-self: end;
   }
 }
 
 .hero__portrait {
   display: block;
-  width: min(200px, 60vw);
+  width: min(120px, 32vw);
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: $radius;
