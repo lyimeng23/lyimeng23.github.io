@@ -3,13 +3,27 @@
 Personal academic site for **Yimeng Liu** — Ph.D. candidate in Computer Science and
 Engineering at Michigan State University.
 
-The site is organised around an intellectual thesis rather than around a paper list:
+**The site is organised around the person, not around a thesis and not around a paper list.**
+Five threads carry it, and every section is one of them:
 
-> **Spatial Intelligence** — from incomplete observation to grounded action.
+| Thread | Section | Question it answers |
+|---|---|---|
+| Who I am | Hero | Yimeng Liu — name, portrait, minimal identity, first-person statement |
+| What I work on | The chain (instrument) | The problem I keep coming back to |
+| What I think | Beliefs | What my own systems forced me to conclude |
+| What I have built | Research System → Selected work | The work, as evidence rather than as bibliography |
+| Where this goes | Roadmap | Three questions, honestly labelled in progress / early / open |
 
-Everything on the homepage is an instance of that thesis: sensing that survives the loss of a
-modality, representation that survives the loss of a frame, and a chain that runs from what is
-observed to what is done.
+`Spatial Intelligence` is kept as the memorable label for the field, but it sits *with* the
+person as a quiet eyebrow rather than replacing them as the headline. The thesis is what the
+work adds up to, not what the page is about.
+
+### Disclosure boundary
+
+`docs/DISCLOSURE.md` records what may and may not appear publicly. In short: camera-ready work
+is public; **SPIRIT, Mímir and Snotra are ICLR '27 submissions under double-blind review and
+must never be named or described**; the research questions they answer are public because a
+question is agenda, not result. `docs/` is excluded from the Jekyll build.
 
 ## Structure
 
@@ -17,7 +31,9 @@ observed to what is done.
 |---|---|
 | `index.md` | Homepage entry point (layout: `homepage`) |
 | `_data/agenda.yml` | **Single source of truth** for the six-stage chain — used by the hero, the instrument and the step list |
-| `_data/thesis.yml` | Hero statement, footer signature, and the three working beliefs |
+| `_data/thesis.yml` | Hero standfirst (first person), field label, and the three convictions |
+| `_data/roadmap.yml` | The three research questions, their capability, and their honest status |
+| `_includes/roadmap.html` | "Where this goes" — the forward-looking section |
 | `_data/system.yml` | The Research System: five capability layers with honest maturity and evidence |
 | `_data/work.yml` | Selected Work, one entry per project (Problem / Insight / Built / Evidence / Why) |
 | `_data/ideas.yml` | Open questions and standing notes — explicitly *not* results |

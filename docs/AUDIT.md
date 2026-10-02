@@ -91,3 +91,55 @@ so it could not be re-run at the end. Core Web Vitals were measured directly wit
 `PerformanceObserver` under a 4× CPU throttle and Slow 4G network emulation, and accessibility was
 measured with axe-core 4.10.2 over the full scroll of every page. An earlier Lighthouse run on this
 build scored 100/100/100/100 (desktop) and 97/100/100/100 (mobile).
+
+## Second-pass correction — the page was about the thesis, not the person
+
+Self-review after the first deploy found a structural fault, not a cosmetic one. The objective
+specifies a hero of *name + thesis statement + minimal identity*, and the build had inverted it:
+`Spatial Intelligence` was the `h1` and the largest element on the page, the visitor's name was a
+12px grey metadata line above it, the portrait was 4,000px down in the record section, and the
+standfirst was a research question whose subject was "AI" rather than "I". Every section heading
+was meta — *Organised by capability, not by year*, *For the people who check it* — so the page
+spent its budget explaining how it was arranged instead of describing a researcher.
+
+Worse, the job-talk planning notes had already named the failure mode:
+
+> The worst thing to do is label Hydra, Adonis, Proteus, SPIRIT, AURA, Mímir and Snotra all
+> "Spatial Intelligence" and then present them in chronological order. Senior faculty will
+> recognise this as retrospective branding immediately.
+
+The first build was exactly that: one label over a chronological pile of papers.
+
+### What changed
+
+| Before | After |
+|---|---|
+| `h1` = `Spatial Intelligence` | `h1` = **Yimeng Liu**, `clamp(2.4rem, 9.6vw, 9.5rem)` |
+| Name in a 12px grey `<p>` above the title | Portrait plate beside the name, bottom-aligned |
+| Portrait buried in the record section | Portrait in the hero, 84–200px, the page's only chromatic moment |
+| Standfirst subject: "AI" | Standfirst subject: "I work on AI that has to know where it is" |
+| "What I believe" — three axioms | "What the work convinced me of" — conclusions drawn from Hydra / Proteus / Adonis |
+| Six sections, all meta-headed | Seven sections, each named after one of the person's threads |
+| No forward-looking layer | New **05 — Where this goes**: three research questions, each with capability and honest status |
+| "Organised by capability, not by year" | "Five things a system has to be able to do" |
+| "For the people who check it" | "The record, in full" |
+| Nav: Thesis / System / Work / Ideas / Publications | Nav: Position / Agenda / Work / Next / Record |
+| OG card: "Spatial Intelligence" dominant | OG card: portrait + **Yimeng Liu** dominant, field as eyebrow |
+
+The 0.55-opacity rail key measured **4.03:1** against the active item's ink — under AA at 11px.
+Raised to 0.68 (≈6:1). It was only caught because axe was run *after* letting the scroll-spy's
+colour transition settle; sampling mid-transition had reported a colour that never occurs in
+steady state, and sampling the settled state is what proved the real number.
+
+### A boundary that had to be drawn first
+
+`~/Downloads/jobtalk` contains camera-ready papers plus three ICLR '27 submissions. SPIRIT, Mímir
+and Snotra are all **double-blind under review**, so none may be named, described, quantified or
+linked publicly. `docs/DISCLOSURE.md` records the decision; the site states only the *questions*
+those papers answer, because a question is agenda and an answer is a result. Verified: 0
+occurrences of SPIRIT / Mímir / Snotra / "under review" / "Agent for Irrigation" anywhere in
+`_site`.
+
+The MobiSys 2026 driving PDF could **not** be claimed as published: it carries no ACM
+camera-ready block and its LaTeX still holds the *Hydra* MobiCom '24 DOI, and it has ten authors
+across two institutions. The site therefore still describes that work as ongoing.

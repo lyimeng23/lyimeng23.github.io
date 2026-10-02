@@ -201,16 +201,54 @@
 }
 
 // ---------- Hero ----------
+// The person is the subject of this page, not the field. The field label sits above
+// the name as a quiet eyebrow; the name is the largest element in the document; the
+// research statement is written in the first person.
 .hero {
-  padding-block: clamp(2.75rem, 6vw, 4.5rem) 0;
+  padding-block: clamp(2.25rem, 5vw, 3.75rem) 0;
+}
+
+.hero__field {
+  margin: 0 0 clamp(1.15rem, 2.4vw, 1.9rem);
+  color: $accent;
+}
+
+.hero__intro {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(1.1rem, 2.6vw, 2.25rem);
+}
+
+.hero__figure { margin: 0; line-height: 0; }
+
+// The one chromatic moment on the page. Everything else is ink on paper, so the eye
+// lands on the face first — which is the point of a person-first site.
+.hero__portrait {
+  display: block;
+  width: clamp(84px, 16.5vw, 200px);
+  height: auto;
+  border-radius: $radius;
+}
+
+.hero__nameblock { min-width: 0; }
+
+.hero__name {
+  margin: 0;
+  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-size: clamp(2.4rem, 9.6vw, 9.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.032em;
+  color: $ink;
 }
 
 .hero__identity {
-  margin: 0 0 clamp(1.5rem, 3.5vw, 2.5rem);
+  margin: clamp(0.7rem, 1.5vw, 1.05rem) 0 0;
   font-family: $font-mono;
   font-size: $t-micro;
   font-weight: 400;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.085em;
   text-transform: uppercase;
   color: $ink-3;
   text-wrap: pretty;
@@ -221,19 +259,13 @@
   }
 }
 
-// Each part is atomic and the separator is non-breaking, so a wrapped line can
-// never begin with a middot. Below 640px the identity becomes a block instead.
+// Each part is atomic and the separator is non-breaking, so a wrapped line can never
+// begin with a middot. Below 640px the identity becomes a block instead.
 .hero__part { white-space: nowrap; }
 
 .hero__part + .hero__part::before {
   content: "\00a0\00b7\00a0";
   opacity: 0.55;
-}
-
-.hero__name {
-  font-weight: 500;
-  color: $ink;
-  letter-spacing: 0.13em;
 }
 
 @media (max-width: #{$bp-sm - 1px}) {
@@ -243,23 +275,10 @@
   .btn { font-size: $t-label; }
 }
 
-.hero__title {
-  margin: 0 0 clamp(1.75rem, 4vw, 3rem);
-}
-
-.hero__title-main {
-  display: block;
-  font-family: $font-display, "Display Fallback", Georgia, serif;
-  font-size: $t-display;
-  font-weight: 400;
-  line-height: 0.94;
-  letter-spacing: -0.035em;
-  color: $ink;
-}
-
 .hero__body {
   display: grid;
   gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1.75rem, 3.6vw, 2.75rem);
   padding-top: clamp(1.25rem, 3vw, 2rem);
   border-top: $rule solid $paper-line;
 
@@ -416,7 +435,9 @@
   }
 }
 
-.rail__key { opacity: 0.55; }
+// 0.55 measured 4.03:1 against the active item's $ink — under AA for 11px text.
+// 0.68 lands near 6:1 while still reading clearly subordinate to the label beside it.
+.rail__key { opacity: 0.68; }
 .rail__text { transition: opacity $dur $ease; }
 
 // ---------- Footer ----------

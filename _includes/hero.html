@@ -1,31 +1,43 @@
 <section class="hero" id="top">
   <div class="container">
-    <p class="hero__identity">
-      <span class="hero__part hero__name">Yimeng Liu</span>
-      <span class="hero__part">Ph.D. candidate<span class="hero__part-long">, Computer Science &amp; Engineering</span></span>
-      <span class="hero__part">Michigan State University</span>
-    </p>
 
-    <h1 class="hero__title">
-      <span class="hero__title-main">Spatial Intelligence</span>
-      <span class="visually-hidden"> — {{ site.title }}, {{ site.position }} in Computer Science and Engineering at {{ site.affiliation }}</span>
-    </h1>
+    <p class="eyebrow hero__field">{{ site.data.thesis.field }}</p>
+
+    <div class="hero__intro">
+      <figure class="hero__figure">
+        <img class="hero__portrait"
+             src="{{ site.avatar | relative_url }}"
+             width="299" height="400"
+             alt="Yimeng Liu"
+             decoding="async" fetchpriority="high" />
+      </figure>
+
+      <div class="hero__nameblock">
+        <h1 class="hero__name">Yimeng Liu<span class="visually-hidden"> — {{ site.position }} in Computer Science and Engineering at {{ site.affiliation }}, working on Spatial Intelligence</span></h1>
+        <p class="hero__identity">
+          <span class="hero__part">{{ site.position }}</span>
+          <span class="hero__part hero__part-long">Computer Science and Engineering</span>
+          <span class="hero__part">{{ site.affiliation }}</span>
+        </p>
+      </div>
+    </div>
 
     <div class="hero__body">
       <p class="hero__standfirst">{{ site.data.thesis.hero.standfirst }}</p>
       <div class="hero__actions">
         {% if site.cv_link %}<a class="btn btn--solid" href="{{ site.cv_link }}" target="_blank" rel="noopener">Curriculum vitae</a>{% endif %}
-        <a class="btn btn--line" href="#thesis">Read the thesis</a>
+        <a class="btn btn--line" href="#chain">What I&rsquo;m building</a>
         {% if site.email_link %}<a class="btn btn--quiet" href="{{ site.email_link }}">Email</a>{% endif %}
       </div>
     </div>
 
     <div class="hero__chain">
-      <span class="hero__chain-label">The chain</span>
-      <ol class="chain" start="2" aria-label="Spatial Intelligence stages">
+      <span class="hero__chain-label">The problem</span>
+      <ol class="chain" start="2" aria-label="The six stages of the problem I work on">
         {% for step in site.data.agenda.main %}{% if forloop.index > 1 %}<li>{{ step.label }}</li>{% endif %}{% endfor %}
       </ol>
       <a class="hero__chain-link" href="#chain">Watch it resolve<span aria-hidden="true">↓</span></a>
     </div>
+
   </div>
 </section>

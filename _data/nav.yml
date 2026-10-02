@@ -1,17 +1,18 @@
 # Primary navigation — section anchors on the homepage, plus the record layer.
+# Labels are short and person-first: they name the thread, not the taxonomy.
 main:
-  - title: Thesis
+  - title: Position
     id: thesis
     url: /#thesis
-  - title: System
-    id: system
-    url: /#system
+  - title: Agenda
+    id: chain
+    url: /#chain
   - title: Work
     id: work
     url: /#work
-  - title: Ideas
-    id: ideas
-    url: /#ideas
-  - title: Publications
+  - title: Next
+    id: roadmap
+    url: /#roadmap
+  - title: Record
     id: record
     url: /#record
