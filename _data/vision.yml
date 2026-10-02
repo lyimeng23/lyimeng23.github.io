@@ -1,0 +1,38 @@
+# The ambition — the research vision.
+#
+# This is the forward-looking statement of intent, NOT a description of finished work.
+# It deliberately describes the shape of the thing I want to exist, never a method and
+# never a result. The unpublished ICLR '27 work behind it must stay unnamed and
+# unquantified (see docs/DISCLOSURE.md); what is safe here is the ambition itself,
+# because a research goal is not a finding.
+
+intro: >-
+  Everything above is a piece of the problem taken on its own. This is the thing I actually
+  want to exist at the end of it.
+
+canvas_alt: >-
+  A schematic: many scattered observers each covering a small part of one space gradually
+  converge into a single shared spatial state, which then drives a single committed action.
+
+# The three moves the figure makes, in order. These are also the figure's fallback text.
+steps:
+  - key: "01"
+    text: "Many partial observers — a camera, a radio return, a car, a sensor on a wall — each seeing a fragment, each failing in its own way."
+  - key: "02"
+    text: "One shared spatial state that survives their disagreement, their latency and their absence — and knows what it does not know."
+  - key: "03"
+    text: "A single committed action taken from that state, with the right to decline to act at all."
+
+aspiration: >-
+  I want to build the runtime that makes this possible: a shared physical-world
+  understanding that many bounded observers can contribute to and rely on, where the state
+  carries its own uncertainty, and where the decision to change the world is separable from
+  the reasoning that proposed it. Not a better model — a shared substrate that models can
+  be composited onto, the way sensors are composited onto a place.
+
+# The honesty line. Without this the section would read as a claim of delivery.
+honest: >-
+  None of this exists yet in the form I have just described. What exists is the sensing and
+  representation half of step 01 and 02, published and citable; step 03 exists as an
+  argument rather than as a system. The work between here and there is the part I am
+  actually asking a lab for.

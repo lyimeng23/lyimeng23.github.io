@@ -15,12 +15,20 @@
       <div class="record__main">
         <div class="record__pubs">
           <div class="record__bar">
-            <h3 class="record__subhead">Publications</h3>
-            <div class="filter" role="group" aria-label="Filter publications by topic">
+            <div>
+              <h3 class="record__subhead">Publications</h3>
+              <p class="record__pubmeta">
+                {{ site.data.publications.main | size }} papers &middot; h-index {{ site.data.publications.meta.h_index }} &middot;
+                {{ site.data.publications.meta.total_citations }} citations
+                <span class="record__pubmeta-note">counted on Google Scholar, {{ site.data.publications.meta.reconciled }}</span>
+              </p>
+            </div>
+            <div class="filter" role="group" aria-label="Filter publications by research stage">
               <button class="filter__btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-              <button class="filter__btn" type="button" data-filter="multimodal" aria-pressed="false">Multimodal</button>
-              <button class="filter__btn" type="button" data-filter="rf" aria-pressed="false">RF &amp; acoustic</button>
-              <button class="filter__btn" type="button" data-filter="artifact" aria-pressed="false">Infrastructure &amp; data</button>
+              <button class="filter__btn" type="button" data-filter="sense" aria-pressed="false">Sense</button>
+              <button class="filter__btn" type="button" data-filter="represent" aria-pressed="false">Represent</button>
+              <button class="filter__btn" type="button" data-filter="act" aria-pressed="false">Act</button>
+              <button class="filter__btn" type="button" data-filter="artifact" aria-pressed="false">Data</button>
             </div>
             <p class="filter__count" data-filter-count aria-live="polite">{{ site.data.publications.main | size }} papers</p>
           </div>
@@ -28,11 +36,19 @@
           <ol class="pubs" data-pubs>
             {% for pub in site.data.publications.main %}
             <li class="pub" data-track="{{ pub.track }}">
-              <p class="pub__venue"><span>{{ pub.venue_short }}</span><span aria-hidden="true">·</span><span>{{ pub.year }}</span></p>
+              <p class="pub__venue">
+                <span>{{ pub.venue_short }}</span><span aria-hidden="true">&middot;</span><span>{{ pub.year }}</span>
+                {% if pub.cited and pub.cited > 0 %}
+                <span class="pub__cites" title="Cited by {{ pub.cited }} on Google Scholar, {{ site.data.publications.meta.reconciled }}">cited {{ pub.cited }}</span>
+                {% endif %}
+              </p>
               <div class="pub__main">
                 <h4 class="pub__title">{{ pub.title }}</h4>
                 <p class="pub__authors">{{ pub.authors }}</p>
                 <p class="pub__meta"><em>{{ pub.venue }}</em>, {{ pub.year }}</p>
+                {% if pub.understanding %}
+                <p class="pub__understanding"><span class="pub__understanding-label">What I take from it</span>{{ pub.understanding }}</p>
+                {% endif %}
               </div>
               <ul class="pub__links">
                 {% if pub.pdf %}<li><a href="{{ pub.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a></li>{% endif %}
@@ -40,11 +56,13 @@
                 {% if pub.code %}<li><a href="{{ pub.code }}" target="_blank" rel="noopener">Code</a></li>{% endif %}
                 {% if pub.slides %}<li><a href="{{ pub.slides | relative_url }}" target="_blank" rel="noopener">Slides</a></li>{% endif %}
                 {% if pub.bibtex %}<li><a href="{{ pub.bibtex | relative_url }}" target="_blank" rel="noopener">BibTeX</a></li>{% endif %}
+                {% if pub.scholar %}
+                <li><a href="https://scholar.google.com/citations?hl=en&amp;user=U0Py5sAAAAAJ&amp;view_op=view_citation&amp;citation_for_view=U0Py5sAAAAAJ:{{ pub.scholar }}" target="_blank" rel="noopener">Scholar</a></li>
+                {% endif %}
               </ul>
             </li>
             {% endfor %}
           </ol>
-          <p class="pubs__empty" data-pubs-empty hidden>No papers in this category.</p>
 
           <p class="record__scholar">
             {% if site.google_scholar %}<a href="{{ site.google_scholar }}" target="_blank" rel="noopener">Complete profile on Google Scholar</a>{% endif %}

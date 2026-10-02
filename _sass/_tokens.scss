@@ -36,12 +36,16 @@ $s-11: 176px;
 // ---------- Type ----------
 $nav-h: 68px;
 
-$font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+// Display face. Times New Roman is a system font on Windows and macOS, so the
+// page gets the classical academic voice with zero bytes of webfont payload.
+// The stack keeps sensible serif fallbacks for Linux.
+$font-display: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman No9 L", "Nimbus Roman", Georgia, serif;
 $font-text: "Newsreader", Georgia, "Iowan Old Style", "Times New Roman", serif;
 $font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-// Fluid display sizes. Instrument Serif has no bold; it is drawn for large sizes.
-$t-display: clamp(3.25rem, 14.5vw, 12rem);   // 52 → 192px, one line at every width
+// Fluid display sizes. Times is narrow, so the cap is set below what a
+// wider display face would need in order to stay on one line.
+$t-display: clamp(3rem, 12.5vw, 10.5rem);    // 48 → 168px, one line at every width
 $t-title: clamp(1.95rem, 3.9vw, 3.15rem);     // 31.2 → 50.4px
 $t-subtitle: clamp(1.45rem, 2.6vw, 2.1rem);   // 23.2 → 33.6px
 $t-lead: clamp(1.14rem, 1.55vw, 1.4rem);      // 18.2 → 22.4px

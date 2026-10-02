@@ -1,6 +1,0 @@
-@inproceedings{adonis25liu,
-  author = {Liu, Yimeng and Gan, Maolin and Li, Gen and Dong, Younsuk and Cao, Zhichao},
-  title = {Adonis: Neural-Enhanced Fine-Grained Leaf Wetness Sensing with Efficient mmWave Imaging},
-  booktitle = {Proceedings of IEEE INFOCOM},
-  year = {2025}
-}

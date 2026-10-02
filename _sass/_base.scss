@@ -4,14 +4,6 @@
 
 // ---------- Self-hosted faces (OFL). Latin subset only. ----------
 @font-face {
-  font-family: "Instrument Serif";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/assets/fonts/InstrumentSerif-Regular.woff2") format("woff2");
-}
-
-@font-face {
   font-family: "Newsreader";
   font-style: normal;
   font-weight: 300 700;
@@ -191,7 +183,7 @@ hr {
 .section__head-main { min-width: 0; }
 
 .section__title {
-  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-family: $font-display;
   font-size: $t-title;
   line-height: 1.04;
   letter-spacing: $track-display;

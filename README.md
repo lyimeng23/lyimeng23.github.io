@@ -76,10 +76,15 @@ docker run --rm -v "jekyll_gems:/usr/local/bundle" -v "$PWD":/srv/jekyll \
 
 ## Fonts
 
-`assets/fonts/` contains self-hosted, latin-subset woff2 files for **Instrument Serif**
-(display), **Newsreader** (text) and **IBM Plex Mono** (labels, data, navigation) — all under
-the SIL Open Font License, with licence texts alongside. Only the weights used above the fold are
-loaded, and metric-matched local fallbacks prevent layout shift on swap.
+The display face is **Times New Roman** — a system font on Windows and macOS, so the page gets
+the classical academic voice with **zero bytes of webfont payload**. The stack falls back through
+Times, Liberation Serif and Nimbus Roman for Linux.
+
+`assets/fonts/` therefore carries only two self-hosted, latin-subset woff2 files: **Newsreader**
+(text) and **IBM Plex Mono** (labels, data, navigation), both under the SIL Open Font License with
+licence texts alongside. Both are preloaded, and metric-matched local fallbacks prevent layout
+shift on swap. Instrument Serif was the previous display face and was removed along with its
+15 KB woff2 when the face changed.
 
 ## Regenerating the OpenGraph card
 

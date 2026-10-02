@@ -36,7 +36,7 @@
 }
 
 .belief__title {
-  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-family: $font-display;
   font-size: clamp(1.5rem, 2.6vw, 2.15rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -127,7 +127,7 @@
   * { vector-effect: non-scaling-stroke; }
 }
 
-// Instrument framing marks
+// Framing marks on the instrument panel
 .panel__corner {
   position: absolute;
   width: 12px;
@@ -376,7 +376,7 @@
 .step__question {
   display: block;
   margin-top: 0.3rem;
-  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-family: $font-display;
   font-size: clamp(1.15rem, 1.7vw, 1.45rem);
   font-weight: 400;
   line-height: 1.18;
@@ -507,7 +507,7 @@
 }
 
 .system__title {
-  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-family: $font-display;
   font-size: clamp(1.6rem, 2.7vw, 2.25rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -698,7 +698,7 @@
 }
 
 .work__title {
-  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-family: $font-display;
   font-size: clamp(2rem, 4vw, 3.1rem);
   line-height: 1;
   letter-spacing: -0.028em;
@@ -841,7 +841,7 @@
 }
 
 .question__title {
-  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-family: $font-display;
   font-size: clamp(1.45rem, 2.4vw, 2rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -968,7 +968,7 @@
 .roadmap__trajectory {
   margin: 0;
   max-width: 46ch;
-  font-family: $font-display, "Display Fallback", Georgia, serif;
+  font-family: $font-display;
   font-size: clamp(1.2rem, 1.95vw, 1.65rem);
   line-height: 1.3;
   letter-spacing: -0.014em;
@@ -1089,7 +1089,7 @@
   border-bottom: $rule solid $paper-line;
 
   @media (min-width: $bp-md) {
-    grid-template-columns: 7.75rem minmax(0, 1fr) auto;
+    grid-template-columns: 9.5rem minmax(0, 1fr) auto;
     align-items: baseline;
   }
 
@@ -1098,7 +1098,9 @@
 
 .pub__venue {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4em;
+  align-items: baseline;
   margin: 0;
   font-family: $font-mono;
   font-size: $t-label;
@@ -1273,4 +1275,167 @@
   gap: 0.5rem 0.75rem;
   padding-top: 1.5rem;
   border-top: 2px solid $ink;
+}
+// ============================================================
+// 07 — Record: publication metadata and per-paper understanding
+// ============================================================
+
+.record__pubmeta {
+  margin: 0.5rem 0 0;
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: $ink-2;
+}
+
+// The reconciliation date, so a citation count is never read as a permanent claim.
+.record__pubmeta-note {
+  display: block;
+  margin-top: 0.35rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  color: $ink-3;
+}
+
+.pub__cites {
+  display: block;
+  width: fit-content;
+  margin-top: 0.4rem;
+  padding: 0.12em 0.5em;
+  border: $rule solid $paper-line;
+  border-radius: $radius-pill;
+  font-size: 0.95em;
+  letter-spacing: 0.08em;
+  color: $ink-3;
+  white-space: nowrap;
+}
+
+// "What I take from it" — the reading of the work in the author's own voice.
+// This is the part that answers "what do you think of your own results", which a
+// bare citation list cannot.
+.pub__understanding {
+  margin: 1.15rem 0 0;
+  padding-left: 0.95rem;
+  border-left: 2px solid $accent-rule;
+  font-size: clamp(0.96rem, 1.2vw, 1.04rem);
+  line-height: 1.62;
+  color: $ink-2;
+  max-width: 62ch;
+}
+
+.pub__understanding-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: $track-label;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+// ============================================================
+// 08 — Vision (the ambition)
+// ============================================================
+
+.vision__figure { margin: 0; }
+
+.vision__canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: $rule solid $paper-line;
+  border-radius: $radius;
+  background: $paper;
+  // Retina: the backing store is scaled in JS; these are the layout dimensions.
+  aspect-ratio: 1200 / 620;
+}
+
+.vision__caption { margin-top: $s-4; }
+
+.vision__steps {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+  }
+}
+
+.vision__step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: baseline;
+  padding-top: 0.7rem;
+  border-top: $rule solid $paper-line;
+}
+
+.vision__step-key {
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: $accent;
+}
+
+.vision__step-text {
+  font-size: clamp(0.94rem, 1.15vw, 1rem);
+  line-height: 1.55;
+  color: $ink-2;
+}
+
+.vision__close {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 2px solid $ink;
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+  }
+}
+
+.vision__aspiration {
+  margin: 0;
+  max-width: 46ch;
+  font-family: $font-display;
+  font-size: clamp(1.2rem, 1.95vw, 1.65rem);
+  line-height: 1.3;
+  letter-spacing: -0.014em;
+  color: $ink;
+  text-wrap: pretty;
+}
+
+.vision__notyet {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: $rule solid $paper-line;
+  border-radius: $radius;
+  background: $accent-wash;
+}
+
+.vision__notyet-label {
+  margin: 0 0 0.6rem;
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: $track-label;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+.vision__notyet-body {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  line-height: 1.55;
+  color: $ink-2;
 }
