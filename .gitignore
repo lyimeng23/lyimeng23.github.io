@@ -170,3 +170,7 @@ _site/
 
 # Agent/session state (never commit)
 .opencode/
+
+# Agent scratch — never commit
+.opencode/goal-locks/
+progress.md

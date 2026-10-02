@@ -1,18 +1,20 @@
 # Primary navigation — section anchors on the homepage, plus the record layer.
 # Labels are short and person-first: they name the thread, not the taxonomy.
+# `chain` was dropped: the old driving-scene instrument was replaced by the concept
+# figure, so #chain no longer exists and leaving it would be a dead anchor.
 main:
-  - title: Position
-    id: thesis
-    url: /#thesis
-  - title: Agenda
-    id: chain
-    url: /#chain
-  - title: Work
-    id: work
-    url: /#work
-  - title: Next
-    id: roadmap
-    url: /#roadmap
   - title: Record
     id: record
     url: /#record
+  - title: Concept
+    id: concept
+    url: /#concept
+  - title: Position
+    id: thesis
+    url: /#thesis
+  - title: System
+    id: system
+    url: /#system
+  - title: Next
+    id: roadmap
+    url: /#roadmap

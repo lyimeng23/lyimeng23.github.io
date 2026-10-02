@@ -26,7 +26,7 @@
       <p class="hero__standfirst">{{ site.data.thesis.hero.standfirst }}</p>
       <div class="hero__actions">
         {% if site.cv_link %}<a class="btn btn--solid" href="{{ site.cv_link }}" target="_blank" rel="noopener">Curriculum vitae</a>{% endif %}
-        <a class="btn btn--line" href="#chain">What I&rsquo;m building</a>
+        <a class="btn btn--line" href="#concept">What I mean by it</a>
         {% if site.email_link %}<a class="btn btn--quiet" href="{{ site.email_link }}">Email</a>{% endif %}
       </div>
     </div>
@@ -36,7 +36,7 @@
       <ol class="chain" start="2" aria-label="The six stages of the problem I work on">
         {% for step in site.data.agenda.main %}{% if forloop.index > 1 %}<li>{{ step.label }}</li>{% endif %}{% endfor %}
       </ol>
-      <a class="hero__chain-link" href="#chain">Watch it resolve<span aria-hidden="true">↓</span></a>
+      <a class="hero__chain-link" href="#concept">See the three scales<span aria-hidden="true">↓</span></a>
     </div>
 
   </div>

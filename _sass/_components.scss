@@ -145,129 +145,6 @@
 // Layers accumulate rather than replace. A past layer recedes in stroke weight,
 // never in legibility: dimming the whole group would drop its labels below the
 // contrast floor, so only strokes lighten.
-.pn-layer {
-  opacity: 0;
-  transition: opacity 480ms $ease, stroke-opacity 480ms $ease;
-}
-.pn-layer--base { opacity: 1; }
-.js .pn-layer.is-on { opacity: 1; stroke-opacity: 0.28; }
-.js .pn-layer.is-front { opacity: 1; stroke-opacity: 1; }
-.js .pn-layer--base.is-on,
-.js .pn-layer--base.is-front { opacity: 1; stroke-opacity: 1; }
-.js .pn-layer.is-on .pn-fov,
-.js .pn-layer.is-on .pn-cone { fill-opacity: 0.45; }
-
-// ---- Base: the place ----
-.pn-grid path { fill: none; stroke: rgba($panel-ink, 0.06); stroke-width: 1; }
-.pn-grid .pn-grid-axis { stroke: rgba($panel-ink, 0.13); }
-.pn-ticks text {
-  fill: $panel-dim;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-anchor: middle;
-}
-.pn-kerb { fill: none; stroke: rgba($panel-ink, 0.24); stroke-width: 2; stroke-linecap: round; }
-.pn-kerb--far { stroke-dasharray: 3 7; opacity: 0.55; }
-.pn-road-edge { fill: none; stroke: rgba($panel-ink, 0.14); stroke-width: 1; stroke-dasharray: 2 9; }
-.pn-crossing path { fill: none; stroke: rgba($panel-ink, 0.3); stroke-width: 5; stroke-linecap: round; }
-.pn-island rect { fill: rgba($panel-ink, 0.04); stroke: rgba($panel-ink, 0.16); stroke-width: 1; }
-.pn-island circle { fill: rgba($panel-ink, 0.06); stroke: rgba($panel-ink, 0.18); stroke-width: 1; }
-.pn-rings circle { fill: none; stroke: rgba($panel-ink, 0.08); stroke-width: 1; stroke-dasharray: 2 8; }
-.pn-ego rect { fill: rgba($panel-ink, 0.13); stroke: $panel-ink; stroke-width: 1.5; }
-.pn-ego path { fill: none; stroke: $panel-ink; stroke-width: 2; stroke-linecap: round; }
-.pn-ego-label {
-  fill: $panel-dim-strong;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-anchor: middle;
-}
-.pn-scalebar path { fill: none; stroke: rgba($panel-ink, 0.3); stroke-width: 1; }
-.pn-scalebar text { fill: $panel-dim; font-size: 11px; letter-spacing: 0.08em; }
-
-// ---- 01 sense ----
-.pn-fov { fill: rgba($signal, 0.06); stroke: rgba($signal, 0.4); stroke-width: 1.5; stroke-dasharray: 6 7; }
-.pn-arcs path { fill: none; stroke: rgba($signal, 0.38); stroke-width: 1.5; stroke-dasharray: 2 7; }
-.pn-returns circle { fill: $signal; }
-.pn-sweep-line {
-  fill: none;
-  stroke: rgba($signal, 0.5);
-  stroke-width: 1.5;
-  transform-origin: 230px 470px;
-  animation: pn-sweep 8s linear infinite;
-}
-.pn-nodetect circle { fill: none; stroke: rgba($signal, 0.45); stroke-width: 1.5; }
-.pn-nodetect path { fill: none; stroke: rgba($signal, 0.6); stroke-width: 1.5; stroke-linecap: round; }
-.pn-nodetect text { fill: rgba($signal, 0.8); font-size: 12px; letter-spacing: 0.1em; }
-.pn-noreturn rect { fill: none; stroke: rgba($panel-ink, 0.3); stroke-width: 1.5; stroke-dasharray: 3 6; }
-.pn-noreturn text { fill: $panel-dim; font-size: 11px; letter-spacing: 0.1em; text-anchor: middle; }
-
-@keyframes pn-sweep {
-  from { transform: rotate(-32deg); }
-  to { transform: rotate(34deg); }
-}
-
-// ---- 02 represent ----
-.pn-entity { fill: none; stroke: $accent-bright; stroke-width: 2; }
-.pn-entity ellipse { fill: rgba($accent-bright, 0.14); }
-.pn-entity rect { fill: rgba($accent-bright, 0.12); }
-.pn-entity--unconfirmed { stroke: rgba($panel-ink, 0.45); }
-.pn-entity--unconfirmed ellipse { fill: none; }
-.pn-vel { stroke: $accent-bright; stroke-width: 2; stroke-linecap: round; }
-.pn-vel-head { fill: none; stroke: $accent-bright; stroke-width: 2; stroke-linecap: round; }
-.pn-unconfirmed { fill: $panel-dim-strong; font-size: 18px; text-anchor: middle; }
-
-.pn-chip rect { fill: rgba($panel, 0.86); stroke: rgba($accent-bright, 0.4); stroke-width: 1; }
-.pn-chip text { fill: $panel-ink; font-size: 13px; letter-spacing: 0.08em; }
-.pn-chip--e4 rect { stroke: rgba($panel-ink, 0.28); stroke-dasharray: 3 4; }
-.pn-chip-leader { fill: none; stroke: rgba($panel-ink, 0.22); stroke-width: 1; }
-
-// ---- 03 model ----
-.pn-trail path { fill: none; stroke: rgba($accent-bright, 0.55); stroke-width: 1.5; stroke-dasharray: 4 4; }
-.pn-trail circle { fill: rgba($panel, 0.9); stroke: rgba($accent-bright, 0.7); stroke-width: 1.5; }
-.pn-trail--e2 path, .pn-trail--e2 circle { stroke: rgba($signal, 0.6); }
-.pn-trail--e2 circle { stroke: rgba($signal, 0.7); }
-.pn-trail--e4 path { stroke: rgba($panel-ink, 0.3); }
-.pn-trail--e4 circle { stroke: rgba($panel-ink, 0.35); }
-.pn-trail-lost { stroke: rgba($panel-ink, 0.5) !important; stroke-dasharray: 2 4 !important; }
-.pn-time { fill: $panel-dim; font-size: 11px; letter-spacing: 0.06em; }
-.pn-occlusion rect { fill: rgba($panel, 0.55); stroke: rgba($panel-ink, 0.34); stroke-width: 1.5; stroke-dasharray: 3 5; }
-.pn-occlusion text {
-  fill: rgba($panel-ink, 0.62);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-anchor: middle;
-}
-.pn-occlusion .pn-occlusion-sub { fill: $panel-dim; font-size: 11px; letter-spacing: 0.1em; }
-
-// ---- 04 reason ----
-.pn-cone { fill: rgba($signal, 0.1); stroke: rgba($signal, 0.45); stroke-width: 1.5; stroke-dasharray: 6 6; }
-.pn-cone-axis { fill: none; stroke: rgba($signal, 0.6); stroke-width: 1.5; stroke-dasharray: 3 4; }
-.pn-future { fill: none; stroke: $signal; stroke-width: 2; }
-.pn-future-label { fill: rgba($signal, 0.85); font-size: 12px; letter-spacing: 0.1em; }
-.pn-rel { fill: none; stroke: rgba($signal, 0.6); stroke-width: 1.5; stroke-dasharray: 5 5; }
-.pn-rel--faint { stroke: rgba($panel-ink, 0.3); }
-.pn-rel-tag rect { fill: rgba($panel, 0.9); stroke: rgba($signal, 0.45); stroke-width: 1; }
-.pn-rel-tag text { fill: $panel-ink; font-size: 12px; letter-spacing: 0.12em; text-anchor: middle; }
-.pn-rel-tag--b rect, .pn-rel-tag--c rect { stroke: rgba($panel-ink, 0.26); }
-.pn-rel-tag--c rect { stroke-dasharray: 3 4; }
-
-// ---- 05 act ----
-.pn-rejected { fill: none; stroke: rgba($panel-ink, 0.22); stroke-width: 1.5; stroke-dasharray: 4 6; }
-.pn-rejected-label { fill: $panel-dim; font-size: 11px; letter-spacing: 0.14em; }
-.pn-commit { fill: none; stroke: $accent-bright; stroke-width: 3.5; stroke-linecap: round; }
-.pn-commit-head { fill: none; stroke: $accent-bright; stroke-width: 3.5; stroke-linecap: round; }
-.pn-stopbar { fill: none; stroke: $accent-bright; stroke-width: 3.5; stroke-linecap: round; }
-.pn-action rect { fill: rgba($accent-bright, 0.16); stroke: $accent-bright; stroke-width: 1.5; }
-.pn-action text {
-  fill: $panel-ink;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-anchor: middle;
-}
-.pn-action-short { display: none; font-size: 38px; letter-spacing: 0.2em; }
-
-// ---- Crosshair: probing the field ----
 .panel__crosshair {
   position: absolute;
   top: 0;
@@ -1438,4 +1315,262 @@
   font-size: clamp(0.98rem, 1.25vw, 1.08rem);
   line-height: 1.55;
   color: $ink-2;
+}
+
+// ============================================================
+// 01 — Concept: what "Spatial Intelligence" means
+// ============================================================
+
+.concept__definition {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+    column-gap: clamp(2rem, 5vw, 5rem);
+  }
+}
+
+.concept__term {
+  margin: 0;
+  font-family: $font-display;
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  color: $accent;
+}
+
+.concept__body {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 350;
+  line-height: 1.5;
+  color: $ink;
+  text-wrap: pretty;
+}
+
+.concept__figure { margin: 0 0 clamp(2.5rem, 5vw, 4rem); }
+
+.concept__pan-hint { display: none; }
+
+// Three panels side by side cannot stay legible at phone width: at 390px the figure
+// scales to ~0.28, which renders the 10px labels at about 3px. Rather than shrink the
+// type into illegibility or rebuild the figure as three stacked SVGs, the figure keeps
+// a readable minimum width and pans. The argument is carried in full by the prose above
+// and below it, so nothing is lost by the pan being an extra gesture.
+.concept__scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.concept__svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+@media (max-width: #{$bp-lg - 1px}) {
+  .concept__scroll { margin-inline: calc(clamp(1.25rem, 4.5vw, 3rem) * -1); padding-inline: clamp(1.25rem, 4.5vw, 3rem); }
+  .concept__svg { min-width: 900px; }
+  .concept__pan-hint {
+    display: block;
+    margin: 0 0 0.75rem;
+    font-family: $font-mono;
+    font-size: $t-label;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $ink-3;
+  }
+}
+
+// The scroll region is focusable, so it needs a visible ring for keyboard users.
+.concept__scroll:focus-visible { outline: 2px solid $accent; outline-offset: 3px; }
+
+// ---------- the figure's grammar ----------
+// Hairlines only for structure. Nothing is filled, so the eye reads relationship rather
+// than volume, and the two channels stay legible as separate kinds of evidence.
+.cp__body {
+  fill: rgba(23, 80, 63, 0.07);
+  stroke: #17503f;
+  stroke-width: 1.5;
+}
+.cp__vein { fill: none; stroke: rgba(23, 80, 63, 0.5); stroke-width: 1; }
+.cp__rule { fill: none; stroke: #16150f; stroke-width: 1; opacity: 0.16; }
+.cp__lane { fill: none; stroke: #faf9f5; stroke-width: 2.5; opacity: 1; }
+.cp__road { fill: rgba(22, 21, 15, 0.035); }
+.cp__soil { fill: rgba(22, 21, 15, 0.035); }
+.cp__ray { stroke: #16150f; stroke-width: 1.1; fill: none; opacity: 0.6; }
+
+// The penetrating channel, in the accent.
+.cp__wave {
+  fill: none;
+  stroke: #17503f;
+  stroke-width: 1.15;
+  opacity: 0.5;
+  stroke-linecap: round;
+}
+
+// Where the penetrating channel actually recovers something.
+.cp__scatter { fill: #17503f; opacity: 0.75; }
+
+// The blind spot: amber, dashed, always the same treatment.
+.cp__gap {
+  fill: rgba(216, 162, 74, 0.07);
+  stroke: #b07f28;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.85;
+}
+
+.cp__observer { fill: none; stroke: #16150f; stroke-width: 1.5; }
+.cp__fov { fill: rgba(22, 21, 15, 0.05); stroke: rgba(22, 21, 15, 0.28); stroke-width: 1; stroke-dasharray: 3 3; }
+.cp__occluder { fill: #16150f; opacity: 0.82; }
+.cp__subject { stroke: #16150f; stroke-width: 1.6; fill: none; stroke-linecap: round; }
+.cp__reticle { fill: none; stroke: #17503f; stroke-width: 1.2; opacity: 0.8; }
+
+// ---------- figure type ----------
+.cp text { font-family: $font-mono; }
+
+.cp__scale {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  fill: #6b6659;
+}
+.cp__label {
+  font-family: $font-display !important;
+  font-size: 27px;
+  fill: #16150f;
+  letter-spacing: -0.01em;
+}
+.cp__work {
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  fill: #6b6659;
+}
+.cp__tiny {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  fill: #6b6659;
+}
+/* Legends are two stacked lines per panel so they can never run into the next panel. */
+.cp__legend-a, .cp__legend-b {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  fill: #17503f;
+}
+.cp__legend-b tspan, .cp__legend-a tspan {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  fill: rgba(22, 21, 15, 0.6);
+}
+
+.cp__spine-rule { stroke: #16150f; stroke-width: 1.4; }
+.cp__spine-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  fill: #17503f;
+}
+.cp__spine-text {
+  font-family: $font-display !important;
+  font-size: 19px;
+  fill: #16150f;
+  letter-spacing: -0.008em;
+}
+
+// ---------- premises ----------
+.concept__list {
+  display: grid;
+  gap: clamp(1.75rem, 3.5vw, 2.75rem);
+  margin: 0 0 clamp(3rem, 6vw, 4.5rem);
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+  }
+}
+
+.concept__item {
+  padding-top: 0.8rem;
+  border-top: $rule solid $paper-line;
+}
+
+.concept__key {
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: $accent;
+}
+
+.concept__item-title {
+  margin: 0.6rem 0 0.7rem;
+  font-family: $font-display;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.14;
+  letter-spacing: -0.014em;
+}
+
+.concept__item-body {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  line-height: 1.6;
+  color: $ink-2;
+}
+
+// ---------- close ----------
+.concept__close {
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 2px solid $ink;
+}
+
+.concept__spine-title {
+  margin: 0 0 0.9rem;
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: $track-label;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+.concept__spine-body {
+  margin: 0 0 clamp(1.75rem, 4vw, 2.75rem);
+  max-width: 62ch;
+  font-family: $font-display;
+  font-size: clamp(1.2rem, 1.95vw, 1.65rem);
+  line-height: 1.32;
+  letter-spacing: -0.014em;
+  color: $ink;
+  text-wrap: pretty;
+}
+
+.concept__bridge {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 58ch;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: $rule solid $paper-line;
+  border-radius: $radius;
+  background: $accent-wash;
+  color: $ink-2;
+  text-decoration: none;
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  line-height: 1.55;
+  transition: border-color $dur-fast $ease;
+
+  &:hover { border-color: $accent; }
+}
+
+.concept__bridge-label {
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: $track-label;
+  text-transform: uppercase;
+  color: $accent;
 }

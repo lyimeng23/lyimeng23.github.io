@@ -1,0 +1,83 @@
+# Spatial Intelligence — the concept, stated before the work is shown.
+#
+# This section exists because the site previously led with a street-intersection diagram,
+# which made a research agenda that spans leaves, soil, foliage, fields and vehicles read as
+# autonomous driving. It does not. The through-line is that every one of those is the SAME
+# question at a different scale.
+#
+# Disclosure: the multi-scale argument is drawn only from published work (Hydra, Proteus,
+# Adonis, mmLeaf, AeroEcho, Soilnutri, biomimetic sonar). Nothing here describes or implies
+# the unpublished ICLR '27 method — see docs/DISCLOSURE.md.
+
+lead: >-
+  Every problem I have published is the same question at a different scale: how much of a
+  space's physical state can be recovered from returns that are each partial, each biased,
+  and each blind in its own direction?
+
+definition:
+  term: "Spatial Intelligence"
+  body: >-
+    The ability of a system to hold a working model of a place — what is there, how it is
+    arranged, how it is changing, how uncertain the model is, and what should be done about it
+    — built from observations that no single sensor could ever supply on its own.
+
+# The three sentences a reader should be able to repeat afterwards.
+premises:
+  - key: "01"
+    title: "No sensor returns the world."
+    body: >-
+      A camera reads a surface. A radio return reads distance but not colour. A passive soil
+      sensor reads moisture where nothing else can be deployed. Each is authoritative inside
+      its own blind spot and useless outside it.
+  - key: "02"
+    title: "The blind spots are structured, not random."
+    body: >-
+      Occlusion, penetration depth and line of sight are geometry, not luck. That makes the
+      question of what is knowable from a given set of returns an observability question —
+      one you can reason about before you collect any data.
+  - key: "03"
+    title: "A state you cannot trust is still a state."
+    body: >-
+      The useful object is not a picture of the space. It is a persistent belief about the
+      space that carries its own uncertainty, survives the failure of any single input, and
+      can be acted on.
+
+# The three scales. Published work only.
+scales:
+  - key: "mm"
+    label: "A leaf"
+    scale: "millimetre"
+    optical: "Optical reads the cuticle — surface moisture, and nothing beneath it."
+    penetrating: "mmWave returns scatter off internal water layers, so structure under the surface is recoverable."
+    work: "Hydra · Proteus · Adonis · mmLeaf"
+  - key: "cm"
+    label: "Soil"
+    scale: "centimetre"
+    optical: "No camera survives contact with the problem. The medium is opaque and the stakes are agronomic."
+    penetrating: "A passive metasurface reports moisture and nitrogen at a cost that makes wide deployment possible."
+    work: "Soilnutri"
+  - key: "m"
+    label: "A space"
+    scale: "metre to kilometre"
+    optical: "A camera sees a pedestrian until something opaque walks in front of it — and then sees nothing at all."
+    penetrating: "A radio return reaches through the obstruction, resolving position without resolving identity."
+    work: "Driving · Biomimetic sonar · AeroEcho"
+
+# Why the scale does not change the question.
+spine:
+  title: "The machinery is the same at every scale"
+  body: >-
+    Change the scale and you change the sensor, the physics and the deployment cost. You do
+    not change the shape of the problem: partial and differently-biased returns, a physical
+    hypothesis that has to explain them, a belief that has to survive being wrong, and a
+    decision that has to be taken from something you are not certain about. That is what I
+    mean by Spatial Intelligence — not a subject area, but one problem recognised at three
+    magnifications.
+
+# The bridge from the concept to the rest of the page.
+to_the_work:
+  title: "How I work on it"
+  body: >-
+    The rest of this page takes that problem apart: what the work concluded, how the
+    capability is layered, what has actually been built, where it is going, and what I am
+    trying to build at the end of it.
