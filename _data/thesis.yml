@@ -1,0 +1,31 @@
+# The thesis: one sentence, three working beliefs.
+# Nothing here is a claim of result. It is the argument the evidence supports.
+
+hero:
+  standfirst: "How can AI build, and keep updating, a usable understanding of a physical space from incomplete multimodal observation — then reason about it and act?"
+
+# Used once, in the footer — a signature, not a restatement of the hero.
+signature: "Spatial Intelligence — from incomplete observation to grounded action."
+
+# Frames the three beliefs that follow.
+thesis_note: "Three commitments that decide which problems I take on, and which measurements count."
+
+beliefs:
+  - key: "I"
+    title: "Observation is never the world."
+    body: >-
+      Every sensor returns a partial, biased slice of reality. A camera fails in the dark and in rain;
+      a radio return knows distance but not colour. Treating any single stream as the world is the
+      first mistake — and the reason multimodal sensing is a representation problem, not a fusion problem.
+  - key: "II"
+    title: "Understanding has to persist."
+    body: >-
+      A snapshot is not understanding. Intelligence in a physical space means holding the same entities
+      across time — noticing what moved, what was occluded, and what is still unknown — so that state
+      survives long enough to be reasoned about.
+  - key: "III"
+    title: "The test is the decision."
+    body: >-
+      A representation earns its keep only when it changes what a system does. I care about models whose
+      output is a grounded action in the world: yield, slow, alert, re-plan. Prediction without a
+      decision is a demo, not a result.

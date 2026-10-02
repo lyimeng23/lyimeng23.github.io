@@ -8,7 +8,9 @@ status: Active
 links:
   pdf: /assets/files/Recruitment_Flyer.pdf
 image: /project/senior-driving/images/driving_bg.webp
-image_alt: Senior driving safety and cognitive health campaign image
+image_width: 1400
+image_height: 673
+image_alt: A road running through open country
 problem_md: |
   Safe driving is key to maintaining independence for older adults. Yet even mild cognitive changes—often unnoticed—increase driving risk. By the time the symptoms of cognitive decline become visible, risky driving behavior may already be underway.
 gap_md: |
@@ -44,15 +46,27 @@ results_md: |
   We are actively recruiting seniors for our study. See our [recruitment flyer](/assets/files/Recruitment_Flyer.pdf) for details.
 gallery:
   - src: /project/senior-driving/images/17d6da5c8340a858b9205a924a8e5d1.webp
-    alt: Senior driving simulation session
+    alt: Logitech driving simulator with wheel, pedal set and a monitor running a simulated street
+    width: 1050
+    height: 1400
   - src: /project/senior-driving/images/259f6d9d66ec3564ed06674dda48211.webp
-    alt: In-car monitoring prototype
+    alt: Simulator wheel and metal pedal set facing a monitor showing a simulated street
+    width: 1050
+    height: 1400
   - src: /project/senior-driving/images/5918ba8f92090e96bce9d3314ffe2e3.webp
-    alt: Driving simulator environment
+    alt: Simulated street scene displayed on the simulator monitor
+    width: 1049
+    height: 1400
   - src: /project/senior-driving/images/cdce72d0fec9f0da8281732156a5aa0.webp
-    alt: Community education workshop
+    alt: Small camera and sensor board mounted beside a simulator seat with pedal set
+    width: 1050
+    height: 1400
   - src: /project/senior-driving/images/f562d383347c92dc6271927b3c5f60f.webp
-    alt: Study participants in action
+    alt: Driving rig, pedal set and large monitor set up in the lab
+    width: 1050
+    height: 1400
   - src: /project/senior-driving/images/image1.webp
-    alt: Project team activity
+    alt: Force-feedback driving rig with wheel, pedals and an instrument cluster
+    width: 1050
+    height: 1400
 ---

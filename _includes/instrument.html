@@ -1,0 +1,229 @@
+<section class="section section--instrument" id="chain" tabindex="-1">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div class="section__head-main">
+        <p class="eyebrow"><span class="eyebrow__index">02</span> The chain</p>
+        <h2 class="section__title">One scene, six questions</h2>
+      </div>
+      <p class="section__note">
+        The same intersection throughout. Nothing new enters as the sequence advances — only what the
+        system can already account for. Observations converge into structure, structure into state, state
+        into a decision.
+      </p>
+    </header>
+  </div>
+
+  <div class="instrument" data-instrument>
+    <div class="container">
+      <div class="instrument__layout">
+        <figure class="panel" data-panel>
+          <div class="panel__frame">
+            <span class="panel__corner panel__corner--tl" aria-hidden="true"></span>
+            <span class="panel__corner panel__corner--tr" aria-hidden="true"></span>
+            <span class="panel__corner panel__corner--bl" aria-hidden="true"></span>
+            <span class="panel__corner panel__corner--br" aria-hidden="true"></span>
+
+            <svg class="panel__svg" viewBox="0 0 1000 620" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet">
+              <!-- ============ base: the place itself, before anything is known ============ -->
+              <g class="pn-layer pn-layer--base" data-layer="0">
+                <g class="pn-grid">
+                  <path d="M100 0V620M200 0V620M300 0V620M400 0V620M600 0V620M700 0V620M800 0V620M900 0V620" />
+                  <path d="M0 100H1000M0 200H1000M0 300H1000M0 400H1000M0 500H1000" />
+                  <path class="pn-grid-axis" d="M500 0V620M0 310H1000" />
+                </g>
+                <g class="pn-ticks">
+                  <text x="100" y="26">10</text><text x="300" y="26">20</text>
+                  <text x="700" y="26">30</text><text x="900" y="26">40 m</text>
+                </g>
+
+                <g class="pn-street">
+                  <path class="pn-kerb" d="M0 352 C150 336 268 358 392 336 C520 314 640 344 760 322 C858 304 940 320 1000 308" />
+                  <path class="pn-kerb pn-kerb--far" d="M0 214 C148 198 262 220 388 198 C516 176 640 206 762 184 C860 166 942 182 1000 170" />
+                  <path class="pn-road-edge" d="M0 600 H1000" />
+                </g>
+
+                <g class="pn-crossing">
+                  <path d="M556 352 L604 344 M628 341 L676 333 M700 330 L748 322" />
+                  <path d="M556 372 L604 364 M628 361 L676 353 M700 350 L748 342" />
+                </g>
+
+                <g class="pn-island">
+                  <rect x="322" y="318" width="128" height="112" rx="10" />
+                  <circle cx="356" cy="352" r="21" />
+                  <circle cx="416" cy="336" r="17" />
+                </g>
+
+                <g class="pn-rings">
+                  <circle cx="230" cy="470" r="130" />
+                  <circle cx="230" cy="470" r="260" />
+                  <circle cx="230" cy="470" r="390" />
+                </g>
+
+                <g class="pn-ego">
+                  <rect x="198" y="452" width="64" height="36" rx="9" />
+                  <path d="M262 470 L286 462" />
+                </g>
+                <text class="pn-ego-label" x="230" y="438">OBSERVER</text>
+
+                <g class="pn-scalebar">
+                  <path d="M40 578 H140 M40 572 V584 M140 572 V584" />
+                  <text x="148" y="583">10 m</text>
+                </g>
+              </g>
+
+              <!-- ============ sense: partial, differently-biased multimodal returns ============ -->
+              <g class="pn-layer" data-layer="1">
+                <path class="pn-fov" d="M262 470 L568 41 A520 520 0 0 1 766 588 Z" />
+
+                <g class="pn-sweep">
+                  <path class="pn-sweep-line" d="M230 470 L700 210" />
+                </g>
+                <g class="pn-arcs">
+                  <path d="M230 470 A390 390 0 0 1 470 220" />
+                  <path d="M230 470 A260 260 0 0 1 400 316" />
+                  <path d="M230 470 A130 130 0 0 1 320 358" />
+                </g>
+                <g class="pn-returns">
+                  <circle cx="596" cy="264" r="4"/><circle cx="608" cy="276" r="4"/><circle cx="586" cy="278" r="3.4"/>
+                  <circle cx="612" cy="256" r="3.4"/><circle cx="596" cy="288" r="3"/>
+                  <circle cx="818" cy="458" r="4"/><circle cx="830" cy="472" r="4"/><circle cx="806" cy="472" r="3.4"/>
+                  <circle cx="824" cy="486" r="3.4"/><circle cx="842" cy="460" r="3"/>
+                  <circle cx="788" cy="196" r="4"/><circle cx="800" cy="208" r="4"/><circle cx="776" cy="210" r="3.4"/>
+                  <circle cx="792" cy="222" r="3.4"/><circle cx="764" cy="194" r="3"/>
+                  <circle cx="486" cy="512" r="3.4"/><circle cx="520" cy="530" r="3"/><circle cx="452" cy="536" r="3"/>
+                </g>
+
+                <g class="pn-nodetect">
+                  <circle cx="600" cy="268" r="26" />
+                  <path d="M556 250 L582 262" />
+                  <text x="450" y="254">OPTICAL RETURN</text>
+                </g>
+                <g class="pn-noreturn">
+                  <rect x="326" y="322" width="120" height="104" rx="8" />
+                  <text x="386" y="306">NO OPTICAL RETURN</text>
+                </g>
+              </g>
+
+              <!-- ============ represent: returns resolved into persistent entities ============ -->
+              <g class="pn-layer" data-layer="2">
+                <g class="pn-entity">
+                  <ellipse cx="600" cy="268" rx="20" ry="13" />
+                  <path class="pn-vel" d="M600 268 L640 314" />
+                  <path class="pn-vel-head" d="M640 314 L633 300 M640 314 L627 310" />
+                </g>
+                <g class="pn-chip pn-chip--e1"><rect x="452" y="302" width="212" height="30" rx="4" /><text x="464" y="322">E1 · PEDESTRIAN · 1.4 m/s</text></g>
+                <path class="pn-chip-leader" d="M520 302 L574 278" />
+
+                <g class="pn-entity">
+                  <rect x="789" y="452" width="64" height="36" rx="8" />
+                  <path class="pn-vel" d="M789 470 L700 470" />
+                  <path class="pn-vel-head" d="M700 470 L715 464 M700 470 L715 476" />
+                </g>
+                <g class="pn-chip pn-chip--e2"><rect x="746" y="300" width="192" height="30" rx="4" /><text x="758" y="320">E2 · VEHICLE · 6.2 m/s</text></g>
+                <path class="pn-chip-leader" d="M800 330 L812 448" />
+
+                <g class="pn-entity">
+                  <rect x="760" y="184" width="60" height="34" rx="8" />
+                </g>
+                <g class="pn-chip pn-chip--e3"><rect x="700" y="112" width="176" height="30" rx="4" /><text x="710" y="132">E3 · VEHICLE · STATIC</text></g>
+                <path class="pn-chip-leader" d="M790 142 L790 180" />
+
+                <g class="pn-entity pn-entity--unconfirmed">
+                  <ellipse cx="396" cy="376" rx="19" ry="12" stroke-dasharray="5 4" />
+                  <text class="pn-unconfirmed" x="396" y="382">?</text>
+                </g>
+                <g class="pn-chip pn-chip--e4"><rect x="150" y="336" width="150" height="30" rx="4" /><text x="160" y="356">E4 · UNCONFIRMED</text></g>
+                <path class="pn-chip-leader" d="M300 352 L374 368" />
+              </g>
+
+              <!-- ============ model: the same entities, held across time ============ -->
+              <g class="pn-layer" data-layer="3">
+                <g class="pn-trail pn-trail--e1">
+                  <path d="M516 192 L544 220 L572 244 L600 268" />
+                  <circle cx="516" cy="192" r="9" /><circle cx="544" cy="220" r="9" /><circle cx="572" cy="244" r="9" />
+                  <text class="pn-time" x="484" y="184">t−3</text>
+                  <text class="pn-time" x="510" y="212">t−2</text>
+                  <text class="pn-time" x="538" y="236">t−1</text>
+                </g>
+                <g class="pn-trail pn-trail--e2">
+                  <path d="M916 470 L884 470 L854 470 L789 470" />
+                  <circle cx="916" cy="470" r="9" /><circle cx="884" cy="470" r="9" /><circle cx="854" cy="470" r="9" />
+                  <text class="pn-time" x="918" y="506">t−3</text>
+                  <text class="pn-time" x="886" y="506">t−2</text>
+                  <text class="pn-time" x="854" y="506">t−1</text>
+                </g>
+                <g class="pn-trail pn-trail--e4">
+                  <path d="M262 442 L310 420 L356 400" />
+                  <path class="pn-trail-lost" d="M356 400 L396 376" />
+                  <circle cx="262" cy="442" r="8" /><circle cx="310" cy="420" r="8" /><circle cx="356" cy="400" r="8" />
+                </g>
+                <g class="pn-occlusion">
+                  <rect x="322" y="318" width="128" height="112" rx="10" />
+                  <text x="386" y="378">UNOBSERVED</text>
+                  <text class="pn-occlusion-sub" x="386" y="400">0.8 s</text>
+                </g>
+              </g>
+
+              <!-- ============ reason: relations, uncertainty, candidate futures ============ -->
+              <g class="pn-layer" data-layer="4">
+                <path class="pn-cone" d="M600 268 L827 395 A260 260 0 0 1 676 517 Z" />
+                <path class="pn-cone-axis" d="M600 268 L726 424" />
+                <circle class="pn-future" cx="726" cy="424" r="16" />
+                <text class="pn-future-label" x="726" y="398">+2 s</text>
+
+                <path class="pn-rel" d="M612 284 L806 452" />
+                <g class="pn-rel-tag pn-rel-tag--a"><rect x="664" y="336" width="132" height="28" rx="4" /><text x="730" y="355">CROSSING</text></g>
+                <path class="pn-rel" d="M770 486 L300 480" />
+                <g class="pn-rel-tag pn-rel-tag--b"><rect x="404" y="432" width="164" height="28" rx="4" /><text x="486" y="451">APPROACHING</text></g>
+                <path class="pn-rel pn-rel--faint" d="M780 218 L420 358" />
+                <g class="pn-rel-tag pn-rel-tag--c"><rect x="600" y="222" width="152" height="28" rx="4" /><text x="676" y="241">OCCLUDED BY</text></g>
+              </g>
+
+              <!-- ============ act: one committed response, and what was rejected ============ -->
+              <g class="pn-layer" data-layer="5">
+                <path class="pn-rejected" d="M262 470 L470 470" />
+                <text class="pn-rejected-label" x="330" y="458">REJECTED</text>
+                <path class="pn-commit" d="M262 470 C288 486 310 496 340 502" />
+                <path class="pn-commit-head" d="M340 502 L324 494 M340 502 L322 500" />
+                <path class="pn-stopbar" d="M352 488 L338 518" />
+                <g class="pn-action">
+                  <rect x="150" y="522" width="300" height="56" rx="4" />
+                  <text class="pn-action-long" x="300" y="556" text-anchor="middle">HOLD · CROSSING OCCUPIED</text>
+                  <text class="pn-action-short" x="300" y="562">HOLD</text>
+                </g>
+              </g>
+            </svg>
+
+            <span class="panel__crosshair" data-crosshair aria-hidden="true"></span>
+          </div>
+
+          <figcaption class="panel__caption">
+            <span class="panel__stage" data-panel-stage>Stage 01 / 06 — Physical World</span>
+            <span class="panel__read" data-panel-read>a place exists — nothing is known about it yet</span>
+            <span class="panel__cursor" data-panel-cursor>— · —</span>
+          </figcaption>
+        </figure>
+
+        <ol class="steps" data-instrument-steps aria-label="From physical world to grounded action">
+          {% for step in site.data.agenda.main %}
+          <li class="step" data-step="{{ step.key }}" data-layer="{{ forloop.index0 }}" data-label="{{ step.label | escape }}" data-read="{{ step.read | escape }}">
+            <button class="step__btn" type="button" aria-pressed="false">
+              <span class="step__key">{{ step.key }}</span>
+              <span class="step__body">
+                <span class="step__label">{{ step.label }}</span>
+                <strong class="step__question">{{ step.question }}</strong>
+                <span class="step__summary">{{ step.summary }}</span>
+                {% if step.evidence != "" %}
+                <span class="step__evidence"><span class="step__evidence-label">Evidence</span>{{ step.evidence }}</span>
+                {% else %}
+                <span class="step__evidence step__evidence--none"><span class="step__evidence-label">Evidence</span>no published result yet</span>
+                {% endif %}
+              </span>
+            </button>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

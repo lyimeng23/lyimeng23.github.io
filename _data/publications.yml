@@ -1,6 +1,6 @@
 # Publications — normalized schema.
-# title / authors / venue / venue_short / year / selected(true→"Selected")
-# optional: image, pdf, page, code, bibtex, slides, dataset, notes.
+# title / authors / venue / venue_short / year
+# optional: pdf, page, code, slides, bibtex, track (used by the homepage filter)
 # Author markup: wrap own name in <strong>…</strong>; * denotes equal contribution.
 main:
   - title: "Proteus: Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer"
@@ -8,8 +8,7 @@ main:
     venue: "Proceedings of ACM SenSys"
     venue_short: "SenSys'25"
     year: 2025
-    selected: true
-    image: /assets/files/proteus.webp
+    track: multimodal
     pdf: /assets/files/proteus.pdf
     page: https://dl.acm.org/doi/10.1145/3715014.3722052
     bibtex: /assets/files/proteus.txt
@@ -20,8 +19,7 @@ main:
     venue: "Proceedings of IEEE INFOCOM"
     venue_short: "INFOCOM'25"
     year: 2025
-    selected: true
-    image: /assets/files/Adonis.webp
+    track: rf
     pdf: /assets/files/adonis.pdf
     bibtex: /assets/files/adonis.txt
     slides: /assets/files/Adonis-INFOCOM25.pptx
@@ -31,20 +29,19 @@ main:
     venue: "Proceedings of ACM MobiCom"
     venue_short: "MobiCom'24"
     year: 2024
-    selected: true
-    image: /assets/files/hydra.webp
+    track: multimodal
     pdf: /assets/files/hydra.pdf
+    page: https://doi.org/10.1145/3636534.3690662
     code: https://github.com/liuyime2/MobiCom24-Hydra
     bibtex: /assets/files/hydra.txt
     slides: /assets/files/HydraLiu-MobiCom24.pptx
 
   - title: "Hydra-Bench: A Benchmark for Multi-Modal Leaf Wetness Sensing"
     authors: "<strong>Yimeng Liu</strong>, Maolin Gan, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Zhichao Cao"
-    venue: "arXiv — dataset & benchmark"
+    venue: "arXiv — dataset and benchmark"
     venue_short: "arXiv'25"
     year: 2025
-    selected: true
-    image: /assets/files/hydrabench.webp
+    track: artifact
     pdf: /assets/files/HydraBench.pdf
     page: https://arxiv.org/abs/2507.22685
     bibtex: /assets/files/hydrabench.txt
@@ -54,7 +51,7 @@ main:
     venue: "Proceedings of IEEE INFOCOM"
     venue_short: "INFOCOM'25"
     year: 2025
-    image: /assets/files/AeroEcho.webp
+    track: artifact
     pdf: /assets/files/aeroecho.pdf
 
   - title: "Poster: mmLeaf — Versatile Leaf Wetness Detection via mmWave Sensing"
@@ -62,7 +59,7 @@ main:
     venue: "Proceedings of ACM MobiSys"
     venue_short: "MobiSys'23"
     year: 2023
-    image: /assets/files/mmleaf.webp
+    track: rf
     pdf: /assets/files/mmleaf.pdf
     page: https://dl.acm.org/doi/abs/10.1145/3581791.3597367
     bibtex: /assets/files/mmleaf.txt
@@ -72,7 +69,7 @@ main:
     venue: "Bioinspiration & Biomimetics, vol. 17"
     venue_short: "Bioinspir. Biomim."
     year: 2022
-    image: /assets/files/biodetection.webp
+    track: rf
     pdf: /assets/files/biodetection.pdf
     page: https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta
     bibtex: /assets/files/biodetection.txt

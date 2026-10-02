@@ -40,7 +40,7 @@ keywords:
 
 # OpenGraph / card image (absolute path).
 avatar: /assets/img/avatar3_lyimeng.webp
-favicon: /assets/img/favicon_lyimeng.webp
+og_image: /assets/img/og.png
 
 # ============================================================
 # Links
@@ -55,30 +55,37 @@ linkedin: https://www.linkedin.com/in/yimeng-liu-5921591ab/
 # ============================================================
 # Jekyll build
 # ============================================================
-# The site ships its own layout/SASS (no remote theme), so we control the design
-# and avoid upstream template drift.
+# The site ships its own layout/SASS. The github-pages gem injects
+# jekyll-theme-primer by default, which silently publishes an unused
+# assets/css/style.css; `theme: null` turns that off.
+theme: null
+# Compressed CSS output: GitHub Pages does not minify for us.
+sass:
+  style: compressed
+
 plugins:
   - jekyll-sitemap
 
 # Show a modest "last updated" date in the footer (build time).
 enable_last_update: true
 
+# Note: jekyll-sitemap also lists the paper PDFs. That is intentional — the
+# papers themselves are meant to be findable. Static files cannot carry front
+# matter, so they cannot be excluded individually.
+
 # Files never rendered into the published site.
 exclude:
   - README.md
-  - README copy.md
   - LICENSE
   - Gemfile
   - Gemfile.lock
   - build.sh
   - CNAME
-  - task_plan.md
-  - findings.md
-  - progress.md
-  - AUDIT_REPORT.md
   - _site
   - .git
   - .github
   - .opencode
   - docs
   - google_scholar_crawler
+  - project/caspianpost
+  - progress.md

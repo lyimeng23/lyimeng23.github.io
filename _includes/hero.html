@@ -1,34 +1,31 @@
-<section class="hero">
+<section class="hero" id="top">
   <div class="container">
-    <div class="hero__grid">
-      <header class="hero__inner">
-        <p class="eyebrow">Academic homepage</p>
-        <h1 class="hero__title">Yimeng Liu</h1>
-        <p class="hero__subtitle">
-          {{ site.position }}, Computer Science &amp; Engineering · {{ site.affiliation }}
-        </p>
-        <p class="hero__lede">
-          I study Spatial Intelligence: how AI can move from incomplete multimodal observations
-          to a persistent understanding of dynamic physical spaces, and ultimately support grounded action.
-        </p>
-        <div class="hero__actions">
-          {% if site.cv_link %}<a class="btn btn--primary" href="{{ site.cv_link }}" target="_blank" rel="noopener">CV</a>{% endif %}
-          {% if site.google_scholar %}<a class="btn btn--ghost" href="{{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
-          {% if site.github %}<a class="btn btn--ghost" href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
-          {% if site.email_link %}<a class="btn btn--ghost" href="{{ site.email_link }}">Email</a>{% endif %}
-          <a class="btn btn--ghost" href="#research-vision">Research</a>
-          <a class="btn btn--ghost" href="#publications">Publications</a>
-        </div>
-      </header>
-      <figure class="hero__media reveal">
-        <img
-          class="hero__portrait"
-          src="{{ site.avatar | relative_url }}"
-          alt="Portrait of {{ site.title }}"
-          width="299" height="400"
-          fetchpriority="high"
-        />
-      </figure>
+    <p class="hero__identity">
+      <span class="hero__part hero__name">Yimeng Liu</span>
+      <span class="hero__part">Ph.D. candidate<span class="hero__part-long">, Computer Science &amp; Engineering</span></span>
+      <span class="hero__part">Michigan State University</span>
+    </p>
+
+    <h1 class="hero__title">
+      <span class="hero__title-main">Spatial Intelligence</span>
+      <span class="visually-hidden"> — {{ site.title }}, {{ site.position }} in Computer Science and Engineering at {{ site.affiliation }}</span>
+    </h1>
+
+    <div class="hero__body">
+      <p class="hero__standfirst">{{ site.data.thesis.hero.standfirst }}</p>
+      <div class="hero__actions">
+        {% if site.cv_link %}<a class="btn btn--solid" href="{{ site.cv_link }}" target="_blank" rel="noopener">Curriculum vitae</a>{% endif %}
+        <a class="btn btn--line" href="#thesis">Read the thesis</a>
+        {% if site.email_link %}<a class="btn btn--quiet" href="{{ site.email_link }}">Email</a>{% endif %}
+      </div>
+    </div>
+
+    <div class="hero__chain">
+      <span class="hero__chain-label">The chain</span>
+      <ol class="chain" start="2" aria-label="Spatial Intelligence stages">
+        {% for step in site.data.agenda.main %}{% if forloop.index > 1 %}<li>{{ step.label }}</li>{% endif %}{% endfor %}
+      </ol>
+      <a class="hero__chain-link" href="#chain">Watch it resolve<span aria-hidden="true">↓</span></a>
     </div>
   </div>
 </section>

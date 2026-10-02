@@ -1,13 +1,17 @@
+# Primary navigation — section anchors on the homepage, plus the record layer.
 main:
-  - title: Research
-    url: /#research-vision
-  - title: Selected Work
-    url: /#featured-research
+  - title: Thesis
+    id: thesis
+    url: /#thesis
+  - title: System
+    id: system
+    url: /#system
+  - title: Work
+    id: work
+    url: /#work
+  - title: Ideas
+    id: ideas
+    url: /#ideas
   - title: Publications
-    url: /#publications
-  - title: Updates
-    url: /#highlights
-  - title: Activities
-    url: /activities/
-  - title: About
-    url: /#about
+    id: record
+    url: /#record

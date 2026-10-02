@@ -10,11 +10,11 @@ layout: default
       {% if page.tagline %}<p class="project__tagline">{{ page.tagline }}</p>{% endif %}
       <div class="project__meta">
         {% if page.venue %}<span>{{ page.venue }}</span>{% endif %}
-        {% if page.status %}<span class="badge">{{ page.status }}</span>{% endif %}
+        {% if page.status %}<span class="tag">{{ page.status }}</span>{% endif %}
       </div>
       {% if page.links %}
       <div class="project__actions">
-        {% if page.links.pdf %}<a class="btn btn--primary" href="{{ page.links.pdf }}" target="_blank" rel="noopener">Read the paper</a>{% endif %}
+        {% if page.links.pdf %}<a class="btn btn--solid" href="{{ page.links.pdf }}" target="_blank" rel="noopener">Project flyer</a>{% endif %}
         {% if page.links.code %}<a class="btn btn--ghost" href="{{ page.links.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
         {% if page.links.dataset %}<a class="btn btn--ghost" href="{{ page.links.dataset }}" target="_blank" rel="noopener">Dataset</a>{% endif %}
         {% if page.links.slides %}<a class="btn btn--ghost" href="{{ page.links.slides }}" target="_blank" rel="noopener">Slides</a>{% endif %}
@@ -26,13 +26,14 @@ layout: default
   {% if page.image %}
   <div class="container">
     <figure class="project__figure">
-      <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy" />
+      <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy" decoding="async"
+           width="{{ page.image_width }}" height="{{ page.image_height }}" />
     </figure>
   </div>
   {% endif %}
 
   <div class="container">
-    <div class="project__body">
+    <div class="project__body prose">
       {% if page.narrative_md %}{{ page.narrative_md | markdownify }}{% endif %}
       {% if page.problem_md %}
       <section class="project__section">
@@ -60,7 +61,7 @@ layout: default
       {% endif %}
       {% if page.results_md %}
       <section class="project__section">
-        <h2 class="project__h2">Results</h2>
+        <h2 class="project__h2">Timeline &amp; team</h2>
         {{ page.results_md | markdownify }}
       </section>
       {% endif %}
@@ -75,12 +76,13 @@ layout: default
 
   {% if page.gallery %}
   <div class="container">
-    <section class="project__section">
+    <section class="project__section project__gallery-section">
       <h2 class="project__h2">Gallery</h2>
       <div class="project__gallery">
         {% for img in page.gallery %}
         <figure class="project__gallery-item">
-          <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" />
+          <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" decoding="async"
+               {% if img.width %}width="{{ img.width }}" height="{{ img.height }}"{% endif %} />
           {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
         </figure>
         {% endfor %}

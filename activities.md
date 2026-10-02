@@ -1,46 +1,52 @@
 ---
 layout: page
 permalink: /activities/
-title: Activities & Service
+title: Activities &amp; Service
 eyebrow: Conferences, talks, and service
-lede: Conference presentations, invited talks, reviewing, and program committee work. Full details are also in my CV.
+lede: Conference presentations, invited talks, reviewing, and program committee work. The complete version of this list is in the CV.
 description: Conferences, talks and academic service for Yimeng Liu, Ph.D. candidate at Michigan State University.
 ---
 
-<h2 class="page__h2">Conferences &amp; Events</h2>
-<ul class="activity-list">
-  {% for conf in site.data.conferences.main %}
-  <li class="activity reveal">
-    <a class="activity__link" href="{{ conf.web }}" target="_blank" rel="noopener">{{ conf.title }}</a>
-    {% if conf.role %}<span class="activity__role">{{ conf.role }}</span>{% endif %}
-  </li>
-  {% endfor %}
-</ul>
+<div class="record__cols record__cols--top">
+  <div class="record__block">
+    <h2 class="page__h2">Conferences &amp; events</h2>
+    <ul class="timeline-list">
+      {% for item in site.data.record.conferences %}
+      <li>
+        <span class="timeline-list__period">{{ item.year }}</span>
+        <span class="timeline-list__body"><strong>{{ item.role }}</strong>{{ item.title }}{% if item.place %}, {{ item.place }}{% endif %}</span>
+      </li>
+      {% endfor %}
+    </ul>
 
-<h2 class="page__h2">Invited Talk</h2>
-<ul class="prose">
-  <li>University of Hawai&#699;i at M&#257;noa, Oct. 2024</li>
-</ul>
+    <h2 class="page__h2">Invited talk</h2>
+    <p class="record__text">{{ site.data.record.talk }}</p>
+  </div>
 
-<h2 class="page__h2">Reviewing</h2>
-<h3 class="page__h3">Invited Reviewer</h3>
-<ul class="prose">
-  <li>UbiComp / ISWC · UbiSense 2025</li>
-  <li>IEEE Internet of Things Journal</li>
-  <li>IEEE Transactions on Mobile Computing</li>
-  <li>IEEE Internet Computing</li>
-  <li>HAI 2025 · Poster track</li>
-</ul>
+  <div class="record__block">
+    <h2 class="page__h2">Service</h2>
+    <p class="record__label">Invited reviewer</p>
+    <ul class="plain-list">
+      {% for item in site.data.record.service.invited_reviewer %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    <p class="record__label">Invited program committee</p>
+    <ul class="plain-list">
+      {% for item in site.data.record.service.program_committee %}<li>{{ item }}</li>{% endfor %}
+    </ul>
 
-<h3 class="page__h3">Invited Program Committee</h3>
-<ul class="prose">
-  <li>IEEE DSAA 2025</li>
-</ul>
+    <h2 class="page__h2">Contact</h2>
+    <ul class="plain-list">
+      <li>Email — <a href="{{ site.email_link }}">{{ site.email }}</a></li>
+      <li><a href="{{ site.address_link }}" target="_blank" rel="noopener">{{ site.address }}</a></li>
+      <li><a href="{{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</div>
 
-<h2 class="page__h2">Contact</h2>
-<ul class="prose">
-  <li>Email: {{ site.email }}</li>
-  <li>Address: <a href="{{ site.address_link }}" target="_blank" rel="noopener">{{ site.address }}</a></li>
-  <li><a href="{{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>
-  <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
-</ul>
+<div class="record__contact">
+  {% if site.cv_link %}<a class="btn btn--solid" href="{{ site.cv_link }}" target="_blank" rel="noopener">Curriculum vitae</a>{% endif %}
+  <a class="btn btn--line" href="{{ '/' | relative_url }}#work">Selected work</a>
+  <a class="btn btn--line" href="{{ '/news/' | relative_url }}">Timeline</a>
+</div>

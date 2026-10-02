@@ -1,41 +1,73 @@
 // ============================================================
-// Motion — reveal-on-scroll with strict reduced-motion handling.
+// Motion — restrained, information-bearing, reduced-motion safe.
+// Nothing hides unless JS is present, so a no-JS page is never blank.
 // ============================================================
 
-// Elements start hidden ONLY when JS adds the .js class (no-JS = fully visible).
 .js .reveal {
   opacity: 0;
   transform: translateY($reveal-y);
-  transition: opacity $dur $ease, transform $dur $ease;
-  will-change: opacity, transform;
+  transition:
+    opacity $dur $ease-out var(--reveal-delay, 0ms),
+    transform $dur $ease-out var(--reveal-delay, 0ms);
 }
 
 .js .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-// Staggered reveal inside the vision chain (serial flow: increasing delay).
-.js .vision {
-  .vision__step { transition-delay: calc(var(--i, 0) * 90ms); }
+// Stagger within a group, capped so nothing waits long.
+.js .reveal[style*="--i"] {
+  --reveal-delay: calc(min(var(--i), 4) * 70ms);
 }
 
-// Always honor reduced motion: no transform, no delay, appear instantly.
+// Page-load: the hero resolves first, quietly.
+.js .hero__identity,
+.js .hero__title-main,
+.js .hero__standfirst,
+.js .hero__actions,
+.js .hero__chain {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hero-in 760ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.js .hero__identity { animation-delay: 60ms; }
+.js .hero__title-main { animation-delay: 140ms; }
+.js .hero__standfirst { animation-delay: 270ms; }
+.js .hero__actions { animation-delay: 330ms; }
+.js .hero__chain { animation-delay: 400ms; }
+
+@keyframes hero-in {
+  to { opacity: 1; transform: none; }
+}
+
+// Nav settles into its scrolled state.
+.nav { will-change: border-color; }
+
+// ---------- Reduced motion ----------
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .js .reveal,
-  .js .vision .vision__step {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+  html { scroll-behavior: auto; }
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
   }
+
+  .js .reveal,
+  .js .hero__identity,
+  .js .hero__title-main,
+  .js .hero__standfirst,
+  .js .hero__actions,
+  .js .hero__chain {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .pn-sweep-line { animation: none !important; }
+  .js .pn-layer { transition: none !important; }
+  .panel__frame { transform: none !important; transition: none !important; }
 }

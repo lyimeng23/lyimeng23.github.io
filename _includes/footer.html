@@ -1,19 +1,24 @@
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <div class="site-footer__identity">
-      <p class="site-footer__name">{{ site.title }}</p>
-      <p class="site-footer__position">{{ site.position }} · {{ site.affiliation }}</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <p class="footer__statement">
+        <span class="footer__name">{{ site.title }}</span>
+        <span class="footer__role">{{ site.position }}, {{ site.affiliation }}</span>
+      </p>
+      <p class="footer__thesis">{{ site.data.thesis.signature }}</p>
     </div>
 
-    <div class="site-footer__links">
-      {% if site.email %}<span class="site-footer__item">{{ site.email }}</span>{% endif %}
-      {% if site.google_scholar %}<a class="site-footer__item" href="{{ site.google_scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar profile">Google Scholar</a>{% endif %}
-      {% if site.github %}<a class="site-footer__item" href="{{ site.github }}" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>{% endif %}
-      {% if site.linkedin %}<a class="site-footer__item" href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>{% endif %}
-      {% if site.cv_link %}<a class="site-footer__item" href="{{ site.cv_link }}" target="_blank" rel="noopener" aria-label="Curriculum vitae (PDF)">CV</a>{% endif %}
-      {% if site.enable_last_update %}
-      <span class="site-footer__item site-footer__updated">Last updated {{ site.time | date: "%b %-d, %Y" }}</span>
-      {% endif %}
+    <div class="footer__bottom">
+      <ul class="footer__links">
+        {% if site.google_scholar %}<li><a href="{{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>{% endif %}
+        {% if site.github %}<li><a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a></li>{% endif %}
+        {% if site.linkedin %}<li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>{% endif %}
+        {% if site.cv_link %}<li><a href="{{ site.cv_link }}" target="_blank" rel="noopener">CV</a></li>{% endif %}
+        {% if site.email_link %}<li><a href="{{ site.email_link }}">{{ site.email }}</a></li>{% endif %}
+      </ul>
+      <p class="footer__updated">
+        {% if site.enable_last_update %}Updated {{ site.time | date: "%b %-d, %Y" }}{% endif %}
+      </p>
     </div>
   </div>
 </footer>

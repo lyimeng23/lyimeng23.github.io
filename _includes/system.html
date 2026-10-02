@@ -1,0 +1,52 @@
+<section class="section section--system" id="system" tabindex="-1">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div class="section__head-main">
+        <p class="eyebrow"><span class="eyebrow__index">03</span> Research system</p>
+        <h2 class="section__title">Organised by capability, not by year</h2>
+      </div>
+      <p class="section__note">
+        Five layers. The first two are carried by published work; the last three are where the agenda
+        currently lives, and the site says so rather than implying otherwise.
+      </p>
+    </header>
+
+    <ol class="system">
+      {% for layer in site.data.system.main %}
+      <li class="system__row system__row--{{ layer.maturity }} reveal" style="--i: {{ forloop.index0 }}">
+        <div class="system__lead">
+          <div class="system__id">
+            <span class="system__key">{{ layer.key }}</span>
+            <span class="system__capability">{{ layer.capability }}</span>
+            <span class="tag tag--{{ layer.maturity }}">{{ layer.maturity_label }}</span>
+          </div>
+          <h3 class="system__title">{{ layer.title }}</h3>
+          <p class="system__body">{{ layer.body }}</p>
+        </div>
+
+        <div class="system__aside">
+          <h4 class="system__subhead">Capability</h4>
+          <ul class="system__list">
+            {% for item in layer.what %}<li>{{ item }}</li>{% endfor %}
+          </ul>
+
+          <h4 class="system__subhead">Evidence</h4>
+          {% if layer.evidence.size > 0 %}
+          <ul class="evidence">
+            {% for item in layer.evidence %}
+            <li class="evidence__item">
+              <span class="evidence__title">{{ item.title }}</span>
+              <span class="evidence__meta">{{ item.meta }}</span>
+              <span class="evidence__note">{{ item.note }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="evidence__none">Nothing published here yet. This layer is the work, not the citation.</p>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

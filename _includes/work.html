@@ -1,0 +1,75 @@
+<section class="section section--work" id="work" tabindex="-1">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div class="section__head-main">
+        <p class="eyebrow"><span class="eyebrow__index">04</span> Selected work</p>
+        <h2 class="section__title">Four projects, read as evidence</h2>
+      </div>
+      <p class="section__note">
+        Not a paper list. Each entry answers the same five questions, so the argument stays visible
+        underneath the results.
+      </p>
+    </header>
+
+    <div class="work">
+      {% for item in site.data.work.main %}
+      {% assign ongoing = false %}{% if item.year == "In progress" %}{% assign ongoing = true %}{% endif %}
+      <article class="work__item{% if forloop.first %} work__item--lead{% endif %}{% if ongoing %} work__item--ongoing{% endif %} reveal" id="work-{{ item.id }}">
+        <figure class="work__figure">
+          <a class="work__figure-link" href="{% if item.links.project %}{{ item.links.project | relative_url }}{% elsif item.links.paper %}{{ item.links.paper | relative_url }}{% else %}{{ item.links.pdf | relative_url }}{% endif %}"
+             {% unless item.links.project %}target="_blank" rel="noopener"{% endunless %}
+             aria-label="Open {{ item.title }} — {% if item.links.project %}project page{% else %}paper{% endif %}">
+            <span class="work__img-wrap">
+              <img class="work__img" src="{{ item.figure.src | relative_url }}" alt="{{ item.figure.alt }}"
+                   width="{{ item.figure.width }}" height="{{ item.figure.height }}" loading="lazy" decoding="async" />
+              <span class="work__figure-index" aria-hidden="true">Fig. 0{{ forloop.index }}</span>
+            </span>
+            <figcaption class="work__figure-caption">{{ item.figure.caption }}</figcaption>
+          </a>
+        </figure>
+
+        <div class="work__body">
+          <div class="work__head">
+            <p class="work__capability">{{ item.capability }}</p>
+            <p class="work__venue"><span>{{ item.venue }}</span><span aria-hidden="true">·</span><span>{{ item.year }}</span></p>
+          </div>
+          <h3 class="work__title">{{ item.title }}</h3>
+          <p class="work__tagline">{{ item.tagline }}</p>
+
+          <dl class="work__spec">
+            <div class="work__spec-row">
+              <dt>Problem</dt>
+              <dd>{{ item.problem }}</dd>
+            </div>
+            <div class="work__spec-row">
+              <dt>Insight</dt>
+              <dd>{{ item.insight }}</dd>
+            </div>
+            <div class="work__spec-row">
+              <dt>Built</dt>
+              <dd>{{ item.built }}</dd>
+            </div>
+            <div class="work__spec-row work__spec-row--evidence">
+              <dt>Evidence</dt>
+              <dd>{{ item.evidence }}</dd>
+            </div>
+            <div class="work__spec-row work__spec-row--why">
+              <dt>Why it matters</dt>
+              <dd>{{ item.why }}</dd>
+            </div>
+          </dl>
+
+          <div class="work__links">
+            {% if item.links.paper %}<a class="taglink" href="{{ item.links.paper | relative_url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
+            {% if item.links.pdf %}<a class="taglink" href="{{ item.links.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            {% if item.links.project %}<a class="taglink" href="{{ item.links.project | relative_url }}">Project</a>{% endif %}
+            {% if item.links.code %}<a class="taglink" href="{{ item.links.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            {% if item.links.talk %}<a class="taglink" href="{{ item.links.talk | relative_url }}" target="_blank" rel="noopener">Talk</a>{% endif %}
+            <span class="work__context">{{ item.context }}</span>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="section section--thesis" id="thesis" tabindex="-1">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div class="section__head-main">
+        <p class="eyebrow"><span class="eyebrow__index">01</span> Thesis</p>
+        <h2 class="section__title">What I believe</h2>
+      </div>
+      <p class="section__note">{{ site.data.thesis.thesis_note }}</p>
+    </header>
+
+    <ol class="beliefs">
+      {% for belief in site.data.thesis.beliefs %}
+      <li class="belief reveal" style="--i: {{ forloop.index0 }}">
+        <span class="belief__key" aria-hidden="true">{{ belief.key }}</span>
+        <h3 class="belief__title">{{ belief.title }}</h3>
+        <p class="belief__body">{{ belief.body }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,144 @@
+<section class="section section--record" id="record" tabindex="-1">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div class="section__head-main">
+        <p class="eyebrow"><span class="eyebrow__index">06</span> The record</p>
+        <h2 class="section__title">For the people who check it</h2>
+      </div>
+      <p class="section__note">
+        Publications, education, service and current activity. Deliberately the last thing on the page:
+        it should be one click away, never the first impression.
+      </p>
+    </header>
+
+    <div class="record">
+      <div class="record__main">
+        <div class="record__pubs">
+          <div class="record__bar">
+            <h3 class="record__subhead">Publications</h3>
+            <div class="filter" role="group" aria-label="Filter publications by topic">
+              <button class="filter__btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter__btn" type="button" data-filter="multimodal" aria-pressed="false">Multimodal</button>
+              <button class="filter__btn" type="button" data-filter="rf" aria-pressed="false">RF &amp; acoustic</button>
+              <button class="filter__btn" type="button" data-filter="artifact" aria-pressed="false">Infrastructure &amp; data</button>
+            </div>
+            <p class="filter__count" data-filter-count aria-live="polite">{{ site.data.publications.main | size }} papers</p>
+          </div>
+
+          <ol class="pubs" data-pubs>
+            {% for pub in site.data.publications.main %}
+            <li class="pub" data-track="{{ pub.track }}">
+              <p class="pub__venue"><span>{{ pub.venue_short }}</span><span aria-hidden="true">·</span><span>{{ pub.year }}</span></p>
+              <div class="pub__main">
+                <h4 class="pub__title">{{ pub.title }}</h4>
+                <p class="pub__authors">{{ pub.authors }}</p>
+                <p class="pub__meta"><em>{{ pub.venue }}</em>, {{ pub.year }}</p>
+              </div>
+              <ul class="pub__links">
+                {% if pub.pdf %}<li><a href="{{ pub.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a></li>{% endif %}
+                {% if pub.page %}<li><a href="{{ pub.page }}" target="_blank" rel="noopener">Paper</a></li>{% endif %}
+                {% if pub.code %}<li><a href="{{ pub.code }}" target="_blank" rel="noopener">Code</a></li>{% endif %}
+                {% if pub.slides %}<li><a href="{{ pub.slides | relative_url }}" target="_blank" rel="noopener">Slides</a></li>{% endif %}
+                {% if pub.bibtex %}<li><a href="{{ pub.bibtex | relative_url }}" target="_blank" rel="noopener">BibTeX</a></li>{% endif %}
+              </ul>
+            </li>
+            {% endfor %}
+          </ol>
+          <p class="pubs__empty" data-pubs-empty hidden>No papers in this category.</p>
+
+          <p class="record__scholar">
+            {% if site.google_scholar %}<a href="{{ site.google_scholar }}" target="_blank" rel="noopener">Complete profile on Google Scholar</a>{% endif %}
+          </p>
+        </div>
+
+        <div class="record__cols">
+          <div class="record__block">
+            <h3 class="record__subhead">Education</h3>
+            <ul class="timeline-list">
+              {% for item in site.data.record.education %}
+              <li>
+                <span class="timeline-list__period">{{ item.period }}</span>
+                <span class="timeline-list__body"><strong>{{ item.degree }}</strong>{{ item.place }}{% if item.note %} — {{ item.note }}{% endif %}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="record__block">
+            <h3 class="record__subhead">Positions</h3>
+            <ul class="timeline-list">
+              {% for item in site.data.record.positions %}
+              <li>
+                <span class="timeline-list__period">{{ item.period }}</span>
+                <span class="timeline-list__body"><strong>{{ item.role }}</strong>{{ item.place }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="record__block">
+            <h3 class="record__subhead">Service</h3>
+            <p class="record__label">Invited reviewer</p>
+            <ul class="plain-list">
+              {% for item in site.data.record.service.invited_reviewer %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+            <p class="record__label">Program committee</p>
+            <ul class="plain-list">
+              {% for item in site.data.record.service.program_committee %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+          </div>
+
+          <div class="record__block">
+            <h3 class="record__subhead">Talks &amp; conferences</h3>
+            <ul class="timeline-list">
+              {% for item in site.data.record.conferences %}
+              <li>
+                <span class="timeline-list__period">{{ item.year }}</span>
+                <span class="timeline-list__body"><strong>{{ item.role }}</strong>{{ item.title }}{% if item.place %}, {{ item.place }}{% endif %}</span>
+              </li>
+              {% endfor %}
+            </ul>
+            <p class="record__label">Invited talk</p>
+            <p class="record__text">{{ site.data.record.talk }}</p>
+          </div>
+        </div>
+
+        <div class="record__block record__block--wide">
+          <h3 class="record__subhead">Updates</h3>
+          <ul class="timeline-list timeline-list--updates">
+            {% assign recent = site.data.news.main | slice: 0, 6 %}
+            {% for entry in recent %}
+            <li>
+              <span class="timeline-list__period">{{ entry.date }}</span>
+              <span class="timeline-list__body">{{ entry.html }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          <p class="record__more"><a href="{{ '/news/' | relative_url }}">Full timeline</a></p>
+        </div>
+      </div>
+
+      <div class="record__side">
+        <figure class="plate">
+          <img class="plate__img" src="{{ '/assets/img/avatar3_lyimeng.webp' | relative_url }}"
+               alt="Portrait of {{ site.title }}" width="299" height="400" loading="lazy" decoding="async" />
+          <figcaption class="plate__caption">
+            {{ site.title }}<br />{{ site.position }}, {{ site.affiliation }}<br />{{ site.address }}
+          </figcaption>
+        </figure>
+
+        <div class="record__contact">
+          {% if site.cv_link %}<a class="btn btn--solid" href="{{ site.cv_link }}" target="_blank" rel="noopener">Curriculum vitae</a>{% endif %}
+          {% if site.email_link %}<a class="btn btn--line" href="{{ site.email_link }}">Email</a>{% endif %}
+          <a class="btn btn--line" href="{{ '/activities/' | relative_url }}">Activities &amp; service</a>
+          <a class="btn btn--line" href="{{ '/news/' | relative_url }}">Timeline</a>
+        </div>
+
+        <p class="record__side-note">
+          Everything above is verifiable in the CV. If you are reviewing a submission or a
+          collaboration request, that is the shortest path.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

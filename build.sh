@@ -4,6 +4,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+# Always build into a clean destination so removed assets cannot linger.
+rm -rf _site
+
 docker run --rm \
   -v "jekyll_gems:/usr/local/bundle" \
   -v "$PWD":/srv/jekyll \

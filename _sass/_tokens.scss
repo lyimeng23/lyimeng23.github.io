@@ -1,48 +1,105 @@
 // ============================================================
-// Design tokens — single source of truth for the whole theme.
+// Design tokens — the single source of truth.
+// Three surfaces: paper (reading), panel (the instrument), and
+// one accent that carries meaning everywhere.
 // ============================================================
 
-// Breakpoints (min-width, mobile-first)
+// ---------- Breakpoints (min-width, mobile-first) ----------
+$bp-xs: 420px;
 $bp-sm: 640px;
 $bp-md: 860px;
 $bp-lg: 1080px;
+$bp-xl: 1280px;
+$bp-2xl: 1440px;
 
-// Layout
-$container: 1160px;
-$container-pad: 24px;
-$nav-height: 64px;
-$radius: 14px;
-$radius-sm: 8px;
+// ---------- Grid & measure ----------
+$container: 1320px;      // 12 columns @ 1280 content width
+$gutter: 24px;
+$col-gap: 24px;
+$measure: 34rem;         // prose (~66 characters)
+$measure-tight: 26rem;
+$measure-wide: 46rem;
 
-// Type scale (fluid via clamp)
-$text-base: 1.0625rem;   // 17px
-$text-lg: 1.125rem;      // 18px
-$h1: clamp(2.6rem, 6vw, 3.75rem);  // 41.6px -> 60px
-$h2: clamp(1.7rem, 3.4vw, 2.25rem);
-$h3: 1.375rem;
+// ---------- Space scale ----------
+$s-1: 4px;
+$s-2: 8px;
+$s-3: 12px;
+$s-4: 16px;
+$s-5: 24px;
+$s-6: 32px;
+$s-7: 48px;
+$s-8: 64px;
+$s-9: 96px;
+$s-10: 128px;
+$s-11: 176px;
 
-// System font stack (no webfont download -> fast)
-$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+// ---------- Type ----------
+$nav-h: 68px;
 
-// Color palette — MSU-green accent on warm paper.
-$color-bg: #ffffff;
-$color-bg-alt: #f6f6f2;      // warm gray for alternate sections
-$color-text: #17150f;        // near-black with slight warmth
-$color-muted: #5f5b52;       // secondary text
-$color-accent: #18453b;      // MSU green
-$color-accent-strong: #0e2f28;
-$color-accent-soft: #eaf0ed; // pale green tint for chips/badges
-$color-border: #e6e2d8;
-$color-on-accent: #ffffff;
-$color-current: #9a591f;
-$color-future: #77736b;
-$color-scene-bg: #102b2b;
-$color-scene-gold: #f4c66f;
-$color-scene-mint: #9ed5ca;
-$color-scene-risk: #de8262;
-$color-scene-paper: #f7f1dd;
+$font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+$font-text: "Newsreader", Georgia, "Iowan Old Style", "Times New Roman", serif;
+$font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-// Motion
-$dur: 450ms;
-$ease: cubic-bezier(0.22, 1, 0.36, 1);
-$reveal-y: 14px;
+// Fluid display sizes. Instrument Serif has no bold; it is drawn for large sizes.
+$t-display: clamp(3.25rem, 14.5vw, 12rem);   // 52 → 192px, one line at every width
+$t-title: clamp(1.95rem, 3.9vw, 3.15rem);     // 31.2 → 50.4px
+$t-subtitle: clamp(1.45rem, 2.6vw, 2.1rem);   // 23.2 → 33.6px
+$t-lead: clamp(1.14rem, 1.55vw, 1.4rem);      // 18.2 → 22.4px
+$t-body: 1.0625rem;                          // 17px
+$t-small: 0.9375rem;                         // 15px
+$t-micro: 0.8125rem;                         // 13px
+$t-label: 0.6875rem;                         // 11px — mono eyebrows
+
+$track-display: -0.028em;
+$track-tight: -0.018em;
+$track-label: 0.15em;
+
+// ---------- Color: paper ----------
+$paper: #faf9f5;
+$paper-sunk: #f2f0e9;
+$paper-line: #e2ded1;
+$paper-line-soft: #eceadf;
+
+$ink: #16150f;        // 15.9:1 on paper
+$ink-2: #4a473f;      // muted body   — 8.8:1 on paper
+$ink-3: #6b6659;      // tertiary meta — 5.4:1 on paper (WCAG AA at every size)
+
+// ---------- Color: the single accent ----------
+// Deep institutional green. Used for identity, evidence and "resolved" state.
+$accent: #17503f;
+$accent-deep: #0d3327;
+$accent-bright: #2f8a6c;   // accent on the dark panel
+$accent-wash: #e8efea;
+$accent-rule: rgba($accent, 0.24);
+
+// ---------- Color: the instrument panel ----------
+$panel: #101612;
+$panel-2: #18211b;
+$panel-line: #2c382f;
+$panel-ink: #eceee9;
+// Minimum legible opacity for any text drawn on the panel (>= 4.9:1).
+$panel-dim: rgba($panel-ink, 0.58);
+$panel-dim-strong: rgba($panel-ink, 0.74);
+
+// ---------- Color: the one signal hue ----------
+// Amber = raw observation, uncertainty, prediction. Nothing else uses it.
+$signal: #d8a24a;
+$signal-dim: rgba($signal, 0.34);
+
+// ---------- Shape ----------
+$rule: 1px;
+$radius: 2px;          // near-zero: editorial, not app-like
+$radius-pill: 999px;
+
+// ---------- Motion ----------
+$dur-fast: 180ms;
+$dur: 420ms;
+$dur-slow: 720ms;
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+$reveal-y: 12px;
+
+// ---------- Mixins ----------
+@mixin at-lg {
+  @media (min-width: $bp-lg) { @content; }
+}

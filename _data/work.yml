@@ -1,0 +1,147 @@
+# Selected Work — the four projects that carry the research trajectory.
+# Framed as Problem / Insight / Built / Evidence / Why, never as an abstract copy.
+# Every number here is taken verbatim from the published paper.
+
+main:
+  - id: hydra
+    title: "Hydra"
+    capability: "Sense — modality redundancy"
+    venue: "ACM MobiCom"
+    year: "2024"
+    tagline: "Complementary mmWave and vision, so perception survives either one failing."
+    problem: >-
+      Leaf wetness duration drives plant disease, but the instruments that measure it are the least
+      reliable number on a farm: they measure synthetic leaves, mis-time real ones by up to half an hour,
+      and break on light, wind, or an unfamiliar plant.
+    insight: >-
+      A camera and a millimetre-wave radar fail in opposite conditions. Rather than deciding which one
+      to trust, fuse them at the feature level so the pair keeps working when either degrades.
+    built: >-
+      A CNN that selectively fuses several mmWave depth images with an RGB frame into multiple feature
+      images; a transformer encoder that relates those feature images into a single feature map; a
+      classifier; training-time augmentation for generalisation. FMCW radar, 76–81 GHz.
+    evidence: >-
+      Up to 96% wetness-classification accuracy across varying scenarios. Deployed on the farm —
+      including rainy, dawn and poorly lit nights — accuracy remains around 90%.
+    why: >-
+      Published proof that multimodal sensing is a redundancy problem: the system stays useful when one
+      of its eyes goes dark.
+    context: "MobiCom '24 · Washington, D.C."
+    figure:
+      src: /assets/files/hydra.webp
+      width: 1200
+      height: 650
+      alt: "Hydra testbed with millimetre-wave radar and camera observing a plant"
+      caption: "Hydra testbed — radar and camera observing the same surface."
+    links:
+      paper: "https://doi.org/10.1145/3636534.3690662"
+      pdf: /assets/files/hydra.pdf
+      code: https://github.com/liuyime2/MobiCom24-Hydra
+      talk: /assets/files/HydraLiu-MobiCom24.pptx
+
+  - id: proteus
+    title: "Proteus"
+    capability: "Represent — cross-modal transfer"
+    venue: "ACM SenSys"
+    year: "2025"
+    tagline: "Keep sensing when the second modality is simply gone."
+    problem: >-
+      mmWave suits leaf wetness because it responds to subtle surface change, yet existing systems fuse
+      it with an RGB camera — so they stop working in the dark, and their accuracy drifts with
+      environment because SAR imaging is not well understood.
+    insight: >-
+      What has already been learned in the RGB domain can be transferred into the mmWave SAR domain.
+      And the radar image can be made more informative before any learning happens at all.
+    built: >-
+      A noise-reduction algorithm that suppresses speckle, phase-angle data added to enrich surface
+      texture at higher resolution, and an RGB teacher guiding an mmWave SAR student through cross-modality
+      knowledge transfer. Prototyped on commercial off-the-shelf radar.
+    evidence: >-
+      Up to 96.3% accuracy across varied environmental scenarios, outperforming state-of-the-art methods.
+    why: >-
+      Representation has to survive the loss of a modality. Proteus is my published statement of that
+      requirement, and the point where a project became a thesis.
+    context: "SenSys '25 · Irvine, CA"
+    figure:
+      src: /assets/files/proteus.webp
+      width: 1200
+      height: 898
+      alt: "Proteus millimetre-wave radar testbed observing a plant"
+      caption: "Proteus testbed — one modality learning from the other."
+    links:
+      paper: "https://doi.org/10.1145/3715014.3722052"
+      pdf: /assets/files/proteus.pdf
+      talk: /assets/files/Proteus-SenSys25.pptx
+
+  - id: adonis
+    title: "Adonis"
+    capability: "Represent — calibrated precision"
+    venue: "IEEE INFOCOM"
+    year: "2025"
+    tagline: "Three signal views and explicit calibration, so precision survives the environment."
+    problem: >-
+      Fine-grained physical state is what a downstream model is supposed to reason over, but measuring
+      it precisely means resolving detail a radar returns noisily — and any system that is precise in a
+      lab tends to stop being precise outdoors.
+    insight: >-
+      Range-Doppler, range-phase angle and range-azimuth views carry genuinely complementary information
+      about the same surface. Using all three, with learned features and an explicit calibration stage,
+      is what makes the measurement hold outside the lab.
+    built: >-
+      Three signal-processing mappings fused into one input; contrastive learning with a CNN that
+      isolates wetness variation from environmental change; a wetness-extraction layer; and model
+      calibration using transmitted and reflected signal strength. FMCW radar, 77–81 GHz.
+    evidence: >-
+      Leaf wetness MAE of 4.43 in controlled environments and 6.49 on a real farm, against 11.84 indoors
+      and 14.32 outdoors for traditional leaf wetness sensors. Removing any one of the three signal views
+      pushes MAE to 8–10; keeping only one pushes it to 14–17.
+    why: >-
+      Measurement quality is a modelling problem, not an engineering detail. A world model is only ever
+      as good as the structure handed to it.
+    context: "INFOCOM '25"
+    figure:
+      src: /assets/files/Adonis.webp
+      width: 1200
+      height: 988
+      alt: "Adonis millimetre-wave imaging setup with radar, antennas and a plant target"
+      caption: "Adonis setup — radar, scan geometry and a plant target."
+    links:
+      paper: /assets/files/adonis.pdf
+      pdf: /assets/files/adonis.pdf
+      talk: /assets/files/Adonis-INFOCOM25.pptx
+
+  - id: driving
+    title: "Cognitive Driving"
+    capability: "Act — grounded, human-centred"
+    venue: "Ongoing project"
+    year: "In progress"
+    tagline: "Where the chain closes: a spatial state that changes what a car does."
+    problem: >-
+      Mild cognitive change raises driving risk well before it is visible. By the time behaviour looks
+      impaired, risky driving has already begun — and most tools either flag clearly impaired drivers
+      or hand the question to a costly clinical assessment.
+    insight: >-
+      There is an in-between stage: driving still largely intact, cognition already changing. It is
+      observable continuously, if you instrument the vehicle and measure it against simulator-based
+      capability assessment.
+    built: >-
+      Simulator protocols that isolate the cognitive demands of driving — cognitive load and attention;
+      an on-board sensing system that tracks driving behaviour over time and surfaces early risk;
+      realistic testing against road conditions; and community education so insight reaches the people
+      it is about.
+    evidence: >-
+      Ongoing research. No published spatial-reasoning model or closed-loop policy is claimed here; the
+      recruitment flyer describes the study as it currently stands.
+    why: >-
+      This is the layer I intend to close the loop on. Acting on a physical world is only defensible when
+      the state is good enough to act on — and when the people affected are part of the design.
+    context: "MSU · CSE, Social Work, Epidemiology"
+    figure:
+      src: /project/senior-driving/images/driving_bg.webp
+      width: 1400
+      height: 673
+      alt: "Road scene used to illustrate the cognitive driving project"
+      caption: "The driving space as an instrumented, continuously observed environment."
+    links:
+      project: /project/senior-driving/
+      paper: /assets/files/Recruitment_Flyer.pdf
