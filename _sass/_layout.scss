@@ -683,7 +683,6 @@
   height: auto;
   border: $rule solid $paper-line;
   border-radius: $radius;
-  filter: saturate(0.92) contrast(1.02);
 }
 
 .project__body { padding-block: clamp(2rem, 5vw, 3.5rem); }
@@ -708,7 +707,6 @@
   object-fit: cover;
   border: $rule solid $paper-line;
   border-radius: $radius;
-  filter: saturate(0.92);
 }
 
 .project__gallery-item figcaption {

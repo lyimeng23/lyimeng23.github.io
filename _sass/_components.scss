@@ -508,13 +508,15 @@
 }
 
 .work__img {
+  display: block;
   width: 100%;
   height: auto;
-  filter: saturate(0.88) contrast(1.04);
-  transition: filter $dur $ease;
+  transform: scale(1);
+  transition: transform $dur $ease;
 }
 
-.work__figure-link:hover .work__img { filter: saturate(1.02) contrast(1.02); }
+/* Hover moves the frame, not the colour: the photograph is never re-graded. */
+.work__figure-link:hover .work__img { transform: scale(1.015); }
 
 .work__figure-index {
   position: absolute;
@@ -678,7 +680,6 @@
 .work__item--ongoing {
   border-top-style: dashed;
   .work__capability { color: $ink-2; }
-  .work__img { filter: saturate(0.55) contrast(1.02); }
   .work__spec-row--why { border-left-style: dashed; border-left-color: $ink-3; }
   .work__spec-row--why dt { color: $ink-2; }
 }
@@ -1077,6 +1078,9 @@
 
 .plate { margin: 0; }
 
+// No filter. The portrait is the only photograph of a person on this site, and rendering
+// it monochrome contradicted the hero, where the same face appears in colour. One face,
+// one treatment.
 .plate__img {
   width: 100%;
   max-width: 12rem;
@@ -1084,7 +1088,6 @@
   object-fit: cover;
   border: $rule solid $paper-line;
   border-radius: $radius;
-  filter: grayscale(1) contrast(1.06) brightness(0.98);
 }
 
 .plate__caption {
