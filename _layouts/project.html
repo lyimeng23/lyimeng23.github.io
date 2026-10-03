@@ -1,93 +1,16 @@
 ---
 layout: default
 ---
-
+{% assign lang = page.lang | default: 'en' %}{% assign ui = site.data.locale[lang] %}{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
+{% assign item = site.data.work.main | where: 'id', page.project_id | first %}{% assign text = item[lang] %}
 <article class="project">
-  <header class="project__header">
-    <div class="container">
-      <p class="eyebrow">{{ page.eyebrow | default: "Project" }}</p>
-      <h1 class="project__title">{{ page.title }}</h1>
-      {% if page.tagline %}<p class="project__tagline">{{ page.tagline }}</p>{% endif %}
-      <div class="project__meta">
-        {% if page.venue %}<span>{{ page.venue }}</span>{% endif %}
-        {% if page.status %}<span class="tag">{{ page.status }}</span>{% endif %}
-      </div>
-      {% if page.links %}
-      <div class="project__actions">
-        {% if page.links.pdf %}<a class="btn btn--solid" href="{{ page.links.pdf }}" target="_blank" rel="noopener">Project flyer</a>{% endif %}
-        {% if page.links.code %}<a class="btn btn--ghost" href="{{ page.links.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
-        {% if page.links.dataset %}<a class="btn btn--ghost" href="{{ page.links.dataset }}" target="_blank" rel="noopener">Dataset</a>{% endif %}
-        {% if page.links.slides %}<a class="btn btn--ghost" href="{{ page.links.slides }}" target="_blank" rel="noopener">Slides</a>{% endif %}
-      </div>
-      {% endif %}
-    </div>
-  </header>
-
-  {% if page.image %}
-  <div class="container">
-    <figure class="project__figure">
-      <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy" decoding="async"
-           width="{{ page.image_width }}" height="{{ page.image_height }}" />
-    </figure>
-  </div>
-  {% endif %}
-
-  <div class="container">
-    <div class="project__body prose">
-      {% if page.narrative_md %}{{ page.narrative_md | markdownify }}{% endif %}
-      {% if page.problem_md %}
-      <section class="project__section">
-        <h2 class="project__h2">Problem</h2>
-        {{ page.problem_md | markdownify }}
-      </section>
-      {% endif %}
-      {% if page.gap_md %}
-      <section class="project__section">
-        <h2 class="project__h2">Gap</h2>
-        {{ page.gap_md | markdownify }}
-      </section>
-      {% endif %}
-      {% if page.idea_md %}
-      <section class="project__section">
-        <h2 class="project__h2">Core idea</h2>
-        {{ page.idea_md | markdownify }}
-      </section>
-      {% endif %}
-      {% if page.system_md %}
-      <section class="project__section">
-        <h2 class="project__h2">System</h2>
-        {{ page.system_md | markdownify }}
-      </section>
-      {% endif %}
-      {% if page.results_md %}
-      <section class="project__section">
-        <h2 class="project__h2">Timeline &amp; team</h2>
-        {{ page.results_md | markdownify }}
-      </section>
-      {% endif %}
-      {% if page.bibtex_md %}
-      <section class="project__section">
-        <h2 class="project__h2">BibTeX</h2>
-        {{ page.bibtex_md | markdownify }}
-      </section>
-      {% endif %}
-    </div>
-  </div>
-
-  {% if page.gallery %}
-  <div class="container">
-    <section class="project__section project__gallery-section">
-      <h2 class="project__h2">Gallery</h2>
-      <div class="project__gallery">
-        {% for img in page.gallery %}
-        <figure class="project__gallery-item">
-          <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" decoding="async"
-               {% if img.width %}width="{{ img.width }}" height="{{ img.height }}"{% endif %} />
-          {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
-        </figure>
-        {% endfor %}
-      </div>
-    </section>
-  </div>
-  {% endif %}
+  <header class="container project__header"><a class="back-link" href="{{ home }}#work">{{ ui.back }}</a><p class="meta">{% if item.status == 'current' %}{{ ui.current }}{% else %}{{ ui.published }}{% endif %} / {{ item.venue }} {{ item.year }}</p><h1>{{ item.title }}</h1><p class="project__title">{{ text.title }}</p><p class="lede">{{ text.summary }}</p><div class="project__links">{% for link in item.links %}{% assign link_key = link[0] %}<a href="{{ link[1] }}" target="_blank" rel="noopener">{% if item.id == 'senior-driving' and link[0] == 'pdf' %}{% if lang == 'zh' %}项目介绍 PDF{% else %}Project flyer{% endif %}{% else %}{{ ui[link_key] }}{% endif %}</a>{% endfor %}</div></header>
+  <figure class="container project__cover"><img src="{{ item.image }}" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" fetchpriority="high" decoding="async" /><figcaption>{{ text.caption }}</figcaption></figure>
+  <div class="container project__story"><div class="project__reflection"><p class="project__pullquote">{{ text.quote }}</p><p class="meta">{{ item.title }} / {{ item.year }}</p></div><div class="project__body">
+    <section><h2>{{ ui.question }}</h2><p>{{ text.question }}</p></section><section><h2>{{ ui.idea }}</h2><p>{{ text.idea }}</p></section>
+    {% if item.id == 'adonis' %}<figure class="results"><table><caption>{% if lang == 'zh' %}论文报告的 LWL 平均绝对误差{% else %}Reported LWL mean absolute error{% endif %}</caption><thead><tr><th scope="col">{% if lang == 'zh' %}条件{% else %}Setting{% endif %}</th><th scope="col">Adonis</th><th scope="col">{% if lang == 'zh' %}传统传感器{% else %}Traditional sensor{% endif %}</th></tr></thead><tbody><tr><th scope="row">{% if lang == 'zh' %}受控{% else %}Controlled{% endif %}</th><td>4.43</td><td>11.84</td></tr><tr><th scope="row">{% if lang == 'zh' %}田间{% else %}Field{% endif %}</th><td>6.49</td><td>14.32</td></tr></tbody></table><figcaption>{{ text.figure_note }}</figcaption></figure>{% endif %}
+    <section><h2>{{ ui.evidence }}</h2><p>{{ text.evidence }}</p><a href="{% if item.links.paper %}{{ item.links.paper }}{% else %}{{ item.links.pdf }}{% endif %}" target="_blank" rel="noopener">{{ ui.source }}: {{ item.venue }} {{ item.year }}</a></section><section><h2>{{ ui.next }}</h2><p>{{ text.next }}</p></section>
+  </div></div>
+  {% if item.gallery.size > 0 %}<figure class="container project__gallery{% if item.gallery.size == 1 %} project__gallery--single{% endif %}">{% for photo in item.gallery %}<img src="{{ photo.src }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" />{% endfor %}<figcaption>{{ text.figure_note }}</figcaption></figure>{% endif %}
+  <nav class="container project__related" aria-label="{{ ui.selected }}"><h2>{{ ui.selected }}</h2>{% for other in site.data.work.main %}{% if other.id != item.id %}<a href="{{ home }}project/{{ other.id }}/"><strong>{{ other.title }}</strong><span>{{ other.venue }} {{ other.year }}</span></a>{% endif %}{% endfor %}</nav>
 </article>

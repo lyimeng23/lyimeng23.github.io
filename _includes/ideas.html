@@ -1,36 +1,6 @@
-<section class="section section--ideas" id="ideas" tabindex="-1">
-  <div class="container">
-    <header class="section__head section__head--split">
-      <div class="section__head-main">
-        <p class="eyebrow"><span class="eyebrow__index">05</span> Thinking</p>
-        <h2 class="section__title">Questions I do not<br>have an answer to</h2>
-      </div>
-      <p class="section__note">{{ site.data.ideas.intro }}</p>
-    </header>
-
-    <ol class="questions">
-      {% for item in site.data.ideas.main %}
-      <li class="question reveal" style="--i: {{ forloop.index0 }}">
-        <div class="question__id">
-          <span class="question__key">{{ item.key }}</span>
-          <span class="tag tag--open">{{ item.status }}</span>
-        </div>
-        <h3 class="question__title">{{ item.title }}</h3>
-        <p class="question__body">{{ item.question }}</p>
-        <ul class="question__threads">
-          {% for thread in item.threads %}<li>{{ thread }}</li>{% endfor %}
-        </ul>
-      </li>
-      {% endfor %}
-    </ol>
-
-    <section class="notes" aria-label="Standing working notes">
-      <h3 class="notes__title">Standing notes</h3>
-      <ul class="notes__list">
-        {% for note in site.data.ideas.notes %}
-        <li class="notes__item"><span class="notes__arrow" aria-hidden="true">→</span><span>{{ note }}</span></li>
-        {% endfor %}
-      </ul>
-    </section>
+<section class="section thinking" id="ideas"><div class="container">
+  <h2>{{ copy.thinking_title }}</h2>
+  <div class="thinking__grid"><dl>{% for principle in copy.principles %}<div><dt>{{ principle.title }}</dt><dd>{{ principle.text }}</dd></div>{% endfor %}</dl>
+    <a class="essay-link" href="{{ home }}writing/observation-and-understanding/"><span class="meta">{{ ui.writing }}</span><h3>{{ copy.essay_title }}</h3><p>{{ copy.essay_note }}</p><span class="text-link">{{ ui.read }}</span></a>
   </div>
-</section>
+</div></section>

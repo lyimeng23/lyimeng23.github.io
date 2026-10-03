@@ -5,7 +5,9 @@ source "https://rubygems.org"
 gem "csv"
 gem "base64"
 gem "bigdecimal"
-gem "logger"
+gem "logger", "~> 1.6.0"
+# Octokit uses the optional retry middleware with the pinned Faraday 2 stack.
+gem "faraday-retry", "~> 2.2"
 gem "json"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

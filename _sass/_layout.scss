@@ -1,661 +1,81 @@
-// ============================================================
-// Layout — nav, hero, section rail, footer, sub-pages.
-// ============================================================
-
-// ---------- Primary nav ----------
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: $z-nav;
-  background: rgba($paper, 0.9);
-  backdrop-filter: saturate(150%) blur(14px);
-  -webkit-backdrop-filter: saturate(150%) blur(14px);
-  border-bottom: $rule solid transparent;
-  transition: border-color $dur $ease, background $dur $ease, box-shadow $dur $ease;
-
-  // Elevation appears only once the header has actually separated from the page, so the
-  // resting state stays completely flat.
-  &.is-stuck {
-    border-bottom-color: $paper-line;
-    box-shadow: $shadow-float;
-  }
+// Four composition families: split observation, editorial timeline, photographic essays,
+// staggered agenda. Consistency comes from measure and grid, not identical content cards.
+.container { width: min(var(--container), calc(100% - var(--gutter) * 2)); margin-inline: auto; }
+.section { padding-block: clamp(72px, 9vw, 132px); }
+.section__head { margin-bottom: 60px; }
+.section__head .lede { margin-top: 24px; }
+.section__head > .meta { margin-bottom: 16px; }
+.hero { padding: clamp(40px, 5vw, 76px) 0 80px; }
+.hero__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+.hero__copy { min-width: 0; }
+.why { background: var(--surface); }
+.statement { font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 18ch; }
+.why__body { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 52px; }
+.journey__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+.journey__intro { position: sticky; top: 132px; }
+.journey__intro p { margin-top: 24px; }
+.work__list { display: grid; gap: 88px; }
+.work__item { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.work__item--proteus { grid-template-columns: 1fr 1.3fr; }
+.work__item--proteus .work__image { order: 2; }
+.work__item--senior-driving { grid-template-columns: 1fr 1.3fr; }
+.work__item--senior-driving .work__image { max-width: 440px; }
+.agenda { background: var(--surface); }
+.agenda__space { display: grid; grid-template-columns: repeat(12,1fr); gap: 36px 24px; }
+.agenda__thrust { grid-column: 1 / 8; }
+.agenda__thrust:nth-child(2) { grid-column: 4 / 11; }
+.agenda__thrust:nth-child(3) { grid-column: 6 / 13; }
+.thinking__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; margin-top: 56px; }
+.about { background: var(--surface); }
+.about__grid { display: grid; grid-template-columns: 1fr 2fr; gap: 100px; align-items: start; }
+.about__grid > figure { max-width: 299px; }
+.about .lede { margin-block: 24px; }
+.page { padding-block: 72px 112px; }
+.page__head { margin-bottom: 56px; }
+.page__title { font-size: clamp(3rem, 6vw, 5.5rem); max-width: 18ch; }
+.page__lede { margin-top: 24px; }
+.page__body { max-width: 100%; }
+.project__header { padding-block: 56px 64px; }
+.project__header .meta { margin-block: 32px 18px; }
+.project__header h1 { font-size: clamp(4rem, 9vw, 8rem); }
+.project__header .lede { margin-top: 24px; }
+.project__story { display: grid; grid-template-columns: 1fr 1.6fr; gap: 100px; padding-block: 88px; align-items: start; }
+.project__reflection { position: sticky; top: 120px; }
+.project__body { max-width: 42rem; }
+.project__body section + section { margin-top: 48px; }
+.project__body h2 { font-size: 2rem; margin-bottom: 20px; }
+.project__body p { color: var(--body); }
+.project__gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-bottom: 88px; }
+.project__gallery figcaption { grid-column: 1 / -1; }
+.project__gallery--single { display: block; }
+.project__gallery--single img { width: min(100%, 960px); margin-inline: auto; }
+.project__related { padding-bottom: 88px; }
+.project__related h2 { font-size: 2rem; margin-bottom: 24px; }
+.essay { max-width: 760px; margin-inline: auto; }
+.essay > p { margin-block: 28px; font-size: 22px; color: var(--body); }
+.essay h2 { margin-top: 48px; font-size: 2.1rem; }
+@media (max-width: 1023px) {
+  .hero__grid { gap: 40px; }
+  .journey__grid,.why__body,.thinking__grid,.about__grid,.project__story { gap: 48px; }
+  .hero__person { flex-direction: column; align-items: flex-start !important; }
 }
-
-.nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: $s-5;
-  min-height: $nav-h;
-}
-
-.nav__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex-shrink: 0;
-
-  &:hover .nav__name { color: $accent; }
-  &:hover .nav__mark rect { fill: $accent; }
-  &:hover .nav__mark rect:nth-child(2),
-  &:hover .nav__mark rect:nth-child(4) { fill: $accent; }
-}
-
-.nav__mark {
-  display: block;
-  svg { display: block; }
-  rect { fill: $ink; transition: fill $dur-fast $ease; }
-}
-
-.nav__name {
-  font-family: $font-mono;
-  font-size: $t-micro;
-  font-weight: 500;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  transition: color $dur-fast $ease;
-}
-
-.nav__menu {
-  display: flex;
-  align-items: center;
-  gap: clamp(1rem, 2.5vw, 2.25rem);
-}
-
-.nav__list {
-  display: flex;
-  align-items: center;
-  gap: clamp(0.9rem, 2vw, 1.75rem);
-}
-
-.nav__link {
-  position: relative;
-  display: inline-block;
-  padding: 0.35rem 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: $ink-2;
-  transition: color $dur-fast $ease;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background: $accent;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform $dur $ease-out;
-  }
-
-  &:hover { color: $ink; }
-  &:hover::after { transform: scaleX(1); }
-
-  &[aria-current="true"] {
-    color: $accent;
-    &::after { transform: scaleX(1); }
-  }
-}
-
-.nav__aside {
-  display: flex;
-  align-items: center;
-  gap: $s-4;
-  padding-left: $s-5;
-  border-left: $rule solid $paper-line;
-}
-
-.nav__cv {
-  padding: 0.42em 0.95em;
-  border: $rule solid $ink;
-  border-radius: $radius-pill;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: background $dur-fast $ease, color $dur-fast $ease, border-color $dur-fast $ease;
-
-  &:hover { background: $ink; color: $paper; border-color: $ink; }
-}
-
-.nav__icon {
-  display: inline-flex;
-  color: $ink-3;
-  transition: color $dur-fast $ease;
-  &:hover { color: $accent; }
-}
-
-.nav__toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 42px;
-  height: 42px;
-  padding: 0 11px;
-  background: transparent;
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-  cursor: pointer;
-
-  &-bar {
-    display: block;
-    width: 100%;
-    height: 1.5px;
-    background: $ink;
-    transition: transform $dur $ease-out, opacity $dur-fast $ease;
-  }
-
-  &[aria-expanded="true"] {
-    .nav__toggle-bar:nth-of-type(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav__toggle-bar:nth-of-type(2) { opacity: 0; }
-  }
-}
-
-@media (max-width: $bp-lg) {
-  .nav__toggle { display: flex; }
-
-  .nav__menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: grid;
-    gap: 0;
-    padding: $s-3 clamp(1.25rem, 4.5vw, 3rem) $s-5;
-    background: $paper;
-    border-bottom: $rule solid $paper-line;
-    box-shadow: $shadow-float-lg;
-    z-index: $z-drawer;
-    box-shadow: 0 20px 40px -30px rgba($ink, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-6px);
-    // `visibility 0s` keeps the links out of the tab order the instant it closes.
-    transition: opacity $dur $ease, transform $dur $ease-out, visibility 0s;
-
-    &.is-open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      transition: opacity $dur $ease, transform $dur $ease-out, visibility 0s;
-    }
-  }
-
-  .nav__list {
-    display: grid;
-    gap: 0;
-  }
-
-  .nav__link {
-    display: block;
-    padding: 0.95rem 0;
-    border-bottom: $rule solid $paper-line-soft;
-    font-size: $t-micro;
-    &::after { display: none; }
-  }
-
-  .nav__aside {
-    padding: $s-5 0 0;
-    border-left: 0;
-  }
-}
-
-// ---------- Hero ----------
-// The person is the subject of this page, not the field. The field label sits above
-// the name as a quiet eyebrow; the name is the largest element in the document; the
-// research statement is written in the first person.
-.hero {
-  padding-block: clamp(2rem, 4.5vw, 3.25rem) 0;
-}
-
-.hero__field {
-  margin: 0 0 clamp(1.15rem, 2.4vw, 1.9rem);
-  color: $accent;
-}
-
-.hero__intro {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: end;
-  gap: clamp(1.1rem, 2.6vw, 2.75rem);
-}
-
-.hero__figure { margin: 0; line-height: 0; }
-
-// The one chromatic moment on the page. Everything else is ink on paper, so the eye
-// lands on the face first — which is the point of a person-first site.
-// Height-driven on wide screens so the portrait reads as a presentational element rather than
-// a thumbnail, but capped by vw: at 26vh on a tall narrow phone the plate ate 234px of a
-// 280px content column and pushed the name off-screen. min() takes whichever binds first.
-.hero__portrait {
-  display: block;
-  width: clamp(80px, min(26vh, 26vw), 300px);
-  height: auto;
-  border-radius: $radius;
-}
-
-.hero__nameblock { min-width: 0; }
-
-.hero__name {
-  margin: 0;
-  font-family: $font-display;
-  // Times is narrow; 11.6vw keeps "Yimeng Liu" on one line from 320px up while still
-  // reading as the largest element on the page.
-  font-size: clamp(2.2rem, 11.6vw, 11.5rem);
-  font-weight: 400;
-  line-height: 0.9;
-  letter-spacing: -0.034em;
-  color: $ink;
-}
-
-.hero__identity {
-  margin: clamp(0.7rem, 1.5vw, 1.05rem) 0 0;
-  font-family: $font-mono;
-  font-size: $t-micro;
-  font-weight: 400;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: $ink-3;
-  text-wrap: pretty;
-
-  @media (max-width: #{$bp-lg - 1px}) {
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-  }
-}
-
-// Each part is atomic and the separator is non-breaking, so a wrapped line can never
-// begin with a middot. Below 640px the identity becomes a block instead.
-.hero__part { white-space: nowrap; }
-
-.hero__part + .hero__part::before {
-  content: "\00a0\00b7\00a0";
-  opacity: 0.55;
-}
-
-@media (max-width: #{$bp-sm - 1px}) {
-  .hero__identity { display: grid; gap: 0.25rem; }
-  .hero__part + .hero__part::before { content: none; }
-  // nowrap only exists so a wrapped line cannot begin with a middot. The separators are
-  // removed here, so the nowrap is no longer needed and was pushing the identity line
-  // 21px past the viewport at 320px.
-  .hero__part { white-space: normal; }
-  .hero__part-long { display: none; }
-  .btn { font-size: $t-label; }
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $s-3;
-
-  // Narrow phones: one full-width target per row, no wrapped labels, and the
-  // quiet email link promoted to the same outline so the three read as a set.
-  @media (max-width: #{$bp-sm - 1px}) {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: stretch;
-
-    .btn--quiet {
-      padding-inline: 1.35em;
-      border-color: $paper-line;
-      color: $ink-3;
-      &:hover { border-color: $ink; color: $accent; }
-    }
-  }
-}
-
-.chain {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.35rem 0.55rem;
-  margin: 0;
-  font-family: $font-mono;
-  font-size: $t-micro;
-
-  @media (max-width: #{$bp-sm - 1px}) {
-    font-size: $t-label;
-    gap: 0.3rem 0.4rem;
-  }
-  letter-spacing: 0.02em;
-  color: $ink-2;
-
-  li { display: inline-flex; align-items: center; gap: 0.55rem; }
-
-  li + li::before {
-    content: "";
-    width: 14px;
-    height: 1px;
-    background: $paper-line;
-  }
-}
-
-// ---------- Section rail ----------
-// Reserve the rail's gutter at exactly the width where the rail starts rendering, so no
-// content can run beneath it at 1440px.
-.rail {
-  position: fixed;
-  top: 50%;
-  right: clamp(1rem, 1.6vw, 1.75rem);
-  z-index: $z-raised;
-  transform: translateY(-50%);
-  display: none;
-  opacity: 0;
-  transition: opacity $dur $ease;
-
-  // Only once there is real clearance from the content column; see $bp-rail.
-  @media (min-width: $bp-rail) { display: block; }
-  &.is-visible { opacity: 1; }
-}
-
-.rail__list { display: grid; gap: 2px; }
-
-.rail__item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.65rem;
-  padding: 3px 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: transparent;
-  transition: color $dur $ease;
-
-  &::after {
-    content: "";
-    width: 14px;
-    height: 1px;
-    background: $paper-line;
-    transition: width $dur $ease-out, background $dur $ease;
-  }
-
-  &:hover { color: $ink-2; }
-
-  &[aria-current="true"] {
-    color: $ink;
-    &::after { width: 26px; background: $accent; }
-  }
-}
-
-// 0.55 measured 4.03:1 against the active item's $ink — under AA for 11px text.
-// 0.68 lands near 6:1 while still reading clearly subordinate to the label beside it.
-.rail__key { opacity: 0.68; }
-.rail__text { transition: opacity $dur $ease; }
-
-// ---------- Footer ----------
-.footer {
-  padding-block: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 4vw, 3rem);
-  background: $ink;
-  color: rgba($paper, 0.72);
-}
-
-.footer__top {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  padding-bottom: clamp(2rem, 4vw, 3rem);
-  border-bottom: $rule solid rgba($paper, 0.16);
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    align-items: start;
-    column-gap: clamp(2rem, 6vw, 6rem);
-  }
-}
-
-.footer__statement { margin: 0; }
-
-.footer__name {
-  display: block;
-  font-family: $font-display;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  line-height: 1;
-  color: $paper;
-}
-
-.footer__role {
-  display: block;
-  margin-top: 0.6rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba($paper, 0.58);
-}
-
-.footer__thesis {
-  margin: 0;
-  max-width: 40ch;
-  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
-  line-height: 1.45;
-  color: rgba($paper, 0.82);
-}
-
-.footer__bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: $s-4;
-  padding-top: $s-5;
-}
-
-.footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  a { transition: color $dur-fast $ease; }
-  a:hover { color: $paper; text-decoration: underline; text-underline-offset: 0.25em; }
-}
-
-.footer__updated {
-  margin: 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba($paper, 0.55);
-}
-
-// ---------- Sub-pages ----------
-.page {
-  padding-block: clamp(3rem, 7vw, 5.5rem) clamp(4rem, 8vw, 6rem);
-}
-
-.page__head {
-  margin-bottom: clamp(2.5rem, 6vw, 4rem);
-  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-  border-bottom: $rule solid $paper-line;
-  max-width: $measure-wide;
-}
-
-.page__title {
-  font-family: $font-display;
-  font-size: $t-title;
-  line-height: 1.02;
-  letter-spacing: $track-display;
-  margin-bottom: 0.35em;
-}
-
-.page__lede {
-  max-width: 52ch;
-  margin: 0;
-  font-size: $t-lead;
-  line-height: 1.5;
-  color: $ink-2;
-}
-
-.prose {
-  max-width: $measure;
-  font-size: $t-body;
-  color: $ink;
-
-  > * + * { margin-top: 1em; }
-  h2 { margin-top: 2.25em; font-family: $font-display; font-size: $t-subtitle; letter-spacing: $track-tight; }
-  h3 { margin-top: 1.75em; font-size: 1.125rem; font-weight: 600; }
-  ul, ol { padding-left: 1.15em; list-style: none; }
-  ul li { position: relative; margin-bottom: 0.4em; padding-left: 0.9em; }
-  ul li::before { content: "—"; position: absolute; left: 0; color: $ink-3; }
-  a { color: $accent; text-decoration: underline; text-underline-offset: 0.2em; text-decoration-color: rgba($accent, 0.35); }
-  a:hover { text-decoration-color: currentColor; }
-  strong { font-weight: 600; }
-  code { font-family: $font-mono, "Mono Fallback", monospace; font-size: 0.86em; }
-}
-
-.page__h2 {
-  margin: 3rem 0 1rem;
-  font-family: $font-display;
-  font-size: $t-subtitle;
-  letter-spacing: $track-tight;
-}
-
-.record__label {
-  margin: 1.25rem 0 0.5rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
-.plain-list {
-  display: grid;
-  gap: 0.3rem;
-  font-size: $t-small;
-  color: $ink-2;
-  li { position: relative; padding-left: 0.9rem; }
-  li::before { content: "—"; position: absolute; left: 0; color: rgba($ink-3, 0.5); }
-}
-
-.timeline {
-  display: grid;
-  max-width: $measure-wide;
-}
-
-.page__head + .timeline .timeline__item:first-child,
-.page__head + .record__cols .record__block { border-top: 0; }
-
-.timeline__item {
-  display: grid;
-  gap: 0.35rem 1.5rem;
-  padding-block: 1.1rem;
-  border-top: $rule solid $paper-line;
-
-  @media (min-width: $bp-sm) { grid-template-columns: 8rem minmax(0, 1fr); }
-}
-
-.timeline__date {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $ink-3;
-  padding-top: 0.25rem;
-}
-
-.timeline__content { color: $ink-2; }
-.timeline__content a { color: $accent; text-decoration: underline; text-underline-offset: 0.2em; }
-.timeline__content strong { color: $ink; font-weight: 600; }
-.timeline__content p { margin: 0; }
-
-// ---------- Project page ----------
-.project__header {
-  padding-block: clamp(3rem, 7vw, 5rem) clamp(2rem, 4vw, 3rem);
-  border-bottom: $rule solid $paper-line;
-}
-
-.project__title {
-  font-family: $font-display;
-  font-size: $t-title;
-  line-height: 1.02;
-  letter-spacing: $track-display;
-  margin-bottom: 0.3em;
-  max-width: 20ch;
-}
-
-.project__tagline {
-  max-width: 52ch;
-  margin: 0 0 1.25rem;
-  font-size: $t-lead;
-  line-height: 1.5;
-  color: $ink-2;
-}
-
-.project__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
-.project__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $s-3;
-  margin-top: $s-5;
-}
-
-.project__figure {
-  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
-}
-
-.project__figure img {
-  width: 100%;
-  height: auto;
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-}
-
-.project__body { padding-block: clamp(2rem, 5vw, 3.5rem); }
-
-.project__gallery-section {
-  padding-bottom: clamp(3rem, 6vw, 4.5rem);
-}
-
-.project__gallery {
-  display: grid;
-  gap: $s-4;
-  margin-top: $s-5;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-}
-
-.project__gallery-item { margin: 0; }
-
-.project__gallery-item img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-}
-
-.project__gallery-item figcaption {
-  margin-top: 0.5rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: $ink-3;
+@media (max-width: 767px) {
+  .hero { padding-block: 32px 56px; }
+  .hero__grid,.why__body,.journey__grid,.work__item,.thinking__grid,.about__grid,.project__story { grid-template-columns: 1fr; gap: 40px; }
+  .hero__person { flex-direction: row; }
+  .hero__grid { gap: 48px; }
+  .section__head { margin-bottom: 40px; }
+  .journey__intro,.project__reflection { position: static; }
+  .work__item--proteus .work__image { order: 0; }
+  .work__list { gap: 64px; }
+  .work__item { gap: 24px; }
+  .work__item--senior-driving .work__image { max-width: none; }
+  .work__item--senior-driving img { aspect-ratio: 4/3; object-fit: cover; object-position: 50% 60%; }
+  .agenda__space { display: block; }
+  .agenda__thrust + .agenda__thrust { margin-top: 36px; }
+  .project__gallery { gap: 12px; }
+  .project__story { padding-block: 56px; }
+  .about__grid > figure { max-width: 160px; }
+  .project__pullquote { max-width: 22ch; }
+  .essay > p { font-size: 20px; }
 }

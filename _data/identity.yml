@@ -1,0 +1,222 @@
+{
+  "en": {
+    "role": "Ph.D. candidate · Computer Science & Engineering",
+    "university": "Michigan State University",
+    "headline": "Understanding a world we can only partly see.",
+    "intro": "I study how intelligent systems turn incomplete physical observations into reliable understanding—starting with sensing, and looking toward reasoning and action.",
+    "visual_title": "One plant. Two ways of seeing.",
+    "visual_note": "RGB and mmWave SAR examples from Proteus. Each reveals a different part of the same physical scene.",
+    "why_title": "A measurement is a view. It is never the whole world.",
+    "why_body": "A camera sees appearance. Radar responds to physical structure and surface water. Light changes, leaves move, and observations disappear. A useful system must reason about both the evidence it has and what that evidence leaves out.",
+    "why_points": [
+      {
+        "title": "Partial",
+        "text": "A sensor observes only what its viewpoint and physics allow."
+      },
+      {
+        "title": "Different",
+        "text": "Two modalities can observe the same thing without measuring the same property."
+      },
+      {
+        "title": "Changing",
+        "text": "An estimate must be reconsidered as the world and its observations change."
+      }
+    ],
+    "journey_title": "The question grew with the work.",
+    "journey_intro": "My background is in mathematics. Sensing brought me to the gap between an observation and the physical state we want to know.",
+    "journey": [
+      {
+        "period": "2022–2023",
+        "title": "Recovering a signal",
+        "text": "Biomimetic sonar and mmLeaf introduced me to indirect observation: finding structure in echoes and measuring leaves with radio waves.",
+        "link": "/#record",
+        "anchor": "Early work"
+      },
+      {
+        "period": "2024",
+        "title": "Learning from complementary views",
+        "text": "Hydra combined radar and camera observations. That made the representation—not simply the choice of sensor—the next question.",
+        "link": "/project/hydra/",
+        "anchor": "Hydra"
+      },
+      {
+        "period": "2025",
+        "title": "Making the representation useful",
+        "text": "Proteus studies what a radar can learn from a camera. Adonis asks how to measure degrees of wetness, with calibration for field conditions.",
+        "link": "/project/proteus/",
+        "anchor": "Proteus & Adonis"
+      },
+      {
+        "period": "Current research",
+        "title": "From a snapshot to a continuing record",
+        "text": "Driving assessment brings time and context into the problem. My current questions concern how understanding persists as observations and conditions change.",
+        "link": "/project/senior-driving/",
+        "anchor": "Driving assessment"
+      }
+    ],
+    "work_title": "Ideas, built and tested.",
+    "work_intro": "Three published sensing systems, followed by a current application that asks a different kind of question.",
+    "future_title": "Beyond a good snapshot.",
+    "future_intro": "The independent research program I want to build connects physical measurement, persistent understanding, and responsible decisions. These are future research directions, not completed capabilities.",
+    "future": [
+      {
+        "title": "Understanding with incomplete evidence",
+        "question": "What physical state can we infer—and what must remain unknown?",
+        "body": "Develop representations that connect heterogeneous observations to physical quantities and make uncertainty explicit.",
+        "origin": "Starting from Hydra, Proteus & Adonis"
+      },
+      {
+        "title": "Understanding that lasts",
+        "question": "How should a system revise its beliefs when observations stop or the environment changes?",
+        "body": "Study continuity, change and uncertainty over time, with evaluation that exposes missing observations and shifting conditions.",
+        "origin": "Motivated by field sensing & contextual driving assessment"
+      },
+      {
+        "title": "Understanding worth acting on",
+        "question": "When is an estimate reliable enough to support a decision?",
+        "body": "Connect model reliability to the consequence of an error, including when a system should ask for more evidence or defer to a person.",
+        "origin": "A future direction in collaboration with domain researchers"
+      }
+    ],
+    "thinking_title": "How I approach a problem.",
+    "principles": [
+      {
+        "title": "Begin with the quantity.",
+        "text": "Define what we need to know about the world before choosing a model."
+      },
+      {
+        "title": "Keep the observation in view.",
+        "text": "Ask which physical effects produced the measurement, and which explanations it can distinguish."
+      },
+      {
+        "title": "Test where the assumption breaks.",
+        "text": "A useful evaluation includes the conditions that make a method stop working."
+      }
+    ],
+    "essay_title": "What changes between a measurement and understanding?",
+    "essay_note": "A research perspective on observation, representation and the questions still open.",
+    "about_title": "From mathematics to the physical world.",
+    "about_body": "I am a Ph.D. candidate in Computer Science and Engineering at Michigan State University, advised by Zhichao Cao. Before MSU, I studied mathematics at Virginia Tech and worked on biomimetic sonar with Rolf Müller.",
+    "contact": "I welcome conversations about multimodal sensing, physical representations, and reliable intelligent systems—and collaborations that connect these questions to real settings.",
+    "record_title": "The academic record.",
+    "record_intro": "Recent papers and public research resources. The complete academic record is one level deeper.",
+    "service_title": "Activities & service",
+    "service_lede": "Conference presentations, invited talks and academic service.",
+    "news_title": "News & timeline",
+    "news_lede": "Public papers, presentations and career updates.",
+    "error_title": "This page is outside the field of view.",
+    "error_body": "The address may have changed. The homepage and publication record are good places to start.",
+    "visual_camera": "The camera shows appearance and visible surfaces. Its evidence depends on lighting.",
+    "visual_radar": "Radar records an indirect physical response. Its structure needs interpretation."
+  },
+  "zh": {
+    "role": "计算机科学与工程 · 博士候选人",
+    "university": "密歇根州立大学",
+    "headline": "从不完整的观测，理解物理世界。",
+    "intro": "我研究智能系统如何把不完整的物理观测转化为可靠的理解：从感知出发，走向推理与行动。",
+    "visual_title": "同一株植物，两种观测。",
+    "visual_note": "Proteus 论文中的 RGB 与毫米波 SAR 观测。每种模态揭示同一物理场景的不同侧面。",
+    "why_title": "测量是一个视角，世界却不止于此。",
+    "why_body": "相机记录外观，雷达响应物理结构和叶面水分。光照会变化，叶片会移动，观测也会中断。一个有用的系统，既要理解已有证据，也要识别证据无法告诉它的部分。",
+    "why_points": [
+      {
+        "title": "不完整",
+        "text": "传感器的视角与物理机制决定了它能观测什么。"
+      },
+      {
+        "title": "不相同",
+        "text": "两种模态可以观测同一对象，却测量不同的物理属性。"
+      },
+      {
+        "title": "持续变化",
+        "text": "世界和观测发生变化时，系统必须重新审视已有估计。"
+      }
+    ],
+    "journey_title": "问题，随着研究逐渐展开。",
+    "journey_intro": "我的起点是数学。感知研究让我走近了一个具体问题：观测与我们想知道的物理状态之间，究竟隔着什么？",
+    "journey": [
+      {
+        "period": "2022–2023",
+        "title": "从回波中提取信息",
+        "text": "仿生声呐与 mmLeaf 让我接触间接观测：从回声中寻找结构，用无线电波测量叶片。",
+        "link": "/#record",
+        "anchor": "早期研究"
+      },
+      {
+        "period": "2024",
+        "title": "从互补视角中学习",
+        "text": "Hydra 将雷达与相机的观测结合起来。接下来的问题不再只是选什么传感器，而是如何表达它们提供的信息。",
+        "link": "/project/hydra/",
+        "anchor": "Hydra"
+      },
+      {
+        "period": "2025",
+        "title": "让表征服务于测量",
+        "text": "Proteus 研究雷达可以向相机学习什么；Adonis 则从干湿分类走向湿度程度的测量，并针对田间条件进行校准。",
+        "link": "/project/proteus/",
+        "anchor": "Proteus 与 Adonis"
+      },
+      {
+        "period": "当前研究",
+        "title": "从一次快照到连续记录",
+        "text": "驾驶评估将时间和情境带入这个问题。我目前关注：当观测和环境不断变化时，理解如何持续成立？",
+        "link": "/project/senior-driving/",
+        "anchor": "持续驾驶评估"
+      }
+    ],
+    "work_title": "用真实系统，检验研究想法。",
+    "work_intro": "三项已发表的感知工作，以及一项提出新问题的当前应用研究。",
+    "future_title": "超越一次准确的快照。",
+    "future_intro": "我希望建立的独立研究方向，将物理测量、持续理解与负责任的决策联系起来。以下是未来研究问题，而非已经实现的能力。",
+    "future": [
+      {
+        "title": "不完整证据下的理解",
+        "question": "哪些物理状态可以推断，哪些必须保留为未知？",
+        "body": "研究把异构观测连接到物理量的表征，让不确定性成为显式信息。",
+        "origin": "从 Hydra、Proteus 与 Adonis 出发"
+      },
+      {
+        "title": "随时间持续的理解",
+        "question": "当观测中断或环境改变，系统应该怎样修正判断？",
+        "body": "研究跨时间的连续性、变化与不确定性，并用缺失观测和变化条件检验方法。",
+        "origin": "来自田间感知与情境化驾驶评估的问题"
+      },
+      {
+        "title": "可以支持决策的理解",
+        "question": "一个估计在什么条件下，才足以支持决策？",
+        "body": "将模型可靠性与错误的后果联系起来，研究何时需要更多证据，何时应交由人来判断。",
+        "origin": "与领域研究者共同探索的未来方向"
+      }
+    ],
+    "thinking_title": "我如何思考一个问题。",
+    "principles": [
+      {
+        "title": "从物理量出发。",
+        "text": "先定义我们需要知道世界的什么，再选择模型。"
+      },
+      {
+        "title": "始终回到观测。",
+        "text": "追问哪些物理效应产生了测量，以及证据能区分哪些解释。"
+      },
+      {
+        "title": "在假设失效处检验。",
+        "text": "有效的评估，也要涵盖方法停止成立的条件。"
+      }
+    ],
+    "essay_title": "从测量到理解，中间发生了什么？",
+    "essay_note": "关于观测、表征与尚未解决问题的一篇研究随笔。",
+    "about_title": "从数学出发，走近物理世界。",
+    "about_body": "我是密歇根州立大学计算机科学与工程博士候选人，导师为 Zhichao Cao。此前，我在弗吉尼亚理工大学学习数学，并与 Rolf Müller 开展仿生声呐研究。",
+    "contact": "欢迎交流多模态感知、物理表征与可靠智能系统，也期待与领域研究者合作，让这些问题走进真实场景。",
+    "record_title": "正式学术记录。",
+    "record_intro": "近期论文与公开研究资源。完整学术记录在独立页面中。",
+    "service_title": "学术活动与服务",
+    "service_lede": "会议报告、受邀讲座与学术服务。",
+    "news_title": "动态与时间线",
+    "news_lede": "公开论文、研究报告与个人学术经历。",
+    "error_title": "这个页面暂时不在视野里。",
+    "error_body": "地址可能已经变更。你可以从首页或论文记录继续浏览。",
+    "visual_camera": "相机记录外观与可见表面，提供的证据受到光照影响。",
+    "visual_radar": "雷达记录间接的物理响应，其中的结构需要解释。"
+  }
+}

@@ -1,46 +1,73 @@
-# Second-layer academic record: education, positions, service.
-# Kept out of the first screen so the thesis leads, but one click away.
-
-education:
-  - period: "2023 —"
-    degree: "Ph.D. candidate, Computer Science and Engineering"
-    place: "Michigan State University"
-    note: "Advised by Dr. Zhichao Cao"
-  - period: "2019 — 2023"
-    degree: "B.S., Mathematics"
-    place: "Virginia Tech"
-    note: "Undergraduate research with Dr. Rolf Müller"
-
-positions:
-  - period: "Summer 2022"
-    role: "Research intern, EIN Lab"
-    place: "Michigan State University"
-  - period: "2023 —"
-    role: "Ph.D. researcher, Spatial Intelligence"
-    place: "CSE, Michigan State University"
-
-service:
-  invited_reviewer:
-    - "UbiComp / ISWC · UbiSense 2025"
-    - "IEEE Internet of Things Journal"
-    - "IEEE Transactions on Mobile Computing"
-    - "IEEE Internet Computing"
-    - "HAI 2025 · Poster track"
-  program_committee:
-    - "IEEE DSAA 2025"
-
-conferences:
-  - title: "NSF Workshop on Sustainable Computing"
-    role: "Participant"
-    place: "Purdue University"
-    year: "2024"
-  - title: "ACM MobiCom"
-    role: "Presented Hydra"
-    place: "Washington, D.C."
-    year: "2024"
-  - title: "ACM SenSys"
-    role: "Presented Proteus"
-    place: "Irvine, CA"
-    year: "2025"
-
-talk: "Invited talk, University of Hawai'i at Mānoa — October 2024"
+{
+  "education": [
+    {
+      "period": "2023 —",
+      "degree": "Ph.D. candidate, Computer Science and Engineering",
+      "place": "Michigan State University",
+      "note": "Advised by Dr. Zhichao Cao",
+      "degree_zh": "计算机科学与工程博士候选人",
+      "place_zh": "密歇根州立大学",
+      "note_zh": "导师：Zhichao Cao"
+    },
+    {
+      "period": "2019 — 2023",
+      "degree": "B.S., Mathematics",
+      "place": "Virginia Tech",
+      "note": "Undergraduate research with Dr. Rolf Müller",
+      "degree_zh": "数学学士",
+      "place_zh": "弗吉尼亚理工大学",
+      "note_zh": "与 Rolf Müller 开展本科研究"
+    }
+  ],
+  "positions": [
+    {
+      "period": "Summer 2022",
+      "role": "Research intern, EIN Lab",
+      "place": "Michigan State University",
+      "role_zh": "EIN 实验室研究实习生"
+    },
+    {
+      "period": "2023 —",
+      "role": "Ph.D. researcher",
+      "place": "CSE, Michigan State University",
+      "role_zh": "博士研究员"
+    }
+  ],
+  "service": {
+    "invited_reviewer": [
+      "UbiComp / ISWC · UbiSense 2025",
+      "IEEE Internet of Things Journal",
+      "IEEE Transactions on Mobile Computing",
+      "IEEE Internet Computing",
+      "HAI 2025 · Poster track"
+    ],
+    "program_committee": [
+      "IEEE DSAA 2025"
+    ]
+  },
+  "conferences": [
+    {
+      "title": "NSF Workshop on Sustainable Computing",
+      "role": "Participant",
+      "place": "Purdue University",
+      "year": "2024",
+      "role_zh": "参会"
+    },
+    {
+      "title": "ACM MobiCom",
+      "role": "Presented Hydra",
+      "place": "Washington, D.C.",
+      "year": "2024",
+      "role_zh": "Hydra 报告"
+    },
+    {
+      "title": "ACM SenSys",
+      "role": "Presented Proteus",
+      "place": "Irvine, CA",
+      "year": "2025",
+      "role_zh": "Proteus 报告"
+    }
+  ],
+  "talk": "Invited talk, University of Hawai'i at Mānoa — October 2024",
+  "talk_zh": "受邀报告，夏威夷大学马诺阿分校，2024 年 10 月"
+}

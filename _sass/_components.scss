@@ -1,1245 +1,144 @@
-// ============================================================
-// Components — beliefs, instrument, system, work, ideas, record.
-// ============================================================
-
-// ============================================================
-// 01 — Beliefs
-// ============================================================
-@include at-lg {
-  .belief__key { grid-row: 1; }
-  .belief__title { grid-row: 1; }
-  .belief__body { grid-row: 1; }
-
-  .belief:nth-child(1) {
-    .belief__key { grid-column: 1; }
-    .belief__title { grid-column: 2 / span 5; }
-    .belief__body { grid-column: 8 / span 5; }
-  }
-  .belief:nth-child(2) {
-    .belief__key { grid-column: 2; }
-    .belief__title { grid-column: 3 / span 5; }
-    .belief__body { grid-column: 8 / span 5; }
-  }
-  .belief:nth-child(3) {
-    .belief__key { grid-column: 3; }
-    .belief__title { grid-column: 4 / span 5; }
-    .belief__body { grid-column: 8 / span 5; }
-  }
-}
-
-// ============================================================
-// 02 — The instrument (signature interaction)
-// ============================================================
-.panel {
-  margin: 0;
-  min-width: 0;
-  // Headroom for the depth drift so the frame never uncovers its box.
-  padding-top: 14px;
-
-  @media (min-width: $bp-lg) {
-    position: sticky;
-    top: calc(#{$nav-h} + 1.5rem);
-  }
-  @media (max-width: #{$bp-lg - 1px}) {
-    // Sticky above the steps, so the frame and its caption must occlude them.
-    position: sticky;
-    top: $nav-h;
-    z-index: 30;
-    padding-bottom: 0.55rem;
-    background: $paper;
-  }
-}
-
-// Framing marks on the instrument panel
-// ---- Layers: cumulative, newest in front ----
-// Layers accumulate rather than replace. A past layer recedes in stroke weight,
-// never in legibility: dimming the whole group would drop its labels below the
-// contrast floor, so only strokes lighten.
-.panel.is-probing .panel__crosshair { opacity: 0.75; }
-
-.panel.is-probing .panel__cursor { color: $ink-3; }
-
-// ---- Steps ----
-.steps {
-  position: relative;
-  display: grid;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 1.05rem;
-    top: 1.1rem;
-    bottom: 1.1rem;
-    width: 1px;
-    background: linear-gradient($accent var(--progress, 0%), $paper-line var(--progress, 0%));
-    transition: background $dur $ease;
-  }
-}
-
-.step {
-  position: relative;
-  border-top: $rule solid $paper-line;
-  padding-block: 0.35rem;
-
-  &:first-child { border-top: 0; }
-}
-
-.step.is-active {
-  .step__key { background: $accent; border-color: $accent; color: $paper; }
-  .step__label { color: $accent; }
-  .step__question { color: $ink; }
-  .step__summary { color: $ink-2; }
-}
-
-// ---- Small screens: the scene keeps its geometry, the caption keeps its words ----
-@media (max-width: $bp-md) {
-  .pn-ticks,
-  .pn-ego-label,
-  .pn-scalebar,
-  .pn-chip,
-  .pn-chip-leader,
-  .pn-nodetect,
-  .pn-noreturn,
-  .pn-occlusion,
-  .pn-time,
-  .pn-rel-tag,
-  .pn-future-label,
-  .pn-rejected-label,
-  .pn-unconfirmed { display: none; }
-
-  .pn-action-long { display: none; }
-  .pn-action-short { display: block; font-size: 30px; }
-
-  .panel__caption { font-size: 0.625rem; }
-  .panel__stage { letter-spacing: 0.08em; }
-}
-
-// ============================================================
-// 03 — Research system
-// ============================================================
-.system { display: grid; }
-
-.evidence { display: grid; gap: 0.9rem; }
-
-// ============================================================
-// 04 — Selected work
-// ============================================================
-.work { display: grid; gap: clamp(3rem, 7vw, 5.5rem); }
-
-.work__item {
-  display: grid;
-  gap: 1.5rem clamp(2rem, 5vw, 4.5rem);
-  padding-top: clamp(2rem, 4vw, 3rem);
-  border-top: $rule solid $paper-line;
-
-  @media (min-width: $bp-md) {
-    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-    align-items: start;
-
-    &:nth-child(even) {
-      grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
-      .work__figure { order: 2; }
-      .work__body { order: 1; }
-    }
-  }
-}
-
-.work__figure { margin: 0; min-width: 0; }
-
-.work__figure-link { display: block; }
-
-.work__img-wrap {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  background: $paper-sunk;
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-}
-
-.work__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transform: scale(1);
-  transition: transform $dur $ease;
-}
-
-/* Hover moves the frame, not the colour: the photograph is never re-graded. */
-.work__figure-link:hover .work__img { transform: scale(1.015); }
-
-.work__figure-index {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 0.4em 0.8em;
-  background: rgba($paper, 0.94);
-  border-right: $rule solid $paper-line;
-  border-bottom: $rule solid $paper-line;
-  border-radius: 0 0 $radius 0;
-  color: $ink-3;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.work__figure-caption {
-  margin-top: 0.6rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.05em;
-  color: $ink-3;
-}
-
-.work__body { min-width: 0; }
-
-.work__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.4rem 1rem;
-  margin-bottom: 0.6rem;
-}
-
-.work__capability {
-  margin: 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-.work__venue {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4em;
-  margin: 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
-.work__title {
-  font-family: $font-display;
-  font-size: clamp(2rem, 4vw, 3.1rem);
-  line-height: 1;
-  letter-spacing: -0.028em;
-  margin-bottom: 0.4rem;
-}
-
-.work__tagline {
-  max-width: 46ch;
-  margin: 0 0 1.5rem;
-  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-  line-height: 1.45;
-  color: $ink-2;
-}
-
-.work__spec {
-  display: grid;
-  gap: 0.85rem;
-  margin: 0 0 1.5rem;
-}
-
-.work__spec-row {
-  display: grid;
-  gap: 0.15rem;
-
-  @media (min-width: $bp-sm) {
-    grid-template-columns: 8.25rem minmax(0, 1fr);
-    column-gap: 1.25rem;
-  }
-
-  dt {
-    font-family: $font-mono;
-    font-size: $t-label;
-    font-weight: 500;
-    letter-spacing: $track-label;
-    text-transform: uppercase;
-    color: $ink-3;
-    padding-top: 0.2rem;
-  }
-
-  dd {
-    margin: 0;
-    max-width: 62ch;
-    font-size: $t-small;
-    line-height: 1.55;
-    color: $ink-2;
-  }
-}
-
-.work__spec-row--evidence {
-  dt { color: $accent; }
-  dd { color: $ink; }
-}
-
-.work__spec-row--why {
-  padding-left: $s-4;
-  border-left: 2px solid $accent;
-  dd { color: $ink; }
-  dt { color: $accent; }
-}
-
-.work__links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.75rem;
-  padding-top: 1.25rem;
-  border-top: $rule solid $paper-line;
-}
-
-.work__context {
-  margin-left: auto;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.06em;
-  color: $ink-3;
-}
-
-// The flagship project gets the full page width: one wide plate, then the
-// argument in two columns underneath it.
-@media (min-width: $bp-lg) {
-  .work__item--lead {
-    display: block;
-
-    .work__figure { margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
-
-    .work__spec {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem clamp(2rem, 4vw, 3.5rem);
-    }
-
-    .work__spec-row {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.3rem;
-    }
-
-    .work__spec-row--why { grid-column: 1 / -1; }
-  }
-}
-
-.work__item--ongoing {
-  border-top-style: dashed;
-  .work__capability { color: $ink-2; }
-  .work__spec-row--why { border-left-style: dashed; border-left-color: $ink-3; }
-  .work__spec-row--why dt { color: $ink-2; }
-}
-
-// ============================================================
-// 05 — Ideas
-// ============================================================
-.questions { display: grid; }
-
-.question {
-  display: grid;
-  gap: 0.35rem;
-  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
-  border-top: $rule solid $paper-line;
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    column-gap: $col-gap;
-    row-gap: 0.7rem;
-    align-items: start;
-  }
-}
-
-.question__id {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.question__key {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: $accent;
-}
-
-.question__title {
-  font-family: $font-display;
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  max-width: 16ch;
-}
-
-.question__body {
-  margin: 0;
-  max-width: 52ch;
-  font-size: clamp(1rem, 1.3vw, 1.08rem);
-  line-height: 1.58;
-  color: $ink-2;
-}
-
-.question__threads {
-  margin-top: 0.5rem;
-  padding-left: 0.8rem;
-  border-left: $rule solid $paper-line;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.04em;
-  line-height: 1.7;
-  color: $ink-3;
-
-  // Flows as one line of text, so separators never begin a wrapped line.
-  li { display: inline; }
-  li + li::before { content: " · "; color: rgba($ink-3, 0.55); }
-}
-
-@include at-lg {
-  .question__id { grid-column: 1 / 3; grid-row: 1; }
-  .question__title { grid-column: 3 / 8; grid-row: 1; }
-  .question__body { grid-column: 8 / 13; grid-row: 1; }
-  .question__threads { grid-column: 8 / 13; grid-row: 2; }
-}
-
-.notes {
-  margin-top: clamp(3rem, 6vw, 4.5rem);
-  padding-top: clamp(1.5rem, 3vw, 2rem);
-  border-top: 2px solid $ink;
-}
-
-.notes__title {
-  margin: 0 0 1.25rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
-.notes__list {
-  display: grid;
-  gap: 0.85rem;
-  max-width: $measure-wide;
-}
-
-.notes__item {
-  display: grid;
-  grid-template-columns: 1.1rem minmax(0, 1fr);
-  gap: 0.4rem;
-  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
-  line-height: 1.5;
-  color: $ink-2;
-}
-
-.notes__arrow {
-  font-family: $font-mono;
-  color: $accent;
-  padding-top: 0.1em;
-}
-
-// ============================================================
-// 05 — Roadmap (where this goes)
-// ============================================================
-
-// The capability line names the thing being built, in the language of the system
-// rather than the language of the question.
-// The honesty line: what is actually finished behind the question.
-// Title and capability travel together in one cell: the grid row is as tall as the
-// body, and a separate row would strand the capability line in the gap below it.
-@include at-lg {
-  .question__id { grid-column: 1 / 3; grid-row: 1; }
-  .question__head { grid-column: 3 / 8; grid-row: 1; }
-  .question__body { grid-column: 8 / 13; grid-row: 1; }
-  .question__status { grid-column: 8 / 13; grid-row: 2; }
-}
-
-// ============================================================
-// 06 — Record
-// ============================================================
-.record {
-  display: grid;
-  gap: clamp(2.5rem, 5vw, 4rem);
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: minmax(0, 1.62fr) minmax(15rem, 0.62fr);
-    column-gap: clamp(2.5rem, 5vw, 5rem);
-    align-items: start;
-  }
-}
-
-.record__main { display: grid; gap: clamp(2rem, 4vw, 3rem); min-width: 0; }
-
-.record__cols {
-  display: grid;
-  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 3rem);
-
-  @media (min-width: $bp-md) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-  // Used directly under a page head, which already carries the rule.
-  &--top .record__block { padding-top: 0; border-top: 0; }
-}
-
-.record__subhead {
-  margin: 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $ink;
-}
-
-.record__bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1.25rem;
-  padding-bottom: 1rem;
-  margin-bottom: 0.5rem;
-  border-bottom: $rule solid $paper-line;
-}
-
-.filter { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-.filter__btn {
-  padding: 0.42em 0.9em;
-  border: $rule solid $paper-line;
-  border-radius: $radius-pill;
-  background: transparent;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $ink-3;
-  cursor: pointer;
-  transition: background $dur-fast $ease, color $dur-fast $ease, border-color $dur-fast $ease;
-
-  &:hover { color: $ink; border-color: $ink-3; }
-
-  &.is-active {
-    background: $ink;
-    border-color: $ink;
-    color: $paper;
-  }
-}
-
-.filter__count {
-  margin: 0 0 0 auto;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
-.pubs { display: grid; border-top: 0; }
-
-.pub {
-  display: grid;
-  gap: 0.3rem 1.5rem;
-  padding-block: 1.15rem;
-  border-bottom: $rule solid $paper-line;
-
-  @media (min-width: $bp-md) {
-    grid-template-columns: 9.5rem minmax(0, 1fr) auto;
-    align-items: baseline;
-  }
-
-  &[hidden] { display: none; }
-}
-
-.pub__venue {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4em;
-  align-items: baseline;
-  margin: 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
-.pub__title {
-  font-size: clamp(1rem, 1.35vw, 1.1rem);
-  font-weight: 600;
-  line-height: 1.32;
-  letter-spacing: -0.008em;
-}
-
-.pub__authors {
-  margin: 0.3rem 0 0;
-  font-size: $t-small;
-  line-height: 1.45;
-  color: $ink-3;
-  strong { color: $ink-2; font-weight: 600; }
-}
-
-.pub__meta {
-  margin: 0.2rem 0 0;
-  font-size: $t-micro;
-  color: $ink-3;
-}
-
-.pub__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-
-  @media (min-width: $bp-md) { justify-content: flex-end; }
-
-  a {
-    font-family: $font-mono;
-    font-size: $t-label;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: $ink-2;
-    border-bottom: $rule solid $paper-line;
-    padding-bottom: 1px;
-    transition: color $dur-fast $ease, border-color $dur-fast $ease;
-    &:hover { color: $accent; border-color: $accent; }
-  }
-}
-
-.record__scholar {
-  margin-top: 1.25rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  a { color: $accent; border-bottom: $rule solid rgba($accent, 0.4); padding-bottom: 2px; }
-  a:hover { border-color: $accent; }
-}
-
-.record__side {
-  display: grid;
-  gap: clamp(1.25rem, 2.5vw, 1.75rem);
-  align-content: start;
-
-  @media (min-width: $bp-lg) {
-    position: sticky;
-    top: calc(#{$nav-h} + 2rem);
-  }
-}
-
-.record__side-note {
-  margin: 0;
-  padding-top: 1.25rem;
-  border-top: $rule solid $paper-line;
-  font-size: $t-micro;
-  line-height: 1.55;
-  color: $ink-3;
-}
-
-.timeline-list--updates {
-  gap: 0.6rem;
-  max-width: $measure-wide;
-}
-
-.record__block--wide {
-  padding-top: 1.5rem;
-}
-
-.plate { margin: 0; }
-
-// No filter. The portrait is the only photograph of a person on this site, and rendering
-// it monochrome contradicted the hero, where the same face appears in colour. One face,
-// one treatment.
-.plate__img {
-  width: 100%;
-  max-width: 12rem;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-}
-
-.plate__caption {
-  margin-top: 0.6rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.05em;
-  color: $ink-3;
-}
-
-.record__block {
-  padding-top: 1.25rem;
-  border-top: $rule solid $paper-line;
-
-  .record__subhead { margin-bottom: 0.9rem; }
-}
-
-.timeline-list { display: grid; gap: 0.85rem; }
-
-.timeline-list li {
-  display: grid;
-  gap: 0.15rem 1rem;
-
-  @media (min-width: 420px) { grid-template-columns: 5.5rem minmax(0, 1fr); }
-}
-
-.timeline-list__period {
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.06em;
-  color: $ink-3;
-  padding-top: 0.15rem;
-}
-
-.timeline-list__body {
-  font-size: $t-small;
-  line-height: 1.45;
-  color: $ink-2;
-
-  strong { display: block; font-weight: 600; color: $ink; }
-  a { color: $accent; text-decoration: underline; text-underline-offset: 0.2em; }
-}
-
-.record__more {
-  margin-top: 0.85rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  a { color: $accent; border-bottom: $rule solid rgba($accent, 0.4); padding-bottom: 2px; }
-  a:hover { border-color: $accent; }
-}
-
-.record__text {
-  margin: 0;
-  font-size: $t-small;
-  line-height: 1.45;
-  color: $ink-2;
-}
-
-.record__contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 0.75rem;
-  padding-top: 1.5rem;
-  border-top: 2px solid $ink;
-}
-// ============================================================
-// 07 — Record: publication metadata and per-paper understanding
-// ============================================================
-
-.record__pubmeta {
-  margin: 0.5rem 0 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: $ink-2;
-}
-
-// The reconciliation date, so a citation count is never read as a permanent claim.
-.record__pubmeta-note {
-  display: block;
-  margin-top: 0.35rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-transform: none;
-  color: $ink-3;
-}
-
-.pub__cites {
-  display: block;
-  width: fit-content;
-  margin-top: 0.4rem;
-  padding: 0.12em 0.5em;
-  border: $rule solid $paper-line;
-  border-radius: $radius-pill;
-  font-size: 0.95em;
-  letter-spacing: 0.08em;
-  color: $ink-3;
-  white-space: nowrap;
-}
-
-// "What I take from it" — the reading of the work in the author's own voice.
-// This is the part that answers "what do you think of your own results", which a
-// bare citation list cannot.
-.pub__understanding {
-  margin: 1.15rem 0 0;
-  padding-left: 0.95rem;
-  border-left: 2px solid $accent-rule;
-  font-size: clamp(0.96rem, 1.2vw, 1.04rem);
-  line-height: 1.62;
-  color: $ink-2;
-  max-width: 62ch;
-}
-
-.pub__understanding-label {
-  display: block;
-  margin-bottom: 0.4rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-// ============================================================
-// 08 — Vision (the ambition)
-// ============================================================
-
-// ============================================================
-// 01 — Concept: what "Spatial Intelligence" means
-// ============================================================
-
-// Three panels side by side cannot stay legible at phone width: at 390px the figure
-// scales to ~0.28, which renders the 10px labels at about 3px. Rather than shrink the
-// type into illegibility or rebuild the figure as three stacked SVGs, the figure keeps
-// a readable minimum width and pans. The argument is carried in full by the prose above
-// and below it, so nothing is lost by the pan being an extra gesture.
-@media (max-width: #{$bp-lg - 1px}) {
-  .concept__scroll { margin-inline: calc(clamp(1.25rem, 4.5vw, 3rem) * -1); padding-inline: clamp(1.25rem, 4.5vw, 3rem); }
-  .concept__svg { min-width: 900px; }
-  .concept__pan-hint {
-    display: block;
-    margin: 0 0 0.75rem;
-    font-family: $font-mono;
-    font-size: $t-label;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: $ink-3;
-  }
-}
-
-// ---------- premises ----------
-// ---------- close ----------
-.concept__bridge-label {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-// ============================================================
-// Narrative arc — hero question, why, journey, future
-// ============================================================
-
-// The one question, set at display scale. This is the largest single sentence on the
-// page and it is a problem statement, not a slogan.
-.hero__question {
-  margin: clamp(1.75rem, 3.5vw, 2.75rem) 0 0;
-  max-width: 30ch;
-  font-family: $font-display;
-  font-size: clamp(1.5rem, 3.1vw, 2.85rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  color: $ink;
-  text-wrap: balance;
-}
-
-.hero__body {
-  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
-  padding-top: clamp(1.25rem, 3vw, 2rem);
-  border-top: $rule solid $paper-line;
-}
-
-// The established-work boundary, kept small: it is the honesty contract, not the pitch.
-.hero__boundary {
-  margin: 0;
-  max-width: 44ch;
-  font-family: $font-mono;
-  font-size: $t-label;
-  line-height: 1.7;
-  letter-spacing: 0.02em;
-  color: $ink-3;
-}
-
-// ---------- 01 Why ----------
-.why__list {
-  display: grid;
-  gap: clamp(1.75rem, 3.5vw, 2.75rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: clamp(1.5rem, 3vw, 3rem);
-  }
-}
-
-.why__item { padding-top: 0.8rem; border-top: $rule solid $paper-line; }
-
-.why__key {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: $accent;
-}
-
-.why__title {
-  margin: 0.6rem 0 0.7rem;
-  font-family: $font-display;
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  line-height: 1.14;
-  letter-spacing: -0.014em;
-}
-
-.why__body {
-  margin: 0;
-  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
-  line-height: 1.6;
-  color: $ink-2;
-}
-
-// ---------- 02 Journey ----------
-// Status is the first thing read. The section's whole job is letting a reviewer see at a
-// glance which steps have results, so status leads and the label is never dropped.
-.journey { margin: 0; padding: 0; list-style: none; }
-
-.journey__step {
-  display: grid;
-  gap: 1rem clamp(1.5rem, 3.5vw, 3.5rem);
-  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
-  border-top: $rule solid $paper-line;
-}
-
-.journey__marker {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.55rem 0.75rem;
-}
-
-.journey__key {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: $accent;
-}
-
-.journey__status {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.22em 0.62em;
-  border-radius: $radius-pill;
-  white-space: nowrap;
-}
-
-// Established: solid accent. Current: neutral. Future: dashed. Same spine language as
-// the publication tags, so the two systems read as one.
-.journey__status--established { color: $accent; border: $rule solid $accent-rule; background: $accent-wash; }
-.journey__status--current { color: $ink-2; border: $rule solid $paper-line; }
-.journey__status--future { color: $ink-3; border: $rule dashed $paper-line; }
-
-.journey__period {
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.06em;
-  color: $ink-3;
-}
-
-.journey__head { min-width: 0; }
-
-.journey__label {
-  margin: 0 0 0.6rem;
-  font-family: $font-display;
-  font-size: clamp(1.5rem, 2.9vw, 2.4rem);
-  line-height: 1.08;
-  letter-spacing: -0.018em;
-}
-
-.journey__problem {
-  margin: 0;
-  max-width: 46ch;
-  font-size: clamp(1rem, 1.35vw, 1.14rem);
-  line-height: 1.55;
-  color: $ink;
-  text-wrap: pretty;
-}
-
-.journey__detail { display: grid; gap: 0.9rem; min-width: 0; }
-
-.journey__field,
-.journey__established {
-  margin: 0;
-  max-width: 54ch;
-  font-size: clamp(0.96rem, 1.2vw, 1.04rem);
-  line-height: 1.6;
-  color: $ink-2;
-}
-
-.journey__field-label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-.journey__evidence {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 0.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    padding: 0.28em 0.7em;
-    border: $rule solid $paper-line;
-    border-radius: $radius-pill;
-    font-family: $font-mono;
-    font-size: $t-label;
-    letter-spacing: 0.04em;
-    color: $ink-2;
-  }
-}
-
-.journey__none {
-  margin: 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.06em;
-  color: $ink-3;
-}
-
-.journey__step--future {
-  // The step that does not exist yet is visually lighter, so the section does not read
-  // as though five results exist.
-  .journey__label { color: $ink-2; }
-}
-
-@include at-lg {
-  .journey__step {
-    grid-template-columns: 9rem minmax(0, 1fr) minmax(0, 1.15fr);
-    align-items: start;
-  }
-  .journey__marker { grid-column: 1; flex-direction: column; align-items: flex-start; }
-  .journey__head { grid-column: 2; grid-row: 1 / 3; }
-  .journey__detail { grid-column: 3; grid-row: 1; }
-  .journey__evidence, .journey__none { grid-column: 3; grid-row: 2; }
-
-  // On a wide viewport the right column is tall enough to hold two of its fields side by
-  // side, which removes the void that appeared under the short label column.
-  @media (min-width: #{$bp-lg + 180px}) {
-    .journey__step { grid-template-columns: 9rem minmax(0, 0.95fr) minmax(0, 2fr); }
-    .journey__detail {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: clamp(1.5rem, 3vw, 3rem);
-      align-items: start;
-    }
-  }
-}
-
-// ---------- 05 Future ----------
-.thrusts {
-  --thrust-gap: clamp(1.5rem, 3vw, 3rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.thrust {
-  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
-  border-top: $rule solid $paper-line;
-}
-
-.thrust__station { display: none; }
-
-// The spatial close: at desktop the three thrusts sit on one axis. Dashed under an open
-// question, solid under the one in progress. The station marker is the only solid dot on the
-// page, which is what makes "this is the part I am actually working on" readable at a glance.
-@include at-lg {
-  .thrusts {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: var(--thrust-gap);
-  }
-
-  .thrust {
-    position: relative;
-    border-top: 0;
-    padding-top: 2.75rem;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: calc(-1 * var(--thrust-gap));
-      border-top: 1px dashed $paper-line;
-    }
-
-    &:last-child::before { right: 0; }
-  }
-
-  .thrust--building::before {
-    border-top-style: solid;
-    border-top-color: $accent-rule;
-    border-top-width: 2px;
-  }
-
-  .thrust__station {
-    display: block;
-    position: absolute;
-    top: -5px;
-    left: 0;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: $paper;
-    border: 1.5px solid $paper-line;
-  }
-
-  .thrust--building .thrust__station {
-    background: $accent;
-    border-color: $accent;
-    box-shadow: 0 0 0 4px $accent-wash;
-  }
-}
-
-.thrust__top { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
-
-.thrust__key {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: $accent;
-}
-
-.thrust__title {
-  margin: 0.75rem 0 1.15rem;
-  max-width: 30ch;
-  font-family: $font-display;
-  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
-  line-height: 1.1;
-  letter-spacing: -0.018em;
-}
-
-.thrust__grid {
-  display: grid;
-  gap: 0.55rem clamp(1.5rem, 3.5vw, 3.5rem);
-  margin: 0;
-
-  dt {
-    font-family: $font-mono;
-    font-size: $t-label;
-    font-weight: 500;
-    letter-spacing: $track-label;
-    text-transform: uppercase;
-    color: $ink-3;
-  }
-
-  dd {
-    margin: 0 0 0.85rem;
-    max-width: 58ch;
-    font-size: clamp(0.96rem, 1.2vw, 1.04rem);
-    line-height: 1.6;
-    color: $ink-2;
-  }
-}
-
-.thrust__from { font-family: $font-mono; font-size: $t-label !important; letter-spacing: 0.04em; color: $ink-3 !important; }
-
-// Each thrust occupies one of three columns, so the dt/dd pair stacks: an 11rem label column
-// left the body about 15 characters per line. Declared here, after the axis block, so it wins.
-@include at-lg {
-  .thrust__grid {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 0.2rem;
-    align-items: start;
-  }
-  .thrust__grid dt { grid-column: 1; padding-top: 0.75rem; }
-  .thrust__grid dd { grid-column: 1; margin-bottom: 0.5rem; }
-}
-
-.future__seek {
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding-top: clamp(1.5rem, 3vw, 2rem);
-  border-top: 2px solid $ink;
-}
-
-.future__seek-label {
-  margin: 0 0 0.6rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-.future__seek-body {
-  margin: 0;
-  max-width: 58ch;
-  font-family: $font-display;
-  font-size: clamp(1.15rem, 1.85vw, 1.5rem);
-  line-height: 1.34;
-  letter-spacing: -0.012em;
-  color: $ink;
-  text-wrap: pretty;
-}
-
-// ---------- Evidence: what was built sits under the evidence it produced ----------
-.work__spec-built {
-  margin-top: 0.7rem;
-  padding-left: 0.8rem;
-  border-left: $rule solid $paper-line;
-  font-size: clamp(0.92rem, 1.1vw, 0.98rem);
-  color: $ink-3;
-}
-
-.work__spec-built span {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-}
-
-// Real paper figure, presented as evidence rather than decoration. No filter, no grading,
-// no framing chrome — the figure is the paper's, and the caption carries the venue.
-.journey__figure { margin: 0 0 1.15rem; }
-
-.journey__figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-  background: $paper-sunk;
-}
-
-.journey__figure figcaption {
-  margin-top: 0.55rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  line-height: 1.55;
-  letter-spacing: 0.02em;
-  color: $ink-3;
-}
-
-// ============================================================
+.nav { position: sticky; top: 0; z-index: var(--z-nav); background: var(--paper); border-bottom: 1px solid var(--line); font: 14px/1.4 var(--sans); }
+.nav__inner { min-height: 72px; display: flex; gap: 32px; align-items: center; }
+.nav a { text-decoration: none; color: var(--ink); }
+.nav a:hover { color: var(--accent); text-decoration: underline; }
+.nav__brand { font-weight: 600; white-space: nowrap; margin-right: auto; }
+.nav__menu,.nav__tools { display: flex; gap: 24px; align-items: center; }
+.nav__menu a,.nav__tools a { padding-block: 14px; }
+.nav__tools { gap: 12px; }
+.theme-control select { background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-control); font-size: 12px; padding: 10px 6px; min-height: 44px; max-width: 104px; }
+.theme-control { display: none; }
+.js .theme-control { display: block; }
+.nav__toggle { display: none; padding: 10px 0 10px 10px; background: none; border: 0; font-size: 13px; min-height: 44px; }
+.hero__person { display: flex; gap: 16px; align-items: center; margin-bottom: 28px; }
+.hero__person img { width: 48px; height: 64px; object-fit: cover; border-radius: 3px; }
+.hero__person p { font: 12px/1.8 var(--sans); color: var(--muted); }
+.hero__statement { font: clamp(2.1rem,3.8vw,3.5rem)/1.1 var(--display); letter-spacing: -.025em; margin-top: 20px; max-width: 21ch; text-wrap: balance; }
+.hero__intro { font-size: clamp(1.12rem,1.6vw,1.35rem); color: var(--body); margin-top: 24px; max-width: 37ch; }
+.hero__links { display: flex; flex-wrap: wrap; gap: 24px; font: 14px/1.5 var(--sans); margin-top: 28px; }
+.hero__links a { padding: 10px 0; }
+.observation { min-width: 0; align-self: center; }
+.observation__images { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 18px; padding-block: 16px; }
+.observation__view { min-width: 0; }
+.observation__view--radar { margin-top: 100px; }
+.observation__view img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-photo); }
+.observation__view span { font: 12px/1.5 var(--mono); display: block; margin-top: 10px; color: var(--muted); }
+.js .observation__controls[hidden], .js .filter[hidden] { display: flex !important; }
+.observation__controls { display: flex; gap: 4px; margin-top: 20px; }
+.observation__controls button,.filter button { font: 13px/1.5 var(--sans); padding: 12px 16px; background: transparent; color: var(--body); border: 1px solid transparent; border-radius: var(--radius-control); min-height: 44px; }
+.observation__controls button[aria-pressed="true"],.filter button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.observation figcaption { max-width: 44ch; }
+.observation figcaption strong { font-weight: 500; color: var(--ink); font-size: 16px; }
+// Individual views enlarge within a reserved frame. The page never shifts when the view changes.
+.observation[data-view="camera"] .observation__view--radar,
+.observation[data-view="radar"] .observation__view--camera { opacity: .18; transform: scale(.9); }
+.why__facts { display: grid; gap: 24px; }
+.why__facts > div { display: grid; grid-template-columns: 90px 1fr; gap: 20px; }
+.why__facts dt { color: var(--accent); font: 14px/1.5 var(--sans); }
+.why__facts dd { font-size: 18px; color: var(--body); }
+.journey__steps { padding: 0 0 0 28px; margin: 0; list-style: none; border-left: 1px solid var(--line); }
+.journey__steps li { padding: 0 0 40px; }
+.journey__steps li:last-child { padding-bottom: 0; }
+.journey__steps h3 { margin-top: 12px; font-size: 1.75rem; }
+.journey__steps p:not(.meta) { margin-top: 16px; color: var(--body); }
+.journey__steps .text-link { margin-top: 8px; }
+.work__image { display: block; overflow: hidden; border-radius: var(--radius-photo); }
+.work__image img { width: 100%; aspect-ratio: auto; object-fit: contain; }
+.work__copy h3 { font-size: 1.35rem; margin-block: 18px; font-family: var(--sans); font-weight: 500; letter-spacing: -.02em; }
+.work__title { font: clamp(1.9rem,3vw,2.8rem)/1.15 var(--display); text-wrap: balance; max-width: 20ch; }
+.work__copy p:not(.work__title):not(.meta) { margin-top: 20px; color: var(--body); max-width: 37ch; }
+.work__copy .text-link { margin-top: 20px; }
+.agenda__thrust { border-top: 1px solid var(--line); padding-top: 28px; }
+.agenda__thrust h3 { font: 14px/1.5 var(--sans); color: var(--accent); }
+.agenda__question { font: clamp(1.7rem,2.8vw,2.5rem)/1.25 var(--display); margin-block: 20px; text-wrap: balance; }
+.agenda__thrust > p:not(.agenda__question) { color: var(--body); max-width: 50ch; }
+.agenda__thrust > .meta { margin-top: 18px; }
+.thinking dl > div + div { margin-top: 32px; }
+.thinking dt { font: 1.6rem/1.25 var(--display); }
+.thinking dd { margin-top: 12px; color: var(--body); max-width: 40ch; }
+.essay-link { text-decoration: none; display: block; padding: 36px; background: var(--surface); border-radius: var(--radius-photo); color: var(--ink); }
+.essay-link h3 { margin-block: 24px; font-size: 2.3rem; }
+.essay-link > p { color: var(--body); }
+.essay-link .text-link { margin-top: 16px; color: var(--accent); text-decoration: underline; }
+.essay-link:hover { text-decoration: none; }
+.publication-tools { font: 13px/1.5 var(--sans); display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.filter { display: flex; flex-wrap: wrap; gap: 4px; }
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pub { display: grid; grid-template-columns: 160px 1fr; gap: 40px; padding-block: 28px; border-top: 1px solid var(--line); }
+.pub__venue { display: flex; flex-direction: column; font: 13px/1.8 var(--sans); color: var(--muted); }
+.pub h3 { font: 1.45rem/1.3 var(--text); letter-spacing: 0; text-wrap: pretty; }
+.pub__authors { margin-top: 10px; color: var(--muted); font: 13px/1.6 var(--sans); }
+.pub__authors strong { color: var(--body); font-weight: 600; }
+.pub__links { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 10px 0 0; font: 13px/1.4 var(--sans); }
+.pub__links a { display: inline-block; padding-block: 6px; }
+.filter-count { font: 12px/1.5 var(--sans); color: var(--muted); margin-top: 16px; }
+.resource-row { margin-top: 48px; background: var(--surface); padding: 32px; }
+.resource-row h3 { font-size: 1.5rem; margin-bottom: 16px; }
+.resource-row p { margin-top: 12px; }
+.record__more { display: flex; flex-wrap: wrap; gap: 24px; font: 14px/1.5 var(--sans); margin-top: 28px; }
+.education { margin-block: 32px; display: grid; gap: 20px; }
+.education p { display: flex; flex-direction: column; font: 14px/1.8 var(--sans); }
+.education strong { font-weight: 500; }
+.contact-link { font: clamp(1.15rem,2.5vw,1.8rem)/1.5 var(--sans); display: inline-block; margin-top: 24px; }
+.footer { border-top: 1px solid var(--line); padding-block: 32px; font: 12px/1.6 var(--sans); }
+.footer__inner { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; }
+.footer__name { font-weight: 600; color: var(--ink); text-decoration: none; }
+.footer p, .footer small { color: var(--muted); }
+.footer__inner > div { display: flex; gap: 20px; margin-left: auto; }
+.footer small { width: 100%; }
+.back-link { font: 13px/1.5 var(--sans); display: inline-block; }
+.project__title { font: clamp(2rem,4vw,3.5rem)/1.2 var(--display); margin-top: 24px; max-width: 22ch; text-wrap: balance; }
+.project__links { display: flex; flex-wrap: wrap; gap: 24px; font: 14px/1.5 var(--sans); margin-top: 28px; }
+.project__links a { padding-block: 8px; }
+.project__cover img { width: 100%; max-height: 650px; object-fit: contain; border-radius: var(--radius-photo); }
+.project__pullquote { font: clamp(1.9rem,3vw,2.8rem)/1.2 var(--display); text-wrap: balance; }
+.project__reflection .meta { margin-top: 24px; }
+.project__body section a { display: inline-block; margin-top: 12px; font: 13px/1.5 var(--sans); }
+.project__gallery img { width: 100%; object-fit: contain; align-self: start; border-radius: var(--radius-photo); }
+.project__related > a { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-top: 1px solid var(--line); text-decoration: none; }
+.project__related strong { font-weight: 400; }
+.project__related span { font: 12px/1.5 var(--sans); color: var(--muted); }
+.results { margin-block: 40px; }
+table { border-collapse: collapse; width: 100%; font: 14px/1.6 var(--sans); }
+caption { text-align: left; margin-bottom: 18px; font-weight: 500; }
+th,td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--line); }
+th { font-weight: 500; }
+td { font-family: var(--mono); }
+.record__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.record__block h2 { font-size: 2rem; margin-block: 32px 20px; }
+.record__label { font: 13px/1.6 var(--sans); color: var(--muted); margin-block: 24px 10px; }
+.plain-list { padding-left: 20px; }
+.timeline-list { list-style: none; padding: 0; }
+.timeline-list li { display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding-block: 16px; }
+.timeline-list__period { font: 13px/1.6 var(--sans); color: var(--muted); }
+.timeline-list__body strong { display: block; font-weight: 500; }
+.timeline { list-style: none; padding: 0; max-width: 900px; }
+.timeline__item { display: grid; grid-template-columns: 120px 1fr; gap: 36px; border-top: 1px solid var(--line); padding-block: 28px; }
+.timeline__date { font: 13px/1.6 var(--sans); color: var(--muted); }
+.error-page { min-height: 60vh; }
+html[lang="zh-CN"] { .hero__statement { line-height: 1.4; letter-spacing: 0; max-width: 100%; font-size: clamp(2rem,3.5vw,3rem); } .work__title,.agenda__question,.project__title,.project__pullquote { line-height: 1.5; } .pub h3 { font-family: Newsreader,Georgia,serif; } }
+@media (max-width: 1023px) { .nav__inner { gap: 20px; } .nav__menu { gap: 16px; } }
+@media (max-width: 767px) {
+  .nav__inner { min-height: 64px; flex-wrap: wrap; gap: 0 12px; }
+  .nav__tools { margin-left: auto; }
+  .nav__menu { order: 3; width: 100%; justify-content: space-between; }
+  .js .nav__toggle, .js .nav__toggle[hidden] { display: block !important; }
+  .js .nav__menu:not(.is-open) { display: none; }
+  .nav__menu a { padding-block: 16px; }
+  .hero__person { margin-bottom: 24px; }
+  .hero__person p { font-size: 11px; }
+  .hero__statement { font-size: clamp(2rem,7.7vw,3.3rem); max-width: 19ch; }
+  .hero__intro { max-width: 36ch; }
+  .hero__links { gap: 24px; margin-top: 18px; }
+  .observation__view--radar { margin-top: 56px; }
+  .observation__images { gap: 12px; padding-block: 0; }
+  .pub { grid-template-columns: 1fr; gap: 12px; }
+  .pub__venue { flex-direction: row; gap: 16px; }
+  .pub h3 { font-size: 1.3rem; }
+  .essay-link { padding: 28px; }
+  .footer__inner > div { margin-left: 0; width: 100%; }
+  .record__cols { grid-template-columns: 1fr; gap: 24px; }
+  .timeline__item { grid-template-columns: 1fr; gap: 10px; }
+}
+@media (max-width: 359px) { .nav__inner { gap: 0 6px; } .nav__tools { gap: 8px; } .nav__brand { font-size: 13px; } .theme-control select { max-width: 84px; padding-inline: 2px; } .nav__toggle { font-size: 12px; } }
+.record-heading { font-size: 2rem; margin-bottom: 28px; }

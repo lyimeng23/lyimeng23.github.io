@@ -1,43 +1,4 @@
-<section class="section section--future" id="future" tabindex="-1">
-  <div class="container">
-    <header class="section__head section__head--split">
-      <div class="section__head-main">
-        <p class="eyebrow"><span class="eyebrow__index">04</span> Future</p>
-        <h2 class="section__title">Three questions<br>the published work stops short of</h2>
-      </div>
-      <p class="section__note">{{ site.data.future.intro }}</p>
-    </header>
-
-    <!--
-      The agenda is arranged on one axis rather than stacked as cards. The axis is dashed
-      under an open question and solid under the one that is actually in progress, which
-      restates the status tag already printed beside it — it encodes a fact the page has
-      already committed to, and asserts nothing new.
-    -->
-    <ol class="thrusts">
-      {% for t in site.data.future.thrusts %}
-      <li class="thrust thrust--{{ t.status_tag }} reveal" style="--i: {{ forloop.index0 }}">
-        <span class="thrust__station" aria-hidden="true"></span>
-        <div class="thrust__top">
-          <span class="thrust__key">{{ t.key }}</span>
-          <span class="tag tag--{{ t.status_tag }}">{{ t.status }}</span>
-        </div>
-        <h3 class="thrust__title">{{ t.title }}</h3>
-        <dl class="thrust__grid">
-          <dt>The gap it comes from</dt>
-          <dd>{{ t.gap }}</dd>
-          <dt>The thrust</dt>
-          <dd>{{ t.thrust }}</dd>
-          <dt>Starts from</dt>
-          <dd class="thrust__from">{{ t.starting_point }}</dd>
-        </dl>
-      </li>
-      {% endfor %}
-    </ol>
-
-    <div class="future__seek">
-      <p class="future__seek-label">{{ site.data.future.seeking.title }}</p>
-      <p class="future__seek-body">{{ site.data.future.seeking.body }}</p>
-    </div>
-  </div>
-</section>
+<section class="section agenda" id="future"><div class="container">
+  <header class="section__head"><p class="meta">{{ ui.future_label }}</p><h2>{{ copy.future_title }}</h2><p class="lede">{{ copy.future_intro }}</p></header>
+  <div class="agenda__space">{% for thrust in copy.future %}<article class="agenda__thrust"><h3>{{ thrust.title }}</h3><p class="agenda__question">{{ thrust.question }}</p><p>{{ thrust.body }}</p><p class="meta">{{ thrust.origin }}</p></article>{% endfor %}</div>
+</div></section>

@@ -1,35 +1,94 @@
-# News / highlights. "featured" items appear on the homepage (Recent Highlights);
-# everything appears on the full timeline (/news/).
-main:
-  - date: "Jul 2025"
-    featured: true
-    html: 'The <a href="https://arxiv.org/abs/2507.22685">Hydra-Bench</a> multimodal leaf-wetness dataset (mmWave raw + SAR + RGB) is released on arXiv.'
-  - date: "Jul 2025"
-    featured: true
-    html: 'My journey from math to computing was highlighted by <a href="https://msutoday.msu.edu/news/2025/student-view-msu-made-math-compute-for-me">MSUTODAY</a>.'
-  - date: "Mar 2025"
-    featured: true
-    html: "Proteus was accepted at <strong>ACM SenSys 2025</strong>."
-  - date: "Dec 2024"
-    featured: true
-    html: "Adonis and AeroEcho were accepted at <strong>IEEE INFOCOM 2025</strong>."
-  - date: "Oct 2024"
-    featured: true
-    html: "Invited talk at the University of Hawai&#699;i at M&#257;noa."
-  - date: "Aug 2024"
-    featured: true
-    html: "Hydra was accepted at <strong>ACM MobiCom 2024</strong> and presented in Washington, D.C."
-  - date: "Aug 2024"
-    html: "Attended the NSF workshop on sustainable computing at Purdue University."
-  - date: "May 2023"
-    html: "Started a Ph.D. in Computer Science and Engineering at Michigan State University, advised by <a href=\"https://cse.msu.edu/~caozc/\">Dr. Zhichao Cao</a>."
-  - date: "Jun 2023"
-    html: "Poster mmLeaf accepted at <a href=\"https://dl.acm.org/doi/abs/10.1145/3581791.3597367\">ACM MobiSys 2023</a>."
-  - date: "May 2023"
-    html: "Graduated from Virginia Tech with a B.S. in Mathematics."
-  - date: "Aug 2022"
-    html: "Paper accepted in <a href=\"https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta\">Bioinspiration &amp; Biomimetics</a>."
-  - date: "May 2022"
-    html: "Summer research intern at EIN Lab, Michigan State University."
-  - date: "Oct 2020"
-    html: "Started undergraduate research with <a href=\"https://me.vt.edu/people/faculty/mueller-rolf.html\">Dr. Rolf Müller</a> at Virginia Tech."
+{
+  "main": [
+    {
+      "date": "Mar 2026",
+      "iso_date": "2026-03",
+      "html": "Our <a href=\"https://arxiv.org/abs/2603.00691\">driving assessment preprint</a> discusses continuous, contextualized and explainable assessment for older adults.",
+      "html_zh": "<a href=\"https://arxiv.org/abs/2603.00691\">驾驶评估预印本</a>公开，讨论面向老年人的持续、情境化与可解释评估。"
+    },
+    {
+      "date": "Jul 2025",
+      "featured": true,
+      "html": "My journey from math to computing was highlighted by <a href=\"https://msutoday.msu.edu/news/2025/student-view-msu-made-math-compute-for-me\">MSUTODAY</a>.",
+      "html_zh": "<a href=\"https://msutoday.msu.edu/news/2025/student-view-msu-made-math-compute-for-me\">MSUTODAY</a> 报道了我从数学走向计算研究的经历。",
+      "iso_date": "2025-07"
+    },
+    {
+      "date": "Jul 2025",
+      "featured": true,
+      "html": "The <a href=\"https://arxiv.org/abs/2507.22685\">Hydra-Bench</a> multimodal leaf-wetness benchmark preprint is publicly available.",
+      "html_zh": "<a href=\"https://arxiv.org/abs/2507.22685\">Hydra-Bench</a> 多模态叶面湿度基准预印本公开。",
+      "iso_date": "2025-07"
+    },
+    {
+      "date": "Mar 2025",
+      "featured": true,
+      "html": "Proteus was accepted at <strong>ACM SenSys 2025</strong>.",
+      "html_zh": "Proteus 被 ACM SenSys 2025 接收。",
+      "iso_date": "2025-03"
+    },
+    {
+      "date": "Dec 2024",
+      "featured": true,
+      "html": "Adonis and AeroEcho were accepted at <strong>IEEE INFOCOM 2025</strong>.",
+      "html_zh": "Adonis 与 AeroEcho 被 IEEE INFOCOM 2025 接收。",
+      "iso_date": "2024-12"
+    },
+    {
+      "date": "Oct 2024",
+      "featured": true,
+      "html": "Invited talk at the University of Hawai&#699;i at M&#257;noa.",
+      "html_zh": "在夏威夷大学马诺阿分校作受邀报告。",
+      "iso_date": "2024-10"
+    },
+    {
+      "date": "Aug 2024",
+      "featured": true,
+      "html": "Hydra was accepted at <strong>ACM MobiCom 2024</strong> and presented in Washington, D.C.",
+      "html_zh": "Hydra 被 ACM MobiCom 2024 接收，并在华盛顿特区报告。",
+      "iso_date": "2024-08"
+    },
+    {
+      "date": "Aug 2024",
+      "html": "Attended the NSF workshop on sustainable computing at Purdue University.",
+      "html_zh": "参加普渡大学 NSF 可持续计算研讨会。",
+      "iso_date": "2024-08"
+    },
+    {
+      "date": "Aug 2023",
+      "html": "Started a Ph.D. in Computer Science and Engineering at Michigan State University, advised by <a href=\"https://cse.msu.edu/~caozc/\">Zhichao Cao</a>.",
+      "html_zh": "开始在密歇根州立大学开展博士研究，导师为 Zhichao Cao。",
+      "iso_date": "2023-08"
+    },
+    {
+      "date": "Jun 2023",
+      "html": "Poster mmLeaf accepted at <a href=\"https://dl.acm.org/doi/abs/10.1145/3581791.3597367\">ACM MobiSys 2023</a>.",
+      "html_zh": "mmLeaf poster 被 ACM MobiSys 2023 接收。",
+      "iso_date": "2023-06"
+    },
+    {
+      "date": "May 2023",
+      "html": "Graduated from Virginia Tech with a B.S. in Mathematics.",
+      "html_zh": "从弗吉尼亚理工大学毕业，获数学学士学位。",
+      "iso_date": "2023-05"
+    },
+    {
+      "date": "Aug 2022",
+      "html": "Paper accepted in <a href=\"https://iopscience.iop.org/article/10.1088/1748-3190/ac7aff/meta\">Bioinspiration &amp; Biomimetics</a>.",
+      "html_zh": "仿生声呐论文被 Bioinspiration & Biomimetics 接收。",
+      "iso_date": "2022-08"
+    },
+    {
+      "date": "May 2022",
+      "html": "Summer research intern at EIN Lab, Michigan State University.",
+      "html_zh": "在密歇根州立大学 EIN 实验室开展暑期研究实习。",
+      "iso_date": "2022-05"
+    },
+    {
+      "date": "Oct 2020",
+      "html": "Started undergraduate research with <a href=\"https://me.vt.edu/people/faculty/mueller-rolf.html\">Dr. Rolf Müller</a> at Virginia Tech.",
+      "html_zh": "开始与弗吉尼亚理工大学 Rolf Müller 开展本科研究。",
+      "iso_date": "2020-10"
+    }
+  ]
+}

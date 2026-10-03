@@ -1,0 +1,11 @@
+---
+layout: default
+lang: zh
+permalink: /zh/404.html
+translation: /404.html
+sitemap: false
+title: 页面未找到
+---
+{% assign lang = page.lang | default: 'en' %}{% assign ui = site.data.locale[lang] %}{% assign copy = site.data.identity[lang] %}{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
+
+<section class="page error-page"><div class="container"><p class="meta">404</p><h1 class="page__title">{{ copy.error_title }}</h1><p class="lede page__lede">{{ copy.error_body }}</p><p class="record__more"><a href="{{ home }}">{{ ui.home }}</a><a href="{{ home }}#record">{{ ui.record }}</a></p></div></section>

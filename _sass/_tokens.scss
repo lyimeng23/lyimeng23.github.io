@@ -1,132 +1,24 @@
-// ============================================================
-// Design tokens — the single source of truth.
-// Three surfaces: paper (reading), panel (the instrument), and
-// one accent that carries meaning everywhere.
-// ============================================================
-
-// ---------- Breakpoints (min-width, mobile-first) ----------
-$bp-xs: 420px;
-$bp-sm: 640px;
-$bp-md: 860px;
-$bp-lg: 1080px;
-$bp-xl: 1280px;
-$bp-2xl: 1440px;
-
-// ---------- Grid & measure ----------
-$container: 1320px;      // 12 columns @ 1280 content width
-$gutter: 24px;
-$col-gap: 24px;
-$measure: 34rem;         // prose (~66 characters)
-$measure-tight: 26rem;
-$measure-wide: 46rem;
-
-// ---------- Space scale ----------
-$s-1: 4px;
-$s-2: 8px;
-$s-3: 12px;
-$s-4: 16px;
-$s-5: 24px;
-$s-6: 32px;
-$s-7: 48px;
-$s-8: 64px;
-$s-9: 96px;
-$s-10: 128px;
-$s-11: 176px;
-
-// ---------- Type ----------
-$nav-h: 68px;
-
-// Display face. Times New Roman is a system font on Windows and macOS, so the
-// page gets the classical academic voice with zero bytes of webfont payload.
-// The stack keeps sensible serif fallbacks for Linux.
-$font-display: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman No9 L", "Nimbus Roman", Georgia, serif;
-$font-text: "Newsreader", Georgia, "Iowan Old Style", "Times New Roman", serif;
-$font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-
-// Fluid display sizes. Times is narrow, so the cap is set below what a
-// wider display face would need in order to stay on one line.
-$t-display: clamp(3rem, 12.5vw, 10.5rem);    // 48 → 168px, one line at every width
-$t-title: clamp(1.95rem, 3.9vw, 3.15rem);     // 31.2 → 50.4px
-$t-subtitle: clamp(1.45rem, 2.6vw, 2.1rem);   // 23.2 → 33.6px
-$t-lead: clamp(1.14rem, 1.55vw, 1.4rem);      // 18.2 → 22.4px
-$t-body: 1.0625rem;                          // 17px
-$t-small: 0.9375rem;                         // 15px
-$t-micro: 0.8125rem;                         // 13px
-$t-label: 0.6875rem;                         // 11px — mono eyebrows
-
-$track-display: -0.028em;
-$track-tight: -0.018em;
-$track-label: 0.15em;
-
-// ---------- Color: paper ----------
-$paper: #faf9f5;
-$paper-sunk: #f2f0e9;
-$paper-line: #e2ded1;
-$paper-line-soft: #eceadf;
-
-$ink: #16150f;        // 15.9:1 on paper
-$ink-2: #4a473f;      // muted body   — 8.8:1 on paper
-$ink-3: #6b6659;      // tertiary meta — 5.4:1 on paper (WCAG AA at every size)
-
-// ---------- Color: the single accent ----------
-// Deep institutional green. Used for identity, evidence and "resolved" state.
-$accent: #17503f;
-$accent-deep: #0d3327;
-$accent-bright: #2f8a6c;   // accent on the dark panel
-$accent-wash: #e8efea;
-$accent-rule: rgba($accent, 0.24);
-
-// ---------- Color: the instrument panel ----------
-$panel: #101612;
-$panel-2: #18211b;
-$panel-line: #2c382f;
-$panel-ink: #eceee9;
-// Minimum legible opacity for any text drawn on the panel (>= 4.9:1).
-$panel-dim: rgba($panel-ink, 0.58);
-$panel-dim-strong: rgba($panel-ink, 0.74);
-
-// ---------- Color: the one signal hue ----------
-// Amber = raw observation, uncertainty, prediction. Nothing else uses it.
-$signal: #d8a24a;
-$signal-dim: rgba($signal, 0.34);
-
-// ---------- Shape ----------
-$rule: 1px;
-$radius: 2px;          // near-zero: editorial, not app-like
-$radius-pill: 999px;
-
-// ---------- Elevation ----------
-// Elevation is nearly absent by design: this is an editorial page built from hairlines and
-// whitespace, and shadows on flat content only make it read as a card layout. A shadow is
-// therefore allowed only where an element genuinely floats above the page — the mobile drawer
-// and the sticky header — and never on content.
-$shadow-none: none;
-$shadow-float: 0 1px 2px rgba($ink, 0.05), 0 12px 32px -8px rgba($ink, 0.12);
-$shadow-float-lg: 0 2px 4px rgba($ink, 0.05), 0 28px 64px -12px rgba($ink, 0.18);
-
-// ---------- Stacking ----------
-// Named rather than numeric, so the order is a decision rather than a guess at build time.
-// The section rail is fixed and right-aligned. Measured, it sat only 31px clear of the content
-// column at 1440px and 46px at 1600px — too tight to be trustworthy at either width. Since it
-// is a progressive enhancement, it now appears only where there is genuinely room, rather than
-// being made to fit at a width where it does not.
-$bp-rail: 1600px;
-
-$z-base: 0;
-$z-raised: 10;    // section rail
-$z-nav: 60;       // sticky header
-$z-drawer: 100;   // mobile navigation panel
-$z-top: 200;      // focus rings and skip link
-
-// ---------- Motion ----------
-$dur-fast: 180ms;
-$dur: 420ms;
-$dur-slow: 720ms;
-$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-$ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-$reveal-y: 12px;
-
-// ---------- Mixins ----------
-@mixin at-lg {
-  @media (min-width: $bp-lg) { @content; }
+// Subject-led palette. Theme changes preserve semantic contrast, not fixed colors.
+:root {
+  color-scheme: light;
+  --paper: #faf9f5; --surface: #f0f1e9; --ink: #16150f; --body: #4a473f;
+  --muted: #6b6659; --line: #d8d9ce; --accent: #17503f; --signal: #d8a24a;
+  --display: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+  --text: "Newsreader", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --space-1: .5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem;
+  --space-5: 3rem; --space-6: 4rem; --space-7: 6rem; --space-8: 8rem;
+  --measure: 36rem; --container: 1248px; --gutter: clamp(20px, 5vw, 80px);
+  --radius-control: 4px; --radius-photo: 3px;
+  --fast: 180ms; --duration: 480ms; --ease: cubic-bezier(.2,.7,.2,1);
+  --z-nav: 20; --z-focus: 30;
 }
+@mixin dark-theme {
+  color-scheme: dark;
+  --paper: #111813; --surface: #1a241d; --ink: #eaece5; --body: #c2c9bc;
+  --muted: #a7b29f; --line: #39463b; --accent: #9bcab0;
+}
+html[data-theme="dark"] { @include dark-theme; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) { @include dark-theme; } }
+html[lang="zh-CN"] { --display: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", SimSun, serif; --text: var(--sans); }

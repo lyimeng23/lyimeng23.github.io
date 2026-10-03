@@ -1,0 +1,2 @@
+{% assign lang = page.lang | default: 'en' %}{% assign ui = site.data.locale[lang] %}{% assign copy = site.data.identity[lang] %}{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
+<ul class="news timeline">{% for item in site.data.news.main %}<li class="timeline__item"><time class="timeline__date" datetime="{{ item.iso_date }}">{% if lang == 'zh' %}{{ item.iso_date }}{% else %}{{ item.date }}{% endif %}</time><div class="timeline__content">{% if lang == 'zh' %}{{ item.html_zh }}{% else %}{{ item.html }}{% endif %}</div></li>{% endfor %}</ul>

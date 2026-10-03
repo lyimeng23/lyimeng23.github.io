@@ -1,0 +1,25 @@
+---
+layout: page
+lang: en
+permalink: /writing/observation-and-understanding/
+translation: /zh/writing/observation-and-understanding/
+title: What changes between a measurement and understanding?
+lede: A research perspective · October 2026
+description: Yimeng Liu on the relationship between physical observations, learned representations and reliable understanding.
+---
+<div class="essay">
+<p>A sensor does not observe “the world.” It records an interaction: light reflected from a surface, radio waves scattered by a leaf, or sound returning through foliage. The measurement contains information about a physical state, but that information is shaped by the way we observe.</p>
+<h2>Start with what we need to know.</h2>
+<p>For leaf wetness, the important quantity is water on the leaf surface. A visually detailed image is not automatically a good measurement of that quantity. A radar response is sensitive to physical properties, but interpreting it requires dealing with noise, geometry and the environment. Choosing a sensor is already choosing which evidence will be available.</p>
+<p><a href="/project/hydra/">Hydra</a> combines camera and radar observations. <a href="/project/proteus/">Proteus</a> uses a visual teacher to guide radar learning. <a href="/project/adonis/">Adonis</a> moves from a wet/dry decision to a fine-grained wetness estimate. These are related but distinct answers to sensing questions. Their common thread is the relation between the observation, the representation and the quantity being estimated.</p>
+<h2>Keep the limits of the evidence.</h2>
+<p>A representation can discard nuisance variation. It can also discard something we will later need. A model that performs well under one set of conditions has not, by that fact alone, established what happens when the lighting changes, a sensor stops reporting, or the object differs from those seen in training.</p>
+<p>That is why I want evaluation to expose the conditions of a result. What was observed? What served as ground truth? Which changes were tested? What remained outside the experiment? An error number becomes informative when these questions have answers.</p>
+<h2>Then ask what must persist.</h2>
+<p>Most of the published systems on this site answer a question about an observation or a short interval. A continuing understanding of a place asks for more: keeping track of what may have changed, carrying uncertainty when evidence is missing, and revising an estimate when new observations disagree.</p>
+<p>The <a href="/project/senior-driving/">driving assessment preprint</a> brings this question into a human setting. Behavior has context. The same observation can mean different things under different road conditions. The paper proposes design principles and research opportunities; a reliable monitoring system still needs to be built and evaluated.</p>
+<h2>Connect reliability to consequence.</h2>
+<p>My future agenda is to connect incomplete observations, persistent understanding and decisions. The goal is not to make every estimate actionable. It is to understand when the available evidence supports a decision, when another observation is needed, and when a person should remain responsible for the judgment.</p>
+<p>That is the research program I want to build. The papers provide starting points. The questions about continuity and action remain questions.</p>
+<p class="meta">This essay expresses a research perspective and future agenda. Published evidence is linked in the text.</p>
+</div>

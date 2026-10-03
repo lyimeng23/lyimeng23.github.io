@@ -1,19 +1,7 @@
 ---
 layout: default
 ---
-{% comment %}
-Narrative arc. One question per section, in the order a reviewer needs:
-  Hero     who he is and the core question, in one screen
-  Why      why the problem is not just an engineering annoyance
-  Journey  how the work got here — established / in progress / future, labelled per step
-  Evidence the four systems that establish steps 01–03
-  Future   three thrusts, nothing more
-  Thinking research philosophy and open questions
-  Record   the full academic record, aligned with the CV
-
-The record deliberately sits at the end rather than after the hero: a reviewer who wants it can
-jump, a visitor who came to understand the work does not have to scroll past a CV first.
-{% endcomment %}
+{% assign lang = page.lang | default: 'en' %}{% assign copy = site.data.identity[lang] %}{% assign ui = site.data.locale[lang] %}{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
 {% include hero.html %}
 {% include why.html %}
 {% include journey.html %}

@@ -1,210 +1,138 @@
-# Publications — the authoritative record.
-#
-# Reconciled against the Google Scholar profile (U0Py5sAAAAAJ) on 2026-10-02:
-# 10 entries, h-index 6, 124 total citations. Two entries were missing from the
-# previous version of this file and have been added; the driving paper's venue was
-# corrected from a mislabelled conference to the arXiv preprint it actually is.
-#
-# `scholar`  : per-entry Google Scholar view id — the one link that is authoritative
-#              for every paper regardless of publisher.
-# `page`     : official DOI/arXiv landing page. Present ONLY where verified from the
-#              paper's own source. Absent where the DOI could not be confirmed —
-#              a wrong DOI is worse than no link.
-# `bibtex`   : generated .bib with full metadata, served from assets/files/.
-# `cited`    : Scholar citation count at the reconciliation date.
-# `track`    : which stage of the chain the paper is evidence for.
-# `understanding`: what the work actually taught me, and where it sits in the agenda.
-#
-# Author markup: wrap own name in <strong>…</strong>; * denotes equal contribution.
-
-meta:
-  scholar_url: "https://scholar.google.com/citations?user=U0Py5sAAAAAJ&hl=en"
-  h_index: 6
-  i10_index: 6
-  total_citations: 124
-  reconciled: "2026-10-02"
-  note: >-
-    Citation counts are Google Scholar's and move over time; they were read on the
-    reconciliation date above rather than hard-coded into any claim about impact.
-
-main:
-  # ---------------- Sense ----------------
-  - id: sonar
-    title: "Detection of Passageways in Natural Foliage Using Biomimetic Sonar"
-    authors: "Rongkun Wang, <strong>Yimeng Liu</strong>, Rolf Müller"
-    venue: "Bioinspiration & Biomimetics"
-    venue_short: "Bioinspir."
-    year: 2022
-    track: sense
-    cited: 27
-    pdf: /assets/files/biodetection.pdf
-    bibtex: /assets/files/biodetection.bib
-    scholar: u-x6o8ySG0sC
-    understanding: >-
-      My first attempt at the question I am still working on: can structure in a space be
-      recovered from returns that are sparse and indirect? Echolocation through dense foliage,
-      where optical sensing simply fails. I would not have called this Spatial Intelligence
-      then, but it set the habit of asking what a measurement can and cannot support.
-
-  - id: mmleaf
-    title: "mmLeaf: Versatile Leaf Wetness Detection via mmWave Sensing"
-    authors: "Maolin Gan, <strong>Yimeng Liu</strong>, Li Liu, Cheng Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao"
-    venue: "Proceedings of the 21st Annual International Conference on Mobile Systems and Applications"
-    venue_short: "MobiSys'23"
-    year: 2023
-    track: sense
-    cited: 19
-    pdf: /assets/files/mmleaf.pdf
-    bibtex: /assets/files/mmleaf.bib
-    slides: /assets/files/mmleaf.pdf
-    scholar: u5HHmVD_uO8C
-    understanding: >-
-      MIMO SAR imaging of a leaf at varying working range. This is where the RF modality
-      entered the work — and where I first ran into the fact that a camera and a radar do not
-      observe the same thing. Everything published after this is a consequence of that.
-
-  - id: hydra
-    title: "Hydra: Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion"
-    authors: "<strong>Yimeng Liu</strong>, Maolin Gan, Huacheng Zeng, Li Liu, Younsuk Dong, Zhichao Cao"
-    venue: "Proceedings of the 30th Annual International Conference on Mobile Computing and Networking"
-    venue_short: "MobiCom'24"
-    year: 2024
-    track: sense
-    cited: 26
-    pdf: /assets/files/hydra.pdf
-    page: "https://doi.org/10.1145/3636534.3690662"
-    code: "https://github.com/liuyime2/MobiCom24-Hydra"
-    bibtex: /assets/files/hydra.bib
-    slides: /assets/files/HydraLiu-MobiCom24.pptx
-    scholar: 9yKSN-GCB0IC
-    understanding: >-
-      The paper that made the problem explicit. Two modalities chosen because they fail under
-      different conditions, fused so that perception survives losing either one. It is also
-      where I stopped treating fusion as the interesting part: a fusion model is really a
-      representation problem, and the representation is what has to survive modality loss.
-
-  - id: aeroecho
-    title: "AeroEcho: Towards Agricultural Low-Power Wide-Area Backscatter with Aerial Excitation Source"
-    authors: "Yidong Ren, Gen Li, <strong>Yimeng Liu</strong>, Younsuk Dong, Zhichao Cao"
-    venue: "IEEE INFOCOM 2025 — IEEE Conference on Computer Communications"
-    venue_short: "INFOCOM'25"
-    year: 2025
-    track: sense
-    cited: 18
-    pdf: /assets/files/aeroecho.pdf
-    bibtex: /assets/files/aeroecho.bib
-    scholar: qjMakFHDy7sC
-    understanding: >-
-      Passive agricultural sensing over wide areas, excited from the air. This is the piece that
-      moved the question from single devices to sensing infrastructure — and it is the first
-      time my own work depended on observers I do not control, which is a different kind of
-      problem from owning a sensor.
-
-  - id: soilnutri
-    title: "Soilnutri: A Passive Metasurface-Based, Low-Cost System for Soil Moisture and Nitrogen Monitoring"
-    authors: "Juexing Wang, Binbin Xie, <strong>Yimeng Liu</strong>, Minhao Cui, Xiao Zhang, Guangjing Wang, Ke Sun, Zhichao Cao, Huacheng Zeng, Qingxu Jin, Younsuk Dong, Hui Li, Jie Xiong, Tianxing Li"
-    venue: "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies"
-    venue_short: "IMWUT'26"
-    year: 2026
-    track: sense
-    cited: 5
-    bibtex: /assets/files/soilnutri.bib
-    scholar: W7OEmFMy1HYC
-    understanding: >-
-      Passive, low-cost, metasurface-based sensing of soil moisture and nitrogen. Environmental
-      monitoring at the scale where the sensing substrate itself has to be close to free — the
-      regime where "many cheap unreliable observers" stops being a thought experiment and starts
-      being the only affordable design.
-
-  # ---------------- Represent ----------------
-  - id: proteus
-    title: "Proteus: Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer"
-    authors: "<strong>Yimeng Liu</strong>, Maolin Gan, Huacheng Zeng, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Xiaobo Tan, Zhichao Cao"
-    venue: "Proceedings of the 23rd ACM Conference on Embedded Networked Sensor Systems"
-    venue_short: "SenSys'25"
-    year: 2025
-    track: represent
-    cited: 15
-    pdf: /assets/files/proteus.pdf
-    page: "https://doi.org/10.1145/3715014.3722052"
-    bibtex: /assets/files/proteus.bib
-    slides: /assets/files/Proteus-SenSys25.pptx
-    scholar: UeHWp8X0CEIC
-    understanding: >-
-      Cross-modality knowledge transfer: an RGB teacher guiding an mmWave student. The teacher
-      was never the point. What mattered was recovering physical structure from sparse
-      apertures — and that reframed the task as an inverse problem rather than an image
-      enhancement problem, which is a claim about evidence, not about pixels.
-
-  - id: adonis
-    title: "Adonis: Neural-Enhanced Fine-Grained Leaf Wetness Sensing with Efficient mmWave Imaging"
-    authors: "<strong>Yimeng Liu</strong>*, Maolin Gan*, Gen Li, Younsuk Dong, Zhichao Cao"
-    venue: "IEEE INFOCOM 2025 — IEEE Conference on Computer Communications"
-    venue_short: "INFOCOM'25"
-    year: 2025
-    track: represent
-    cited: 13
-    pdf: /assets/files/adonis.pdf
-    bibtex: /assets/files/adonis.bib
-    slides: /assets/files/Adonis-INFOCOM25.pptx
-    scholar: 2osOgNQ5qMEC
-    understanding: >-
-      The same physical state, represented compactly enough to be deployable rather than only
-      demonstrable — range-Doppler, range-phase and range-azimuth maps with learned features and
-      calibration. Proteus asked whether the state could be recovered; Adonis asked whether the
-      representation survives contact with a real budget.
-
-  - id: gapfill
-    title: "Comparative Analysis of Machine Learning Models to Restore Gaps in Multivariate Time Series Leaf Wetness Sensor Data"
-    authors: "Shivani Rana, Nawab Ali, Zhichao Cao, Jill C. Check, Martin I. Chilvers, Jaime Willbur, Benjamin Werling, <strong>Yimeng Liu</strong>, Younsuk Dong"
-    venue: "Computers and Electronics in Agriculture"
-    venue_short: "CEA'26"
-    year: 2026
-    track: represent
-    cited: 1
-    bibtex: /assets/files/gapfill.bib
-    scholar: zYLM7Y9cAGgC
-    understanding: >-
-      The unglamorous half of the thesis. A state you hold across time is only as good as what
-      happens when your sensors stop reporting — and this paper is an honest measurement of how
-      badly standard imputation fails on exactly the signal I care about.
-
-  # ---------------- Grounded action ----------------
-  - id: driving
-    title: "AIoT-Based Continuous, Contextualized, and Explainable Driving Assessment for Older Adults"
-    authors: "<strong>Yimeng Liu</strong>, Fangwei Zhang, Maolin Gan, Jialuo Du, Jingkai Lin, Yawen Wang, Fei Sun, Honglei Chen, Linda Hill, Ruofeng Liu, Tianxing Li, Zhichao Cao"
-    venue: "arXiv preprint arXiv:2603.00691"
-    venue_short: "arXiv'26"
-    year: 2026
-    track: act
-    cited: 0
-    page: "https://arxiv.org/abs/2603.00691"
-    bibtex: /assets/files/driving.bib
-    project: /project/senior-driving/
-    scholar: Y0pCki6q_DkC
-    understanding: >-
-      Everyday driving as a continuous functional record instead of an occasional clinic
-      snapshot — separating age-related change from situational factors like traffic and weather.
-      This one is a design-principles and research-opportunities document: it proposes the
-      sensing, modelling and context architecture, and states plainly that a reliable real-world
-      monitoring system still has to be built and evaluated. The action stage of my agenda is
-      genuinely unfinished, and this paper is an argument for how to finish it, not a result.
-
-  # ---------------- Data & benchmarks ----------------
-  - id: hydrabench
-    title: "Hydra-Bench: A Benchmark for Multi-Modal Leaf Wetness Sensing"
-    authors: "<strong>Yimeng Liu</strong>, Maolin Gan, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Zhichao Cao"
-    venue: "arXiv preprint arXiv:2507.22685"
-    venue_short: "arXiv'25"
-    year: 2025
-    track: artifact
-    cited: 0
-    pdf: /assets/files/HydraBench.pdf
-    page: "https://arxiv.org/abs/2507.22685"
-    bibtex: /assets/files/hydrabench.bib
-    scholar: IjCSPb-OGe4C
-    understanding: >-
-      Six months of synchronised mmWave raw, SAR and RGB data, released publicly. A multi-modal
-      claim is not checkable from prose alone, so this was an attempt to make ours checkable by
-      someone who is not us — and it is the first step toward Question II, what can be known
-      together.
+{
+  "meta": {
+    "scholar_url": "https://scholar.google.com/citations?user=U0Py5sAAAAAJ&hl=en",
+    "reconciled": "2026-10-02"
+  },
+  "main": [
+    {
+      "id": "driving",
+      "title": "AIoT-Based Continuous, Contextualized, and Explainable Driving Assessment for Older Adults",
+      "authors": "<strong>Yimeng Liu</strong>, Fangwei Zhang, Maolin Gan, Jialuo Du, Jingkai Lin, Yawen Wang, Fei Sun, Honglei Chen, Linda Hill, Ruofeng Liu, Tianxing Li, Zhichao Cao",
+      "venue": "arXiv preprint arXiv:2603.00691",
+      "venue_short": "arXiv'26",
+      "year": 2026,
+      "page": "https://arxiv.org/abs/2603.00691",
+      "bibtex": "/assets/files/driving.bib",
+      "project": "/project/senior-driving/",
+      "scholar": "Y0pCki6q_DkC",
+      "category": "preprint"
+    },
+    {
+      "id": "soilnutri",
+      "title": "Soilnutri: A Passive Metasurface-Based, Low-Cost System for Soil Moisture and Nitrogen Monitoring",
+      "authors": "Juexing Wang, Binbin Xie, <strong>Yimeng Liu</strong>, Minhao Cui, Xiao Zhang, Guangjing Wang, Ke Sun, Zhichao Cao, Huacheng Zeng, Qingxu Jin, Younsuk Dong, Hui Li, Jie Xiong, Tianxing Li",
+      "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+      "venue_short": "IMWUT'26",
+      "year": 2026,
+      "bibtex": "/assets/files/soilnutri.bib",
+      "scholar": "W7OEmFMy1HYC",
+      "category": "published"
+    },
+    {
+      "id": "gapfill",
+      "title": "Comparative Analysis of Machine Learning Models to Restore Gaps in Multivariate Time Series Leaf Wetness Sensor Data",
+      "authors": "Shivani Rana, Nawab Ali, Zhichao Cao, Jill C. Check, Martin I. Chilvers, Jaime Willbur, Benjamin Werling, <strong>Yimeng Liu</strong>, Younsuk Dong",
+      "venue": "Computers and Electronics in Agriculture",
+      "venue_short": "CEA'26",
+      "year": 2026,
+      "bibtex": "/assets/files/gapfill.bib",
+      "scholar": "zYLM7Y9cAGgC",
+      "category": "published"
+    },
+    {
+      "id": "proteus",
+      "title": "Proteus: Enhanced mmWave Leaf Wetness Detection with Cross-Modality Knowledge Transfer",
+      "authors": "<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Xiaobo Tan, Zhichao Cao",
+      "venue": "Proceedings of the 23rd ACM Conference on Embedded Networked Sensor Systems",
+      "venue_short": "SenSys'25",
+      "year": 2025,
+      "pdf": "/assets/files/proteus.pdf",
+      "page": "https://doi.org/10.1145/3715014.3722052",
+      "bibtex": "/assets/files/proteus.bib",
+      "slides": "/assets/files/Proteus-SenSys25.pptx",
+      "scholar": "UeHWp8X0CEIC",
+      "project": "/project/proteus/",
+      "category": "published"
+    },
+    {
+      "id": "aeroecho",
+      "title": "AeroEcho: Towards Agricultural Low-Power Wide-Area Backscatter with Aerial Excitation Source",
+      "authors": "Yidong Ren, Gen Li, <strong>Yimeng Liu</strong>, Younsuk Dong, Zhichao Cao",
+      "venue": "IEEE INFOCOM 2025 — IEEE Conference on Computer Communications",
+      "venue_short": "INFOCOM'25",
+      "year": 2025,
+      "pdf": "/assets/files/aeroecho.pdf",
+      "bibtex": "/assets/files/aeroecho.bib",
+      "scholar": "qjMakFHDy7sC",
+      "category": "published"
+    },
+    {
+      "id": "adonis",
+      "title": "Adonis: Neural-Enhanced Fine-Grained Leaf Wetness Sensing with Efficient mmWave Imaging",
+      "authors": "<strong>Yimeng Liu</strong>*, Maolin Gan*, Gen Li, Younsuk Dong, Zhichao Cao",
+      "venue": "IEEE INFOCOM 2025 — IEEE Conference on Computer Communications",
+      "venue_short": "INFOCOM'25",
+      "year": 2025,
+      "pdf": "/assets/files/adonis.pdf",
+      "bibtex": "/assets/files/adonis.bib",
+      "slides": "/assets/files/Adonis-INFOCOM25.pptx",
+      "scholar": "2osOgNQ5qMEC",
+      "project": "/project/adonis/",
+      "category": "published"
+    },
+    {
+      "id": "hydrabench",
+      "title": "Hydra-Bench: A Benchmark for Multi-Modal Leaf Wetness Sensing",
+      "authors": "<strong>Yimeng Liu</strong>, Maolin Gan, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Zhichao Cao",
+      "venue": "arXiv preprint arXiv:2507.22685",
+      "venue_short": "arXiv'25",
+      "year": 2025,
+      "pdf": "/assets/files/HydraBench.pdf",
+      "page": "https://arxiv.org/abs/2507.22685",
+      "bibtex": "/assets/files/hydrabench.bib",
+      "scholar": "IjCSPb-OGe4C",
+      "category": "preprint",
+      "dataset": "https://drive.google.com/drive/folders/1C0mq5vZgEJOYMNL1vSghvFn0OfyIi8Cm"
+    },
+    {
+      "id": "hydra",
+      "title": "Hydra: Accurate Multi-Modal Leaf Wetness Sensing with mm-Wave and Camera Fusion",
+      "authors": "<strong>Yimeng Liu</strong>, Maolin Gan, Huaili Zeng, Li Liu, Younsuk Dong, Zhichao Cao",
+      "venue": "Proceedings of the 30th Annual International Conference on Mobile Computing and Networking",
+      "venue_short": "MobiCom'24",
+      "year": 2024,
+      "pdf": "/assets/files/hydra.pdf",
+      "page": "https://doi.org/10.1145/3636534.3690662",
+      "code": "https://github.com/liuyime2/MobiCom24-Hydra",
+      "bibtex": "/assets/files/hydra.bib",
+      "slides": "/assets/files/HydraLiu-MobiCom24.pptx",
+      "scholar": "9yKSN-GCB0IC",
+      "project": "/project/hydra/",
+      "category": "published"
+    },
+    {
+      "id": "mmleaf",
+      "title": "Poster: mmLeaf: Versatile Leaf Wetness Detection via mmWave Sensing",
+      "authors": "Maolin Gan, <strong>Yimeng Liu</strong>, Li Liu, Cheng Wu, Younsuk Dong, Huacheng Zeng, Zhichao Cao",
+      "venue": "Proceedings of the 21st Annual International Conference on Mobile Systems and Applications",
+      "venue_short": "MobiSys 2023 · Poster",
+      "year": 2023,
+      "pdf": "/assets/files/mmleaf.pdf",
+      "bibtex": "/assets/files/mmleaf.bib",
+      "scholar": "u5HHmVD_uO8C",
+      "category": "published"
+    },
+    {
+      "id": "sonar",
+      "title": "Detection of Passageways in Natural Foliage Using Biomimetic Sonar",
+      "authors": "Rongkun Wang, <strong>Yimeng Liu</strong>, Rolf Müller",
+      "venue": "Bioinspiration & Biomimetics",
+      "venue_short": "Bioinspir.",
+      "year": 2022,
+      "pdf": "/assets/files/biodetection.pdf",
+      "bibtex": "/assets/files/biodetection.bib",
+      "scholar": "u-x6o8ySG0sC",
+      "category": "published"
+    }
+  ]
+}
