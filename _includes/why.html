@@ -1,0 +1,21 @@
+<section class="section section--why" id="why" tabindex="-1">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div class="section__head-main">
+        <p class="eyebrow"><span class="eyebrow__index">01</span> Why</p>
+        <h2 class="section__title">The physical world<br>is only partly observable</h2>
+      </div>
+      <p class="section__note">{{ site.data.thesis.why.lead }}</p>
+    </header>
+
+    <ol class="why__list">
+      {% for p in site.data.thesis.why.premises %}
+      <li class="why__item reveal" style="--i: {{ forloop.index0 }}">
+        <span class="why__key">{{ p.key }}</span>
+        <h3 class="why__title">{{ p.title }}</h3>
+        <p class="why__body">{{ p.body }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

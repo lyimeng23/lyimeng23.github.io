@@ -13,17 +13,23 @@ main:
       Leaf wetness duration drives plant disease, but the instruments that measure it are the least
       reliable number on a farm: they measure synthetic leaves, mis-time real ones by up to half an hour,
       and break on light, wind, or an unfamiliar plant.
-    insight: >-
+    idea: >-
       A camera and a millimetre-wave radar fail in opposite conditions. Rather than deciding which one
       to trust, fuse them at the feature level so the pair keeps working when either degrades.
     built: >-
       A CNN that selectively fuses several mmWave depth images with an RGB frame into multiple feature
       images; a transformer encoder that relates those feature images into a single feature map; a
-      classifier; training-time augmentation for generalisation. FMCW radar, 76–81 GHz.
+      classifier; training-time augmentation for generalisation. FMCW radar in the 77–81 GHz band (the paper also reports a 76–81 GHz configuration).
     evidence: >-
-      Up to 96% wetness-classification accuracy across varying scenarios. Deployed on the farm —
-      including rainy, dawn and poorly lit nights — accuracy remains around 90%.
-    why: >-
+      Deployed on a working farm and evaluated across daylight, rain, dawn and poorly lit nights,
+      with degradation only where the optical channel fails. Exact figures are in the paper and
+      are deliberately not repeated here — a homepage number that nobody can check is a claim,
+      not evidence.
+    agenda: >-
+      Step 01. This is where the modality choice stopped being a hardware decision and
+      became the scientific one: if two channels fail under different conditions, redundancy is a
+      property you can design for rather than hope for. It also produced the observation that set
+      the next two papers — that fusion is really a representation problem.
       Published proof that multimodal sensing is a redundancy problem: the system stays useful when one
       of its eyes goes dark.
     context: "MobiCom '24 · Washington, D.C."
@@ -49,7 +55,7 @@ main:
       mmWave suits leaf wetness because it responds to subtle surface change, yet existing systems fuse
       it with an RGB camera — so they stop working in the dark, and their accuracy drifts with
       environment because SAR imaging is not well understood.
-    insight: >-
+    idea: >-
       What has already been learned in the RGB domain can be transferred into the mmWave SAR domain.
       And the radar image can be made more informative before any learning happens at all.
     built: >-
@@ -57,8 +63,10 @@ main:
       texture at higher resolution, and an RGB teacher guiding an mmWave SAR student through cross-modality
       knowledge transfer. Prototyped on commercial off-the-shelf radar.
     evidence: >-
-      Up to 96.3% accuracy across varied environmental scenarios, outperforming state-of-the-art methods.
-    why: >-
+      Evaluated across varied environmental scenarios against RGB-only baselines, outperforming state-of-the-art methods.
+    agenda: >-
+      Step 01. Extends the redundancy argument from sensing to estimation: what is recovered
+      is a physical quantity from a sparse return, not an enhanced image.
       Representation has to survive the loss of a modality. Proteus is my published statement of that
       requirement, and the point where a project became a thesis.
     context: "SenSys '25 · Irvine, CA"
@@ -83,19 +91,21 @@ main:
       Fine-grained physical state is what a downstream model is supposed to reason over, but measuring
       it precisely means resolving detail a radar returns noisily — and any system that is precise in a
       lab tends to stop being precise outdoors.
-    insight: >-
+    idea: >-
       Range-Doppler, range-phase angle and range-azimuth views carry genuinely complementary information
       about the same surface. Using all three, with learned features and an explicit calibration stage,
       is what makes the measurement hold outside the lab.
     built: >-
       Three signal-processing mappings fused into one input; contrastive learning with a CNN that
       isolates wetness variation from environmental change; a wetness-extraction layer; and model
-      calibration using transmitted and reflected signal strength. FMCW radar, 77–81 GHz.
+      calibration using transmitted and reflected signal strength. FMCW radar, 77–81 GHz band.
     evidence: >-
       Leaf wetness MAE of 4.43 in controlled environments and 6.49 on a real farm, against 11.84 indoors
       and 14.32 outdoors for traditional leaf wetness sensors. Removing any one of the three signal views
       pushes MAE to 8–10; keeping only one pushes it to 14–17.
-    why: >-
+    agenda: >-
+      Step 03. Establishes that a compact representation can hold a physical quantity without
+      collapsing, which is what any persistent state would have to be built on.
       Measurement quality is a modelling problem, not an engineering detail. A world model is only ever
       as good as the structure handed to it.
     context: "INFOCOM '25"
@@ -117,22 +127,26 @@ main:
     year: "In progress"
     tagline: "Where the chain closes: a spatial state that changes what a car does."
     problem: >-
-      Mild cognitive change raises driving risk well before it is visible. By the time behaviour looks
-      impaired, risky driving has already begun — and most tools either flag clearly impaired drivers
-      or hand the question to a costly clinical assessment.
-    insight: >-
-      There is an in-between stage: driving still largely intact, cognition already changing. It is
-      observable continuously, if you instrument the vehicle and measure it against simulator-based
-      capability assessment.
+      Assessment of driving safety in older adults currently depends on infrequent clinic visits
+      or brief screening tools, which capture a snapshot rather than how a person actually drives.
+      The gap I work on is measurement, not diagnosis: what continuous observation can and cannot
+      contribute to a question that clinical assessment already owns.
+    idea: >-
+      Driving is a continuous functional record rather than a single observation. Instrumenting a
+      vehicle, and relating continuous behaviour to simulator-based capability assessment, makes
+      that record available at all — which is what the study design depends on.
     built: >-
       Simulator protocols that isolate the cognitive demands of driving — cognitive load and attention;
-      an on-board sensing system that tracks driving behaviour over time and surfaces early risk;
+      an on-board sensing system intended to track driving behaviour over time;
       realistic testing against road conditions; and community education so insight reaches the people
       it is about.
     evidence: >-
       Ongoing research. No published spatial-reasoning model or closed-loop policy is claimed here; the
       recruitment flyer describes the study as it currently stands.
-    why: >-
+    agenda: >-
+      Step 05, and the honest limit of the record. It shows what changes when an estimate has to
+      survive contact with a real setting and real people — and that is a different design problem
+      from the published three steps.
       This is the layer I intend to close the loop on. Acting on a physical world is only defensible when
       the state is good enough to act on — and when the people affected are part of the design.
     context: "MSU · CSE, Social Work, Epidemiology"

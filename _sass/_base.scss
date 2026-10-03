@@ -55,6 +55,10 @@
 *::after { box-sizing: border-box; }
 
 html {
+  // The page is a single light theme by design. Declaring it here (not only in a meta tag)
+  // is what keeps UA-rendered surfaces — scrollbars, form controls, the default canvas —
+  // from inverting for a visitor whose OS is set to dark.
+  color-scheme: light;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: calc(#{$nav-h} + 1.5rem);
@@ -101,6 +105,10 @@ hr {
   border-top: $rule solid $paper-line;
   margin: 0;
 }
+
+// Ranges and compound tokens must never break across lines: "01–03" split into
+// "01–" and "03" reads as two separate numbers.
+.nowrap { white-space: nowrap; }
 
 ::selection {
   background: rgba($accent, 0.16);
@@ -187,7 +195,7 @@ hr {
   font-size: $t-title;
   line-height: 1.04;
   letter-spacing: $track-display;
-  max-width: 17ch;
+  max-width: 22ch;
 }
 
 .section__note {
@@ -290,7 +298,7 @@ hr {
     background: $ink;
     border-color: $ink;
     color: $paper;
-    &:hover { background: $accent; border-color: $accent; color: #fff; }
+    &:hover { background: $accent; border-color: $accent; color: $paper; }
   }
 
   &--line {

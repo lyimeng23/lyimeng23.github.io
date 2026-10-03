@@ -5,52 +5,6 @@
 // ============================================================
 // 01 — Beliefs
 // ============================================================
-.beliefs {
-  display: grid;
-  counter-reset: belief;
-}
-
-.belief {
-  display: grid;
-  gap: 0.4rem;
-  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
-  border-top: $rule solid $paper-line;
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    column-gap: $col-gap;
-    align-items: start;
-    row-gap: 0.6rem;
-  }
-}
-
-.belief__key {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: $accent;
-  padding-top: 0.5rem;
-
-  @media (min-width: $bp-lg) { padding-top: 0.35rem; }
-}
-
-.belief__title {
-  font-family: $font-display;
-  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  max-width: 15ch;
-}
-
-.belief__body {
-  margin: 0;
-  max-width: 44ch;
-  color: $ink-2;
-  font-size: clamp(1rem, 1.35vw, 1.1rem);
-  line-height: 1.58;
-}
-
 @include at-lg {
   .belief__key { grid-row: 1; }
   .belief__title { grid-row: 1; }
@@ -76,17 +30,6 @@
 // ============================================================
 // 02 — The instrument (signature interaction)
 // ============================================================
-.instrument__layout {
-  display: grid;
-  gap: clamp(1.75rem, 4vw, 4rem);
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: minmax(0, 1.42fr) minmax(19rem, 0.58fr);
-    column-gap: clamp(2rem, 4vw, 4.5rem);
-    align-items: start;
-  }
-}
-
 .panel {
   margin: 0;
   min-width: 0;
@@ -107,75 +50,13 @@
   }
 }
 
-.panel__frame {
-  position: relative;
-  transform: translateY(calc(var(--depth, 0) * 16px));
-  transition: transform $dur $ease-out;
-  aspect-ratio: 1000 / 620;
-  overflow: hidden;
-  background: $panel;
-  border: $rule solid rgba($panel-ink, 0.12);
-  border-radius: $radius;
-}
-
-.panel__svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  font-family: $font-mono, "Mono Fallback", monospace;
-
-  * { vector-effect: non-scaling-stroke; }
-}
-
 // Framing marks on the instrument panel
-.panel__corner {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border: 0 solid rgba($panel-ink, 0.34);
-  pointer-events: none;
-
-  &--tl { top: 10px; left: 10px; border-top-width: 1px; border-left-width: 1px; }
-  &--tr { top: 10px; right: 10px; border-top-width: 1px; border-right-width: 1px; }
-  &--bl { bottom: 10px; left: 10px; border-bottom-width: 1px; border-left-width: 1px; }
-  &--br { bottom: 10px; right: 10px; border-bottom-width: 1px; border-right-width: 1px; }
-}
-
 // ---- Layers: cumulative, newest in front ----
 // Layers accumulate rather than replace. A past layer recedes in stroke weight,
 // never in legibility: dimming the whole group would drop its labels below the
 // contrast floor, so only strokes lighten.
-.panel__crosshair {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  margin: -20px 0 0 -20px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity $dur-fast $ease;
-  background:
-    linear-gradient(rgba($signal, 0.85), rgba($signal, 0.85)) center / 1px 100% no-repeat,
-    linear-gradient(rgba($signal, 0.85), rgba($signal, 0.85)) center / 100% 1px no-repeat;
-}
 .panel.is-probing .panel__crosshair { opacity: 0.75; }
 
-.panel__caption {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.35rem 1rem;
-  padding-top: 0.8rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.panel__stage { color: $accent; font-weight: 500; }
-.panel__read { color: $ink-3; text-transform: none; letter-spacing: 0.04em; }
-.panel__cursor { margin-left: auto; color: transparent; transition: color $dur-fast $ease; }
 .panel.is-probing .panel__cursor { color: $ink-3; }
 
 // ---- Steps ----
@@ -202,98 +83,6 @@
 
   &:first-child { border-top: 0; }
 }
-
-.step__btn {
-  display: grid;
-  grid-template-columns: 2.125rem minmax(0, 1fr);
-  gap: 0 0.9rem;
-  width: 100%;
-  padding: 0.9rem 0;
-  background: none;
-  border: 0;
-  font: inherit;
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-
-  &:hover .step__label { color: $accent; }
-  &:hover .step__summary { color: $ink; }
-}
-
-.step__key {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.125rem;
-  height: 2.125rem;
-  border: $rule solid $paper-line;
-  border-radius: 50%;
-  background: $paper-sunk;
-  color: $ink-3;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  transition: background $dur $ease, color $dur $ease, border-color $dur $ease;
-}
-
-.step__body { display: block; min-width: 0; }
-
-.step__label {
-  display: block;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $ink-3;
-  transition: color $dur-fast $ease;
-}
-
-.step__question {
-  display: block;
-  margin-top: 0.3rem;
-  font-family: $font-display;
-  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
-  font-weight: 400;
-  line-height: 1.18;
-  letter-spacing: -0.015em;
-  color: $ink-3;
-  transition: color $dur $ease;
-}
-
-.step__summary {
-  display: block;
-  margin-top: 0.45rem;
-  font-size: $t-small;
-  line-height: 1.5;
-  color: $ink-3;
-  transition: color $dur $ease;
-}
-
-.step__evidence {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.4em 0.6em;
-  margin-top: 0.6rem;
-  padding-top: 0.55rem;
-  border-top: $rule dashed $paper-line;
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.02em;
-  color: $ink-2;
-}
-
-.step__evidence-label {
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-.step__evidence--none { color: $ink-3; font-style: normal; }
-.step__evidence--none .step__evidence-label { color: $ink-3; }
 
 .step.is-active {
   .step__key { background: $accent; border-color: $accent; color: $paper; }
@@ -330,146 +119,7 @@
 // ============================================================
 .system { display: grid; }
 
-.system__row {
-  position: relative;
-  display: grid;
-  gap: 1.5rem clamp(2rem, 5vw, 4.5rem);
-  padding-block: clamp(2rem, 4vw, 3rem);
-  padding-left: $s-5;
-  border-top: $rule solid $paper-line;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: clamp(2rem, 4vw, 3rem);
-    bottom: 0;
-    width: 2px;
-    background: $paper-line;
-  }
-
-  &--proven::before { background: $accent; }
-  &--building::before { background: $ink-3; }
-  &--open::before { background: transparent; border-left: 2px dashed $paper-line; }
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-    align-items: start;
-  }
-}
-
-.system__id {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.6rem 0.9rem;
-  margin-bottom: 0.85rem;
-}
-
-.system__key {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: $accent;
-}
-
-.system__capability {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $ink;
-}
-
-.system__title {
-  font-family: $font-display;
-  font-size: clamp(1.6rem, 2.7vw, 2.25rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.6rem;
-  max-width: 18ch;
-}
-
-.system__body {
-  margin: 0;
-  max-width: 48ch;
-  color: $ink-2;
-  font-size: clamp(1rem, 1.3vw, 1.08rem);
-  line-height: 1.58;
-}
-
-.system__subhead {
-  margin: 0 0 0.75rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
-.system__list {
-  display: grid;
-  gap: 0.5rem;
-  margin-bottom: 1.75rem;
-  font-size: $t-small;
-  line-height: 1.45;
-  color: $ink-2;
-
-  li { position: relative; padding-left: 1rem; }
-  li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.62em;
-    width: 6px;
-    height: 1px;
-    background: $accent;
-  }
-}
-
 .evidence { display: grid; gap: 0.9rem; }
-
-.evidence__item {
-  display: grid;
-  gap: 0.1rem 0.6rem;
-  padding-top: 0.9rem;
-  border-top: $rule solid $paper-line;
-}
-
-.evidence__title {
-  font-family: $font-mono;
-  font-size: $t-micro;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: $ink;
-}
-
-.evidence__meta {
-  font-family: $font-mono;
-  font-size: $t-label;
-  letter-spacing: 0.06em;
-  color: $accent;
-}
-
-.evidence__note {
-  margin-top: 0.2rem;
-  font-size: $t-small;
-  line-height: 1.45;
-  color: $ink-2;
-}
-
-.evidence__none {
-  margin: 0;
-  padding-top: 0.9rem;
-  border-top: $rule dashed $paper-line;
-  font-size: $t-small;
-  line-height: 1.5;
-  color: $ink-3;
-  font-style: italic;
-}
 
 // ============================================================
 // 04 — Selected work
@@ -520,13 +170,13 @@
 
 .work__figure-index {
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   padding: 0.4em 0.8em;
   background: rgba($paper, 0.94);
-  border-left: $rule solid $paper-line;
+  border-right: $rule solid $paper-line;
   border-bottom: $rule solid $paper-line;
-  border-radius: 0 0 0 $radius;
+  border-radius: 0 0 $radius 0;
   color: $ink-3;
   font-family: $font-mono;
   font-size: $t-label;
@@ -799,28 +449,7 @@
 
 // The capability line names the thing being built, in the language of the system
 // rather than the language of the question.
-.question__head { min-width: 0; }
-
-.question__capability {
-  margin: 0.75rem 0 0;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $ink-3;
-}
-
 // The honesty line: what is actually finished behind the question.
-.question__status {
-  margin: 0.9rem 0 0;
-  padding-left: 0.8rem;
-  border-left: 2px solid $accent-rule;
-  font-size: clamp(0.94rem, 1.15vw, 1rem);
-  line-height: 1.5;
-  color: $ink-3;
-}
-
 // Title and capability travel together in one cell: the grid row is as tall as the
 // body, and a separate row would strand the capability line in the gap below it.
 @include at-lg {
@@ -828,54 +457,6 @@
   .question__head { grid-column: 3 / 8; grid-row: 1; }
   .question__body { grid-column: 8 / 13; grid-row: 1; }
   .question__status { grid-column: 8 / 13; grid-row: 2; }
-}
-
-.roadmap__close {
-  margin-top: clamp(3rem, 6vw, 4.5rem);
-  padding-top: clamp(1.5rem, 3vw, 2rem);
-  border-top: 2px solid $ink;
-  display: grid;
-  gap: clamp(1.75rem, 4vw, 3rem);
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    column-gap: clamp(2.5rem, 6vw, 6rem);
-  }
-}
-
-.roadmap__trajectory {
-  margin: 0;
-  max-width: 46ch;
-  font-family: $font-display;
-  font-size: clamp(1.2rem, 1.95vw, 1.65rem);
-  line-height: 1.3;
-  letter-spacing: -0.014em;
-  color: $ink;
-  text-wrap: pretty;
-}
-
-.roadmap__looking {
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-  background: $accent-wash;
-}
-
-.roadmap__looking-label {
-  margin: 0 0 0.6rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-.roadmap__looking-body {
-  margin: 0;
-  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
-  line-height: 1.55;
-  color: $ink-2;
 }
 
 // ============================================================
@@ -1028,12 +609,6 @@
     transition: color $dur-fast $ease, border-color $dur-fast $ease;
     &:hover { color: $accent; border-color: $accent; }
   }
-}
-
-.pubs__empty {
-  margin: 1.5rem 0 0;
-  font-size: $t-small;
-  color: $ink-3;
 }
 
 .record__scholar {
@@ -1221,156 +796,15 @@
 // 08 — Vision (the ambition)
 // ============================================================
 
-.vision__figure { margin: 0; }
-
-.vision__canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-  background: $paper;
-  // Retina: the backing store is scaled in JS; these are the layout dimensions.
-  aspect-ratio: 1200 / 620;
-}
-
-.vision__caption { margin-top: $s-4; }
-
-.vision__steps {
-  display: grid;
-  gap: 0.7rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  @media (min-width: $bp-md) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: clamp(1.5rem, 3vw, 3rem);
-  }
-}
-
-.vision__step {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.7rem;
-  align-items: baseline;
-  padding-top: 0.7rem;
-  border-top: $rule solid $paper-line;
-}
-
-.vision__step-key {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: $accent;
-}
-
-.vision__step-text {
-  font-size: clamp(0.94rem, 1.15vw, 1rem);
-  line-height: 1.55;
-  color: $ink-2;
-}
-
-.vision__close {
-  margin-top: clamp(3rem, 6vw, 4.5rem);
-  padding-top: clamp(1.5rem, 3vw, 2rem);
-  border-top: 2px solid $ink;
-  display: grid;
-  gap: clamp(1.75rem, 4vw, 3rem);
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    column-gap: clamp(2.5rem, 6vw, 6rem);
-  }
-}
-
-.vision__aspiration {
-  margin: 0;
-  max-width: 46ch;
-  font-family: $font-display;
-  font-size: clamp(1.2rem, 1.95vw, 1.65rem);
-  line-height: 1.3;
-  letter-spacing: -0.014em;
-  color: $ink;
-  text-wrap: pretty;
-}
-
-.vision__notyet {
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-  background: $accent-wash;
-}
-
-.vision__notyet-label {
-  margin: 0 0 0.6rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
-}
-
-.vision__notyet-body {
-  margin: 0;
-  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
-  line-height: 1.55;
-  color: $ink-2;
-}
-
 // ============================================================
 // 01 — Concept: what "Spatial Intelligence" means
 // ============================================================
-
-.concept__definition {
-  display: grid;
-  gap: clamp(1rem, 2.5vw, 2rem);
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
-    column-gap: clamp(2rem, 5vw, 5rem);
-  }
-}
-
-.concept__term {
-  margin: 0;
-  font-family: $font-display;
-  font-size: clamp(1.5rem, 3vw, 2.6rem);
-  line-height: 1.08;
-  letter-spacing: -0.018em;
-  color: $accent;
-}
-
-.concept__body {
-  margin: 0;
-  max-width: 58ch;
-  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
-  font-weight: 350;
-  line-height: 1.5;
-  color: $ink;
-  text-wrap: pretty;
-}
-
-.concept__figure { margin: 0 0 clamp(2.5rem, 5vw, 4rem); }
-
-.concept__pan-hint { display: none; }
 
 // Three panels side by side cannot stay legible at phone width: at 390px the figure
 // scales to ~0.28, which renders the 10px labels at about 3px. Rather than shrink the
 // type into illegibility or rebuild the figure as three stacked SVGs, the figure keeps
 // a readable minimum width and pans. The argument is carried in full by the prose above
 // and below it, so nothing is lost by the pan being an extra gesture.
-.concept__scroll {
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  -webkit-overflow-scrolling: touch;
-}
-
-.concept__svg { display: block; width: 100%; height: auto; overflow: visible; }
-
 @media (max-width: #{$bp-lg - 1px}) {
   .concept__scroll { margin-inline: calc(clamp(1.25rem, 4.5vw, 3rem) * -1); padding-inline: clamp(1.25rem, 4.5vw, 3rem); }
   .concept__svg { min-width: 900px; }
@@ -1385,109 +819,56 @@
   }
 }
 
-// The scroll region is focusable, so it needs a visible ring for keyboard users.
-.concept__scroll:focus-visible { outline: 2px solid $accent; outline-offset: 3px; }
-
-// ---------- the figure's grammar ----------
-// Hairlines only for structure. Nothing is filled, so the eye reads relationship rather
-// than volume, and the two channels stay legible as separate kinds of evidence.
-.cp__body {
-  fill: rgba(23, 80, 63, 0.07);
-  stroke: #17503f;
-  stroke-width: 1.5;
-}
-.cp__vein { fill: none; stroke: rgba(23, 80, 63, 0.5); stroke-width: 1; }
-.cp__rule { fill: none; stroke: #16150f; stroke-width: 1; opacity: 0.16; }
-.cp__lane { fill: none; stroke: #faf9f5; stroke-width: 2.5; opacity: 1; }
-.cp__road { fill: rgba(22, 21, 15, 0.035); }
-.cp__soil { fill: rgba(22, 21, 15, 0.035); }
-.cp__ray { stroke: #16150f; stroke-width: 1.1; fill: none; opacity: 0.6; }
-
-// The penetrating channel, in the accent.
-.cp__wave {
-  fill: none;
-  stroke: #17503f;
-  stroke-width: 1.15;
-  opacity: 0.5;
-  stroke-linecap: round;
-}
-
-// Where the penetrating channel actually recovers something.
-.cp__scatter { fill: #17503f; opacity: 0.75; }
-
-// The blind spot: amber, dashed, always the same treatment.
-.cp__gap {
-  fill: rgba(216, 162, 74, 0.07);
-  stroke: #b07f28;
-  stroke-width: 1;
-  stroke-dasharray: 4 4;
-  opacity: 0.85;
-}
-
-.cp__observer { fill: none; stroke: #16150f; stroke-width: 1.5; }
-.cp__fov { fill: rgba(22, 21, 15, 0.05); stroke: rgba(22, 21, 15, 0.28); stroke-width: 1; stroke-dasharray: 3 3; }
-.cp__occluder { fill: #16150f; opacity: 0.82; }
-.cp__subject { stroke: #16150f; stroke-width: 1.6; fill: none; stroke-linecap: round; }
-.cp__reticle { fill: none; stroke: #17503f; stroke-width: 1.2; opacity: 0.8; }
-
-// ---------- figure type ----------
-.cp text { font-family: $font-mono; }
-
-.cp__scale {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  fill: #6b6659;
-}
-.cp__label {
-  font-family: $font-display !important;
-  font-size: 27px;
-  fill: #16150f;
-  letter-spacing: -0.01em;
-}
-.cp__work {
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  fill: #6b6659;
-}
-.cp__tiny {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  fill: #6b6659;
-}
-/* Legends are two stacked lines per panel so they can never run into the next panel. */
-.cp__legend-a, .cp__legend-b {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  fill: #17503f;
-}
-.cp__legend-b tspan, .cp__legend-a tspan {
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  fill: rgba(22, 21, 15, 0.6);
-}
-
-.cp__spine-rule { stroke: #16150f; stroke-width: 1.4; }
-.cp__spine-label {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  fill: #17503f;
-}
-.cp__spine-text {
-  font-family: $font-display !important;
-  font-size: 19px;
-  fill: #16150f;
-  letter-spacing: -0.008em;
-}
-
 // ---------- premises ----------
-.concept__list {
+// ---------- close ----------
+.concept__bridge-label {
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: $track-label;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+// ============================================================
+// Narrative arc — hero question, why, journey, future
+// ============================================================
+
+// The one question, set at display scale. This is the largest single sentence on the
+// page and it is a problem statement, not a slogan.
+.hero__question {
+  margin: clamp(1.75rem, 3.5vw, 2.75rem) 0 0;
+  max-width: 30ch;
+  font-family: $font-display;
+  font-size: clamp(1.5rem, 3.1vw, 2.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: $ink;
+  text-wrap: balance;
+}
+
+.hero__body {
+  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  border-top: $rule solid $paper-line;
+}
+
+// The established-work boundary, kept small: it is the honesty contract, not the pitch.
+.hero__boundary {
+  margin: 0;
+  max-width: 44ch;
+  font-family: $font-mono;
+  font-size: $t-label;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: $ink-3;
+}
+
+// ---------- 01 Why ----------
+.why__list {
   display: grid;
   gap: clamp(1.75rem, 3.5vw, 2.75rem);
-  margin: 0 0 clamp(3rem, 6vw, 4.5rem);
+  margin: 0;
   padding: 0;
   list-style: none;
 
@@ -1497,12 +878,9 @@
   }
 }
 
-.concept__item {
-  padding-top: 0.8rem;
-  border-top: $rule solid $paper-line;
-}
+.why__item { padding-top: 0.8rem; border-top: $rule solid $paper-line; }
 
-.concept__key {
+.why__key {
   font-family: $font-mono;
   font-size: $t-label;
   font-weight: 500;
@@ -1510,7 +888,7 @@
   color: $accent;
 }
 
-.concept__item-title {
+.why__title {
   margin: 0.6rem 0 0.7rem;
   font-family: $font-display;
   font-size: clamp(1.25rem, 2vw, 1.6rem);
@@ -1518,58 +896,97 @@
   letter-spacing: -0.014em;
 }
 
-.concept__item-body {
+.why__body {
   margin: 0;
   font-size: clamp(0.98rem, 1.25vw, 1.08rem);
   line-height: 1.6;
   color: $ink-2;
 }
 
-// ---------- close ----------
-.concept__close {
-  padding-top: clamp(1.5rem, 3vw, 2rem);
-  border-top: 2px solid $ink;
+// ---------- 02 Journey ----------
+// Status is the first thing read. The section's whole job is letting a reviewer see at a
+// glance which steps have results, so status leads and the label is never dropped.
+.journey { margin: 0; padding: 0; list-style: none; }
+
+.journey__step {
+  display: grid;
+  gap: 1rem clamp(1.5rem, 3.5vw, 3.5rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-top: $rule solid $paper-line;
 }
 
-.concept__spine-title {
-  margin: 0 0 0.9rem;
+.journey__marker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem 0.75rem;
+}
+
+.journey__key {
   font-family: $font-mono;
   font-size: $t-label;
   font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
+  letter-spacing: 0.14em;
   color: $accent;
 }
 
-.concept__spine-body {
-  margin: 0 0 clamp(1.75rem, 4vw, 2.75rem);
-  max-width: 62ch;
+.journey__status {
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22em 0.62em;
+  border-radius: $radius-pill;
+  white-space: nowrap;
+}
+
+// Established: solid accent. Current: neutral. Future: dashed. Same spine language as
+// the publication tags, so the two systems read as one.
+.journey__status--established { color: $accent; border: $rule solid $accent-rule; background: $accent-wash; }
+.journey__status--current { color: $ink-2; border: $rule solid $paper-line; }
+.journey__status--future { color: $ink-3; border: $rule dashed $paper-line; }
+
+.journey__period {
+  font-family: $font-mono;
+  font-size: $t-label;
+  letter-spacing: 0.06em;
+  color: $ink-3;
+}
+
+.journey__head { min-width: 0; }
+
+.journey__label {
+  margin: 0 0 0.6rem;
   font-family: $font-display;
-  font-size: clamp(1.2rem, 1.95vw, 1.65rem);
-  line-height: 1.32;
-  letter-spacing: -0.014em;
+  font-size: clamp(1.5rem, 2.9vw, 2.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+}
+
+.journey__problem {
+  margin: 0;
+  max-width: 46ch;
+  font-size: clamp(1rem, 1.35vw, 1.14rem);
+  line-height: 1.55;
   color: $ink;
   text-wrap: pretty;
 }
 
-.concept__bridge {
-  display: grid;
-  gap: 0.5rem;
-  max-width: 58ch;
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
-  border: $rule solid $paper-line;
-  border-radius: $radius;
-  background: $accent-wash;
-  color: $ink-2;
-  text-decoration: none;
-  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
-  line-height: 1.55;
-  transition: border-color $dur-fast $ease;
+.journey__detail { display: grid; gap: 0.9rem; min-width: 0; }
 
-  &:hover { border-color: $accent; }
+.journey__field,
+.journey__established {
+  margin: 0;
+  max-width: 54ch;
+  font-size: clamp(0.96rem, 1.2vw, 1.04rem);
+  line-height: 1.6;
+  color: $ink-2;
 }
 
-.concept__bridge-label {
+.journey__field-label {
+  display: block;
+  margin-bottom: 0.3rem;
   font-family: $font-mono;
   font-size: $t-label;
   font-weight: 500;
@@ -1577,3 +994,252 @@
   text-transform: uppercase;
   color: $accent;
 }
+
+.journey__evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.28em 0.7em;
+    border: $rule solid $paper-line;
+    border-radius: $radius-pill;
+    font-family: $font-mono;
+    font-size: $t-label;
+    letter-spacing: 0.04em;
+    color: $ink-2;
+  }
+}
+
+.journey__none {
+  margin: 0;
+  font-family: $font-mono;
+  font-size: $t-label;
+  letter-spacing: 0.06em;
+  color: $ink-3;
+}
+
+.journey__step--future {
+  // The step that does not exist yet is visually lighter, so the section does not read
+  // as though five results exist.
+  .journey__label { color: $ink-2; }
+}
+
+@include at-lg {
+  .journey__step {
+    grid-template-columns: 9rem minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: start;
+  }
+  .journey__marker { grid-column: 1; flex-direction: column; align-items: flex-start; }
+  .journey__head { grid-column: 2; grid-row: 1 / 3; }
+  .journey__detail { grid-column: 3; grid-row: 1; }
+  .journey__evidence, .journey__none { grid-column: 3; grid-row: 2; }
+
+  // On a wide viewport the right column is tall enough to hold two of its fields side by
+  // side, which removes the void that appeared under the short label column.
+  @media (min-width: #{$bp-lg + 180px}) {
+    .journey__step { grid-template-columns: 9rem minmax(0, 0.95fr) minmax(0, 2fr); }
+    .journey__detail {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(1.5rem, 3vw, 3rem);
+      align-items: start;
+    }
+  }
+}
+
+// ---------- 05 Future ----------
+.thrusts {
+  --thrust-gap: clamp(1.5rem, 3vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thrust {
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-top: $rule solid $paper-line;
+}
+
+.thrust__station { display: none; }
+
+// The spatial close: at desktop the three thrusts sit on one axis. Dashed under an open
+// question, solid under the one in progress. The station marker is the only solid dot on the
+// page, which is what makes "this is the part I am actually working on" readable at a glance.
+@include at-lg {
+  .thrusts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--thrust-gap);
+  }
+
+  .thrust {
+    position: relative;
+    border-top: 0;
+    padding-top: 2.75rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: calc(-1 * var(--thrust-gap));
+      border-top: 1px dashed $paper-line;
+    }
+
+    &:last-child::before { right: 0; }
+  }
+
+  .thrust--building::before {
+    border-top-style: solid;
+    border-top-color: $accent-rule;
+    border-top-width: 2px;
+  }
+
+  .thrust__station {
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: $paper;
+    border: 1.5px solid $paper-line;
+  }
+
+  .thrust--building .thrust__station {
+    background: $accent;
+    border-color: $accent;
+    box-shadow: 0 0 0 4px $accent-wash;
+  }
+}
+
+.thrust__top { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+
+.thrust__key {
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: $accent;
+}
+
+.thrust__title {
+  margin: 0.75rem 0 1.15rem;
+  max-width: 30ch;
+  font-family: $font-display;
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+}
+
+.thrust__grid {
+  display: grid;
+  gap: 0.55rem clamp(1.5rem, 3.5vw, 3.5rem);
+  margin: 0;
+
+  dt {
+    font-family: $font-mono;
+    font-size: $t-label;
+    font-weight: 500;
+    letter-spacing: $track-label;
+    text-transform: uppercase;
+    color: $ink-3;
+  }
+
+  dd {
+    margin: 0 0 0.85rem;
+    max-width: 58ch;
+    font-size: clamp(0.96rem, 1.2vw, 1.04rem);
+    line-height: 1.6;
+    color: $ink-2;
+  }
+}
+
+.thrust__from { font-family: $font-mono; font-size: $t-label !important; letter-spacing: 0.04em; color: $ink-3 !important; }
+
+// Each thrust occupies one of three columns, so the dt/dd pair stacks: an 11rem label column
+// left the body about 15 characters per line. Declared here, after the axis block, so it wins.
+@include at-lg {
+  .thrust__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.2rem;
+    align-items: start;
+  }
+  .thrust__grid dt { grid-column: 1; padding-top: 0.75rem; }
+  .thrust__grid dd { grid-column: 1; margin-bottom: 0.5rem; }
+}
+
+.future__seek {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 2px solid $ink;
+}
+
+.future__seek-label {
+  margin: 0 0 0.6rem;
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: $track-label;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+.future__seek-body {
+  margin: 0;
+  max-width: 58ch;
+  font-family: $font-display;
+  font-size: clamp(1.15rem, 1.85vw, 1.5rem);
+  line-height: 1.34;
+  letter-spacing: -0.012em;
+  color: $ink;
+  text-wrap: pretty;
+}
+
+// ---------- Evidence: what was built sits under the evidence it produced ----------
+.work__spec-built {
+  margin-top: 0.7rem;
+  padding-left: 0.8rem;
+  border-left: $rule solid $paper-line;
+  font-size: clamp(0.92rem, 1.1vw, 0.98rem);
+  color: $ink-3;
+}
+
+.work__spec-built span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: $font-mono;
+  font-size: $t-label;
+  font-weight: 500;
+  letter-spacing: $track-label;
+  text-transform: uppercase;
+}
+
+// Real paper figure, presented as evidence rather than decoration. No filter, no grading,
+// no framing chrome — the figure is the paper's, and the caption carries the venue.
+.journey__figure { margin: 0 0 1.15rem; }
+
+.journey__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: $rule solid $paper-line;
+  border-radius: $radius;
+  background: $paper-sunk;
+}
+
+.journey__figure figcaption {
+  margin-top: 0.55rem;
+  font-family: $font-mono;
+  font-size: $t-label;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: $ink-3;
+}
+
+// ============================================================

@@ -1,50 +1,69 @@
-# The person, first. Everything on the site is in service of one of five threads:
-#   我是谁   who I am
-#   我在做什么 what I work on
-#   我有什么工作 what I have built
-#   我有什么想法 / 思想 what I believe and am still arguing about
-#   路线     where this goes
-# Nothing here is a claim of result. It is the position the evidence supports.
+# THE thesis. One statement. Everything else on the site either supports it, evidences it,
+# or is explicitly labelled as not yet done.
+#
+# Failure this file exists to prevent: the previous build carried six competing labels
+# (Spatial Intelligence / multimodal sensing / RF imaging / cross-modal representation /
+# world modelling / grounded action) and asserted reasoning and action as current capability,
+# while the published record is sensing plus physical-state estimation. Vision was running
+# ahead of evidence. So: one sentence, three premises that justify why it is hard, and a
+# hard boundary on what may be claimed.
 
-hero:
-  # First person, and about me rather than about "AI". The research question is still
-  # the whole agenda, but it is stated as what I do, not as a subject waiting for a subject.
-  standfirst: >-
-    I work on AI that has to know where it is — building a working understanding of a physical
-    space out of incomplete sensors, and keeping that understanding current enough to act on.
+# ---- the single scientific question ----------------------------------------------------
+thesis:
+  # Stated as a problem, not as a slogan, and deliberately not branded in the hero.
+  statement: >-
+    How can an intelligent system build a physical-world understanding that stays reliable,
+    while its observations arrive incomplete, noisy, heterogeneous and always changing —
+    and then be used for reasoning and action?
 
-# The label for the field, kept because it is memorable and because it is what the work adds up to.
-# It sits with the person in the hero; it does not replace the person.
-field: "Spatial Intelligence"
+  # One plain-language sentence for a visitor who will not read the long one.
+  plain: >-
+    Learning to know a place from sensors that each only ever see part of it.
 
-# Used once, in the footer — a signature, not a restatement of the hero.
-signature: "Spatial Intelligence — from incomplete observation to grounded action."
+  # The name is a label for the field, not the claim. It appears once, quietly.
+  field_label: "Physical-world understanding"
+  field_note: >-
+    I have used the phrase "Spatial Intelligence" for this area. It is a convenient handle,
+    but the work is defined by the problem above, not by the label.
 
-# Frames the three convictions. Deliberately not "what I believe": these are conclusions the
-# work forced, and saying so is the difference between a position and a slogan.
-thesis_note: >-
-  These are the three conclusions my own systems kept forcing on me — not a manifesto, and not
-  three things I decided in advance.
+# ---- why this is hard: three premises, each falsifiable --------------------------------
+why:
+  lead: >-
+    The physical world does not present itself cleanly to a machine. Four properties of the
+    measurement problem are what make this hard, and they are the reason the field exists.
+  premises:
+    - key: "01"
+      title: "Observation is partial by construction."
+      body: >-
+        No sensor returns a place. A camera reads a surface and is defeated by darkness, rain
+        and occlusion. A radio return gives distance but not colour or intent. Each channel is
+        authoritative inside its own blind spot and silent outside it — so "the world" is never
+        available as input, only as inference.
+    - key: "02"
+      title: "The blind spots are structured, so observability is a question."
+      body: >-
+        Occlusion, penetration depth and line of sight are geometry rather than luck. That
+        makes it possible to reason, before collecting any data, about what a given set of
+        sensors can and cannot establish — and therefore what an experiment can even test.
+    - key: "03"
+      title: "A snapshot is not understanding."
+      body: >-
+        Most sensing results report a good estimate at one instant. But places change, sensors
+        fail intermittently, and a belief that cannot survive being wrong cannot be relied on
+        for a decision. Holding state across time — including the parts of it that are missing
+        — is a separate and harder problem than estimating a state at all.
 
-beliefs:
-  - key: "I"
-    title: "A sensor never returns the world."
-    body: >-
-      Every return is a partial, biased slice. A camera fails in the dark and in rain; a radio
-      echo knows distance but not colour. Hydra only worked once I stopped treating mmWave and
-      camera as two views of one truth and started treating them as two questions that fail
-      differently — which is why this is a representation problem, not a fusion problem.
-  - key: "II"
-    title: "Understanding has to persist."
-    body: >-
-      A snapshot is not understanding. Proteus and Adonis could both read a leaf well at a given
-      moment; what neither could do is hold the same entity across time, notice what moved, what
-      was occluded, and what is still unknown. Holding state long enough to reason over it turned
-      out to be the harder half of the problem.
-  - key: "III"
-    title: "The test is a decision."
-    body: >-
-      A representation earns its keep only when it changes what a system does. I care about models
-      whose output is a grounded action — yield, slow down, alert, hand control back. Prediction
-      that leaves the decision unchanged is a demo, and I would rather ship the slower version
-      that actually moves something.
+# ---- the honest boundary ----------------------------------------------------------------
+# This is the constraint that keeps the rest of the site truthful. Anything not backed by
+# published work must be labelled as such wherever it appears.
+boundary:
+  established: >-
+    Published and citable: multimodal sensing that survives the loss of a modality, and
+    physical-state estimation from sparse returns — sensor, radar, mmWave and acoustic.
+  current: >-
+    In progress, partly published: holding an estimate across time and loss, and longitudinal
+    measurement in a deployed setting.
+  not_claimed: >-
+    Not claimed anywhere on this site as a capability: a persistent world model, a spatial
+    reasoning system, or a closed-loop control policy. These are the research programme, not
+    a result.

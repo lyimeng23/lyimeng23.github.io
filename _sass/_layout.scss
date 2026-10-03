@@ -6,14 +6,19 @@
 .nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: $z-nav;
   background: rgba($paper, 0.9);
   backdrop-filter: saturate(150%) blur(14px);
   -webkit-backdrop-filter: saturate(150%) blur(14px);
   border-bottom: $rule solid transparent;
-  transition: border-color $dur $ease, background $dur $ease;
+  transition: border-color $dur $ease, background $dur $ease, box-shadow $dur $ease;
 
-  &.is-stuck { border-bottom-color: $paper-line; }
+  // Elevation appears only once the header has actually separated from the page, so the
+  // resting state stays completely flat.
+  &.is-stuck {
+    border-bottom-color: $paper-line;
+    box-shadow: $shadow-float;
+  }
 }
 
 .nav__inner {
@@ -166,6 +171,8 @@
     padding: $s-3 clamp(1.25rem, 4.5vw, 3rem) $s-5;
     background: $paper;
     border-bottom: $rule solid $paper-line;
+    box-shadow: $shadow-float-lg;
+    z-index: $z-drawer;
     box-shadow: 0 20px 40px -30px rgba($ink, 0.5);
     opacity: 0;
     visibility: hidden;
@@ -205,7 +212,7 @@
 // the name as a quiet eyebrow; the name is the largest element in the document; the
 // research statement is written in the first person.
 .hero {
-  padding-block: clamp(2.25rem, 5vw, 3.75rem) 0;
+  padding-block: clamp(2rem, 4.5vw, 3.25rem) 0;
 }
 
 .hero__field {
@@ -217,16 +224,19 @@
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: end;
-  gap: clamp(1.1rem, 2.6vw, 2.25rem);
+  gap: clamp(1.1rem, 2.6vw, 2.75rem);
 }
 
 .hero__figure { margin: 0; line-height: 0; }
 
 // The one chromatic moment on the page. Everything else is ink on paper, so the eye
 // lands on the face first — which is the point of a person-first site.
+// Height-driven on wide screens so the portrait reads as a presentational element rather than
+// a thumbnail, but capped by vw: at 26vh on a tall narrow phone the plate ate 234px of a
+// 280px content column and pushed the name off-screen. min() takes whichever binds first.
 .hero__portrait {
   display: block;
-  width: clamp(84px, 16.5vw, 200px);
+  width: clamp(80px, min(26vh, 26vw), 300px);
   height: auto;
   border-radius: $radius;
 }
@@ -236,10 +246,12 @@
 .hero__name {
   margin: 0;
   font-family: $font-display;
-  font-size: clamp(2.4rem, 9.6vw, 9.5rem);
+  // Times is narrow; 11.6vw keeps "Yimeng Liu" on one line from 320px up while still
+  // reading as the largest element on the page.
+  font-size: clamp(2.2rem, 11.6vw, 11.5rem);
   font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: -0.032em;
+  line-height: 0.9;
+  letter-spacing: -0.034em;
   color: $ink;
 }
 
@@ -271,43 +283,18 @@
 @media (max-width: #{$bp-sm - 1px}) {
   .hero__identity { display: grid; gap: 0.25rem; }
   .hero__part + .hero__part::before { content: none; }
+  // nowrap only exists so a wrapped line cannot begin with a middot. The separators are
+  // removed here, so the nowrap is no longer needed and was pushing the identity line
+  // 21px past the viewport at 320px.
+  .hero__part { white-space: normal; }
   .hero__part-long { display: none; }
   .btn { font-size: $t-label; }
-}
-
-.hero__body {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 2rem);
-  margin-top: clamp(1.75rem, 3.6vw, 2.75rem);
-  padding-top: clamp(1.25rem, 3vw, 2rem);
-  border-top: $rule solid $paper-line;
-
-  @media (min-width: $bp-md) {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-    column-gap: clamp(2rem, 5vw, 5rem);
-    align-items: start;
-  }
-}
-
-.hero__standfirst {
-  margin: 0;
-  max-width: 42ch;
-  font-size: clamp(1.15rem, 1.85vw, 1.6rem);
-  font-weight: 350;
-  line-height: 1.45;
-  letter-spacing: -0.006em;
-  color: $ink-2;
-  text-wrap: pretty;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: $s-3;
-
-  @media (min-width: $bp-md) {
-    justify-content: flex-end;
-  }
 
   // Narrow phones: one full-width target per row, no wrapped labels, and the
   // quiet email link promoted to the same outline so the three read as a set.
@@ -323,30 +310,6 @@
       &:hover { border-color: $ink; color: $accent; }
     }
   }
-}
-
-.hero__chain {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: baseline;
-  gap: 0.55rem 1.25rem;
-  margin: clamp(1.5rem, 3.5vw, 2.5rem) 0 0;
-  padding-block: clamp(0.9rem, 2vw, 1.25rem);
-  border-top: $rule solid $paper-line;
-  border-bottom: $rule solid $paper-line;
-
-  @media (min-width: $bp-md) {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-  }
-}
-
-.hero__chain-label {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $accent;
 }
 
 .chain {
@@ -375,32 +338,21 @@
   }
 }
 
-.hero__chain-link {
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $ink-3;
-  transition: color $dur-fast $ease;
-
-  span { display: inline-block; transition: transform $dur-fast $ease; }
-  &:hover { color: $accent; }
-  &:hover span { transform: translateY(2px); }
-}
-
 // ---------- Section rail ----------
+// Reserve the rail's gutter at exactly the width where the rail starts rendering, so no
+// content can run beneath it at 1440px.
 .rail {
   position: fixed;
   top: 50%;
   right: clamp(1rem, 1.6vw, 1.75rem);
-  z-index: 60;
+  z-index: $z-raised;
   transform: translateY(-50%);
   display: none;
   opacity: 0;
   transition: opacity $dur $ease;
 
-  @media (min-width: $bp-2xl) { display: block; }
+  // Only once there is real clearance from the content column; see $bp-rail.
+  @media (min-width: $bp-rail) { display: block; }
   &.is-visible { opacity: 1; }
 }
 
@@ -569,16 +521,6 @@
   font-family: $font-display;
   font-size: $t-subtitle;
   letter-spacing: $track-tight;
-}
-
-.page__h3 {
-  margin: 2rem 0 0.75rem;
-  font-family: $font-mono;
-  font-size: $t-label;
-  font-weight: 500;
-  letter-spacing: $track-label;
-  text-transform: uppercase;
-  color: $ink-3;
 }
 
 .record__label {

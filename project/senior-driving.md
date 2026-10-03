@@ -1,9 +1,9 @@
 ---
 layout: project
 permalink: /project/senior-driving/
-title: Senior Driving Safety & Cognitive Health
+title: Continuous Driving Assessment for Older Adults
 eyebrow: Project
-tagline: In-car sensing, driving simulators, and community outreach to keep older adults independent and safe behind the wheel.
+tagline: In-car sensing and driving simulation, to measure driving ability continuously rather than in a single clinic visit.
 status: Active
 links:
   pdf: /assets/files/Recruitment_Flyer.pdf
@@ -12,24 +12,28 @@ image_width: 1400
 image_height: 673
 image_alt: A road running through open country
 problem_md: |
-  Safe driving is key to maintaining independence for older adults. Yet even mild cognitive changes—often unnoticed—increase driving risk. By the time the symptoms of cognitive decline become visible, risky driving behavior may already be underway.
+  Driving is how a great many older adults stay independent, and the tools used to assess that ability are sparse: an infrequent clinic visit, or a brief screening test. Both produce a snapshot. Neither describes how a person actually drives day to day.
+
+  This project is about **measurement**, not diagnosis. It does not detect, diagnose or claim any clinical condition, and it is not a substitute for clinical assessment. The question it takes on is narrower: what can continuous observation contribute that a single visit cannot?
 gap_md: |
-  Most existing tools either flag clearly impaired drivers or rely on costly clinical assessments. There is little support for the **in-between** stage: seniors whose driving is still largely intact but whose early cognitive changes deserve earlier, softer, data-driven detection. Community education is also missing from most technical approaches.
+  Continuous driving data is collected routinely by vehicles and almost never used for assessment. It exists, it is rich, and no one has established what may responsibly be read out of it — which is the reason a technical project here has an unusual obligation to be conservative about its claims.
+
+  The measurement problem is also coupled to a social one: a person who is being assessed is a person who may lose the thing being measured. That trade-off is a design input, not an afterthought.
 idea_md: |
   Combine three layers that none of the existing options offers together:
 
   - **Simulation-based capability assessment** — validated driving-simulator protocols that isolate the cognitive challenges seniors actually face on the road.
-  - **Continuous in-car monitoring** — an on-board sensing system that watches driving behavior over time and surfaces early signs of risky driving.
+  - **Continuous in-car monitoring** — an on-board sensing system intended to record driving behaviour continuously, and to establish which signals of change are measurable at all.
   - **Community education** — accessible workshops and resources for seniors and their families, so insight turns into action.
 system_md: |
   The project is organized around four research threads:
 
   - **Assess driving capability**: develop simulator protocols that measure driving performance in older adults, focusing on cognitive load and attention.
-  - **Innovate monitoring**: build and study an in-car sensor system that continuously tracks driving behavior and flags early signals of decline.
+  - **Innovate monitoring**: build and characterise an in-car sensor system that records driving behaviour continuously, and determine what it can and cannot support.
   - **Run realistic simulation tests**: evaluate prototypes against real-world driving conditions before deployment.
-  - **Educate the community**: offer workshops that teach seniors and families how to read the early signals and plan ahead.
+  - **Educate the community**: offer workshops that teach seniors and families what continuous driving data can and cannot tell them about themselves.
 results_md: |
-  ### Project timeline
+  ### Status and timeline
 
   - **Months 1–3**: establish the simulation lab and co-design testing protocols with stakeholders.
   - **Months 3–7**: run simulation studies and analyze driving behavior across participant groups.
@@ -43,7 +47,15 @@ results_md: |
   - **Dr. Fei Sun** — Professor, School of Social Work, Michigan State University
   - **Dr. Honglei Chen** — Foundation Professor, Epidemiology and Biostatistics, Michigan State University
 
-  We are actively recruiting seniors for our study. See our [recruitment flyer](/assets/files/Recruitment_Flyer.pdf) for details.
+  No results are reported here. The study is recruiting; see the [recruitment flyer](/assets/files/Recruitment_Flyer.pdf).
+
+  ### Related publication
+
+  The design principles for this system — the sensing, modelling and context architecture, and the
+  research opportunities it opens — are published as a preprint. It reports no completed
+  end-to-end evaluation:
+
+  - [AIoT-based Continuous, Contextualized, and Explainable Driving Assessment for Older Adults](https://arxiv.org/abs/2603.00691) — arXiv:2603.00691
 gallery:
   - src: /project/senior-driving/images/17d6da5c8340a858b9205a924a8e5d1.webp
     alt: Logitech driving simulator with wheel, pedal set and a monitor running a simulated street

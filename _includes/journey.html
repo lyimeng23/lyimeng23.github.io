@@ -1,0 +1,66 @@
+<section class="section section--journey" id="journey" tabindex="-1">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div class="section__head-main">
+        <p class="eyebrow"><span class="eyebrow__index">02</span> How the work got here</p>
+        <h2 class="section__title">Five problems,<br>in the order they arrived</h2>
+      </div>
+      <p class="section__note">{{ site.data.journey.closing.body }}</p>
+    </header>
+
+    <!--
+      The honest spine: status is the first thing rendered for each step, because the whole
+      point of this section is that the reader can tell at a glance which steps have results
+      and which do not. Established steps carry their venue inline; current and future steps
+      carry no evidence list at all rather than an empty-looking one.
+    -->
+    <ol class="journey">
+      {% for s in site.data.journey.arc %}
+      <li class="journey__step journey__step--{{ s.status }} reveal" style="--i: {{ forloop.index0 }}">
+        <div class="journey__marker">
+          <span class="journey__key">{{ s.key }}</span>
+          <span class="journey__status journey__status--{{ s.status }}">{{ s.status_label }}</span>
+          {% if s.period and s.period != 'now' and s.period != 'next' %}
+          <span class="journey__period">{{ s.period }}</span>
+          {% endif %}
+        </div>
+
+        <div class="journey__head">
+          <h3 class="journey__label">{{ s.label }}</h3>
+          <p class="journey__problem">{{ s.problem }}</p>
+        </div>
+
+        <div class="journey__detail">
+          {% comment %}
+            Real figure from the paper, not a redrawn schematic. Only the established steps
+            carry one, because only they have something to show.
+          {% endcomment %}
+          {% if s.figure %}
+          <figure class="journey__figure">
+            <img src="{{ s.figure.src | relative_url }}" width="{{ s.figure.width }}" height="{{ s.figure.height }}"
+                 alt="{{ s.figure.alt }}" loading="lazy" decoding="async" />
+            <figcaption>{{ s.figure.caption }}</figcaption>
+          </figure>
+          {% endif %}
+          <p class="journey__field">
+            <span class="journey__field-label">Core idea</span>
+            {{ s.core_idea }}
+          </p>
+          <p class="journey__established">
+            <span class="journey__field-label">{{ s.standing_label }}</span>
+            {{ s.established }}
+          </p>
+        </div>
+
+        {% if s.evidence and s.evidence.size > 0 %}
+        <ul class="journey__evidence">
+          {% for e in s.evidence %}<li>{{ e }}</li>{% endfor %}
+        </ul>
+        {% else %}
+        <p class="journey__none">No published work on this step yet.</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

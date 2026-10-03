@@ -79,7 +79,7 @@ main:
     scholar: 9yKSN-GCB0IC
     understanding: >-
       The paper that made the problem explicit. Two modalities chosen because they fail under
-      *different* conditions, fused so that perception survives losing either one. It is also
+      different conditions, fused so that perception survives losing either one. It is also
       where I stopped treating fusion as the interesting part: a fusion model is really a
       representation problem, and the representation is what has to survive modality loss.
 
@@ -96,7 +96,7 @@ main:
     scholar: qjMakFHDy7sC
     understanding: >-
       Passive agricultural sensing over wide areas, excited from the air. This is the piece that
-      moved the question from single devices to sensing *infrastructure* — and it is the first
+      moved the question from single devices to sensing infrastructure — and it is the first
       time my own work depended on observers I do not control, which is a different kind of
       problem from owning a sensor.
 

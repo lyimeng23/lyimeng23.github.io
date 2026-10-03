@@ -1,0 +1,65 @@
+# Future agenda — deliberately only three thrusts.
+#
+# The previous version had five capability layers plus a separate three-question roadmap plus
+# an ambition section, which meant three different forward-looking vocabularies competing. A
+# hiring reader could not tell which one was the programme. Now there is exactly one list, it
+# has three entries, and each entry names the published work that motivates it.
+#
+# These are agenda statements. A research question is not a finding. Nothing here implies a
+# result, and the unpublished work behind these questions stays unnamed (docs/DISCLOSURE.md).
+
+intro: >-
+  Three questions follow from where the published work stops. Each one names the gap it comes
+  from, because a future direction that could have been started five years ago is not a
+  direction, it is a backlog.
+
+thrusts:
+  - key: "01"
+    title: "What can be known from a partial set of returns?"
+    gap: >-
+      Step 02 recovers structure by transferring from a modality that sees the target well but
+      only its surface. That works while the teacher exists. It tells us nothing about what is
+      recoverable when no channel is privileged — which is the normal condition outdoors.
+    thrust: >-
+      Inference that commits to an explicit physical hypothesis and then tests whether that
+      hypothesis accounts for the measurements, instead of producing an output that cannot be
+      checked against the physics that produced it.
+    starting_point: "Proteus (SenSys '25) · Adonis (INFOCOM '25)"
+    status: "Open"
+    status_tag: "open"
+
+  - key: "02"
+    title: "What has to be true of a belief that survives its inputs going quiet?"
+    gap: >-
+      Gap restoration measured how badly standard imputation recovers multivariate leaf-wetness
+      data when sensors drop out. The answer was: badly, and systematically. That is the
+      obstacle for any persistent state, and it has not been solved.
+    thrust: >-
+      A representation whose uncertainty is explicit and carried, rather than imputed and hidden
+      — so that "I do not currently know this" is a first-class value rather than a number
+      someone had to fill in.
+    starting_point: "Gap restoration (CEA '26) · Hydra-Bench (arXiv '25)"
+    status: "In progress"
+    status_tag: "building"
+
+  - key: "03"
+    title: "When should a spatial belief be allowed to change anything?"
+    gap: >-
+      Everything published so far stops at estimation. The moment a belief drives an action, a
+      wrong estimate has a physical cost rather than an accuracy penalty, and the design
+      question changes from accuracy to authority.
+    thrust: >-
+      Separating the authority to propose an action from the authority to take it, and treating
+      abstention and handover as correct outcomes rather than as failures.
+    starting_point: "AIoT-based Driving Assessment (arXiv '26) — a design document, not a system"
+    status: "Open"
+    status_tag: "open"
+
+# What I am looking for. Kept here rather than in a separate section, because a programme
+# statement and the kind of place it needs are one claim, not two.
+seeking:
+  title: "What kind of environment this needs"
+  body: >-
+    Somewhere the estimation and the consequence are argued about by people who disagree — where
+    a sensing result has to survive a domain researcher, and a decision has to survive the people
+    who live with it. I am not optimising for a job title.

@@ -95,6 +95,29 @@ $rule: 1px;
 $radius: 2px;          // near-zero: editorial, not app-like
 $radius-pill: 999px;
 
+// ---------- Elevation ----------
+// Elevation is nearly absent by design: this is an editorial page built from hairlines and
+// whitespace, and shadows on flat content only make it read as a card layout. A shadow is
+// therefore allowed only where an element genuinely floats above the page — the mobile drawer
+// and the sticky header — and never on content.
+$shadow-none: none;
+$shadow-float: 0 1px 2px rgba($ink, 0.05), 0 12px 32px -8px rgba($ink, 0.12);
+$shadow-float-lg: 0 2px 4px rgba($ink, 0.05), 0 28px 64px -12px rgba($ink, 0.18);
+
+// ---------- Stacking ----------
+// Named rather than numeric, so the order is a decision rather than a guess at build time.
+// The section rail is fixed and right-aligned. Measured, it sat only 31px clear of the content
+// column at 1440px and 46px at 1600px — too tight to be trustworthy at either width. Since it
+// is a progressive enhancement, it now appears only where there is genuinely room, rather than
+// being made to fit at a width where it does not.
+$bp-rail: 1600px;
+
+$z-base: 0;
+$z-raised: 10;    // section rail
+$z-nav: 60;       // sticky header
+$z-drawer: 100;   // mobile navigation panel
+$z-top: 200;      // focus rings and skip link
+
 // ---------- Motion ----------
 $dur-fast: 180ms;
 $dur: 420ms;

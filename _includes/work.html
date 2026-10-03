@@ -2,12 +2,13 @@
   <div class="container">
     <header class="section__head section__head--split">
       <div class="section__head-main">
-        <p class="eyebrow"><span class="eyebrow__index">04</span> What I have built</p>
-        <h2 class="section__title">What this looks like<br>once it is built</h2>
+        <p class="eyebrow"><span class="eyebrow__index">03</span> Evidence</p>
+        <h2 class="section__title">The work that<br>establishes steps <span class="nowrap">01&ndash;03</span></h2>
       </div>
       <p class="section__note">
-        Not a paper list. Each entry answers the same five questions, so the argument stays visible
-        underneath the results.
+        Four systems, each answering the same four questions: the problem, the scientific idea, the
+        verified evidence, and which step of the journey it advanced. Nothing here claims more than
+        its venue supports.
       </p>
     </header>
 
@@ -42,20 +43,17 @@
               <dd>{{ item.problem }}</dd>
             </div>
             <div class="work__spec-row">
-              <dt>Insight</dt>
-              <dd>{{ item.insight }}</dd>
-            </div>
-            <div class="work__spec-row">
-              <dt>Built</dt>
-              <dd>{{ item.built }}</dd>
+              <dt>Core idea</dt>
+              <dd>{{ item.idea }}</dd>
             </div>
             <div class="work__spec-row work__spec-row--evidence">
-              <dt>Evidence</dt>
+              <dt>Verified evidence</dt>
               <dd>{{ item.evidence }}</dd>
+              <dd class="work__spec-built"><span>What was built</span>{{ item.built }}</dd>
             </div>
             <div class="work__spec-row work__spec-row--why">
-              <dt>Why it matters</dt>
-              <dd>{{ item.why }}</dd>
+              <dt>How it advances the agenda</dt>
+              <dd>{{ item.agenda }}</dd>
             </div>
           </dl>
 
