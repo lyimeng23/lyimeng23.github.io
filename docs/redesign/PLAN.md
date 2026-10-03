@@ -34,4 +34,4 @@ Use only named camera-ready Hydra/Proteus/Adonis PDFs and ZIPs from jobtalk, the
 - [x] Implement homepage, case studies, writing and academic record design.
 - [x] Verify theme, language, mobile, keyboard, reduced-motion and no-JS behavior.
 - [x] Critique screenshots and iterate; run all regression/performance/disclosure checks.
-- [ ] Commit, push and verify the deployed pages.
+- [x] Commit, push and verify the deployed pages.

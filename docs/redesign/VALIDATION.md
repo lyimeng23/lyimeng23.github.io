@@ -69,4 +69,6 @@ Use ./build.sh install once, then ./build.sh build and python3 -m http.server 88
 
 ## Deployment
 
-User explicitly authorized commit and GitHub push for this redesign. GitHub Pages source verified as main / root. Publication and live-page checks are performed after the implementation commit; completion evidence will be recorded after deployment.
+User explicitly authorized commit and GitHub push for this redesign. GitHub Pages source verified as main / root. Implementation commit 14ecf2ebda98077596d24fa30d60c4b18ff106bc was pushed to main. GitHub Pages build/deployment run 37088128943 completed successfully; Pages API reports built for that commit. The ordinary production homepage (no query-string bypass) was reloaded in the browser and renders the new identity3 stylesheet, research headline and three-paper preview. All 20 live English/Chinese routes returned HTTP 200 with the new shell; all 12 rendered image URLs returned 200. AGENTS.html and internal redesign/disclosure document routes return 404. Live language switching and a production desktop screenshot were also verified.
+
+Production: https://lyimeng23.github.io/ and https://lyimeng23.github.io/zh/. The subsequent documentation-only commit records this completed deployment; no published site content changes in that follow-up.
