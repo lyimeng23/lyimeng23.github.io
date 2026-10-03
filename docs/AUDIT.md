@@ -143,3 +143,112 @@ occurrences of SPIRIT / Mímir / Snotra / "under review" / "Agent for Irrigation
 The MobiSys 2026 driving PDF could **not** be claimed as published: it carries no ACM
 camera-ready block and its LaTeX still holds the *Hydra* MobiCom '24 DOI, and it has ten authors
 across two institutions. The site therefore still describes that work as ongoing.
+
+---
+
+## Third pass — a requirement audit that found three real gaps
+
+After the rebuild was "complete" and verified, each clause of the brief was checked against the
+built page rather than against my memory of what I had built. Three failed.
+
+### Gap 1 — the hero had no visual of consequence
+
+Measured, not judged: the largest visual in the hero was 4% of the viewport and the portrait was
+268px. There was no scale to speak of.
+
+The obvious fix — enlarge the portrait — was not available. Every image on disk was checked for
+what can carry scale without resampling, and the portrait (299×400) is the only version that
+exists anywhere: Downloads, Desktop, Documents, Pictures and the resume PDF were all searched.
+At hero size it would have to upscale.
+
+So the hero was scaled **typographically**: the name is resolution-independent, and the plate is
+now sized `clamp(80px, min(26vh, 26vw), 300px)` — about 234px wide at desktop, which
+*downscales* from the 299px source rather than stretching it.
+
+Reusing the Hydra field photograph for the hero was considered and rejected: it carries figure
+annotations ("Testbed", "Camera"), so at hero scale it reads as a paper figure, and it already
+appears in the Evidence section.
+
+### Gap 2 — a diagram that was deleted rather than shipped
+
+The brief asks for abstract concepts to be explained visually. A "partial observability" figure
+was composed for the Why section: a space, an obstruction, the thing to be known, two coverage
+wedges, and a pocket labelled UNOBSERVED.
+
+The first render was broken — a `clipPath` was declared and never referenced, so both wedges drew
+straight out of the space, with sweeps over 60°. Both were fixed.
+
+The second render exposed something worse. The box labelled UNOBSERVED was visibly covered by the
+optical wedge. Rather than trust the eye, the geometry was computed: the box's top-left corner
+lies at bearing 29.9° and distance 228 from the optical sensor, which is inside the 8–42° wedge.
+Separating it from the target at 15.9° would require a 9° sliver, not a sensor field of view.
+
+The geometry could not be made honest with a small fix, so the figure and its CSS were removed and
+the built output verified to contain zero references. **A diagram that misstates its own claim is
+worse than no diagram**, and the Why section already carries the argument in three premises.
+
+### Gap 3 — the future agenda had no spatial close
+
+Closed typographically rather than illustratively. The three thrusts are Open / In progress / Open,
+so they sit on one horizontal axis at desktop: dashed beneath an open question, solid beneath the
+one in progress, with the single filled dot on the page marking what is actually being worked on.
+
+This restates a status the page has already committed to in the tag beside each thrust, so unlike
+the coverage diagram it cannot assert anything new.
+
+---
+
+## Verification method problems worth recording
+
+Three times this session, a check reported success while the thing it checked was still broken.
+All three were caught by looking at the rendered output instead of trusting the instrument.
+
+| Failure | How it presented | What actually happened |
+|---|---|---|
+| Silent text replacement | tool reported success | two `str.replace` calls matched nothing; only the screenshot revealed the old text |
+| Class-selector mismatch | CSS looked correct | selectors were `.cp__wave path` while the markup put the class on the `<path>` itself, so **no rule matched** and elements fell back to `fill: black` |
+| Stale build | source verified clean, build was not | the screenshot was served from a previous `_site`; the build still contained a rule the source no longer had |
+
+The general lesson: `replace()` returning without error is not evidence, and a rule that appears
+correct in the stylesheet is not evidence unless the selector matches the emitted markup.
+
+Three genuine defects were also found only by measuring rather than looking:
+
+- The section rail overlapped body text by **31px at 1440px**. Three fixes were attempted (gutter
+  on `body`, on `main`, on `.container`); the first clipped the full-bleed nav, the second did not
+  constrain the container, the third measured unchanged. The problem was removed instead: the rail
+  is progressive enhancement and now renders only at ≥1600px, where there is real clearance.
+- The `Fig. 01` badge sat in the figure's top-right corner, which is exactly where the fixed rail
+  renders its active label.
+- `26vh` sizes the portrait by viewport *height*; on a tall narrow phone it consumed 234px of a
+  280px content column and pushed the page to 467px wide.
+
+## Things that were verified rather than assumed
+
+- **Alignment.** An automated check reported inconsistent left edges at 390px. Probing which
+  elements sat at each edge showed 23/23 content elements sharing one edge, with the outliers
+  being nav chrome. The alarm was a false positive.
+- **Contrast.** Every distinct rendered text/background pair was measured rather than read off a
+  token table; 12/12 pass AA, lowest 5.43:1 at 13px. Forcing OS dark mode confirmed the page does
+  not invert — which required `color-scheme: light` in CSS, since the meta tag alone does not
+  govern UA-rendered surfaces.
+- **Keyboard.** All five pages tabbed programmatically: first stop is "Skip to content"
+  everywhere, zero elements without a focus ring, Escape closes the mobile drawer, and 9/9 drawer
+  links are visible and keyboard-reachable when it is open.
+- **Reduced motion.** 0 of 19 reveals hidden and 0 stuck mid-fade.
+- **Reachability.** Projects, papers (10 PDF), systems, datasets, code, talks, writing and the
+  record are all reachable, and all seven named systems appear.
+
+## Claims that were removed rather than softened
+
+- The accuracy figures **96% / 96.3% / 90%** appear in no part of the source of the papers that
+  claim them. Checked `main.tex` and every included `.tex` in all three archives. Removed.
+- Hydra's own paper uses **both** 76–81 and 77–81 GHz for different radar configurations; the
+  site printed one number without saying which.
+- "Mild cognitive change **raises** driving risk" is a causal clinical claim. It appeared both in
+  `_data/work.yml` and on `/project/senior-driving/`; both were corrected, so the two pages no
+  longer contradict each other.
+- "Surfaces early signs" and "flags early signals of decline" imply a detection capability the
+  study does not have and has not evaluated.
+- JSON-LD advertised **World modelling** and **Grounded action** as established expertise, and the
+  meta description asserted "reasoning, predicting, and supporting safe action" as current.
