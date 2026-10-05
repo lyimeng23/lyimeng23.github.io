@@ -1,5 +1,5 @@
 <section class="section agenda" id="why"><div class="container">
   <header class="section__head"><h2>{{ copy.home_vision_title }}</h2><p class="lede">{{ copy.home_vision }}</p></header>
-  <div class="home-vision__questions">{% for thrust in copy.future %}<article><h3>{{ thrust.title }}</h3><p>{{ thrust.question }}</p></article>{% endfor %}</div>
+  <div class="home-vision__questions">{% for thrust in copy.vision_questions %}<article><h3>{{ thrust.question }}</h3><p>{{ thrust.body }}</p></article>{% endfor %}</div>
   <p class="home-vision__route"><a class="text-link" href="{{ home }}research/">{% if lang == 'zh' %}研究方向与路线{% else %}Research direction & roadmap{% endif %}</a></p>
 </div></section>

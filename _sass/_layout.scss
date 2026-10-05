@@ -26,16 +26,15 @@
 .agenda__thrust { grid-column: 1 / 8; }
 .agenda__thrust:nth-child(2) { grid-column: 4 / 11; }
 .agenda__thrust:nth-child(3) { grid-column: 6 / 13; }
-.thinking__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; margin-top: 56px; }
 .about { background: var(--surface); }
 .page { padding-block: 72px 112px; }
 .page__head { margin-bottom: 56px; }
-.page__title { font-size: clamp(3rem, 6vw, 5.5rem); max-width: 18ch; }
+.page__title { font-size: clamp(3rem, 6vw, 5rem); max-width: 18ch; }
 .page__lede { margin-top: 24px; }
 .page__body { max-width: 100%; }
 .project__header { padding-block: 56px 64px; }
 .project__header .meta { margin-block: 32px 18px; }
-.project__header h1 { font-size: clamp(4rem, 9vw, 8rem); }
+.project__header h1 { font-size: clamp(3rem, 6vw, 5rem); }
 .project__header .lede { margin-top: 24px; }
 .project__story { display: grid; grid-template-columns: 1fr 1.6fr; gap: 100px; padding-block: 88px; align-items: start; }
 .project__reflection { position: sticky; top: 120px; }
@@ -54,11 +53,11 @@
 .essay h2 { margin-top: 48px; font-size: 2.1rem; }
 @media (max-width: 1023px) {
   .hero__grid { gap: 40px; }
-  .journey__grid,.thinking__grid,.project__story { gap: 48px; }
+  .journey__grid,.project__story { gap: 48px; }
 }
 @media (max-width: 767px) {
   .hero { padding-block: 32px 56px; }
-  .hero__grid,.research__grid,.contact__grid,.journey__grid,.work__item,.thinking__grid,.project__story { grid-template-columns: 1fr; gap: 40px; }
+  .hero__grid,.research__grid,.contact__grid,.journey__grid,.work__item,.project__story { grid-template-columns: 1fr; gap: 40px; }
   .hero__grid { gap: 48px; }
   .section__head { margin-bottom: 40px; }
   .journey__intro,.project__reflection { position: static; }

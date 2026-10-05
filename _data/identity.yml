@@ -76,7 +76,7 @@
     "work_title": "Selected research",
     "work_intro": "Three published sensing systems and a driving-assessment preprint. Each asks a specific question and provides a different kind of evidence.",
     "future_title": "Understanding the physical world over time",
-    "future_intro": "I want to build a research program in spatial intelligence that connects observation, physical representation and continuing understanding. The goal is for systems to maintain an account of what is happening, what is uncertain and when the evidence is sufficient to reason or act. Three open questions define the work ahead.",
+    "future_intro": "I want to build a research program in spatial intelligence that connects observation, physical representation and persistent understanding. The goal is for systems to maintain an account of what is happening, what is uncertain and when the evidence is sufficient to reason or act. Three open questions define the work ahead.",
     "future": [
       {
         "title": "Understanding with incomplete evidence",
@@ -100,23 +100,23 @@
     "thinking_title": "How I approach research",
     "principles": [
       {
-        "title": "Begin with the quantity.",
-        "text": "Define what we need to know about the world before choosing a model."
+        "title": "Start with the question, not the model.",
+        "text": "Define what must be understood or decided before choosing how to model it."
       },
       {
         "title": "Keep the observation in view.",
-        "text": "Ask which physical effects produced the measurement, and which explanations it can distinguish."
+        "text": "Ask what the evidence supports, what it cannot distinguish, and which assumptions connect observation to physical state."
       },
       {
         "title": "Test where the assumption breaks.",
-        "text": "A useful evaluation includes the conditions that make a method stop working."
+        "text": "Evaluate where a system works, where its assumptions fail, and whether it can recognize when the evidence is no longer sufficient."
       }
     ],
     "essay_title": "What changes between a measurement and understanding?",
     "essay_note": "A research perspective on observation, representation and the questions still open.",
     "contact": "I welcome conversations about multimodal sensing, physical representations and reliable intelligent systems, especially where these questions meet a concrete measurement problem.",
     "record_title": "Core papers & research",
-    "record_intro": "Three first-author or co-first-author papers, alongside current research.",
+    "record_intro": "Selected work that shaped my current research direction.",
     "service_title": "Activities & service",
     "service_lede": "Conference presentations, invited talks and academic service.",
     "news_title": "News & timeline",
@@ -126,9 +126,9 @@
     "visual_camera": "The camera shows appearance and visible surfaces. Its evidence depends on lighting.",
     "visual_radar": "Radar records an indirect physical response. Its structure needs interpretation.",
     "bio": "I am a Ph.D. candidate in Computer Science and Engineering at Michigan State University, advised by Zhichao Cao.",
-    "background": "My research combines multimodal sensing and learning to estimate physical properties in real environments. Before MSU, I studied mathematics at Virginia Tech and worked on biomimetic sonar with Rolf Müller.",
+    "background": "I study how intelligent systems understand the physical world from incomplete observations. My published work builds on multimodal sensing and learning in real environments. Before MSU, I studied mathematics at Virginia Tech and worked on biomimetic sonar with Rolf Müller.",
     "current_title": "Current focus",
-    "current_body": "My long-term direction is spatial intelligence: turning partial physical observations into reliable, continuing understanding for reasoning and action.",
+    "current_body": "My long-term direction is spatial intelligence: turning partial physical observations into reliable, persistent understanding for reasoning and action.",
     "contact_title": "Get in touch",
     "university": "Michigan State University",
     "roadmap_label": "Roadmap overview",
@@ -152,7 +152,21 @@
     "journey_label": "Toward spatial intelligence",
     "name": "Yimeng Liu",
     "home_vision_title": "My research vision",
-    "home_vision": "I began with physical sensing and the question of how observations become trustworthy representations. I want to connect these foundations to continuing understanding of the world, and to reasoning and action grounded in physical evidence. This is my long-term vision for spatial intelligence."
+    "home_vision": "I aim to build intelligent systems that turn partial physical observations into persistent, reliable understanding—and use it to reason and act under uncertainty. I see spatial intelligence as this full loop: observing the world, forming and updating representations of it, and knowing when those representations can support action.",
+    "vision_questions": [
+      {
+        "question": "What can we know from incomplete evidence?",
+        "body": "How can heterogeneous observations be connected to physical state while keeping uncertainty explicit?"
+      },
+      {
+        "question": "How should understanding change over time?",
+        "body": "How can a system preserve, revise or discard what it believes as observations and conditions change?"
+      },
+      {
+        "question": "When is understanding reliable enough to act?",
+        "body": "How should uncertainty, consequences and missing evidence determine whether a system acts, gathers more information or defers?"
+      }
+    ]
   },
   "zh": {
     "headline": "智能系统如何从不完整的观测中，理解物理世界？",
@@ -255,23 +269,23 @@
     "thinking_title": "我怎样开展研究",
     "principles": [
       {
-        "title": "从物理量出发。",
-        "text": "先定义我们需要知道世界的什么，再选择模型。"
+        "title": "从问题出发，再选择模型。",
+        "text": "先明确需要理解什么、做出什么决策，再决定如何建模。"
       },
       {
-        "title": "始终回到观测。",
-        "text": "追问哪些物理效应产生了测量，以及证据能区分哪些解释。"
+        "title": "始终回到观测与证据。",
+        "text": "追问证据支持什么、无法区分什么，以及哪些假设将观测连接到物理状态。"
       },
       {
-        "title": "在假设失效处检验。",
-        "text": "有效的评估，也要涵盖方法停止成立的条件。"
+        "title": "检验假设失效的边界。",
+        "text": "评估系统在哪些条件下有效、假设何时失效，以及系统能否识别证据已经不足。"
       }
     ],
     "essay_title": "从测量到理解，中间发生了什么？",
     "essay_note": "关于观测、表征与尚未解决问题的一篇研究随笔。",
     "contact": "欢迎交流多模态感知、物理表征与可靠智能系统，也期待与领域研究者合作，讨论具体测量问题。",
     "record_title": "核心论文与研究",
-    "record_intro": "三篇一作或共同一作论文，以及我目前关注的研究。",
+    "record_intro": "塑造了我当前研究方向的代表工作。",
     "service_title": "学术活动与服务",
     "service_lede": "会议报告、受邀讲座与学术服务。",
     "news_title": "动态与时间线",
@@ -281,7 +295,7 @@
     "visual_camera": "相机记录外观与可见表面，提供的证据受到光照影响。",
     "visual_radar": "雷达记录间接的物理响应，其中的结构需要解释。",
     "bio": "我是密歇根州立大学计算机科学与工程博士候选人，导师为曹志超老师。",
-    "background": "我的研究结合多模态感知与机器学习，估计真实环境中的物理属性。在此之前，我在弗吉尼亚理工大学学习数学，并与 Rolf Müller 开展仿生声呐研究。",
+    "background": "我研究智能系统如何从不完整的观测中理解物理世界。已发表的工作以真实环境中的多模态感知与学习为基础。加入密歇根州立大学前，我在弗吉尼亚理工大学学习数学，并与 Rolf Müller 合作研究仿生声呐。",
     "current_title": "目前关注",
     "current_body": "我的长期方向是空间智能：从不完整的物理观测出发，建立可靠、持续并可用于推理与行动的理解。",
     "contact_title": "交流与联系",
@@ -307,6 +321,20 @@
     "journey_label": "走向空间智能",
     "name": "刘益萌",
     "home_vision_title": "我的研究愿景",
-    "home_vision": "我从物理感知出发，研究观测怎样成为可信的表征。接下来，希望将这些基础连接到对世界的持续理解，以及有物理依据的推理和行动。这是我对空间智能的长期研究愿景。"
+    "home_vision": "我希望构建这样的智能系统：从不完整的物理观测中形成持续、可靠的世界理解，并在不确定性下据此推理和行动。我将空间智能看作一个完整过程：观测世界，建立并更新表征，以及判断这些表征何时足以支持行动。",
+    "vision_questions": [
+      {
+        "question": "不完整证据下，我们能知道什么？",
+        "body": "如何将异构观测连接到物理状态，同时明确保留不确定性？"
+      },
+      {
+        "question": "理解应如何随时间更新？",
+        "body": "当观测与环境条件变化时，系统应如何保留、修正或放弃已有判断？"
+      },
+      {
+        "question": "理解何时足以支持行动？",
+        "body": "如何根据不确定性、行动后果与缺失证据，决定行动、补充观测或暂缓判断？"
+      }
+    ]
   }
 }

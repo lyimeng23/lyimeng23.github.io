@@ -1,6 +1,5 @@
 <section class="section thinking" id="ideas"><div class="container">
   <h2>{{ copy.thinking_title }}</h2>
-  <div class="thinking__grid"><dl>{% for principle in copy.principles %}<div><dt>{{ principle.title }}</dt><dd>{{ principle.text }}</dd></div>{% endfor %}</dl>
-    <a class="essay-link" href="{{ home }}writing/observation-and-understanding/"><span class="meta">{{ ui.writing }}</span><h3>{{ copy.essay_title }}</h3><p>{{ copy.essay_note }}</p><span class="text-link">{{ ui.read }}</span></a>
-  </div>
+  <dl class="thinking__principles">{% for principle in copy.principles %}<div><dt>{{ principle.title }}</dt><dd>{{ principle.text }}</dd></div>{% endfor %}</dl>
+  <p class="thinking__reading"><span class="meta">{% if lang == 'zh' %}延伸阅读{% else %}Further reading{% endif %}</span> <a href="{{ home }}writing/observation-and-understanding/">{{ copy.essay_title }}</a></p>
 </div></section>

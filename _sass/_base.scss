@@ -5,9 +5,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 19px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
 [hidden] { display: none !important; }
 h1,h2,h3,h4,p,figure,dl,dd { margin: 0; }
-h1,h2,h3,h4 { font-family: var(--display); font-weight: 400; line-height: 1.1; text-wrap: balance; }
-h1 { font-size: clamp(3.4rem, 7.3vw, 6.7rem); letter-spacing: -.045em; }
-h2 { font-size: clamp(2.4rem, 4.6vw, 4.3rem); letter-spacing: -.035em; max-width: 16ch; }
+h1,h2,h3,h4 { font-family: var(--display); font-weight: 500; line-height: 1.1; text-wrap: balance; }
+h1 { font-size: clamp(3.4rem, 6vw, 5rem); letter-spacing: -.045em; }
+h2 { font-size: clamp(2.2rem, 4vw, 3.375rem); letter-spacing: -.035em; max-width: 16ch; }
 h3 { font-size: clamp(1.6rem, 2.5vw, 2.4rem); letter-spacing: -.02em; }
 p { text-wrap: pretty; }
 img { display: block; max-width: 100%; height: auto; }
@@ -22,9 +22,9 @@ button { color: var(--ink); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip-link { position: fixed; z-index: var(--z-focus); top: -100px; left: 20px; background: var(--paper); padding: 12px 20px; }
 .skip-link:focus { top: 12px; }
-.meta { font: 12px/1.6 var(--sans); color: var(--muted); }
-.lede { font-size: clamp(1.2rem, 1.7vw, 1.55rem); color: var(--body); max-width: var(--measure); line-height: 1.5; }
+.meta { font: 13px/1.6 var(--sans); color: var(--muted); }
+.lede { font-size: clamp(1.2rem, 1.7vw, 1.4375rem); color: var(--body); max-width: var(--measure); line-height: 1.5; }
 .text-link { font: 14px/1.5 var(--sans); padding: 10px 0; display: inline-block; }
 figcaption { font: 13px/1.6 var(--sans); color: var(--muted); padding-top: 16px; }
 figcaption p { margin-top: 6px; }
-html[lang="zh-CN"] { body { font-size: 17px; line-height: 1.85; } h1 { font-family: "Times New Roman", Times, serif; } h2,h3 { line-height: 1.4; letter-spacing: 0; } .lede { line-height: 1.8; } }
+html[lang="zh-CN"] { body { font-size: 17px; line-height: 1.85; } h2,h3 { line-height: 1.4; letter-spacing: 0; } .lede { line-height: 1.8; } }

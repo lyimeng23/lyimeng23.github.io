@@ -29,6 +29,8 @@ python3 -m http.server 8811 --directory _site
 - `zh/`: fully rendered Chinese routes. Language switching preserves the corresponding page.
 - `docs/redesign/`: evaluation baseline, design decisions, asset provenance and final validation; excluded from publication.
 
+English headings and narrative use the existing self-hosted Newsreader family; metadata and controls use system sans. Chinese uses system CJK fallbacks. Monospace is reserved for technical data.
+
 All text and images are available without JavaScript. Theme follows the system by default; manual selection persists. Reduced motion disables movement and sticky reading effects. Motion has no continuous loop or scroll hijacking. Paper metadata retains its source language for citation.
 
 ## Evidence and publication boundaries
@@ -39,4 +41,4 @@ Internal documents, build scripts and agent instructions are excluded in `_confi
 
 ## Validation
 
-See `docs/redesign/IDENTITY_LED.md` for the latest local revision and validation; `PERSON_FIRST.md` records earlier audience and roadmap decisions. `docs/redesign/VALIDATION.md` records the preceding published version. Repository-required browser audits remain external temporary tooling; no test scripts or browser dependencies are published with the site.
+See `docs/redesign/EDITORIAL_REFINEMENT.md` for the latest editorial refinement and validation; `IDENTITY_LED.md` records the preceding person-first revision; `PERSON_FIRST.md` records earlier audience and roadmap decisions. `docs/redesign/VALIDATION.md` records the preceding published version. Repository-required browser audits remain external temporary tooling; no test scripts or browser dependencies are published with the site.
