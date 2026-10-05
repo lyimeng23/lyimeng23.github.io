@@ -1,29 +1,8 @@
-<section class="hero" id="top">
-  <div class="container hero__grid">
-    <div class="hero__copy">
-      <div class="hero__person">
-        <img src="{{ site.avatar }}" width="299" height="400" alt="Yimeng Liu" decoding="async" fetchpriority="high" />
-        <div><p>{{ copy.role }}</p><p>{{ copy.university }}</p></div>
-      </div>
-      <h1>Yimeng Liu</h1>
-      <p class="hero__statement">{{ copy.headline }}</p>
-      <p class="hero__intro">{{ copy.intro }}</p>
-      <div class="hero__links">
-        <a href="{{ site.cv_link }}" target="_blank" rel="noopener">{{ ui.cv }}</a>
-        <a href="{{ site.google_scholar }}" target="_blank" rel="noopener">{{ ui.scholar }}</a>
-        <a href="{{ site.github }}" target="_blank" rel="noopener">{{ ui.github }}</a>
-        <a href="{{ site.email_link }}">{{ ui.email }}</a>
-      </div>
-    </div>
-    <figure class="observation" data-observation data-camera-note="{{ copy.visual_camera }}" data-radar-note="{{ copy.visual_radar }}" data-both-note="{{ copy.visual_note }}">
-      <div class="observation__images">
-        <div class="observation__view observation__view--camera"><img src="/assets/img/research/p-plant_rgb.webp" width="408" height="408" alt="RGB plant observation from Proteus, with the paper's original red annotations" decoding="async" fetchpriority="high" /><span>{{ ui.camera }}</span></div>
-        <div class="observation__view observation__view--radar"><img src="/assets/img/research/p-plant_sar.webp" width="408" height="406" alt="mmWave SAR observation of the plant from Proteus" decoding="async" /><span>{{ ui.radar }}</span></div>
-      </div>
-      <div class="observation__controls" role="group" aria-label="{{ ui.observations }}" hidden>
-        <button type="button" data-view="both" aria-pressed="true">{{ ui.both }}</button><button type="button" data-view="camera" aria-pressed="false">{{ ui.camera }}</button><button type="button" data-view="radar" aria-pressed="false">{{ ui.radar }}</button>
-      </div>
-      <figcaption><strong>{{ copy.visual_title }}</strong><p><span data-view-description aria-live="polite">{{ copy.visual_note }}</span> <a href="{{ home }}project/proteus/">Proteus</a></p></figcaption>
-    </figure>
+<section class="hero" id="top"><div class="container hero__grid" id="about">
+  <div class="hero__copy"><h1>{{ copy.name }}</h1>
+    <p class="hero__bio">{{ copy.bio }}</p><p class="hero__background">{{ copy.background }}</p>
+    <div class="hero__current"><p class="hero__label">{{ copy.current_title }}</p><p>{{ copy.current_body }}</p></div>
+    <div class="hero__links"><a href="{{ site.cv_link }}" target="_blank" rel="noopener">{{ ui.cv }}</a><a href="{{ site.google_scholar }}" target="_blank" rel="noopener">{{ ui.scholar }}</a><a href="{{ home }}publications/">{{ ui.record }}</a><a href="{{ site.github }}" target="_blank" rel="noopener">{{ ui.github }}</a><a href="{{ site.email_link }}">{{ ui.email }}</a></div>
   </div>
-</section>
+  <figure class="hero__portrait"><img src="{{ site.avatar }}" width="299" height="400" alt="Yimeng Liu" decoding="async" fetchpriority="high" /><figcaption>{% for item in site.data.record.education %}<p><span>{{ item.period }}</span><strong>{% if lang == 'zh' %}{{ item.degree_zh }}{% else %}{{ item.degree }}{% endif %}</strong><span>{% if lang == 'zh' %}{{ item.place_zh }}{% else %}{{ item.place }}{% endif %}</span></p>{% endfor %}</figcaption></figure>
+</div></section>

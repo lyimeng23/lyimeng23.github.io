@@ -5,6 +5,24 @@
   },
   "main": [
     {
+      "id": "spirit",
+      "title": "SPIRIT: Sparse Physics-Informed Inverse Rendering for SAR Imaging",
+      "venue": "Unpublished research manuscript",
+      "venue_short": "Manuscript",
+      "year": "",
+      "category": "manuscript",
+      "group": "core"
+    },
+    {
+      "id": "mimer",
+      "title": "Mímir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control",
+      "venue": "Unpublished research manuscript",
+      "venue_short": "Manuscript",
+      "year": "",
+      "category": "manuscript",
+      "group": "core"
+    },
+    {
       "id": "driving",
       "title": "AIoT-Based Continuous, Contextualized, and Explainable Driving Assessment for Older Adults",
       "authors": "<strong>Yimeng Liu</strong>, Fangwei Zhang, Maolin Gan, Jialuo Du, Jingkai Lin, Yawen Wang, Fei Sun, Honglei Chen, Linda Hill, Ruofeng Liu, Tianxing Li, Zhichao Cao",
@@ -15,29 +33,9 @@
       "bibtex": "/assets/files/driving.bib",
       "project": "/project/senior-driving/",
       "scholar": "Y0pCki6q_DkC",
-      "category": "preprint"
-    },
-    {
-      "id": "soilnutri",
-      "title": "Soilnutri: A Passive Metasurface-Based, Low-Cost System for Soil Moisture and Nitrogen Monitoring",
-      "authors": "Juexing Wang, Binbin Xie, <strong>Yimeng Liu</strong>, Minhao Cui, Xiao Zhang, Guangjing Wang, Ke Sun, Zhichao Cao, Huacheng Zeng, Qingxu Jin, Younsuk Dong, Hui Li, Jie Xiong, Tianxing Li",
-      "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
-      "venue_short": "IMWUT'26",
-      "year": 2026,
-      "bibtex": "/assets/files/soilnutri.bib",
-      "scholar": "W7OEmFMy1HYC",
-      "category": "published"
-    },
-    {
-      "id": "gapfill",
-      "title": "Comparative Analysis of Machine Learning Models to Restore Gaps in Multivariate Time Series Leaf Wetness Sensor Data",
-      "authors": "Shivani Rana, Nawab Ali, Zhichao Cao, Jill C. Check, Martin I. Chilvers, Jaime Willbur, Benjamin Werling, <strong>Yimeng Liu</strong>, Younsuk Dong",
-      "venue": "Computers and Electronics in Agriculture",
-      "venue_short": "CEA'26",
-      "year": 2026,
-      "bibtex": "/assets/files/gapfill.bib",
-      "scholar": "zYLM7Y9cAGgC",
-      "category": "published"
+      "category": "preprint",
+      "group": "core",
+      "pdf": "https://arxiv.org/pdf/2603.00691"
     },
     {
       "id": "proteus",
@@ -52,19 +50,8 @@
       "slides": "/assets/files/Proteus-SenSys25.pptx",
       "scholar": "UeHWp8X0CEIC",
       "project": "/project/proteus/",
-      "category": "published"
-    },
-    {
-      "id": "aeroecho",
-      "title": "AeroEcho: Towards Agricultural Low-Power Wide-Area Backscatter with Aerial Excitation Source",
-      "authors": "Yidong Ren, Gen Li, <strong>Yimeng Liu</strong>, Younsuk Dong, Zhichao Cao",
-      "venue": "IEEE INFOCOM 2025 — IEEE Conference on Computer Communications",
-      "venue_short": "INFOCOM'25",
-      "year": 2025,
-      "pdf": "/assets/files/aeroecho.pdf",
-      "bibtex": "/assets/files/aeroecho.bib",
-      "scholar": "qjMakFHDy7sC",
-      "category": "published"
+      "category": "published",
+      "group": "core"
     },
     {
       "id": "adonis",
@@ -78,21 +65,8 @@
       "slides": "/assets/files/Adonis-INFOCOM25.pptx",
       "scholar": "2osOgNQ5qMEC",
       "project": "/project/adonis/",
-      "category": "published"
-    },
-    {
-      "id": "hydrabench",
-      "title": "Hydra-Bench: A Benchmark for Multi-Modal Leaf Wetness Sensing",
-      "authors": "<strong>Yimeng Liu</strong>, Maolin Gan, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Zhichao Cao",
-      "venue": "arXiv preprint arXiv:2507.22685",
-      "venue_short": "arXiv'25",
-      "year": 2025,
-      "pdf": "/assets/files/HydraBench.pdf",
-      "page": "https://arxiv.org/abs/2507.22685",
-      "bibtex": "/assets/files/hydrabench.bib",
-      "scholar": "IjCSPb-OGe4C",
-      "category": "preprint",
-      "dataset": "https://drive.google.com/drive/folders/1C0mq5vZgEJOYMNL1vSghvFn0OfyIi8Cm"
+      "category": "published",
+      "group": "core"
     },
     {
       "id": "hydra",
@@ -108,7 +82,60 @@
       "slides": "/assets/files/HydraLiu-MobiCom24.pptx",
       "scholar": "9yKSN-GCB0IC",
       "project": "/project/hydra/",
-      "category": "published"
+      "category": "published",
+      "group": "core"
+    },
+    {
+      "id": "hydrabench",
+      "title": "Hydra-Bench: A Benchmark for Multi-Modal Leaf Wetness Sensing",
+      "authors": "<strong>Yimeng Liu</strong>, Maolin Gan, Yidong Ren, Gen Li, Jingkai Lin, Younsuk Dong, Zhichao Cao",
+      "venue": "arXiv preprint arXiv:2507.22685",
+      "venue_short": "arXiv'25",
+      "year": 2025,
+      "pdf": "/assets/files/HydraBench.pdf",
+      "page": "https://arxiv.org/abs/2507.22685",
+      "bibtex": "/assets/files/hydrabench.bib",
+      "scholar": "IjCSPb-OGe4C",
+      "category": "preprint",
+      "dataset": "https://drive.google.com/drive/folders/1C0mq5vZgEJOYMNL1vSghvFn0OfyIi8Cm",
+      "group": "other_first"
+    },
+    {
+      "id": "soilnutri",
+      "title": "Soilnutri: A Passive Metasurface-Based, Low-Cost System for Soil Moisture and Nitrogen Monitoring",
+      "authors": "Juexing Wang, Binbin Xie, <strong>Yimeng Liu</strong>, Minhao Cui, Xiao Zhang, Guangjing Wang, Ke Sun, Zhichao Cao, Huacheng Zeng, Qingxu Jin, Younsuk Dong, Hui Li, Jie Xiong, Tianxing Li",
+      "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+      "venue_short": "IMWUT'26",
+      "year": 2026,
+      "bibtex": "/assets/files/soilnutri.bib",
+      "scholar": "W7OEmFMy1HYC",
+      "category": "published",
+      "group": "collaboration"
+    },
+    {
+      "id": "gapfill",
+      "title": "Comparative Analysis of Machine Learning Models to Restore Gaps in Multivariate Time Series Leaf Wetness Sensor Data",
+      "authors": "Shivani Rana, Nawab Ali, Zhichao Cao, Jill C. Check, Martin I. Chilvers, Jaime Willbur, Benjamin Werling, <strong>Yimeng Liu</strong>, Younsuk Dong",
+      "venue": "Computers and Electronics in Agriculture",
+      "venue_short": "CEA'26",
+      "year": 2026,
+      "bibtex": "/assets/files/gapfill.bib",
+      "scholar": "zYLM7Y9cAGgC",
+      "category": "published",
+      "group": "collaboration"
+    },
+    {
+      "id": "aeroecho",
+      "title": "AeroEcho: Towards Agricultural Low-Power Wide-Area Backscatter with Aerial Excitation Source",
+      "authors": "Yidong Ren, Gen Li, <strong>Yimeng Liu</strong>, Younsuk Dong, Zhichao Cao",
+      "venue": "IEEE INFOCOM 2025 — IEEE Conference on Computer Communications",
+      "venue_short": "INFOCOM'25",
+      "year": 2025,
+      "pdf": "/assets/files/aeroecho.pdf",
+      "bibtex": "/assets/files/aeroecho.bib",
+      "scholar": "qjMakFHDy7sC",
+      "category": "published",
+      "group": "collaboration"
     },
     {
       "id": "mmleaf",
@@ -120,7 +147,8 @@
       "pdf": "/assets/files/mmleaf.pdf",
       "bibtex": "/assets/files/mmleaf.bib",
       "scholar": "u5HHmVD_uO8C",
-      "category": "published"
+      "category": "published",
+      "group": "collaboration"
     },
     {
       "id": "sonar",
@@ -132,7 +160,8 @@
       "pdf": "/assets/files/biodetection.pdf",
       "bibtex": "/assets/files/biodetection.bib",
       "scholar": "u-x6o8ySG0sC",
-      "category": "published"
+      "category": "published",
+      "group": "collaboration"
     }
   ]
 }

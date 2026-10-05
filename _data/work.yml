@@ -11,22 +11,22 @@
       "height": 650,
       "alt": "Hydra radar and camera testbed deployed in a crop field",
       "en": {
-        "title": "Two imperfect views. One better measurement.",
+        "title": "Measuring leaf wetness with radar and vision.",
         "summary": "Combining radar and camera observations for leaf wetness sensing in changing field conditions.",
         "question": "How can we measure wetness on real leaves when lighting and plant conditions vary?",
         "idea": "Fuse complementary mmWave depth images and RGB features, rather than relying on one observation channel.",
-        "evidence": "Hydra prototypes a radar–camera sensing system and evaluates leaf wetness classification in controlled and field settings. Its field experiments include changing light and weather. The paper establishes a sensing result; it does not establish persistent world understanding.",
+        "evidence": "Hydra evaluates leaf wetness classification in controlled and field settings, including changing light and weather. Its radar–camera prototype tests how complementary observations support this measurement task.",
         "next": "Fusion raised a representation question: can information learned from one modality remain useful when only the other is available? Proteus follows that question.",
         "caption": "The field testbed reported in Hydra. Radar and camera observe the same plant.",
         "quote": "The sensor is a starting point. The representation decides what we can use.",
         "figure_note": "Figure from Hydra: RGB, multiple SAR depth images and class activation maps. Activation maps visualize model attention; they are not ground truth measurements."
       },
       "zh": {
-        "title": "两个不完美的视角，一次更可靠的测量。",
+        "title": "用雷达与相机，感知叶面干湿。",
         "summary": "结合雷达与相机观测，在变化的田间条件下感知叶面湿度。",
         "question": "光照与植物条件变化时，怎样测量真实叶片的湿度？",
         "idea": "融合毫米波深度图与 RGB 特征，利用两种观测的互补信息。",
-        "evidence": "Hydra 实现了雷达与相机结合的感知系统，并在受控环境与田间开展叶面干湿分类实验，包括不同光照与天气条件。论文提供的是感知证据，尚未证明持续的世界理解。",
+        "evidence": "Hydra 实现了雷达与相机结合的感知系统，在受控环境与田间开展叶面干湿分类实验，包括不同光照与天气条件。论文检验了两种观测的互补信息如何支持这项测量任务。",
         "next": "融合引出了表征问题：只保留一种模态时，另一种模态学到的信息还能发挥作用吗？Proteus 继续研究这个问题。",
         "caption": "Hydra 论文中的田间实验系统。雷达与相机观测同一株植物。",
         "quote": "传感器是起点，表征决定信息如何被使用。",
@@ -58,22 +58,22 @@
       "height": 898,
       "alt": "Proteus radar sensing prototype and plant target",
       "en": {
-        "title": "Learn across modalities. Sense with radar.",
+        "title": "Learning with vision, sensing with radar.",
         "summary": "Transferring visual knowledge to mmWave representations, with more informative radar imaging.",
         "question": "Can a radar recover useful wetness information without keeping a camera in the inference loop?",
         "idea": "Reduce SAR speckle, incorporate phase-angle information, and train an mmWave student using an RGB teacher.",
-        "evidence": "Proteus prototypes this approach on commercial radar and evaluates wetness classification across environmental scenarios. The teacher supports training; the student uses mmWave at inference. This is evidence for cross-modality transfer in this task, rather than a general claim of physical understanding.",
+        "evidence": "Experiments on commercial radar evaluate leaf wetness classification across environmental scenarios. An RGB teacher guides training; the student uses mmWave observations at inference. The evaluation concerns cross-modal learning for this sensing task.",
         "next": "The work highlights the importance of what the radar representation preserves. It motivates my broader question: which physical distinctions can an incomplete observation actually support?",
         "caption": "The Proteus experimental setup, reproduced from the public paper.",
         "quote": "A second modality can shape learning without becoming a permanent deployment requirement.",
         "figure_note": "Paired RGB and SAR examples from the Proteus paper. The red annotations belong to the original figure; the images are not pixel-aligned."
       },
       "zh": {
-        "title": "跨模态学习，用雷达感知。",
+        "title": "向视觉学习，用雷达感知。",
         "summary": "把视觉知识迁移到毫米波表征，同时增强雷达图像中的有效信息。",
         "question": "推理阶段不保留相机，雷达能否获得有效的叶面湿度信息？",
         "idea": "抑制 SAR 散斑噪声、加入相位信息，并用 RGB 教师指导毫米波学生模型训练。",
-        "evidence": "Proteus 使用商用雷达构建原型，并在不同环境条件下评估干湿分类。教师参与训练，学生在推理时使用毫米波观测。这证明了该任务中的跨模态迁移，尚不是通用物理理解的证明。",
+        "evidence": "Proteus 在商用雷达上实现并评估了这一方法，检验不同环境下的叶面干湿分类。RGB 教师指导训练，毫米波学生模型负责推理。论文提供的是这项感知任务中的跨模态学习证据。",
         "next": "这项工作强调了雷达表征究竟保留什么信息，也引出更广泛的问题：不完整观测能够支持哪些物理上的区分？",
         "caption": "Proteus 公开论文中的实验装置。",
         "quote": "第二种模态可以指导学习，而不必始终参与部署。",
@@ -110,7 +110,7 @@
       "height": 988,
       "alt": "Adonis mmWave radar experiment with a plant and scan geometry",
       "en": {
-        "title": "Beyond wet or dry. Measure how much.",
+        "title": "Measuring how wet a leaf is.",
         "summary": "Fine-grained leaf wetness estimation from complementary radar signal views and calibration.",
         "question": "A binary wet/dry label misses how surface water changes. Can radar measure degrees of leaf wetness?",
         "idea": "Combine range–Doppler, range–phase and range–azimuth information with contrastive feature learning and inference-time calibration.",
@@ -121,7 +121,7 @@
         "figure_note": "Reported LWL mean absolute error. Lower is better. Source: Adonis abstract and evaluation; controlled and field conditions are distinct protocols."
       },
       "zh": {
-        "title": "不止判断干湿，更要测量程度。",
+        "title": "从干湿判断，到湿度程度的测量。",
         "summary": "融合互补的雷达信号视图，并通过校准估计细粒度叶面湿度。",
         "question": "干湿标签无法描述叶面水分的连续变化。雷达能否测量湿度程度？",
         "idea": "结合距离–多普勒、距离–相位与距离–方位信息，使用对比特征学习与推理阶段校准。",
@@ -139,7 +139,7 @@
     },
     {
       "id": "senior-driving",
-      "title": "Driving assessment",
+      "title": "AURA",
       "venue": "arXiv preprint",
       "year": 2026,
       "status": "current",
@@ -148,7 +148,7 @@
       "height": 1400,
       "alt": "Driving simulator with steering wheel, pedals and a road scene on the monitor",
       "en": {
-        "title": "A continuing record. A human context.",
+        "title": "Driving assessment over time and in context.",
         "summary": "Exploring continuous, contextualized driving assessment for older adults.",
         "question": "What can everyday driving observations contribute beyond a brief, occasional assessment?",
         "idea": "Relate driving behavior to context over time, and make the reasoning legible to the people affected. The public preprint lays out design principles and research opportunities for an AIoT approach.",
@@ -159,7 +159,7 @@
         "figure_note": "Project simulator and sensing equipment. Photographs show the apparatus; no clinical or system-performance result is inferred."
       },
       "zh": {
-        "title": "连续的记录，具体的人的情境。",
+        "title": "随时间持续、结合情境的驾驶评估。",
         "summary": "探索面向老年人的持续、情境化驾驶评估。",
         "question": "日常驾驶观测，能够提供短暂且偶发的评估所缺少的什么信息？",
         "idea": "把驾驶行为放到时间和情境中理解，并让相关的人能读懂推理依据。公开预印本提出了 AIoT 方法的设计原则与研究机会。",

@@ -6,11 +6,12 @@
 .section__head .lede { margin-top: 24px; }
 .section__head > .meta { margin-bottom: 16px; }
 .hero { padding: clamp(40px, 5vw, 76px) 0 80px; }
-.hero__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+.hero__grid { display: grid; grid-template-columns: 1.8fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
 .hero__copy { min-width: 0; }
 .why { background: var(--surface); }
-.statement { font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 18ch; }
-.why__body { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 52px; }
+.research__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px,6vw,96px); align-items: start; }
+.research__copy { min-width: 0; }
+.contact__grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; }
 .journey__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
 .journey__intro { position: sticky; top: 132px; }
 .journey__intro p { margin-top: 24px; }
@@ -27,9 +28,6 @@
 .agenda__thrust:nth-child(3) { grid-column: 6 / 13; }
 .thinking__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; margin-top: 56px; }
 .about { background: var(--surface); }
-.about__grid { display: grid; grid-template-columns: 1fr 2fr; gap: 100px; align-items: start; }
-.about__grid > figure { max-width: 299px; }
-.about .lede { margin-block: 24px; }
 .page { padding-block: 72px 112px; }
 .page__head { margin-bottom: 56px; }
 .page__title { font-size: clamp(3rem, 6vw, 5.5rem); max-width: 18ch; }
@@ -56,13 +54,11 @@
 .essay h2 { margin-top: 48px; font-size: 2.1rem; }
 @media (max-width: 1023px) {
   .hero__grid { gap: 40px; }
-  .journey__grid,.why__body,.thinking__grid,.about__grid,.project__story { gap: 48px; }
-  .hero__person { flex-direction: column; align-items: flex-start !important; }
+  .journey__grid,.thinking__grid,.project__story { gap: 48px; }
 }
 @media (max-width: 767px) {
   .hero { padding-block: 32px 56px; }
-  .hero__grid,.why__body,.journey__grid,.work__item,.thinking__grid,.about__grid,.project__story { grid-template-columns: 1fr; gap: 40px; }
-  .hero__person { flex-direction: row; }
+  .hero__grid,.research__grid,.contact__grid,.journey__grid,.work__item,.thinking__grid,.project__story { grid-template-columns: 1fr; gap: 40px; }
   .hero__grid { gap: 48px; }
   .section__head { margin-bottom: 40px; }
   .journey__intro,.project__reflection { position: static; }
@@ -75,7 +71,6 @@
   .agenda__thrust + .agenda__thrust { margin-top: 36px; }
   .project__gallery { gap: 12px; }
   .project__story { padding-block: 56px; }
-  .about__grid > figure { max-width: 160px; }
   .project__pullquote { max-width: 22ch; }
   .essay > p { font-size: 20px; }
 }

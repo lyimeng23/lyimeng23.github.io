@@ -2,9 +2,8 @@
 layout: default
 ---
 {% assign lang = page.lang | default: 'en' %}{% assign copy = site.data.identity[lang] %}{% assign ui = site.data.locale[lang] %}{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
-{% include hero.html %}
-{% include record.html %}
-{% include community.html %}
-{% include ideas.html %}
-{% include home_vision.html %}
-{% include contact.html %}
+{{ content }}
+{% include why.html %}
+{% include journey.html %}
+{% include work.html %}
+{% include future.html %}

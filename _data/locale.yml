@@ -61,7 +61,8 @@
     "notes": "Research perspective",
     "profile": "Complete Google Scholar profile",
     "future_note": "Research questions, not completed results",
-    "missing": "Page not found"
+    "missing": "Page not found",
+    "website": "Website"
   },
   "zh": {
     "home": "首页",
@@ -125,6 +126,7 @@
     "notes": "研究随笔",
     "profile": "完整 Google Scholar 主页",
     "future_note": "研究问题，而非已完成的结果",
-    "missing": "页面未找到"
+    "missing": "页面未找到",
+    "website": "项目主页"
   }
 }

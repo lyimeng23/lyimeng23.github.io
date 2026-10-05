@@ -1,13 +1,10 @@
 {
   "en": {
-    "role": "Ph.D. candidate · Computer Science & Engineering",
-    "university": "Michigan State University",
-    "headline": "Understanding a world we can only partly see.",
-    "intro": "I study how intelligent systems turn incomplete physical observations into reliable understanding—starting with sensing, and looking toward reasoning and action.",
+    "headline": "How can intelligent systems understand a world they only partly observe?",
     "visual_title": "One plant. Two ways of seeing.",
     "visual_note": "RGB and mmWave SAR examples from Proteus. Each reveals a different part of the same physical scene.",
-    "why_title": "A measurement is a view. It is never the whole world.",
-    "why_body": "A camera sees appearance. Radar responds to physical structure and surface water. Light changes, leaves move, and observations disappear. A useful system must reason about both the evidence it has and what that evidence leaves out.",
+    "why_title": "Research direction · Spatial intelligence",
+    "why_body": "My long-term direction is spatial intelligence: helping intelligent systems understand the physical world—its properties, relationships and changes—well enough to reason and act. I approach this through observation. Sensors provide partial, noisy and different evidence; my published work studies how to recover useful physical quantities from it. Maintaining that understanding over time and using it in decisions are the next questions.",
     "why_points": [
       {
         "title": "Partial",
@@ -22,42 +19,64 @@
         "text": "An estimate must be reconsidered as the world and its observations change."
       }
     ],
-    "journey_title": "The question grew with the work.",
-    "journey_intro": "My background is in mathematics. Sensing brought me to the gap between an observation and the physical state we want to know.",
+    "journey_title": "Research roadmap",
+    "journey_intro": "My published work establishes task-specific foundations in sensing and representation. Current research brings time and context into view. The roadmap extends from these results toward persistent physical-world understanding; its later stages remain open research questions.",
     "journey": [
       {
         "period": "2022–2023",
         "title": "Recovering a signal",
         "text": "Biomimetic sonar and mmLeaf introduced me to indirect observation: finding structure in echoes and measuring leaves with radio waves.",
-        "link": "/#record",
-        "anchor": "Early work"
+        "link": "/publications/",
+        "anchor": "Early work",
+        "status": "Published foundations",
+        "state": "past",
+        "id": "journey-foundations"
       },
       {
         "period": "2024",
         "title": "Learning from complementary views",
         "text": "Hydra combined radar and camera observations. That made the representation—not simply the choice of sensor—the next question.",
         "link": "/project/hydra/",
-        "anchor": "Hydra"
+        "anchor": "Hydra",
+        "status": "Published foundations",
+        "state": "past",
+        "id": "journey-fusion"
       },
       {
         "period": "2025",
         "title": "Making the representation useful",
         "text": "Proteus studies what a radar can learn from a camera. Adonis asks how to measure degrees of wetness, with calibration for field conditions.",
         "link": "/project/proteus/",
-        "anchor": "Proteus & Adonis"
+        "anchor": "Proteus & Adonis",
+        "status": "Published foundations",
+        "state": "past",
+        "id": "journey-representation"
       },
       {
         "period": "Current research",
         "title": "From a snapshot to a continuing record",
-        "text": "Driving assessment brings time and context into the problem. My current questions concern how understanding persists as observations and conditions change.",
+        "text": "Driving assessment motivates a shift from isolated measurements to behavior understood over time and in context. The public preprint sets out design principles and research opportunities; a completed monitoring evaluation remains to be established.",
         "link": "/project/senior-driving/",
-        "anchor": "Driving assessment"
+        "anchor": "Driving assessment",
+        "status": "In progress · public preprint",
+        "state": "current",
+        "id": "journey-current"
+      },
+      {
+        "period": "Next",
+        "status": "Future agenda",
+        "state": "future",
+        "title": "Persistent understanding for reasoning and action",
+        "text": "Connect physical estimates across time, revise them when evidence changes, and determine when they can support a decision. These are the next research goals, building on the sensing foundations above.",
+        "link": "/research/#future",
+        "anchor": "Research vision",
+        "id": "journey-future"
       }
     ],
-    "work_title": "Ideas, built and tested.",
-    "work_intro": "Three published sensing systems, followed by a current application that asks a different kind of question.",
-    "future_title": "Beyond a good snapshot.",
-    "future_intro": "The independent research program I want to build connects physical measurement, persistent understanding, and responsible decisions. These are future research directions, not completed capabilities.",
+    "work_title": "Selected research",
+    "work_intro": "Three published sensing systems and a driving-assessment preprint. Each asks a specific question and provides a different kind of evidence.",
+    "future_title": "Understanding the physical world over time",
+    "future_intro": "I want to build a research program in spatial intelligence that connects observation, physical representation and continuing understanding. The goal is for systems to maintain an account of what is happening, what is uncertain and when the evidence is sufficient to reason or act. Three open questions define the work ahead.",
     "future": [
       {
         "title": "Understanding with incomplete evidence",
@@ -78,7 +97,7 @@
         "origin": "A future direction in collaboration with domain researchers"
       }
     ],
-    "thinking_title": "How I approach a problem.",
+    "thinking_title": "How I approach research",
     "principles": [
       {
         "title": "Begin with the quantity.",
@@ -95,11 +114,9 @@
     ],
     "essay_title": "What changes between a measurement and understanding?",
     "essay_note": "A research perspective on observation, representation and the questions still open.",
-    "about_title": "From mathematics to the physical world.",
-    "about_body": "I am a Ph.D. candidate in Computer Science and Engineering at Michigan State University, advised by Zhichao Cao. Before MSU, I studied mathematics at Virginia Tech and worked on biomimetic sonar with Rolf Müller.",
-    "contact": "I welcome conversations about multimodal sensing, physical representations, and reliable intelligent systems—and collaborations that connect these questions to real settings.",
-    "record_title": "The academic record.",
-    "record_intro": "Recent papers and public research resources. The complete academic record is one level deeper.",
+    "contact": "I welcome conversations about multimodal sensing, physical representations and reliable intelligent systems, especially where these questions meet a concrete measurement problem.",
+    "record_title": "Core papers & research",
+    "record_intro": "Three first-author or co-first-author papers, alongside current research.",
     "service_title": "Activities & service",
     "service_lede": "Conference presentations, invited talks and academic service.",
     "news_title": "News & timeline",
@@ -107,17 +124,42 @@
     "error_title": "This page is outside the field of view.",
     "error_body": "The address may have changed. The homepage and publication record are good places to start.",
     "visual_camera": "The camera shows appearance and visible surfaces. Its evidence depends on lighting.",
-    "visual_radar": "Radar records an indirect physical response. Its structure needs interpretation."
+    "visual_radar": "Radar records an indirect physical response. Its structure needs interpretation.",
+    "bio": "I am a Ph.D. candidate in Computer Science and Engineering at Michigan State University, advised by Zhichao Cao.",
+    "background": "My research combines multimodal sensing and learning to estimate physical properties in real environments. Before MSU, I studied mathematics at Virginia Tech and worked on biomimetic sonar with Rolf Müller.",
+    "current_title": "Current focus",
+    "current_body": "My long-term direction is spatial intelligence: turning partial physical observations into reliable, continuing understanding for reasoning and action.",
+    "contact_title": "Get in touch",
+    "university": "Michigan State University",
+    "roadmap_label": "Roadmap overview",
+    "roadmap_overview": [
+      {
+        "label": "Established",
+        "focus": "Sensing & physical representation",
+        "target": "journey-foundations"
+      },
+      {
+        "label": "In progress",
+        "focus": "Time & context",
+        "target": "journey-current"
+      },
+      {
+        "label": "Next",
+        "focus": "Persistent understanding & decisions",
+        "target": "journey-future"
+      }
+    ],
+    "journey_label": "Toward spatial intelligence",
+    "name": "Yimeng Liu",
+    "home_vision_title": "My research vision",
+    "home_vision": "I began with physical sensing and the question of how observations become trustworthy representations. I want to connect these foundations to continuing understanding of the world, and to reasoning and action grounded in physical evidence. This is my long-term vision for spatial intelligence."
   },
   "zh": {
-    "role": "计算机科学与工程 · 博士候选人",
-    "university": "密歇根州立大学",
-    "headline": "从不完整的观测，理解物理世界。",
-    "intro": "我研究智能系统如何把不完整的物理观测转化为可靠的理解：从感知出发，走向推理与行动。",
+    "headline": "智能系统如何从不完整的观测中，理解物理世界？",
     "visual_title": "同一株植物，两种观测。",
     "visual_note": "Proteus 论文中的 RGB 与毫米波 SAR 观测。每种模态揭示同一物理场景的不同侧面。",
-    "why_title": "测量是一个视角，世界却不止于此。",
-    "why_body": "相机记录外观，雷达响应物理结构和叶面水分。光照会变化，叶片会移动，观测也会中断。一个有用的系统，既要理解已有证据，也要识别证据无法告诉它的部分。",
+    "why_title": "研究方向 · 空间智能",
+    "why_body": "我的长期研究方向是空间智能：让智能系统理解物理世界的属性、关系与变化，并据此推理和行动。我从观测入手：传感器提供不完整、带噪声且彼此不同的证据，已发表的工作研究怎样从中提取有用的物理量。如何让这种理解持续成立，并用于决策，是接下来要推进的问题。",
     "why_points": [
       {
         "title": "不完整",
@@ -132,42 +174,64 @@
         "text": "世界和观测发生变化时，系统必须重新审视已有估计。"
       }
     ],
-    "journey_title": "问题，随着研究逐渐展开。",
-    "journey_intro": "我的起点是数学。感知研究让我走近了一个具体问题：观测与我们想知道的物理状态之间，究竟隔着什么？",
+    "journey_title": "研究路线",
+    "journey_intro": "已发表的研究建立了感知与表征方面的具体基础；当前研究开始引入时间与情境。这条路线从已有成果出发，走向持续的物理世界理解。后面的阶段仍是需要研究和验证的问题。",
     "journey": [
       {
         "period": "2022–2023",
         "title": "从回波中提取信息",
         "text": "仿生声呐与 mmLeaf 让我接触间接观测：从回声中寻找结构，用无线电波测量叶片。",
-        "link": "/#record",
-        "anchor": "早期研究"
+        "link": "/publications/",
+        "anchor": "早期研究",
+        "status": "已有成果",
+        "state": "past",
+        "id": "journey-foundations"
       },
       {
         "period": "2024",
         "title": "从互补视角中学习",
         "text": "Hydra 将雷达与相机的观测结合起来。接下来的问题不再只是选什么传感器，而是如何表达它们提供的信息。",
         "link": "/project/hydra/",
-        "anchor": "Hydra"
+        "anchor": "Hydra",
+        "status": "已有成果",
+        "state": "past",
+        "id": "journey-fusion"
       },
       {
         "period": "2025",
         "title": "让表征服务于测量",
         "text": "Proteus 研究雷达可以向相机学习什么；Adonis 则从干湿分类走向湿度程度的测量，并针对田间条件进行校准。",
         "link": "/project/proteus/",
-        "anchor": "Proteus 与 Adonis"
+        "anchor": "Proteus 与 Adonis",
+        "status": "已有成果",
+        "state": "past",
+        "id": "journey-representation"
       },
       {
         "period": "当前研究",
         "title": "从一次快照到连续记录",
-        "text": "驾驶评估将时间和情境带入这个问题。我目前关注：当观测和环境不断变化时，理解如何持续成立？",
+        "text": "驾驶评估推动研究从单次测量转向时间与情境中的行为理解。公开预印本提出了设计原则与研究机会，完整监测系统的评估仍有待完成。",
         "link": "/project/senior-driving/",
-        "anchor": "持续驾驶评估"
+        "anchor": "持续驾驶评估",
+        "status": "正在推进 · 公开预印本",
+        "state": "current",
+        "id": "journey-current"
+      },
+      {
+        "period": "下一步",
+        "status": "未来方向",
+        "state": "future",
+        "title": "持续理解，支持推理与行动",
+        "text": "把物理估计连接到时间中，在证据变化时修正理解，并判断何时足以支持决策。这些是建立在已有感知基础上的下一阶段研究目标。",
+        "link": "/research/#future",
+        "anchor": "研究愿景",
+        "id": "journey-future"
       }
     ],
-    "work_title": "用真实系统，检验研究想法。",
-    "work_intro": "三项已发表的感知工作，以及一项提出新问题的当前应用研究。",
-    "future_title": "超越一次准确的快照。",
-    "future_intro": "我希望建立的独立研究方向，将物理测量、持续理解与负责任的决策联系起来。以下是未来研究问题，而非已经实现的能力。",
+    "work_title": "代表研究",
+    "work_intro": "三项已发表的感知系统研究，以及一篇驾驶评估预印本。每项工作都有具体问题与对应的证据。",
+    "future_title": "持续理解物理世界",
+    "future_intro": "我希望建立一个以空间智能为方向的研究计划，将观测、物理表征与持续理解连接起来。目标是让系统持续知道：世界正在发生什么，哪些仍不确定，以及证据何时足以支持推理或行动。以下三个开放问题，构成接下来要推进的研究。",
     "future": [
       {
         "title": "不完整证据下的理解",
@@ -188,7 +252,7 @@
         "origin": "与领域研究者共同探索的未来方向"
       }
     ],
-    "thinking_title": "我如何思考一个问题。",
+    "thinking_title": "我怎样开展研究",
     "principles": [
       {
         "title": "从物理量出发。",
@@ -205,11 +269,9 @@
     ],
     "essay_title": "从测量到理解，中间发生了什么？",
     "essay_note": "关于观测、表征与尚未解决问题的一篇研究随笔。",
-    "about_title": "从数学出发，走近物理世界。",
-    "about_body": "我是密歇根州立大学计算机科学与工程博士候选人，导师为 Zhichao Cao。此前，我在弗吉尼亚理工大学学习数学，并与 Rolf Müller 开展仿生声呐研究。",
-    "contact": "欢迎交流多模态感知、物理表征与可靠智能系统，也期待与领域研究者合作，让这些问题走进真实场景。",
-    "record_title": "正式学术记录。",
-    "record_intro": "近期论文与公开研究资源。完整学术记录在独立页面中。",
+    "contact": "欢迎交流多模态感知、物理表征与可靠智能系统，也期待与领域研究者合作，讨论具体测量问题。",
+    "record_title": "核心论文与研究",
+    "record_intro": "三篇一作或共同一作论文，以及我目前关注的研究。",
     "service_title": "学术活动与服务",
     "service_lede": "会议报告、受邀讲座与学术服务。",
     "news_title": "动态与时间线",
@@ -217,6 +279,34 @@
     "error_title": "这个页面暂时不在视野里。",
     "error_body": "地址可能已经变更。你可以从首页或论文记录继续浏览。",
     "visual_camera": "相机记录外观与可见表面，提供的证据受到光照影响。",
-    "visual_radar": "雷达记录间接的物理响应，其中的结构需要解释。"
+    "visual_radar": "雷达记录间接的物理响应，其中的结构需要解释。",
+    "bio": "我是密歇根州立大学计算机科学与工程博士候选人，导师为曹志超老师。",
+    "background": "我的研究结合多模态感知与机器学习，估计真实环境中的物理属性。在此之前，我在弗吉尼亚理工大学学习数学，并与 Rolf Müller 开展仿生声呐研究。",
+    "current_title": "目前关注",
+    "current_body": "我的长期方向是空间智能：从不完整的物理观测出发，建立可靠、持续并可用于推理与行动的理解。",
+    "contact_title": "交流与联系",
+    "university": "密歇根州立大学",
+    "roadmap_label": "研究路线概览",
+    "roadmap_overview": [
+      {
+        "label": "已有成果",
+        "focus": "感知与物理表征",
+        "target": "journey-foundations"
+      },
+      {
+        "label": "正在推进",
+        "focus": "时间与情境",
+        "target": "journey-current"
+      },
+      {
+        "label": "下一步",
+        "focus": "持续理解与决策",
+        "target": "journey-future"
+      }
+    ],
+    "journey_label": "走向空间智能",
+    "name": "刘益萌",
+    "home_vision_title": "我的研究愿景",
+    "home_vision": "我从物理感知出发，研究观测怎样成为可信的表征。接下来，希望将这些基础连接到对世界的持续理解，以及有物理依据的推理和行动。这是我对空间智能的长期研究愿景。"
   }
 }

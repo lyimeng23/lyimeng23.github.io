@@ -1,0 +1,16 @@
+<li class="pub" data-track="{{ pub.category }}">
+  <div class="pub__venue"><span>{{ pub.year }}</span><span>{{ pub.venue_short }}</span></div>
+  <div class="pub__main"><h3>{{ pub.title }}</h3>{% if pub.authors %}<p class="pub__authors">{{ pub.authors }}</p>{% endif %}
+    <p class="pub__citation-venue">{% if pub.category == 'manuscript' and lang == 'zh' %}未发表研究稿件{% else %}{{ pub.venue }}{% endif %}{% if pub.year != '' %} ({{ pub.year }}){% endif %}{% if pub.id == 'adonis' %} · {% if lang == 'zh' %}共同一作{% else %}Co-first author{% endif %}{% endif %}</p>
+    {% if pub.pdf or pub.project or pub.page or pub.bibtex or pub.slides or pub.code or pub.dataset or pub.scholar %}<ul class="pub__links">
+      {% if pub.pdf %}<li><a href="{{ pub.pdf }}" target="_blank" rel="noopener">{{ ui.pdf }}</a></li>{% endif %}
+      {% if pub.project %}<li><a href="{% if lang == 'zh' %}/zh{% endif %}{{ pub.project }}">{{ ui.website }}</a></li>{% endif %}
+      {% if pub.bibtex %}<li><a href="{{ pub.bibtex }}" target="_blank" rel="noopener">BibTeX</a></li>{% endif %}
+      {% if pub.slides %}<li><a href="{{ pub.slides }}" target="_blank" rel="noopener">{{ ui.talk }}</a></li>{% endif %}
+      {% if pub.page %}<li><a href="{{ pub.page }}" target="_blank" rel="noopener">{% if pub.category == 'preprint' %}arXiv{% else %}{{ ui.paper }}{% endif %}</a></li>{% endif %}
+      {% if pub.code %}<li><a href="{{ pub.code }}" target="_blank" rel="noopener">{{ ui.code }}</a></li>{% endif %}
+      {% if pub.dataset %}<li><a href="{{ pub.dataset }}" target="_blank" rel="noopener">{{ ui.dataset }}</a></li>{% endif %}
+      {% if pub.scholar %}<li><a href="https://scholar.google.com/citations?hl=en&amp;user=U0Py5sAAAAAJ&amp;view_op=view_citation&amp;citation_for_view=U0Py5sAAAAAJ:{{ pub.scholar }}" target="_blank" rel="noopener">Scholar</a></li>{% endif %}
+    </ul>{% endif %}
+  </div>
+</li>

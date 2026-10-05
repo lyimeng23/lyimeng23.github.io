@@ -1,10 +1,6 @@
 <section class="section record" id="record"><div class="container">
-  <header class="section__head"><h2>{{ copy.record_title }}</h2><p class="lede">{{ copy.record_intro }}</p></header>
-  {% include publications.html compact=true %}
-  <div class="resource-row"><h3>{{ ui.resources }}</h3><p><a href="https://arxiv.org/abs/2507.22685" target="_blank" rel="noopener">Hydra-Bench</a> — {% if lang == 'zh' %}多模态叶面湿度数据与基准预印本{% else %}multimodal leaf-wetness data & benchmark preprint{% endif %}</p><p><a href="https://drive.google.com/drive/folders/1C0mq5vZgEJOYMNL1vSghvFn0OfyIi8Cm" target="_blank" rel="noopener">Hydra-Bench {{ ui.dataset }}</a></p><p><a href="https://github.com/liuyime2/MobiCom24-Hydra" target="_blank" rel="noopener">Hydra {{ ui.code }}</a></p></div>
-  <p class="record__more"><a href="{{ home }}publications/">{{ ui.record }} & {{ ui.resources }}</a><a href="{{ home }}activities/">{{ ui.service }}</a><a href="{{ home }}news/">{{ ui.more }}</a></p>
-</div></section>
-<section class="section about" id="about"><div class="container about__grid">
-  <figure><img src="{{ site.avatar }}" width="299" height="400" alt="Portrait of Yimeng Liu" loading="lazy" decoding="async" /></figure>
-  <div><h2>{{ copy.about_title }}</h2><p class="lede">{{ copy.about_body }}</p><div class="education">{% for item in site.data.record.education %}<p><span class="meta">{{ item.period }}</span><strong>{% if lang == 'zh' %}{{ item.degree_zh }}{% else %}{{ item.degree }}{% endif %}</strong><span>{% if lang == 'zh' %}{{ item.place_zh }}{% else %}{{ item.place }}{% endif %}</span></p>{% endfor %}</div><p>{{ copy.contact }}</p><a class="contact-link" href="{{ site.email_link }}">liuyime2@msu.edu</a></div>
+  <header class="record__intro"><h2>{{ copy.record_title }}</h2><p>{{ copy.record_intro }}</p></header>
+  {% assign core_papers = site.data.publications.main | where: 'group', 'core' %}
+  <ol class="pubs record__citations">{% for pub in core_papers %}{% include publication_item.html %}{% endfor %}</ol>
+  <div class="record__more"><a href="{{ home }}publications/">{{ ui.record }} & {{ ui.resources }}</a><a href="{{ home }}activities/">{{ ui.service }}</a><a href="{{ home }}news/">{{ ui.more }}</a></div>
 </div></section>

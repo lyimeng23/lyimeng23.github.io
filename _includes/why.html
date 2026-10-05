@@ -1,8 +1,13 @@
-<section class="section why" id="why">
-  <div class="container">
-    <h2 class="statement">{{ copy.why_title }}</h2>
-    <div class="why__body"><p class="lede">{{ copy.why_body }}</p>
-      <dl class="why__facts">{% for point in copy.why_points %}<div><dt>{{ point.title }}</dt><dd>{{ point.text }}</dd></div>{% endfor %}</dl>
-    </div>
-  </div>
-</section>
+<section class="section why" id="why"><div class="container research__grid">
+  <div class="research__copy"><h2>{{ copy.why_title }}</h2><p class="research__question">{{ copy.headline }}</p><p class="lede">{{ copy.why_body }}</p><dl class="why__facts">{% for point in copy.why_points %}<div><dt>{{ point.title }}</dt><dd>{{ point.text }}</dd></div>{% endfor %}</dl></div>
+    <figure class="observation" data-observation data-camera-note="{{ copy.visual_camera }}" data-radar-note="{{ copy.visual_radar }}" data-both-note="{{ copy.visual_note }}">
+      <div class="observation__images">
+        <div class="observation__view observation__view--camera"><img src="/assets/img/research/p-plant_rgb.webp" width="408" height="408" alt="RGB plant observation from Proteus, with the paper's original red annotations" loading="lazy" decoding="async" /><span>{{ ui.camera }}</span></div>
+        <div class="observation__view observation__view--radar"><img src="/assets/img/research/p-plant_sar.webp" width="408" height="406" alt="mmWave SAR observation of the plant from Proteus" loading="lazy" decoding="async" /><span>{{ ui.radar }}</span></div>
+      </div>
+      <div class="observation__controls" role="group" aria-label="{{ ui.observations }}" hidden>
+        <button type="button" data-view="both" aria-pressed="true">{{ ui.both }}</button><button type="button" data-view="camera" aria-pressed="false">{{ ui.camera }}</button><button type="button" data-view="radar" aria-pressed="false">{{ ui.radar }}</button>
+      </div>
+      <figcaption><strong>{{ copy.visual_title }}</strong><p><span data-view-description aria-live="polite">{{ copy.visual_note }}</span> <a href="{{ home }}project/proteus/">Proteus</a></p></figcaption>
+    </figure>
+</div></section>

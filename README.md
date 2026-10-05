@@ -2,7 +2,7 @@
 
 Bilingual personal academic website, built with Jekyll and published on GitHub Pages.
 
-The homepage introduces the researcher, explains partial physical observation, follows the research journey, presents representative public evidence, and separates future directions from current research. Dedicated case studies, a research perspective, publications, activities and a timeline provide the second layer.
+The homepage opens with personal background, core papers, service, conferences and recent updates. It then explains research thinking and a concise vision. Detailed research figures, studies and the roadmap live on the bilingual Research page. Dedicated case studies, a research perspective, publications, activities and a timeline provide the second layer.
 
 ## Run
 
@@ -39,4 +39,4 @@ Internal documents, build scripts and agent instructions are excluded in `_confi
 
 ## Validation
 
-See `docs/redesign/VALIDATION.md` for the measured checks, visual revisions and deployment evidence. Repository-required browser audits remain external temporary tooling; no test scripts or browser dependencies are published with the site.
+See `docs/redesign/IDENTITY_LED.md` for the latest local revision and validation; `PERSON_FIRST.md` records earlier audience and roadmap decisions. `docs/redesign/VALIDATION.md` records the preceding published version. Repository-required browser audits remain external temporary tooling; no test scripts or browser dependencies are published with the site.

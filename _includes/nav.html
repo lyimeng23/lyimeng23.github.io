@@ -1,11 +1,11 @@
 <header class="nav" id="site-nav">
   <div class="container nav__inner">
-    <a class="nav__brand" href="{{ home | relative_url }}">Yimeng Liu</a>
+    <a class="nav__brand" href="{{ home | relative_url }}">{{ copy.name }}</a>
     <nav class="nav__menu" id="nav-menu" aria-label="{{ ui.primary }}">
-      <a href="{{ home }}#journey">{{ ui.research }}</a>
-      <a href="{{ home }}#work">{{ ui.work }}</a>
-      <a href="{{ home }}#record">{{ ui.record }}</a>
       <a href="{{ home }}#about">{{ ui.about }}</a>
+      <a href="{{ home }}publications/">{{ ui.record }}</a>
+      <a href="{{ home }}#why">{{ ui.research }}</a>
+      <a href="{{ home }}#community">{{ ui.service }}</a>
     </nav>
     <div class="nav__tools">
       <a class="language" href="{{ page.translation | default: '/zh/' }}" lang="{% if lang == 'zh' %}en{% else %}zh-CN{% endif %}" hreflang="{% if lang == 'zh' %}en{% else %}zh-CN{% endif %}" aria-label="{% if lang == 'zh' %}Read in English{% else %}阅读中文版{% endif %}">{% if lang == 'zh' %}EN{% else %}中文{% endif %}</a>

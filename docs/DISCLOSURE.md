@@ -1,77 +1,21 @@
-# Disclosure boundary
+# Publication boundaries
 
-Internal decision record. Not published — `docs/` is excluded from the Jekyll build.
-Governs what may appear on `lyimeng23.github.io` and in any public talk derived from it.
+This repository is public. Excluding a file from Jekyll prevents website rendering, but does not make committed source private.
 
-Rule of thumb: **published and camera-ready is public; anything in review is not; the agenda
-(a question, a direction, a capability) is public even when the result behind it is not.**
+## Authorized public content
 
-## Public — safe to name, describe, link
+Published papers, verified academic records, public preprints, and clearly identified future research questions may appear on the site.
 
-| Work | Venue | Evidence |
-|---|---|---|
-| Hydra | ACM MobiCom '24 | Camera-ready PDF in repo |
-| Adonis | IEEE INFOCOM '25 | Camera-ready PDF in repo |
-| Proteus | ACM SenSys '25 | Camera-ready PDF in repo |
-| Driving (AURA) | ACM MobiSys '26 | Camera-ready PDF in repo |
-| Hydra-Bench | arXiv '25 | preprint |
-| AeroEcho | IEEE INFOCOM '25 | published |
-| mmLeaf | ACM MobiSys '23 | poster + published |
-| Biomimetic sonar | 2022 | published |
+The user explicitly requested SPIRIT and Mímir as core research on 2026-10-04 and authorized pushing the reviewed site on 2026-10-05. Their names, manuscript titles and brief topic descriptions may be published. They are labelled unpublished research manuscripts. Do not publish private PDFs, submission or review metadata, manuscript figures, architectures, datasets, ablations or results. Anonymous source drafts do not establish author order.
 
-### Important honesty caveat
+AURA / Driving is the public arXiv:2603.00691 design and research-opportunities preprint. It must not be described as an accepted MobiSys paper, a deployed system, or an evaluated end-to-end monitoring system.
 
-**AURA / Driving (MobiSys '26) is a design-principles and research-opportunities paper.**
-Its abstract ends "This paper outlines the design principles, challenges, and research
-opportunities needed to build reliable, real-world monitoring systems." It proposes the
-framework and its sensing/modelling/analysis design; it does **not** report a completed
-end-to-end evaluation. On the site it must never be described as a shipped or evaluated
-system, and must not carry performance numbers.
+Hydra (MobiCom 2024), Adonis (INFOCOM 2025, co-first author) and Proteus (SenSys 2025) form the published core. Other public work is retained in the full academic archive with source-bound metadata.
 
-## Confidential — must not appear publicly
+## Standing rules
 
-| Work | Status | Why |
-|---|---|---|
-| SPIRIT | ICLR '27 submission | double-blind under review |
-| Mímir (Agent for Irrigation) | ICLR '27 submission | double-blind under review |
-| Snotra (World Model for Irrigation) | ICLR '27 submission | double-blind under review |
-
-Consequences for the public site:
-
-- Do not name SPIRIT, Mímir, or Snotra.
-- Do not describe their methods, architectures, datasets, ablations, or results.
-- Do not reproduce their figures, numbers, or paper text.
-- Do not link their PDFs or the arXiv/`ICLR27_*` filenames.
-- The ICLR '27 papers also carry co-author and submission metadata that must not leak.
-
-**Permitted substitute:** the *research questions* those papers answer. Questions are agenda,
-not result, and are safe to state:
-
-1. What can be known from physical evidence?
-2. What can be known together?
-3. When should intelligence change the world?
-
-The site states these three questions and the capabilities they imply. It does not claim
-results from the work behind them.
-
-## Standing honesty rules
-
-- No unpublished result may be presented as a result. Capability that is in progress is
-  labelled in progress; capability that is open is labelled open.
-- No performance number appears without its paper, and only within that paper's own
-  evaluation scope.
-- AURA's evaluation status must stay honest even as it becomes more central to the narrative.
-
-## Retrospective-branding warning
-
-Recorded from the job-talk planning notes, because it describes the failure mode this site
-was originally built into:
-
-> The worst thing to do is label Hydra, Adonis, Proteus, SPIRIT, AURA, Mímir and Snotra all
-> "Spatial Intelligence" and then present them in chronological order. Senior faculty will
-> recognise this as retrospective branding immediately.
-
-Mitigation applied to the public site: work is presented as a **trajectory in which each
-project forced a specific requirement**, and the aggregate agenda is described as something
-that *emerged from* the work rather than a label applied to it. The six-stage chain is framed
-as the problem being solved, not as a taxonomy retrofitted onto past papers.
+- Do not publish any other restricted work, private manuscript or submission metadata.
+- No result without its source and evaluation scope; no invented author, venue, award, date or number.
+- Label current research and future questions separately from published findings.
+- Do not add private local paths, credentials or sensitive source material to Git, including documentation excluded from Jekyll.
+- Validate the built output and attachment links before publication. Explicit naming exceptions are limited to the authorized core manuscripts.

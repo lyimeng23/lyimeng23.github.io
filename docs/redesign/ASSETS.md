@@ -18,4 +18,4 @@ The driving preprint is arXiv:2603.00691, a design/research-opportunities paper.
 
 Hydra-Bench dataset link is the Google Drive URL embedded twice on page 2 of its public PDF. The site links the author-published location without claiming a fresh data download or certifying its contents. Crossref metadata independently confirms Huaili Zeng in Hydra and Proteus; the previous author spelling and BibTeX files were corrected together.
 
-The social sharing card (`assets/img/og.png`) is a 1200 × 630 native HTML composition of the same real Proteus observations and the site identity. Its reproducible source is `docs/og-preview.html`; it contains no invented figure or result.
+The social sharing card (`assets/img/og.png`) is a 1200 × 630 native HTML composition of the published portrait and factual personal profile. The subsequent person-first revision replaces the earlier Proteus-led composition. Its reproducible source is `docs/og-preview.html`; it contains no invented figure or result.
