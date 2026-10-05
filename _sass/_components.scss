@@ -211,3 +211,13 @@ html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
 .pub__citation-venue { margin-top: 10px; color: var(--body); font: italic 16px/1.5 var(--text); }
 .record__citations .pub__authors { font-size: 15px; }
 .record__citations .pub__links { font-size: 14px; }
+
+// The provider's white image canvas stays intact; recoloring it would also alter the data dots.
+.visitor-map { width: 100%; margin-top: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.visitor-map summary { cursor: pointer; color: var(--body); width: fit-content; min-height: 44px; padding-block: 10px; font: 13px/1.6 var(--sans); }
+.visitor-map__provider { color: var(--muted); margin-left: 16px; }
+.visitor-map__body { max-width: 420px; margin-top: 12px; }
+.visitor-map__image { display: block; background: #fff; aspect-ratio: 2 / 1; }
+.visitor-map__image img { width: 100%; height: auto; }
+.visitor-map__links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 14px; }
+.visitor-map__links a { min-height: 44px; padding-block: 10px; }
