@@ -42,6 +42,27 @@
       controls.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b === button)); });
     });
   });
+  document.querySelectorAll('[data-evo]').forEach(function (section) {
+    var buttons = section.querySelectorAll('[data-evo-stage]');
+    var steps = section.querySelectorAll('.evo__step');
+    var controls = section.querySelector('.evo__controls');
+    var count = section.querySelector('[data-evo-count]');
+    var total = buttons.length, current = 1;
+    function show(n) {
+      current = Math.min(total, Math.max(1, n));
+      section.setAttribute('data-stage', String(current));
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(Number(b.dataset.evoStage) === current)); });
+      steps.forEach(function (li) { li.classList.toggle('is-active', Number(li.dataset.stage) === current); });
+      count.textContent = current + ' / ' + total + ' · ' + buttons[current - 1].textContent.replace(/^\d+/, '');
+    }
+    controls.hidden = false;
+    controls.addEventListener('click', function (event) {
+      var b = event.target.closest('[data-evo-step]');
+      if (b) show(current + Number(b.dataset.evoStep));
+    });
+    buttons.forEach(function (b) { b.addEventListener('click', function () { show(Number(b.dataset.evoStage)); }); });
+    show(1);
+  });
   var filter = document.querySelector('.filter');
   if (filter) {
     filter.hidden = false;

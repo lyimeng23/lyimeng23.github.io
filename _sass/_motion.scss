@@ -16,3 +16,5 @@ button,select { transition: background-color var(--fast), color var(--fast); }
   .journey__intro,.project__reflection { position: static; }
 }
 @media print { .nav,.footer,.filter,.observation__controls { display: none; } body { background: white; color: black; } .section { padding-block: 32px; } .journey__intro,.project__reflection { position: static; } }
+// Stage changes are user-initiated; the transition only shows which layer a step adds.
+.evo__layer { transition: opacity var(--duration) var(--ease); }

@@ -138,11 +138,16 @@ delete → merge → simplify → reuse → rewrite → add
 三个名字和"双盲在审"的事实全部泄漏。任何新增的根目录文件都必须同步加进 `_config.yml`
 的 `exclude`，并重跑上面的保密检查。
 
+**2026-10-20 更新**：SPIRIT 与 Mimir 已于 2026-10-01 公开为 arXiv 预印本
+（arXiv:2610.23914、arXiv:2610.02038），现可公开作者名单、arXiv 链接与 PDF。
+Snotra 仍以 "Manuscript under review / 在审稿件" 列出：可写名称、研究问题、方法概述与
+论文摘要中的结果数字；**不提供 PDF、arXiv 链接或审稿会议名**，也不写作者名单（匿名稿件里没有）。
+
 | 类别 | 内容 |
 |---|---|
-| 可公开 | 已 camera-ready 的论文：Hydra (MobiCom'24)、Adonis (INFOCOM'25)、Proteus (SenSys'25)、Driving (arXiv:2603.00691)、AeroEcho (INFOCOM'25)、Hydra-Bench (arXiv:2507.22685)、Soilnutri (IMWUT'26)、mmLeaf (MobiSys'23)、Biomimetic sonar (2022)、Gap restoration (CEA'26) |
-| **绝不公开** | **SPIRIT、Mímir、Snotra** —— ICLR '27 双盲在审稿：不得出现名字、方法、架构、数据集、消融、结果数字、PDF 或 arXiv 链接 |
-| 安全替代 | 只陈述它们回答的**研究问题**。问题是 agenda，结果才是 answer。 |
+| 可公开 | 已 camera-ready 的论文：Hydra (MobiCom'24)、Adonis (INFOCOM'25)、Proteus (SenSys'25)、Driving/AURA (arXiv:2603.00691)、AeroEcho (INFOCOM'25)、Hydra-Bench (arXiv:2507.22685)、Soilnutri (IMWUT'26)、mmLeaf (MobiSys'23)、Biomimetic sonar (2022)、Gap restoration (CEA'26)；公开预印本：SPIRIT (arXiv:2610.23914)、Mimir (arXiv:2610.02038) |
+| 在审，可提及 | Snotra：名称、问题、方法概述、摘要中的结果 |
+| 仍不公开 | Snotra 的 PDF / zip / 链接、审稿会议名称 |
 
 MobiSys 2026 那份 driving PDF **不得声称已发表于 MobiSys '26**：它没有 ACM camera-ready 版权块，
 LaTeX 里残留 Hydra MobiCom'24 的 DOI，且是 10 位作者跨两所。真实 venue 是 arXiv 预印本。
@@ -208,7 +213,8 @@ node --check assets/js/main.js && node --check assets/js/vision.js
 find _site -iname "*DISCLOSURE*" -o -iname "*AUDIT*" | wc -l   # 必须为 0
 
 # 保密词必须整站为 0 —— 注意用 -l 数"有多少个文件命中"，不要用 grep -c 的行数
-for t in SPIRIT "Mímir" Snotra ICLR27 "under review" "double-blind"; do
+# （2026-10-07 起 SPIRIT / Mímir / Snotra / "under review" 允许出现，见保密边界）
+for t in ICLR "double-blind" "Anonymous authors" "ICLR27_" "SPIRIT_ICLR"; do
   printf "%-14s %s\n" "$t" "$(grep -rl "$t" _site/ 2>/dev/null | wc -l | tr -d ' ')"
 done   # 必须全部为 0
 

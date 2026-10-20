@@ -20,7 +20,7 @@
       }
     ],
     "journey_title": "Research roadmap",
-    "journey_intro": "My published work establishes task-specific foundations in sensing and representation. Current research brings time and context into view. The roadmap extends from these results toward persistent physical-world understanding; its later stages remain open research questions.",
+    "journey_intro": "Published work establishes sensing foundations; current work moves from representation to understanding and action for one observer. The roadmap then extends the loop to many observers sharing one space—open research questions, not results.",
     "journey": [
       {
         "period": "2022–2023",
@@ -63,11 +63,21 @@
         "id": "journey-current"
       },
       {
+        "period": "2026",
+        "title": "From representation to understanding and action",
+        "text": "SPIRIT reconstructs explicit 3D surfaces from sparse radar measurements. Mímir lets an LLM agent propose irrigation decisions while physics keeps authority; Snotra revises its world model only when evidence supports the change.",
+        "link": "/publications/",
+        "anchor": "Preprints & manuscript",
+        "status": "Public preprints · one manuscript",
+        "state": "current",
+        "id": "journey-manuscripts"
+      },
+      {
         "period": "Next",
         "status": "Future agenda",
         "state": "future",
-        "title": "Persistent understanding for reasoning and action",
-        "text": "Connect physical estimates across time, revise them when evidence changes, and determine when they can support a decision. These are the next research goals, building on the sensing foundations above.",
+        "title": "Shared spatial intelligence",
+        "text": "Let several observers combine what they see, believe and do: when views complement each other, how shared beliefs are revised, and who may act. AURA’s multi-view driving setting is the first test.",
         "link": "/research/#future",
         "anchor": "Research vision",
         "id": "journey-future"
@@ -75,26 +85,26 @@
     ],
     "work_title": "Selected research",
     "work_intro": "Three published sensing systems and a driving-assessment preprint. Each asks a specific question and provides a different kind of evidence.",
-    "future_title": "Understanding the physical world over time",
-    "future_intro": "I want to build a research program in spatial intelligence that connects observation, physical representation and persistent understanding. The goal is for systems to maintain an account of what is happening, what is uncertain and when the evidence is sufficient to reason or act. Three open questions define the work ahead.",
+    "future_title": "From one observer to shared spatial intelligence",
+    "future_intro": "Today’s intelligence lives on islands: a field sensor sees one leaf, a car one viewpoint, a robot one room, a language model words rather than places. One observer is a sparse aperture on the world. My next step is to let observers combine what they see, believe and do—without giving up local authority.",
     "future": [
       {
-        "title": "Understanding with incomplete evidence",
-        "question": "What physical state can we infer—and what must remain unknown?",
-        "body": "Develop representations that connect heterogeneous observations to physical quantities and make uncertainty explicit.",
-        "origin": "Starting from Hydra, Proteus & Adonis"
+        "title": "Observe together",
+        "question": "When do several partial views determine what one cannot?",
+        "body": "Share evidence across sensors and agents, and measure what becomes identifiable only when views are combined.",
+        "origin": "Challenge: alignment, timing and bandwidth across heterogeneous sensors."
       },
       {
-        "title": "Understanding that lasts",
-        "question": "How should a system revise its beliefs when observations stop or the environment changes?",
-        "body": "Study continuity, change and uncertainty over time, with evaluation that exposes missing observations and shifting conditions.",
-        "origin": "Motivated by field sensing & contextual driving assessment"
+        "title": "Believe together",
+        "question": "How should shared beliefs be revised—and when should they not be?",
+        "body": "Maintain a common model of the space with explicit uncertainty, admitting revisions only when evidence supports them.",
+        "origin": "Challenge: avoiding double-counted evidence and conflicting sources."
       },
       {
-        "title": "Understanding worth acting on",
-        "question": "When is an estimate reliable enough to support a decision?",
-        "body": "Connect model reliability to the consequence of an error, including when a system should ask for more evidence or defer to a person.",
-        "origin": "A future direction in collaboration with domain researchers"
+        "title": "Act together",
+        "question": "Who may act on shared understanding?",
+        "body": "Coordinate decisions across agents while each keeps physical authority bounded and local.",
+        "origin": "Challenge: safety, accountability and privacy when consequences are physical."
       }
     ],
     "thinking_title": "How I approach research",
@@ -128,45 +138,200 @@
     "bio": "I am a Ph.D. candidate in Computer Science and Engineering at Michigan State University, advised by Zhichao Cao.",
     "background": "I study how intelligent systems understand the physical world from incomplete observations. My published work builds on multimodal sensing and learning in real environments. Before MSU, I studied mathematics at Virginia Tech and worked on biomimetic sonar with Rolf Müller.",
     "current_title": "Current focus",
-    "current_body": "My long-term direction is spatial intelligence: turning partial physical observations into reliable, persistent understanding for reasoning and action.",
+    "current_body": "Spatial intelligence: systems that know what is where, in what state, how it is changing and what can be done about it—first for one observer, then for many observers sharing one space.",
     "contact_title": "Get in touch",
     "university": "Michigan State University",
     "roadmap_label": "Roadmap overview",
     "roadmap_overview": [
       {
         "label": "Established",
-        "focus": "Sensing & physical representation",
+        "focus": "Sensing hidden physical state",
         "target": "journey-foundations"
       },
       {
         "label": "In progress",
-        "focus": "Time & context",
-        "target": "journey-current"
+        "focus": "Understanding & action for one observer",
+        "target": "journey-manuscripts"
       },
       {
         "label": "Next",
-        "focus": "Persistent understanding & decisions",
+        "focus": "Shared spatial intelligence",
         "target": "journey-future"
       }
     ],
     "journey_label": "Toward spatial intelligence",
     "name": "Yimeng Liu",
-    "home_vision_title": "My research vision",
-    "home_vision": "I aim to build intelligent systems that turn partial physical observations into persistent, reliable understanding—and use it to reason and act under uncertainty. I see spatial intelligence as this full loop: observing the world, forming and updating representations of it, and knowing when those representations can support action.",
+    "home_vision_title": "Next: from one observer to shared spatial intelligence",
+    "home_vision": "Today’s intelligence lives on islands: a field sensor sees one leaf, a car one viewpoint, a robot one room, a language model words rather than places. One observer is a sparse aperture on the world. My next step is to let observers combine what they see, believe and do—without giving up local authority.",
     "vision_questions": [
       {
-        "question": "What can we know from incomplete evidence?",
-        "body": "How can heterogeneous observations be connected to physical state while keeping uncertainty explicit?"
+        "label": "Observe together",
+        "question": "When do several partial views determine what one cannot?",
+        "body": "Share evidence across sensors and agents, and measure what becomes identifiable only when views are combined.",
+        "challenge": "Challenge: alignment, timing and bandwidth across heterogeneous sensors."
       },
       {
-        "question": "How should understanding change over time?",
-        "body": "How can a system preserve, revise or discard what it believes as observations and conditions change?"
+        "label": "Believe together",
+        "question": "How should shared beliefs be revised—and when should they not be?",
+        "body": "Maintain a common model of the space with explicit uncertainty, admitting revisions only when evidence supports them.",
+        "challenge": "Challenge: avoiding double-counted evidence and conflicting sources."
       },
       {
-        "question": "When is understanding reliable enough to act?",
-        "body": "How should uncertainty, consequences and missing evidence determine whether a system acts, gathers more information or defers?"
+        "label": "Act together",
+        "question": "Who may act on shared understanding?",
+        "body": "Coordinate decisions across agents while each keeps physical authority bounded and local.",
+        "challenge": "Challenge: safety, accountability and privacy when consequences are physical."
       }
-    ]
+    ],
+    "count_line": "8 first-author papers · 3 published · 1 under review · 4 preprints",
+    "evo_label": "How intelligence enters a physical space",
+    "evo_title": "From a single sensor to a space that understands itself",
+    "evo_intro": "Take one room: a plant, a table, a window. Machines have entered it in five steps. Select a step to see what each one added, and what it still could not do.",
+    "evo_figure": "A room seen by machines at five stages: sensors, models, language models, embodied agents, and spatial intelligence.",
+    "evo_stages": [
+      {
+        "name": "Sensors",
+        "title": "Machines start to measure the world.",
+        "limit": "Signals everywhere, but no understanding."
+      },
+      {
+        "name": "Perception models",
+        "title": "Learning turns signals into labels.",
+        "limit": "Recognition for one task, from one view, in one place."
+      },
+      {
+        "name": "Language models",
+        "title": "AI learns to reason and explain.",
+        "limit": "Knowledge without a body: it has never been in this room."
+      },
+      {
+        "name": "Embodied intelligence",
+        "title": "Sensors, a model and a body close one loop.",
+        "limit": "One agent senses, decides and acts—alone.",
+        "formula": "sensors + model + robot = embodied intelligence"
+      },
+      {
+        "name": "Spatial intelligence",
+        "title": "The space and its agents share one model.",
+        "limit": "The room as a whole can sense, understand and act.",
+        "formula": "environment + many agents + shared model = spatial intelligence"
+      }
+    ],
+    "evo_prev": "Previous step",
+    "evo_next": "Next step",
+    "evo_stage_label": "Stage",
+    "thesis_label": "Thesis",
+    "thesis_title": "Spatial intelligence shapes our future.",
+    "thesis_body": "Intelligence is moving from text into rooms, fields and roads. To be useful there, a system must know what is where, in what state, how it changes and what can be done—and, increasingly, know it together with other systems that share the same space.",
+    "thesis_quote": "“The truth would be literally nothing but the shadows of the images.”",
+    "thesis_cite": "Plato, Republic VII · the allegory of the cave",
+    "lenses": [
+      {
+        "label": "Science",
+        "title": "An inverse problem",
+        "text": "Every sensor sees a projection of the world: O = h(W) + ε. Understanding means asking which world explains all the projections—and what stays unobservable even when they are combined."
+      },
+      {
+        "label": "Philosophy",
+        "title": "From shadows to community",
+        "text": "Plato: we see projections. Gibson: we perceive in order to act. Aristotle and Xunzi: we became intelligent by living and knowing together."
+      },
+      {
+        "label": "Engineering",
+        "title": "One loop, many scales",
+        "text": "Sense → understand → act, built across sensors, models, bodies and networks, and evaluated where its assumptions break."
+      }
+    ],
+    "map_label": "Research",
+    "map_title": "Sense, understand, act: closing the loop for one observer",
+    "map_intro": "Each stage of the loop has its own failure mode. My first-author papers address one stage each; one lead paper per stage is highlighted.",
+    "map": [
+      {
+        "stage": "Sense",
+        "challenge": "The state that matters is often hidden.",
+        "detail": "Cameras miss water and material; any single sensor fails somewhere.",
+        "lead": {
+          "name": "Hydra",
+          "status": "ACM MobiCom 2024",
+          "idea": "Fuse mmWave SAR depth slices with camera images to sense wetness on real leaves, day and night.",
+          "result": "≈96% accuracy indoors and ≈90% in the field, including rain, dawn and poorly lit nights.",
+          "link": "/project/hydra/"
+        },
+        "related": [
+          {
+            "name": "Adonis",
+            "note": "INFOCOM 2025 · calibrated, fine-grained wetness",
+            "link": "/project/adonis/"
+          },
+          {
+            "name": "Proteus",
+            "note": "SenSys 2025 · learn with vision, deploy with radar",
+            "link": "/project/proteus/"
+          }
+        ]
+      },
+      {
+        "stage": "Understand",
+        "challenge": "Sparse evidence admits many worlds.",
+        "detail": "Fast sensing means few measurements, and few measurements fit many shapes and meanings.",
+        "lead": {
+          "name": "SPIRIT",
+          "status": "arXiv 2026",
+          "idea": "Treat sparse-aperture radar as inverse rendering: reconstruct an explicit 3D surface through a physical model of visibility, phase and propagation.",
+          "result": "Over 90% less data collection while keeping low geometric and signal error.",
+          "link": "/publications/"
+        },
+        "related": [
+          {
+            "name": "AURA",
+            "note": "arXiv 2026 · driving understood in context, over time",
+            "link": "/project/senior-driving/"
+          }
+        ]
+      },
+      {
+        "stage": "Act",
+        "challenge": "In the physical world there is no reset.",
+        "detail": "Actions change future states, errors compound, and models go stale.",
+        "lead": {
+          "name": "Mímir",
+          "status": "arXiv 2026",
+          "idea": "A physics-grounded LLM agent: language proposes, a simulator checks and repairs, and physical authority stays with fixed numerical mechanisms.",
+          "result": "About 51% less irrigation than the historical schedule; no monotonic gain from larger language models.",
+          "link": "/publications/"
+        },
+        "related": [
+          {
+            "name": "Snotra",
+            "note": "Under review · revise a world model only when evidence supports it (10/10 supported accepted, 25/25 unsupported rejected)",
+            "link": ""
+          }
+        ]
+      }
+    ],
+    "islands": [
+      {
+        "name": "Field sensor",
+        "limit": "one leaf, one number"
+      },
+      {
+        "name": "Driver assistance",
+        "limit": "one car, one viewpoint"
+      },
+      {
+        "name": "Home robot",
+        "limit": "one room, one task"
+      },
+      {
+        "name": "Language model",
+        "limit": "knows words, not places"
+      }
+    ],
+    "islands_label": "Today: islands of sensing and intelligence",
+    "bridge_title": "The bridge: AURA, ongoing",
+    "bridge_body": "AURA reads one driving situation through several streams—driver behavior, vehicle state, road and weather context—over trips and years. Its next test is an occluded intersection: a roadside unit sees a pedestrian that one car cannot, another vehicle adds a view, and the car keeps the final decision.",
+    "sharing_title": "When is sharing better?",
+    "sharing_body": "Not always. Sharing helps when observers complement each other, adds little when they are redundant, and can hurt when the same evidence is counted twice. Measuring which regime a space is in is part of the science."
   },
   "zh": {
     "headline": "智能系统如何从不完整的观测中，理解物理世界？",
@@ -189,7 +354,7 @@
       }
     ],
     "journey_title": "研究路线",
-    "journey_intro": "已发表的研究建立了感知与表征方面的具体基础；当前研究开始引入时间与情境。这条路线从已有成果出发，走向持续的物理世界理解。后面的阶段仍是需要研究和验证的问题。",
+    "journey_intro": "已发表的工作建立了感知基础；当前工作为单个观察者从表征走向理解与行动。路线随后把回路扩展到共享同一空间的多个观察者——这些是待研究的问题，而非已有结果。",
     "journey": [
       {
         "period": "2022–2023",
@@ -232,11 +397,21 @@
         "id": "journey-current"
       },
       {
+        "period": "2026",
+        "title": "从表征走向理解与行动",
+        "text": "SPIRIT 从稀疏雷达测量中重建显式三维表面。Mímir 让 LLM 智能体提出灌溉决策，而物理机制保留执行权；Snotra 只在证据支持时修正世界模型。",
+        "link": "/publications/",
+        "anchor": "预印本与在审稿件",
+        "status": "公开预印本 · 一篇在审",
+        "state": "current",
+        "id": "journey-manuscripts"
+      },
+      {
         "period": "下一步",
         "status": "未来方向",
         "state": "future",
-        "title": "持续理解，支持推理与行动",
-        "text": "把物理估计连接到时间中，在证据变化时修正理解，并判断何时足以支持决策。这些是建立在已有感知基础上的下一阶段研究目标。",
+        "title": "共享的空间智能",
+        "text": "让多个观察者合并它们所看到、所相信和所做的：视角何时互补、共享信念如何修正、谁可以行动。AURA 的多视角驾驶场景是第一个测试。",
         "link": "/research/#future",
         "anchor": "研究愿景",
         "id": "journey-future"
@@ -244,26 +419,26 @@
     ],
     "work_title": "代表研究",
     "work_intro": "三项已发表的感知系统研究，以及一篇驾驶评估预印本。每项工作都有具体问题与对应的证据。",
-    "future_title": "持续理解物理世界",
-    "future_intro": "我希望建立一个以空间智能为方向的研究计划，将观测、物理表征与持续理解连接起来。目标是让系统持续知道：世界正在发生什么，哪些仍不确定，以及证据何时足以支持推理或行动。以下三个开放问题，构成接下来要推进的研究。",
+    "future_title": "从一个观察者到共享的空间智能",
+    "future_intro": "今天的智能生活在一座座孤岛上：田间传感器只看一片叶子，汽车只有一个视角，机器人只在一个房间，语言模型懂词语而不懂地点。一个观察者只是世界的一个稀疏孔径。我的下一步，是让观察者合并它们所看到、所相信和所做的——同时不放弃本地的执行权。",
     "future": [
       {
-        "title": "不完整证据下的理解",
-        "question": "哪些物理状态可以推断，哪些必须保留为未知？",
-        "body": "研究把异构观测连接到物理量的表征，让不确定性成为显式信息。",
-        "origin": "从 Hydra、Proteus 与 Adonis 出发"
+        "title": "共同观察",
+        "question": "多个局部视角何时能确定单一视角无法确定的东西？",
+        "body": "在传感器与智能体之间共享证据，并度量哪些状态只有在视角合并后才变得可辨识。",
+        "origin": "挑战：异构传感器之间的对齐、时序与带宽。"
       },
       {
-        "title": "随时间持续的理解",
-        "question": "当观测中断或环境改变，系统应该怎样修正判断？",
-        "body": "研究跨时间的连续性、变化与不确定性，并用缺失观测和变化条件检验方法。",
-        "origin": "来自田间感知与情境化驾驶评估的问题"
+        "title": "共同相信",
+        "question": "共享的信念应当如何修正——何时不应修正？",
+        "body": "维护一个带显式不确定性的空间共同模型，只在证据支持时接受修正。",
+        "origin": "挑战：避免重复计算同一证据，处理相互冲突的来源。"
       },
       {
-        "title": "可以支持决策的理解",
-        "question": "一个估计在什么条件下，才足以支持决策？",
-        "body": "将模型可靠性与错误的后果联系起来，研究何时需要更多证据，何时应交由人来判断。",
-        "origin": "与领域研究者共同探索的未来方向"
+        "title": "共同行动",
+        "question": "谁可以依据共享的理解采取行动？",
+        "body": "协调多个智能体的决策，同时让每个智能体的物理执行权保持有界且本地。",
+        "origin": "挑战：后果是物理的，安全、责任与隐私都必须被考虑。"
       }
     ],
     "thinking_title": "我怎样开展研究",
@@ -297,44 +472,199 @@
     "bio": "我是密歇根州立大学计算机科学与工程博士候选人，导师为曹志超老师。",
     "background": "我研究智能系统如何从不完整的观测中理解物理世界。已发表的工作以真实环境中的多模态感知与学习为基础。加入密歇根州立大学前，我在弗吉尼亚理工大学学习数学，并与 Rolf Müller 合作研究仿生声呐。",
     "current_title": "目前关注",
-    "current_body": "我的长期方向是空间智能：从不完整的物理观测出发，建立可靠、持续并可用于推理与行动的理解。",
+    "current_body": "空间智能：让系统知道什么在哪里、处于什么状态、正在如何变化、可以做什么——先是一个观察者，再到共享同一空间的多个观察者。",
     "contact_title": "交流与联系",
     "university": "密歇根州立大学",
     "roadmap_label": "研究路线概览",
     "roadmap_overview": [
       {
-        "label": "已有成果",
-        "focus": "感知与物理表征",
+        "label": "已建立",
+        "focus": "感知隐藏的物理状态",
         "target": "journey-foundations"
       },
       {
-        "label": "正在推进",
-        "focus": "时间与情境",
-        "target": "journey-current"
+        "label": "进行中",
+        "focus": "单个观察者的理解与行动",
+        "target": "journey-manuscripts"
       },
       {
         "label": "下一步",
-        "focus": "持续理解与决策",
+        "focus": "共享的空间智能",
         "target": "journey-future"
       }
     ],
     "journey_label": "走向空间智能",
     "name": "刘益萌",
-    "home_vision_title": "我的研究愿景",
-    "home_vision": "我希望构建这样的智能系统：从不完整的物理观测中形成持续、可靠的世界理解，并在不确定性下据此推理和行动。我将空间智能看作一个完整过程：观测世界，建立并更新表征，以及判断这些表征何时足以支持行动。",
+    "home_vision_title": "下一步：从一个观察者到共享的空间智能",
+    "home_vision": "今天的智能生活在一座座孤岛上：田间传感器只看一片叶子，汽车只有一个视角，机器人只在一个房间，语言模型懂词语而不懂地点。一个观察者只是世界的一个稀疏孔径。我的下一步，是让观察者合并它们所看到、所相信和所做的——同时不放弃本地的执行权。",
     "vision_questions": [
       {
-        "question": "不完整证据下，我们能知道什么？",
-        "body": "如何将异构观测连接到物理状态，同时明确保留不确定性？"
+        "label": "共同观察",
+        "question": "多个局部视角何时能确定单一视角无法确定的东西？",
+        "body": "在传感器与智能体之间共享证据，并度量哪些状态只有在视角合并后才变得可辨识。",
+        "challenge": "挑战：异构传感器之间的对齐、时序与带宽。"
       },
       {
-        "question": "理解应如何随时间更新？",
-        "body": "当观测与环境条件变化时，系统应如何保留、修正或放弃已有判断？"
+        "label": "共同相信",
+        "question": "共享的信念应当如何修正——何时不应修正？",
+        "body": "维护一个带显式不确定性的空间共同模型，只在证据支持时接受修正。",
+        "challenge": "挑战：避免重复计算同一证据，处理相互冲突的来源。"
       },
       {
-        "question": "理解何时足以支持行动？",
-        "body": "如何根据不确定性、行动后果与缺失证据，决定行动、补充观测或暂缓判断？"
+        "label": "共同行动",
+        "question": "谁可以依据共享的理解采取行动？",
+        "body": "协调多个智能体的决策，同时让每个智能体的物理执行权保持有界且本地。",
+        "challenge": "挑战：后果是物理的，安全、责任与隐私都必须被考虑。"
       }
-    ]
+    ],
+    "count_line": "8 篇第一作者论文 · 3 篇已发表 · 1 篇在审 · 4 篇预印本",
+    "evo_label": "智能如何进入物理空间",
+    "evo_title": "从一个传感器，到一个能理解自身的空间",
+    "evo_intro": "以一个房间为例：一盆植物、一张桌子、一扇窗。机器分五步进入这个空间。选择每一步，看它带来了什么，又还做不到什么。",
+    "evo_figure": "机器眼中的房间，分为五个阶段：传感器、感知模型、语言模型、具身智能、空间智能。",
+    "evo_stages": [
+      {
+        "name": "传感器",
+        "title": "机器开始测量世界。",
+        "limit": "信号无处不在，但没有理解。"
+      },
+      {
+        "name": "感知模型",
+        "title": "学习把信号变成标签。",
+        "limit": "一种任务、一个视角、一个地点的识别。"
+      },
+      {
+        "name": "语言模型",
+        "title": "AI 学会推理与解释。",
+        "limit": "有知识而无身体：它从未进入过这个房间。"
+      },
+      {
+        "name": "具身智能",
+        "title": "传感器、模型与身体闭合一个回路。",
+        "limit": "一个智能体独自感知、决策、行动。",
+        "formula": "传感器 + 模型 + 机器人 = 具身智能"
+      },
+      {
+        "name": "空间智能",
+        "title": "空间与其中的智能体共享一个模型。",
+        "limit": "整个房间都能感知、理解与行动。",
+        "formula": "环境 + 多个智能体 + 共享模型 = 空间智能"
+      }
+    ],
+    "evo_prev": "上一步",
+    "evo_next": "下一步",
+    "evo_stage_label": "阶段",
+    "thesis_label": "核心观点",
+    "thesis_title": "空间智能塑造我们的未来。",
+    "thesis_body": "智能正在从文本走进房间、农田与道路。要在那里发挥作用，系统必须知道什么在哪里、处于什么状态、如何变化、可以做什么——并且越来越需要与共享同一空间的其他系统一起知道。",
+    "thesis_quote": "“他们会认为，真实不过是影像的投影。”",
+    "thesis_cite": "柏拉图《理想国》第七卷 · 洞穴之喻",
+    "lenses": [
+      {
+        "label": "科学",
+        "title": "一个逆问题",
+        "text": "每个传感器看到的都是世界的投影：O = h(W) + ε。理解，就是追问哪一个世界能解释所有投影——以及哪些即使合在一起也仍不可观测。"
+      },
+      {
+        "label": "哲学",
+        "title": "从影子到群体",
+        "text": "柏拉图：我们看到的是投影。吉布森：感知是为了行动。亚里士多德与荀子：人因群居与共知而成为智慧的物种——“人能群，彼不能群也”。"
+      },
+      {
+        "label": "工程",
+        "title": "一个回路，多种尺度",
+        "text": "感知 → 理解 → 行动，跨越传感器、模型、身体与网络构建，并在假设失效之处接受检验。"
+      }
+    ],
+    "map_label": "研究",
+    "map_title": "感知、理解、行动：为一个观察者闭合回路",
+    "map_intro": "回路的每个阶段都有自己的失败方式。我的第一作者论文各自回答其中一个阶段；每个阶段突出一篇代表作。",
+    "map": [
+      {
+        "stage": "感知",
+        "challenge": "关键状态往往是隐藏的。",
+        "detail": "相机看不到水分与材质；任何单一传感器都会在某处失效。",
+        "lead": {
+          "name": "Hydra",
+          "status": "ACM MobiCom 2024",
+          "idea": "融合毫米波 SAR 深度切片与相机图像，昼夜感知真实叶片上的水分。",
+          "result": "室内准确率约 96%，田间约 90%，包括雨天、黎明与弱光夜晚。",
+          "link": "/project/hydra/"
+        },
+        "related": [
+          {
+            "name": "Adonis",
+            "note": "INFOCOM 2025 · 带校准的细粒度湿度估计",
+            "link": "/project/adonis/"
+          },
+          {
+            "name": "Proteus",
+            "note": "SenSys 2025 · 用视觉训练，用雷达部署",
+            "link": "/project/proteus/"
+          }
+        ]
+      },
+      {
+        "stage": "理解",
+        "challenge": "稀疏证据可以对应许多个世界。",
+        "detail": "快速感知意味着测量更少，而更少的测量能拟合许多种形状与含义。",
+        "lead": {
+          "name": "SPIRIT",
+          "status": "arXiv 2026",
+          "idea": "把稀疏孔径雷达成像视为逆渲染：通过可见性、相位与传播的物理模型重建显式三维表面。",
+          "result": "数据采集减少 90% 以上，同时保持较低的几何与信号误差。",
+          "link": "/publications/"
+        },
+        "related": [
+          {
+            "name": "AURA",
+            "note": "arXiv 2026 · 在情境与时间中理解驾驶",
+            "link": "/project/senior-driving/"
+          }
+        ]
+      },
+      {
+        "stage": "行动",
+        "challenge": "物理世界没有重置键。",
+        "detail": "行动改变未来状态，误差会累积，模型会过时。",
+        "lead": {
+          "name": "Mímir",
+          "status": "arXiv 2026",
+          "idea": "物理落地的 LLM 智能体：语言提出方案，模拟器检验与修复，物理执行权留给固定的数值机制。",
+          "result": "灌溉用水比历史方案减少约 51%；更大的语言模型并不带来单调提升。",
+          "link": "/publications/"
+        },
+        "related": [
+          {
+            "name": "Snotra",
+            "note": "在审 · 只有证据支持时才修正世界模型（10/10 有依据修正被接受，25/25 无依据修正被拒绝）",
+            "link": ""
+          }
+        ]
+      }
+    ],
+    "islands": [
+      {
+        "name": "田间传感器",
+        "limit": "一片叶子，一个数值"
+      },
+      {
+        "name": "驾驶辅助",
+        "limit": "一辆车，一个视角"
+      },
+      {
+        "name": "家庭机器人",
+        "limit": "一个房间，一项任务"
+      },
+      {
+        "name": "语言模型",
+        "limit": "懂词语，不懂地点"
+      }
+    ],
+    "islands_label": "今天：感知与智能的孤岛",
+    "bridge_title": "桥梁：进行中的 AURA",
+    "bridge_body": "AURA 通过多路数据理解同一个驾驶情境——驾驶员行为、车辆状态、道路与天气——跨越行程与年份。它的下一个测试是一个被遮挡的路口：路侧单元看到了一辆车看不到的行人，另一辆车补充一个视角，而最终决策仍由这辆车做出。",
+    "sharing_title": "共享何时更好？",
+    "sharing_body": "并非总是如此。观察者互补时共享有益，冗余时收益很小，同一证据被重复计算时甚至有害。度量一个空间处于哪种状态，本身就是科学问题的一部分。"
   }
 }

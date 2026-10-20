@@ -3,8 +3,11 @@ layout: default
 ---
 {% assign lang = page.lang | default: 'en' %}{% assign copy = site.data.identity[lang] %}{% assign ui = site.data.locale[lang] %}{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
 {% include hero.html %}
+{% include evolution.html %}
+{% include thesis.html %}
+{% include map.html %}
+{% include home_vision.html %}
 {% include record.html %}
 {% include community.html %}
 {% include ideas.html %}
-{% include home_vision.html %}
 {% include contact.html %}

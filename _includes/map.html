@@ -1,0 +1,9 @@
+<section class="section map" id="research"><div class="container">
+  <header class="section__head"><p class="meta">{{ copy.map_label }} · {{ copy.count_line }}</p><h2>{{ copy.map_title }}</h2><p class="lede">{{ copy.map_intro }}</p></header>
+  <ol class="map__stages">{% for stage in copy.map %}<li class="map__stage">
+    <p class="map__label"><span>{{ forloop.index }}</span>{{ stage.stage }}</p>
+    <h3>{{ stage.challenge }}</h3><p class="map__detail">{{ stage.detail }}</p>
+    <article class="map__lead"><p class="meta">{{ stage.lead.status }}</p><h4>{% if stage.lead.link != '' %}<a href="{% if lang == 'zh' %}/zh{% endif %}{{ stage.lead.link }}">{{ stage.lead.name }}</a>{% else %}{{ stage.lead.name }}{% endif %}</h4><p>{{ stage.lead.idea }}</p><p class="map__result">{{ stage.lead.result }}</p></article>
+    <ul class="map__related">{% for item in stage.related %}<li><strong>{% if item.link != '' %}<a href="{% if lang == 'zh' %}/zh{% endif %}{{ item.link }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</strong> <span>{{ item.note }}</span></li>{% endfor %}</ul>
+  </li>{% endfor %}</ol>
+</div></section>

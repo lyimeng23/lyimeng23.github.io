@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>{% if page.layout == "homepage" %}{{ site.title }} · {% if lang == "zh" %}物理世界理解{% else %}Physical-world understanding{% endif %}{% elsif page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} · {{ site.position }}, {{ site.affiliation }}{% endif %}</title>
+<title>{% if page.layout == "homepage" %}{{ site.title }} · {% if lang == "zh" %}空间智能{% else %}Spatial intelligence{% endif %}{% elsif page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} · {{ site.position }}, {{ site.affiliation }}{% endif %}</title>
 <meta name="description" content="{{ page_desc }}" />
 {% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: ', ' }}" />
 {% elsif site.keywords %}<meta name="keywords" content="{{ site.keywords | join: ', ' }}" />{% endif %}
@@ -19,7 +19,7 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="{{ site.title }}" />
-<meta property="og:title" content="{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} · Physical-world understanding{% endif %}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} · Spatial intelligence{% endif %}" />
 <meta property="og:description" content="{{ page_desc }}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url | remove: 'index.html' }}" />
 <meta property="og:image" content="{{ site.url }}{{ site.og_image }}" />
@@ -28,10 +28,10 @@
 <meta property="og:image:alt" content="Yimeng Liu — Research on reliable understanding from incomplete physical observations" />
 <meta property="og:locale" content="{% if lang == 'zh' %}zh_CN{% else %}en_US{% endif %}" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} · Physical-world understanding{% endif %}" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} · Spatial intelligence{% endif %}" />
 <meta name="twitter:description" content="{{ page_desc }}" />
 <meta name="twitter:image" content="{{ site.url }}{{ site.og_image }}" />
-<meta name="twitter:image:alt" content="Yimeng Liu — Physical-world understanding" />
+<meta name="twitter:image:alt" content="Yimeng Liu — Spatial intelligence" />
 
 <link rel="icon" href="{{ '/assets/img/icon.svg?v=20261005-yl' | relative_url }}" type="image/svg+xml" />
 <link rel="icon" href="{{ '/assets/img/favicon-32.png?v=20261005-yl' | relative_url }}" sizes="32x32" type="image/png" />
@@ -67,4 +67,4 @@
 }
 </script>
 
-<link rel="stylesheet" href="{{ '/assets/css/main.css?v=20261005-visitors1' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/main.css?v=20261007-spatial' | relative_url }}" />

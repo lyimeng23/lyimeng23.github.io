@@ -3,8 +3,9 @@
     <a class="nav__brand" href="{{ home | relative_url }}">{{ copy.name }}</a>
     <nav class="nav__menu" id="nav-menu" aria-label="{{ ui.primary }}">
       <a href="{{ home }}#about">{{ ui.about }}</a>
+      <a href="{{ home }}#research">{{ ui.research }}</a>
+      <a href="{{ home }}#why">{% if lang == 'zh' %}愿景{% else %}Vision{% endif %}</a>
       <a href="{{ home }}publications/">{{ ui.record }}</a>
-      <a href="{{ home }}#why">{{ ui.research }}</a>
       <a href="{{ home }}#community">{{ ui.service }}</a>
     </nav>
     <div class="nav__tools">

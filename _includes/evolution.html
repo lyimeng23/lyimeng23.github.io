@@ -1,0 +1,53 @@
+<section class="section evo" id="evolution" data-evo><div class="container evo__grid">
+  <header class="evo__head"><p class="meta">{{ copy.evo_label }}</p><h2>{{ copy.evo_title }}</h2><p class="lede">{{ copy.evo_intro }}</p></header>
+  <figure class="evo__figure">
+    <svg class="evo__svg" viewBox="0 0 640 430" role="img" aria-labelledby="evo-svg-title">
+      <title id="evo-svg-title">{{ copy.evo_figure }}</title>
+      <g class="evo__room">
+        <polygon class="evo__wall" points="20,14 140,40 140,240 20,410" />
+        <polygon class="evo__wall" points="500,40 620,14 620,410 500,240" />
+        <polygon class="evo__floor" points="140,240 500,240 620,410 20,410" />
+        <rect class="evo__wall" x="140" y="40" width="360" height="200" />
+        <rect class="evo__pane" x="200" y="72" width="104" height="66" /><line class="evo__line" x1="252" y1="72" x2="252" y2="138" />
+        <rect class="evo__pane" x="420" y="128" width="52" height="112" />
+        <rect class="evo__object" x="262" y="300" width="156" height="10" /><line class="evo__leg" x1="274" y1="310" x2="274" y2="356" /><line class="evo__leg" x1="406" y1="310" x2="406" y2="356" />
+        <rect class="evo__object" x="72" y="346" width="40" height="36" />
+        <ellipse class="evo__leaf" cx="80" cy="322" rx="17" ry="28" /><ellipse class="evo__leaf evo__leaf--dark" cx="104" cy="318" rx="16" ry="31" /><ellipse class="evo__leaf" cx="92" cy="302" rx="11" ry="24" />
+      </g>
+      <g class="evo__layer evo__layer--1">
+        <circle class="evo__signal" cx="58" cy="78" r="24" /><rect class="evo__glyph" x="46" y="70" width="24" height="16" rx="2" /><circle class="evo__glyph-hole" cx="58" cy="78" r="5" />
+        <circle class="evo__signal" cx="320" cy="58" r="24" /><path class="evo__glyph-line" d="M310 66 a14 14 0 0 1 20 -20 M314 62 a8 8 0 0 1 12 -12" /><circle class="evo__glyph-dot" cx="320" cy="60" r="3" />
+        <circle class="evo__signal" cx="152" cy="352" r="22" /><line class="evo__glyph-line" x1="152" y1="340" x2="152" y2="356" /><circle class="evo__glyph-dot" cx="152" cy="360" r="4" />
+      </g>
+      <g class="evo__layer evo__layer--2">
+        <rect class="evo__tag" x="22" y="262" width="104" height="22" /><text class="evo__tag-text" x="30" y="277">{% if lang == 'zh' %}植物 · 湿？{% else %}plant · wet?{% endif %}</text>
+        <rect class="evo__tag" x="300" y="272" width="62" height="22" /><text class="evo__tag-text" x="308" y="287">{% if lang == 'zh' %}桌子{% else %}table{% endif %}</text>
+        <rect class="evo__tag" x="330" y="100" width="72" height="22" /><text class="evo__tag-text" x="338" y="115">{% if lang == 'zh' %}窗户{% else %}window{% endif %}</text>
+      </g>
+      <g class="evo__layer evo__layer--3">
+        <path class="evo__bubble" d="M372 52 h220 a10 10 0 0 1 10 10 v40 a10 10 0 0 1 -10 10 h-150 l-22 18 l2 -18 h-50 a10 10 0 0 1 -10 -10 v-40 a10 10 0 0 1 10 -10 z" />
+        <text class="evo__bubble-text" x="482" y="88" text-anchor="middle">{% if lang == 'zh' %}“这盆植物可能需要浇水。”{% else %}“The plant may need water.”{% endif %}</text>
+      </g>
+      <g class="evo__layer evo__layer--4">
+        <path class="evo__loop" d="M184 318 a46 46 0 1 1 0 64" /><path class="evo__loop-head" d="M178 384 l12 0 l-6 -10 z" />
+        <rect class="evo__agent" x="206" y="330" width="40" height="34" rx="6" /><rect class="evo__agent" x="214" y="312" width="24" height="18" rx="4" />
+        <circle class="evo__eye" cx="221" cy="321" r="2.5" /><circle class="evo__eye" cx="231" cy="321" r="2.5" /><line class="evo__leg" x1="216" y1="364" x2="216" y2="378" /><line class="evo__leg" x1="236" y1="364" x2="236" y2="378" />
+      </g>
+      <g class="evo__layer evo__layer--5">
+        <polygon class="evo__map" points="140,240 500,240 620,410 20,410" />
+        <path class="evo__grid-line" d="M230 240 L170 410 M320 240 L320 410 M410 240 L470 410 M80 325 L560 325" />
+        <line class="evo__link" x1="58" y1="78" x2="320" y2="196" /><line class="evo__link" x1="320" y1="58" x2="320" y2="196" /><line class="evo__link" x1="152" y1="352" x2="320" y2="196" />
+        <line class="evo__link" x1="226" y1="340" x2="320" y2="196" /><line class="evo__link" x1="452" y1="104" x2="320" y2="196" /><line class="evo__link" x1="552" y1="330" x2="320" y2="196" />
+        <line class="evo__arm" x1="436" y1="90" x2="468" y2="118" /><line class="evo__arm" x1="436" y1="118" x2="468" y2="90" /><circle class="evo__rotor" cx="436" cy="90" r="7" /><circle class="evo__rotor" cx="468" cy="90" r="7" /><circle class="evo__rotor" cx="436" cy="118" r="7" /><circle class="evo__rotor" cx="468" cy="118" r="7" /><rect class="evo__agent" x="444" y="97" width="16" height="14" rx="3" />
+        <circle class="evo__agent" cx="552" cy="312" r="10" /><path class="evo__agent" d="M538 352 v-18 a14 14 0 0 1 28 0 v18 z" />
+        <circle class="evo__hub" cx="320" cy="196" r="34" />
+        <text class="evo__hub-text" x="320" y="192" text-anchor="middle">{% if lang == 'zh' %}共享{% else %}shared{% endif %}</text><text class="evo__hub-text" x="320" y="208" text-anchor="middle">{% if lang == 'zh' %}模型{% else %}model{% endif %}</text>
+      </g>
+    </svg>
+    <div class="evo__controls" hidden><button type="button" data-evo-step="-1">← {{ copy.evo_prev }}</button><span class="meta" data-evo-count aria-live="polite"></span><button type="button" data-evo-step="1">{{ copy.evo_next }} →</button></div>
+  </figure>
+  <ol class="evo__steps">{% for stage in copy.evo_stages %}<li class="evo__step" data-stage="{{ forloop.index }}">
+    <h3><button type="button" data-evo-stage="{{ forloop.index }}" aria-pressed="false"><span class="evo__num">{{ forloop.index }}</span>{{ stage.name }}</button></h3>
+    <p class="evo__title">{{ stage.title }}</p><p class="evo__limit">{{ stage.limit }}</p>{% if stage.formula %}<p class="evo__formula">{{ stage.formula }}</p>{% endif %}
+  </li>{% endfor %}</ol>
+</div></section>

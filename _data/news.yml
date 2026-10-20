@@ -1,6 +1,18 @@
 {
   "main": [
     {
+      "date": "Oct 2026",
+      "iso_date": "2026-10",
+      "html": "The <a href=\"https://arxiv.org/abs/2610.23914\">SPIRIT</a> preprint is on arXiv: sparse-aperture SAR as physics-informed inverse rendering.",
+      "html_zh": "<a href=\"https://arxiv.org/abs/2610.23914\">SPIRIT</a> 预印本上线 arXiv：把稀疏孔径 SAR 视为物理约束的逆渲染问题。"
+    },
+    {
+      "date": "Oct 2026",
+      "iso_date": "2026-10",
+      "html": "The <a href=\"https://arxiv.org/abs/2610.02038\">Mimir</a> preprint is on arXiv: a physics-grounded LLM agent for long-horizon irrigation control.",
+      "html_zh": "<a href=\"https://arxiv.org/abs/2610.02038\">Mimir</a> 预印本上线 arXiv：面向长周期灌溉控制的物理约束 LLM 智能体。"
+    },
+    {
       "date": "Mar 2026",
       "iso_date": "2026-03",
       "html": "Our <a href=\"https://arxiv.org/abs/2603.00691\">driving assessment preprint</a> discusses continuous, contextualized and explainable assessment for older adults.",

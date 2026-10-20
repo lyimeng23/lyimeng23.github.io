@@ -20,9 +20,9 @@ locale: en_US
 
 # Short human + SEO-friendly one-liners. Keep keywords focused (no stuffing).
 description: >
-  Yimeng Liu, Ph.D. candidate at Michigan State University. Research on reliable
-  physical-world understanding from incomplete observations, with published work
-  in multimodal sensing and physical-state estimation.
+  Yimeng Liu, Ph.D. candidate at Michigan State University. Research on spatial
+  intelligence: sensing hidden physical state, understanding space from sparse
+  evidence, and acting safely, from one observer toward shared intelligence.
 # Cut from twelve broad terms to five that the published record actually supports.
 # Removed: Physical AI, Embodied AI, world modeling, intelligent systems, IoT — none of which
 # is evidenced by a paper, and each of which dilutes the terms that are.
@@ -32,6 +32,7 @@ keywords:
   - multimodal sensing
   - mmWave sensing
   - physical-state estimation
+  - spatial intelligence
 
 # OpenGraph / card image (absolute path).
 avatar: /assets/img/avatar3_lyimeng.webp

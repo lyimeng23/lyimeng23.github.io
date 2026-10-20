@@ -221,3 +221,115 @@ html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
 .visitor-map__image img { width: 100%; height: auto; }
 .visitor-map__links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 14px; }
 .visitor-map__links a { min-height: 44px; padding-block: 10px; }
+
+// Evolution figure. Signal (amber) marks raw observations only; accent marks shared understanding.
+// Without JS every layer except the transient language-model bubble is visible, so the figure
+// reads as the final stage and every step's text stays on the page.
+.evo__grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px clamp(40px, 5vw, 80px); align-items: start; }
+.evo__head { grid-column: 1 / -1; }
+.evo__head h2 { max-width: 20ch; }
+.evo__figure { position: sticky; top: 96px; }
+.evo__svg { display: block; width: 100%; height: auto; font-family: var(--mono); }
+.evo__wall { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.evo__floor { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.evo__pane { fill: var(--paper); stroke: var(--line); stroke-width: 1.5; }
+.evo__line,.evo__leg { stroke: var(--muted); stroke-width: 3; }
+.evo__line { stroke: var(--line); stroke-width: 1.5; }
+.evo__object { fill: var(--muted); }
+.evo__leaf { fill: var(--accent); opacity: .7; }
+.evo__leaf--dark { opacity: 1; }
+.evo__signal { fill: none; stroke: var(--signal); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.evo__glyph { fill: none; stroke: var(--ink); stroke-width: 2; }
+.evo__glyph-hole,.evo__glyph-dot { fill: var(--ink); }
+.evo__glyph-line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+.evo__tag { fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+.evo__tag-text { font-size: 11px; fill: var(--ink); }
+.evo__bubble { fill: var(--paper); stroke: var(--accent); stroke-width: 1.5; }
+.evo__bubble-text { font: italic 14px var(--text); fill: var(--ink); }
+.evo__agent { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+.evo__eye { fill: var(--ink); }
+.evo__arm { stroke: var(--ink); stroke-width: 2; }
+.evo__rotor { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
+.evo__loop { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.evo__loop-head { fill: var(--accent); }
+.evo__map { fill: var(--accent); opacity: .1; }
+.evo__grid-line { stroke: var(--accent); stroke-opacity: .3; stroke-width: 1; fill: none; }
+.evo__link { stroke: var(--accent); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.evo__hub { fill: var(--accent); }
+.evo__hub-text { font-size: 11px; fill: var(--paper); }
+.evo__layer--3 { opacity: 0; }
+.evo[data-stage] .evo__layer { opacity: 0; }
+.evo[data-stage="1"] .evo__layer--1,
+.evo[data-stage="2"] :is(.evo__layer--1,.evo__layer--2),
+.evo[data-stage="3"] :is(.evo__layer--1,.evo__layer--2,.evo__layer--3),
+.evo[data-stage="4"] :is(.evo__layer--1,.evo__layer--2,.evo__layer--4),
+.evo[data-stage="5"] :is(.evo__layer--1,.evo__layer--2,.evo__layer--4,.evo__layer--5) { opacity: 1; }
+.evo__controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; font: 14px/1.5 var(--sans); }
+.evo__controls button { background: none; border: 1px solid var(--line); border-radius: var(--radius-control); padding: 8px 14px; color: var(--accent); }
+.evo__controls button:hover { border-color: var(--accent); }
+.evo__steps { list-style: none; padding: 0; margin: 0; }
+.evo__step { border-top: 1px solid var(--line); padding: 20px 0 20px 20px; border-left: 3px solid transparent; }
+.evo__step h3 { font: 500 1.5rem/1.25 var(--display); letter-spacing: -.01em; }
+.evo__step button { all: unset; cursor: pointer; display: inline-flex; align-items: baseline; gap: 12px; }
+.evo__step button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.evo__num { font: 13px/1 var(--mono); color: var(--muted); }
+.evo__title { margin-top: 6px; color: var(--ink); }
+.evo__limit { color: var(--body); font-size: 17px; }
+.evo__formula { margin-top: 8px; font: 13px/1.5 var(--mono); color: var(--accent); }
+.evo[data-stage] .evo__step:not(.is-active) :is(h3,.evo__title) { color: var(--muted); }
+.evo .evo__step.is-active { border-left-color: var(--accent); }
+
+// Thesis and lenses.
+.thesis { background: var(--surface); }
+.thesis__head h2 { font-size: clamp(2.6rem, 5.4vw, 4.5rem); max-width: 14ch; }
+.thesis__head .lede { margin-top: 28px; max-width: 44rem; }
+.thesis__quote { margin: 48px 0 0; padding-left: 24px; border-left: 3px solid var(--accent); max-width: 44rem; }
+.thesis__quote p { font: italic 1.5rem/1.4 var(--text); color: var(--ink); }
+.thesis__quote footer { margin-top: 8px; }
+.thesis__lenses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 64px; }
+.thesis__lenses > div { border-top: 1px solid var(--ink); padding-top: 20px; }
+.thesis__lenses dt { font: 500 1.6rem/1.25 var(--display); }
+.thesis__lenses dt .meta { display: block; color: var(--accent); margin-bottom: 6px; letter-spacing: .04em; text-transform: uppercase; }
+.thesis__lenses dd { margin-top: 12px; color: var(--body); font-size: 18px; }
+
+// Research map: one column per loop stage.
+.map__stages { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.map__stage { display: flex; flex-direction: column; border-top: 1px solid var(--ink); padding-top: 20px; }
+.map__label { font: 13px/1.5 var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; display: flex; gap: 10px; align-items: center; }
+.map__label span { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: var(--paper); font-size: 12px; }
+.map__stage h3 { font-size: clamp(1.5rem, 2vw, 1.9rem); margin-top: 14px; }
+.map__detail { margin-top: 10px; color: var(--body); font-size: 17px; }
+.map__lead { margin-top: 24px; background: var(--surface); padding: 20px 22px; border-radius: var(--radius-control); flex: 1; }
+.map__lead h4 { font: 500 1.6rem/1.2 var(--display); margin-top: 2px; }
+.map__lead h4 a { color: var(--ink); }
+.map__lead p:not(.meta) { margin-top: 10px; font-size: 17px; color: var(--body); }
+.map__lead .map__result { color: var(--ink); border-top: 1px solid var(--line); padding-top: 10px; }
+.map__related { list-style: none; padding: 0; margin: 16px 0 0; font: 14px/1.55 var(--sans); color: var(--muted); }
+.map__related li + li { margin-top: 8px; }
+.map__related strong { color: var(--ink); font-weight: 600; }
+
+// Vision: islands strip, three thrusts, bridge.
+.islands { margin-bottom: 56px; }
+.islands ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.islands li { border: 1px solid var(--line); border-radius: 18px; padding: 16px 20px; background: var(--paper); }
+.islands strong { display: block; font: 500 1.2rem/1.3 var(--display); }
+.islands span { font: 14px/1.5 var(--sans); color: var(--muted); }
+.home-vision__questions p.map__label { font-size: 13px; color: var(--accent); margin: 0 0 14px; }
+.home-vision__challenge { font: 14px/1.6 var(--sans) !important; color: var(--muted) !important; }
+.bridge { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+.bridge h3 { font-size: 1.6rem; }
+.bridge p { margin-top: 12px; color: var(--body); font-size: 18px; }
+.hero__count { margin-top: 12px; font: 13px/1.6 var(--mono); color: var(--accent); }
+@media (max-width: 1023px) {
+  .map__stages { grid-template-columns: 1fr; gap: 48px; }
+  .islands ul { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .evo__grid { grid-template-columns: 1fr; }
+  .evo__figure { position: static; }
+  .thesis__lenses,.bridge { grid-template-columns: 1fr; gap: 32px; }
+  .islands ul { grid-template-columns: 1fr; }
+}
+// `ch` is the width of a Latin "0"; a CJK glyph is ~2ch, so the Latin measure breaks Chinese headings mid-word.
+html[lang="zh-CN"] :is(.evo__head,.thesis__head,.map .section__head,.agenda .section__head) h2 { max-width: 30ch; }
+.evo__controls button { white-space: nowrap; }

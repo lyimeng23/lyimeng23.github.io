@@ -1,0 +1,5 @@
+<section class="section thesis" id="thesis"><div class="container">
+  <header class="thesis__head"><p class="meta">{{ copy.thesis_label }}</p><h2>{{ copy.thesis_title }}</h2><p class="lede">{{ copy.thesis_body }}</p></header>
+  <blockquote class="thesis__quote"><p>{{ copy.thesis_quote }}</p><footer class="meta">{{ copy.thesis_cite }}</footer></blockquote>
+  <dl class="thesis__lenses">{% for lens in copy.lenses %}<div><dt><span class="meta">{{ lens.label }}</span>{{ lens.title }}</dt><dd>{{ lens.text }}</dd></div>{% endfor %}</dl>
+</div></section>
