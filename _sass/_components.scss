@@ -185,15 +185,10 @@ html[lang="zh-CN"] .hero__background, html[lang="zh-CN"] .hero__current { font-s
 .community { background: var(--surface); }
 .community h2 { max-width: 24ch; }
 .community__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 48px; }
-.community__grid h3, .community__news h3 { font-size: 1.8rem; }
+.community__grid h3 { font-size: 1.8rem; }
 .community__events { list-style: none; padding: 0; margin: 24px 0 0; }
 .community__events li { display: flex; flex-direction: column; gap: 5px; margin-bottom: 22px; font: 16px/1.6 var(--sans); color: var(--body); }
 .community__events strong { color: var(--ink); font-weight: 500; }
-.community__news { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 36px; }
-.community__news ol { list-style: none; padding: 0; margin: 24px 0 0; }
-.community__news li { display: grid; grid-template-columns: 120px 1fr; gap: 24px; margin-bottom: 18px; }
-.community__news time { font: 13px/1.6 var(--sans); color: var(--muted); padding-top: 5px; }
-.community__news p { max-width: 64ch; }
 .home-vision__questions { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
 .home-vision__questions article { border-top: 1px solid var(--line); padding-top: 24px; }
 .home-vision__questions h3 { font: 500 clamp(1.625rem,2.2vw,2rem)/1.2 var(--display); letter-spacing: -.02em; color: var(--ink); min-height: 2.4em; }
@@ -204,7 +199,6 @@ html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
 @media (max-width: 767px) {
   .home-vision__questions h3, html[lang="zh-CN"] .home-vision__questions h3 { min-height: 0; }
   .community__grid, .home-vision__questions { grid-template-columns: 1fr; gap: 36px; }
-  .community__news li { grid-template-columns: 1fr; gap: 6px; }
   html[lang="zh-CN"] .hero__copy h1 { font-size: 2.8rem; }
 }
 
