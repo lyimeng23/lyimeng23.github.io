@@ -3,6 +3,12 @@
     {
       "date": "Oct 2026",
       "iso_date": "2026-10",
+      "html": "Our paper <strong>UltraLEGO</strong> will appear at <strong>ACM MobiCom 2026</strong>.",
+      "html_zh": "我们的论文 <strong>UltraLEGO</strong> 将在 <strong>ACM MobiCom 2026</strong> 发表。"
+    },
+    {
+      "date": "Oct 2026",
+      "iso_date": "2026-10",
       "html": "The <a href=\"https://arxiv.org/abs/2610.23914\">SPIRIT</a> preprint is on arXiv: sparse-aperture SAR as physics-informed inverse rendering.",
       "html_zh": "<a href=\"https://arxiv.org/abs/2610.23914\">SPIRIT</a> 预印本上线 arXiv：把稀疏孔径 SAR 视为物理约束的逆渲染问题。"
     },
