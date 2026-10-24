@@ -47,12 +47,16 @@
     var steps = section.querySelectorAll('.evo__step');
     var controls = section.querySelector('.evo__controls');
     var count = section.querySelector('[data-evo-count]');
+    var prev = controls.querySelector('[data-evo-step="-1"]');
+    var next = controls.querySelector('[data-evo-step="1"]');
     var total = buttons.length, current = 1;
     function show(n) {
       current = Math.min(total, Math.max(1, n));
       section.setAttribute('data-stage', String(current));
       buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(Number(b.dataset.evoStage) === current)); });
       steps.forEach(function (li) { li.classList.toggle('is-active', Number(li.dataset.stage) === current); });
+      prev.disabled = current === 1;
+      next.disabled = current === total;
       count.textContent = current + ' / ' + total + ' · ' + buttons[current - 1].textContent.replace(/^\d+/, '');
     }
     controls.hidden = false;

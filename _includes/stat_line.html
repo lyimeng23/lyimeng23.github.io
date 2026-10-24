@@ -1,0 +1,3 @@
+{%- assign stats = include.text | split: ' · ' -%}
+{%- assign sep = ',' -%}{%- if lang == 'zh' -%}{%- assign sep = '、' -%}{%- endif -%}
+<span class="stat-line">{% for stat in stats %}<span>{{ stat }}{% unless forloop.last %}{{ sep }}{% endunless %}</span>{% endfor %}</span>

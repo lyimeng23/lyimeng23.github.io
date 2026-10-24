@@ -1,7 +1,7 @@
 // Motion interprets a user action or changes the view of an actual observation.
 // No hidden text, continuous animation loop, scroll hijack, or per-paragraph reveal.
 .observation__view { transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease); }
-button,select { transition: background-color var(--fast), color var(--fast); }
+button,select { transition: background-color var(--fast), border-color var(--fast), color var(--fast); }
 @media (prefers-reduced-motion: no-preference) {
   .work__image img { transition: transform var(--duration) var(--ease); }
   .work__image:hover img { transform: scale(1.025); }

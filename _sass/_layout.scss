@@ -21,12 +21,12 @@
 .work__item--proteus .work__image { order: 2; }
 .work__item--senior-driving { grid-template-columns: 1fr 1.3fr; }
 .work__item--senior-driving .work__image { max-width: 440px; }
-.agenda { background: var(--surface); }
+.agenda { background: var(--surface); padding-bottom: clamp(64px,7vw,96px); }
 .agenda__space { display: grid; grid-template-columns: repeat(12,1fr); gap: 36px 24px; }
 .agenda__thrust { grid-column: 1 / 8; }
 .agenda__thrust:nth-child(2) { grid-column: 4 / 11; }
 .agenda__thrust:nth-child(3) { grid-column: 6 / 13; }
-.about { background: var(--surface); }
+.contact { padding-block: clamp(72px,8vw,112px); background: var(--paper); }
 .page { padding-block: 72px 112px; }
 .page__head { margin-bottom: 56px; }
 .page__title { font-size: clamp(3rem, 6vw, 5rem); max-width: 18ch; }

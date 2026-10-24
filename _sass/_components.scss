@@ -6,15 +6,19 @@
 .nav__menu,.nav__tools { display: flex; gap: 24px; align-items: center; }
 .nav__menu a,.nav__tools a { padding-block: 14px; }
 .nav__tools { gap: 12px; }
-.theme-control select { background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-control); font-size: 12px; padding: 10px 6px; min-height: 44px; max-width: 104px; }
-.theme-control { display: none; }
+// Appearance is a utility, not a destination: a quiet mono label and a drawn chevron
+// keep the native select from becoming the heaviest control in the header.
+.theme-control { display: none; position: relative; }
 .js .theme-control { display: block; }
+.theme-control select { appearance: none; -webkit-appearance: none; background: transparent; color: var(--muted); border: 0; border-radius: 0; font: 12px/1.4 var(--mono); padding: 10px 18px 10px 0; min-height: 44px; max-width: none; }
+.theme-control::after { content: ""; position: absolute; right: 3px; top: 50%; width: 6px; height: 6px; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+.theme-control select:hover, .theme-control select:focus-visible { color: var(--ink); }
 .nav__toggle { display: none; padding: 10px 0 10px 10px; background: none; border: 0; font-size: 13px; min-height: 44px; }
 // First screen establishes the person. The research proposition has its own later section.
 .hero__bio { font-size: clamp(1.2rem,1.8vw,1.4375rem); color: var(--body); line-height: 1.5; max-width: 43ch; margin-top: 28px; }
 .hero__background { color: var(--body); max-width: 46ch; margin-top: 22px; font-size: 21px; }
 .hero__current { margin-top: 26px; max-width: 46ch; color: var(--body); }
-.hero__label { font: 13px/1.6 var(--sans); color: var(--accent); margin-bottom: 8px; }
+.hero__label { font: 12px/1.6 var(--mono); color: var(--accent); letter-spacing: .04em; text-transform: uppercase; margin-bottom: 8px; }
 .hero__portrait { width: min(100%,260px); margin-left: auto; padding-top: 12px; }
 .hero__portrait img { width: 100%; border-radius: var(--radius-photo); }
 .hero__portrait figcaption p { font: 13px/1.6 var(--sans); display: flex; flex-direction: column; }
@@ -40,6 +44,7 @@
 .observation__controls { display: flex; gap: 4px; margin-top: 20px; }
 .observation__controls button,.filter button { font: 13px/1.5 var(--sans); padding: 12px 16px; background: transparent; color: var(--body); border: 1px solid transparent; border-radius: var(--radius-control); min-height: 44px; }
 .observation__controls button[aria-pressed="true"],.filter button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.observation__controls button:not([aria-pressed="true"]):hover,.filter button:not([aria-pressed="true"]):hover { border-color: var(--line); color: var(--ink); }
 .observation figcaption { max-width: 44ch; }
 .observation figcaption strong { font-weight: 500; color: var(--ink); font-size: 16px; }
 // Individual views enlarge within a reserved frame. The page never shifts when the view changes.
@@ -81,19 +86,27 @@
 .agenda__thrust > .meta { margin-top: 18px; }
 // A single reading column keeps the principles together; further reading stays secondary.
 .thinking { padding-block: clamp(56px,6vw,88px); }
-.thinking h2 { font-size: clamp(2rem,3.5vw,3rem); max-width: none; }
-.thinking__principles { margin-top: 40px; max-width: 850px; }
+.thinking__grid { display: grid; grid-template-columns: minmax(240px,.7fr) minmax(0,1.5fr); gap: clamp(48px,8vw,140px); align-items: start; }
+.thinking__head h2 { font-size: clamp(2rem,3.2vw,2.75rem); max-width: 12ch; }
+html[lang="zh-CN"] .thinking__head h2 { max-width: none; }
+.thinking__principles { margin-top: 0; max-width: none; }
+.thinking__principles > div { border-top: 1px solid var(--line); padding-top: 20px; }
 .thinking__principles > div + div { margin-top: 32px; }
 .thinking dt { font: 500 clamp(1.5rem,2vw,1.75rem)/1.3 var(--display); }
 .thinking dd { margin-top: 10px; color: var(--body); max-width: 64ch; }
-.thinking__reading { margin-top: 36px; font-size: 17px; max-width: 64ch; }
+.thinking__reading { margin-top: 32px; font-size: 15px; max-width: 36ch; }
 .thinking__reading .meta { display: block; margin-bottom: 8px; }
+@media (max-width: 1023px) {
+  .thinking__grid { grid-template-columns: 1fr; gap: 32px; }
+  .thinking__head h2 { max-width: none; }
+  .thinking__reading { max-width: 64ch; }
+}
 
 .publication-tools { font: 13px/1.5 var(--sans); display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; margin-bottom: 32px; }
 .filter { display: flex; flex-wrap: wrap; gap: 4px; }
 .pubs { list-style: none; margin: 0; padding: 0; }
 .pub { display: grid; grid-template-columns: 160px 1fr; gap: 40px; padding-block: 28px; border-top: 1px solid var(--line); }
-.pub__venue { display: flex; flex-direction: column; font: 13px/1.8 var(--sans); color: var(--muted); }
+.pub__venue { display: flex; flex-direction: column; font: 12px/1.7 var(--mono); color: var(--muted); letter-spacing: .015em; }
 .pub h3 { font: 1.45rem/1.3 var(--text); letter-spacing: 0; text-wrap: pretty; }
 .pub__authors { margin-top: 10px; color: var(--muted); font: 13px/1.6 var(--sans); }
 .pub__authors strong { color: var(--body); font-weight: 600; }
@@ -134,25 +147,37 @@ th { font-weight: 500; }
 td { font-family: var(--mono); }
 .record__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
 .record__block h2 { font-size: 2rem; margin-block: 32px 20px; }
-.record__label { font: 13px/1.6 var(--sans); color: var(--muted); margin-block: 24px 10px; }
+.record__label { font: 12px/1.6 var(--mono); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; margin-block: 24px 10px; }
 .plain-list { padding-left: 20px; font: 16px/1.7 var(--sans); color: var(--body); }
 .timeline-list { list-style: none; padding: 0; }
 .timeline-list li { display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding-block: 16px; }
-.timeline-list__period { font: 13px/1.6 var(--sans); color: var(--muted); }
+.timeline-list__period { font: 12px/1.6 var(--mono); color: var(--muted); letter-spacing: .015em; }
 .timeline-list__body strong { display: block; font-weight: 500; }
 .timeline { list-style: none; padding: 0; max-width: 900px; }
 .timeline__item { display: grid; grid-template-columns: 120px 1fr; gap: 36px; border-top: 1px solid var(--line); padding-block: 28px; }
-.timeline__date { font: 13px/1.6 var(--sans); color: var(--muted); }
+.timeline__date { font: 12px/1.6 var(--mono); color: var(--muted); letter-spacing: .015em; }
+// The home news index sits beside its introduction, so the section reads as one
+// composition instead of a full-width heading followed by a half-empty list.
+.news__grid { display: grid; grid-template-columns: minmax(240px,.72fr) minmax(0,1.5fr); gap: clamp(48px,7vw,120px); align-items: start; }
+.news__head h2 { max-width: none; }
+.news__head .lede { margin-top: 24px; }
+.news__head .record__more { margin-top: 24px; }
+.news__list .timeline { max-width: none; }
+@media (max-width: 1023px) {
+  .news__grid { grid-template-columns: 1fr; gap: 40px; }
+}
 .error-page { min-height: 60vh; }
-html[lang="zh-CN"] { .research__question { line-height: 1.4; letter-spacing: 0; } .work__title,.agenda__question,.project__title,.project__pullquote { line-height: 1.5; } .pub h3 { font-family: Newsreader,Georgia,serif; } }
+html[lang="zh-CN"] { .research__question { line-height: 1.4; letter-spacing: 0; } .work__title,.agenda__question,.project__title,.project__pullquote { line-height: 1.5; } .pub h3 { font-family: Newsreader,Georgia,serif; } .hero__label,.record__label,.timeline__date,.timeline-list__period,.pub__venue { font-family: var(--sans); font-size: 13px; letter-spacing: 0; text-transform: none; } .map__label { font-family: var(--sans); letter-spacing: 0; } }
 @media (max-width: 1023px) { .nav__inner { gap: 20px; } .nav__menu { gap: 16px; } }
 @media (max-width: 767px) {
   .nav__inner { min-height: 64px; flex-wrap: wrap; gap: 0 12px; }
   .nav__tools { margin-left: auto; }
-  .nav__menu { order: 3; width: 100%; justify-content: space-between; }
+  .nav__menu { order: 3; width: 100%; flex-direction: column; align-items: stretch; gap: 0; border-top: 1px solid var(--line); margin-top: 4px; }
   .js .nav__toggle, .js .nav__toggle[hidden] { display: block !important; }
+  .js .nav__toggle[aria-expanded="true"] { color: var(--accent); }
   .js .nav__menu:not(.is-open) { display: none; }
-  .nav__menu a { padding-block: 16px; }
+  .nav__menu a { padding-block: 14px; border-bottom: 1px solid var(--line); }
+  .nav__menu a:last-child { border-bottom: 0; }
   .hero__links { gap: 24px; margin-top: 18px; }
   .observation__view--radar { margin-top: 56px; }
   .observation__images { gap: 12px; padding-block: 0; }
@@ -163,8 +188,11 @@ html[lang="zh-CN"] { .research__question { line-height: 1.4; letter-spacing: 0; 
   .record__cols { grid-template-columns: 1fr; gap: 24px; }
   .timeline__item { grid-template-columns: 1fr; gap: 10px; }
 }
-@media (max-width: 359px) { .nav__inner { gap: 0 6px; } .nav__tools { gap: 8px; } .nav__brand { font-size: 13px; } .theme-control select { max-width: 84px; padding-inline: 2px; } .nav__toggle { font-size: 12px; } }
+@media (max-width: 359px) { .nav__inner { gap: 0 6px; } .nav__tools { gap: 8px; } .nav__brand { font-size: 13px; } .theme-control select { font-size: 11px; padding-right: 14px; } .nav__toggle { font-size: 12px; } }
 .record-heading { font-size: 2rem; margin-bottom: 28px; }
+// A provenance note is secondary to the publication list; the rule gives it a home
+// without letting it compete with the group heading.
+.pub-group__note { margin: 12px 0; padding-left: 14px; border-left: 2px solid var(--line); max-width: 90ch; font: 14px/1.7 var(--sans); color: var(--muted); }
 
 @media (max-width: 767px) {
   .hero__grid { display: block; position: relative; }
@@ -194,7 +222,7 @@ html[lang="zh-CN"] .hero__background, html[lang="zh-CN"] .hero__current { font-s
 .home-vision__questions h3 { font: 500 clamp(1.625rem,2.2vw,2rem)/1.2 var(--display); letter-spacing: -.02em; color: var(--ink); min-height: 2.4em; }
 html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
 .home-vision__questions p { font-size: 19px; margin-top: 16px; color: var(--body); }
-.home-vision__route { margin-top: 32px; }
+.home-vision__route { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; }
 .pub-group + .pub-group { margin-top: 56px; }
 @media (max-width: 767px) {
   .home-vision__questions h3, html[lang="zh-CN"] .home-vision__questions h3 { min-height: 0; }
@@ -259,13 +287,21 @@ html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
 .evo[data-stage="4"] :is(.evo__layer--1,.evo__layer--2,.evo__layer--4),
 .evo[data-stage="5"] :is(.evo__layer--1,.evo__layer--2,.evo__layer--4,.evo__layer--5) { opacity: 1; }
 .evo__controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; font: 14px/1.5 var(--sans); }
+.evo__controls [data-evo-count] { white-space: nowrap; }
 .evo__controls button { background: none; border: 1px solid var(--line); border-radius: var(--radius-control); padding: 8px 14px; color: var(--accent); }
-.evo__controls button:hover { border-color: var(--accent); }
+.evo__controls button:hover { border-color: var(--accent); background: var(--surface); }
+.evo__controls button:disabled, .evo__controls button:disabled:hover { color: var(--muted); border-color: var(--line); background: transparent; cursor: not-allowed; }
+@media (max-width: 560px) {
+  .evo__controls { flex-wrap: wrap; }
+  .evo__controls [data-evo-count] { order: -1; flex: 1 0 100%; text-align: center; margin-bottom: 6px; }
+  .evo__controls button { flex: 1; }
+}
 .evo__steps { list-style: none; padding: 0; margin: 0; }
 .evo__step { border-top: 1px solid var(--line); padding: 20px 0 20px 20px; border-left: 3px solid transparent; }
 .evo__step h3 { font: 500 1.5rem/1.25 var(--display); letter-spacing: -.01em; }
-.evo__step button { all: unset; cursor: pointer; display: inline-flex; align-items: baseline; gap: 12px; }
+.evo__step button { all: unset; cursor: pointer; display: inline-flex; align-items: baseline; gap: 12px; transition: color var(--fast) var(--ease); }
 .evo__step button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.evo__step h3 button:hover { color: var(--accent); }
 .evo__num { font: 13px/1 var(--mono); color: var(--muted); }
 .evo__title { margin-top: 6px; color: var(--ink); }
 .evo__limit { color: var(--body); font-size: 17px; }
@@ -303,9 +339,11 @@ html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
 .map__related strong { color: var(--ink); font-weight: 600; }
 
 // Vision: islands strip, three thrusts, bridge.
+// Islands are an index, not buttons: a rule and a label keep them inside the site's
+// editorial system and remove the card affordance the old rounded boxes implied.
 .islands { margin-bottom: 56px; }
-.islands ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.islands li { border: 1px solid var(--line); border-radius: 18px; padding: 16px 20px; background: var(--paper); }
+.islands ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.islands li { border-top: 1px solid var(--line); padding: 14px 0 0; }
 .islands strong { display: block; font: 500 1.2rem/1.3 var(--display); }
 .islands span { font: 14px/1.5 var(--sans); color: var(--muted); }
 .home-vision__questions p.map__label { font-size: 13px; color: var(--accent); margin: 0 0 14px; }
@@ -313,7 +351,7 @@ html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
 .bridge { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
 .bridge h3 { font-size: 1.6rem; }
 .bridge p { margin-top: 12px; color: var(--body); font-size: 18px; }
-.hero__count { margin-top: 12px; font: 13px/1.6 var(--mono); color: var(--accent); }
+.hero__count { margin-top: 12px; font: 12px/1.6 var(--mono); color: var(--accent); }
 @media (max-width: 1023px) {
   .map__stages { grid-template-columns: 1fr; gap: 48px; }
   .islands ul { grid-template-columns: repeat(2, 1fr); }
@@ -323,6 +361,11 @@ html[lang="zh-CN"] .home-vision__questions h3 { min-height: 2.8em; }
   .evo__figure { position: static; }
   .thesis__lenses,.bridge { grid-template-columns: 1fr; gap: 32px; }
   .islands ul { grid-template-columns: 1fr; }
+  // A dot stranded at the end of the label line reads as a typo when the count wraps.
+  .map__meta-label { display: block; }
+  .map__meta-sep { display: none; }
+  // One step below the h2 minimum keeps the 19-character Chinese title on two lines.
+  html[lang="zh-CN"] .map .section__head h2 { font-size: 2.1rem; }
 }
 // `ch` is the width of a Latin "0"; a CJK glyph is ~2ch, so the Latin measure breaks Chinese headings mid-word.
 html[lang="zh-CN"] :is(.evo__head,.thesis__head,.map .section__head,.agenda .section__head) h2 { max-width: 30ch; }

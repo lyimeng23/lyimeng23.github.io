@@ -1,6 +1,5 @@
 {% assign lang = page.lang | default: 'en' %}{% assign ui = site.data.locale[lang] %}{% assign copy = site.data.identity[lang] %}{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
-<section class="section news" id="news"><div class="container">
-  <header class="section__head"><h2>{{ copy.news_title }}</h2><p class="lede">{{ copy.news_lede }}</p></header>
-  {% include news.html limit=3 %}
-  <p class="record__more"><a class="text-link" href="{{ home }}news/">{{ ui.more }}</a></p>
+<section class="section news" id="news"><div class="container news__grid">
+  <header class="news__head"><h2>{{ copy.news_title }}</h2><p class="lede">{{ copy.news_lede }}</p><p class="record__more"><a class="text-link" href="{{ home }}news/">{{ ui.more }}</a></p></header>
+  <div class="news__list">{% include news.html limit=3 %}</div>
 </div></section>

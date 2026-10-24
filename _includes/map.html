@@ -1,5 +1,5 @@
 <section class="section map" id="research-map"><div class="container">
-  <header class="section__head"><p class="meta">{{ copy.map_label }} · {{ copy.count_line }}</p><h2>{{ copy.map_title }}</h2><p class="lede">{{ copy.map_intro }}</p></header>
+  <header class="section__head"><p class="meta"><span class="map__meta-label">{{ copy.map_label }} <span class="map__meta-sep" aria-hidden="true">·</span></span> {% include stat_line.html text=copy.count_line %}</p><h2>{{ copy.map_title }}</h2><p class="lede">{{ copy.map_intro }}</p></header>
   <ol class="map__stages">{% for stage in copy.map %}<li class="map__stage">
     <p class="map__label"><span>{{ forloop.index }}</span>{{ stage.stage }}</p>
     <h3>{{ stage.challenge }}</h3><p class="map__detail">{{ stage.detail }}</p>
